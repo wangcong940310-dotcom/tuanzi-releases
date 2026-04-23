@@ -1,72 +1,78 @@
+<div align="right">
+
+[中文](README_CN.md) | **English**
+
+</div>
+
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/wangcong940310-dotcom/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="团子">
+<img src="https://raw.githubusercontent.com/wangcong940310-dotcom/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="Tuanzi">
 
-# 团子
+# Tuanzi
 
-**你的 AI 编程搭子，就趴在桌面上。**
+**Your AI coding buddy, right on your desktop.**
 
-一只会根据 Claude Code 状态实时反应的桌面宠物猫。
-思考时翻书、工作时敲键盘、完成时提醒你、摸它还会撒娇。
+A desktop pet cat that reacts in real time to Claude Code's status.
+Flips through books while thinking, types while working, celebrates when done — and purrs when you pet it.
 
-[![下载最新版](https://img.shields.io/github/v/release/wangcong940310-dotcom/tuanzi-releases?label=%E4%B8%8B%E8%BD%BD&color=blue)](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest)
+[![Download](https://img.shields.io/github/v/release/wangcong940310-dotcom/tuanzi-releases?label=Download&color=blue)](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest)
 [![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest)
 
-[**下载**](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest) · [**功能介绍**](#功能) · [**快速开始**](#快速开始) · [**反馈**](#反馈)
+[**Download**](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest) · [**Features**](#features) · [**Getting Started**](#getting-started)
 
 </div>
 
 ---
 
-## 功能
+## Features
 
-### Claude Code 实时联动
+### Real-time Claude Code Integration
 
-团子通过 Webhook 监听 Claude Code 的 Hook 事件，实时切换动画状态：
+Tuanzi listens to Claude Code hook events via Webhook and switches animations in real time:
 
-| Claude 状态 | 团子反应 |
+| Claude Status | Tuanzi Reaction |
 |---|---|
-| 用户提交 Prompt | 翻书搜索 |
-| 工具调用中 | 敲键盘工作 |
-| 任务完成 | 开心提醒 + 音效 |
-| 等待审批 | 弹出权限面板 |
-| 会话结束 | 打瞌睡 |
-| 空闲太久 | 睡着了 |
+| User submits prompt | Flips through books |
+| Tool call in progress | Types on keyboard |
+| Task complete | Happy celebration + sound |
+| Waiting for approval | Permission panel pops up |
+| Session ends | Dozes off |
+| Idle too long | Falls asleep |
 
-### 20+ 种动效
+### 20+ Animations
 
-#### 日常
+#### Daily
 
-| 待机 | 伸懒腰 | 舔爪子 | 睡觉 | 喝水 |
+| Idle | Stretch | Lick Paw | Sleep | Drink |
 |:---:|:---:|:---:|:---:|:---:|
 | <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> |
 
-#### 交互
+#### Interactive
 
-| 戳一下 | 摸摸撒娇 | 提起拖拽 | 敲键盘 |
+| Poke | Pet | Drag | Typing |
 |:---:|:---:|:---:|:---:|
 | <img src="assets/gif/poke.gif" width="100"> | <img src="assets/gif/pet.gif" width="100"> | <img src="assets/gif/drag.gif" width="100"> | <img src="assets/gif/typing.gif" width="100"> |
 
-#### 工作 & 状态
+#### Work & Status
 
-| 搜索翻书 | 思考 | 工作 | 完成提醒 | 消息通知 |
+| Search | Think | Working | Done | Notify |
 |:---:|:---:|:---:|:---:|:---:|
 | <img src="assets/gif/search.gif" width="100"> | <img src="assets/gif/think.gif" width="100"> | <img src="assets/gif/working.gif" width="100"> | <img src="assets/gif/done.gif" width="100"> | <img src="assets/gif/notify.gif" width="100"> |
 
-### 侧边吸附 + 终端会话面板
+### Edge Docking + Terminal Session Panel
 
 <img src="assets/gif/dock.gif" width="600">
 
-拖到屏幕边缘自动吸附，悬停弹出终端会话面板：
+Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel:
 
-- 实时显示所有 Claude 会话状态
-- 点击跳转到对应终端窗口（支持 Terminal / iTerm2 / Kitty / WezTerm / Ghostty）
-- 权限审批和选项弹窗内联显示，不打断工作流
-- 喝水倒计时集成在面板标题栏
+- Live status of all Claude sessions
+- Click to jump to the corresponding terminal window (supports Terminal / iTerm2 / Kitty / WezTerm / Ghostty)
+- Inline permission approval and option prompts — no workflow interruption
+- Hydration reminder countdown integrated in the panel title bar
 
-### 多终端支持
+### Multi-Terminal Support
 
-| 终端 | tty 跳转 | 窗口标题匹配 |
+| Terminal | tty Jump | Window Title Match |
 |---|---|---|
 | Terminal.app | ✅ | ✅ |
 | iTerm2 | ✅ | ✅ |
@@ -74,25 +80,25 @@
 | WezTerm | ✅ | - |
 | Ghostty | - | ✅ |
 
-### 其他功能
+### Other Features
 
-- **飞书消息监听** — Dock 角标变化时播放提醒动画
-- **喝水提醒** — 自定义间隔，支持秒/分/时
-- **权限快捷键** — 可配置修饰键 + 按键，不用鼠标点
-- **进程发现** — 自动发现未通过 Hook 注册的 Claude 会话
-- **拖拽 & 摸摸** — 拖着玩、来回划触发撒娇动画
+- **Lark notification listener** — Plays alert animation on Dock badge changes
+- **Hydration reminder** — Custom intervals in seconds / minutes / hours
+- **Permission hotkey** — Configurable modifier + key combo, no mouse needed
+- **Process discovery** — Auto-detects Claude sessions not registered via hooks
+- **Drag & pet** — Drag to play, swipe back and forth to trigger purring animation
 
 ---
 
-## 快速开始
+## Getting Started
 
-### 1. 下载安装
+### 1. Download & Install
 
-前往 [Releases](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest) 下载最新 zip，解压后拖入「应用程序」文件夹。
+Go to [Releases](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
 
-### 2. 配置 Claude Code Hook
+### 2. Configure Claude Code Hooks
 
-首次打开团子时会自动配置。如需手动配置，在 `~/.claude/settings.json` 的 `hooks` 中添加：
+Tuanzi auto-configures on first launch. For manual setup, add the following to `hooks` in `~/.claude/settings.json`:
 
 ```json
 {
@@ -106,41 +112,32 @@
 }
 ```
 
-### 3. 开始使用
+### 3. Start Using
 
-启动团子 → 拖到屏幕右侧吸附 → 打开终端用 Claude Code → 团子会跟着动起来。
+Launch Tuanzi → Drag to the right edge of the screen → Open a terminal with Claude Code → Tuanzi comes alive.
 
 ---
 
-## 工作原理
+## How It Works
 
 ```
-Claude Code ──Hook事件──→ hook.sh ──HTTP──→ 团子 Webhook (port 23333)
+Claude Code ──Hook Event──→ hook.sh ──HTTP──→ Tuanzi Webhook (port 23333)
                                                     │
                                           ┌─────────┼─────────┐
                                           ▼         ▼         ▼
-                                       动画切换   会话面板   权限弹窗
+                                     Animations  Session   Permission
+                                                  Panel     Prompt
 ```
 
 ---
 
-## 系统要求
+## Requirements
 
 - macOS 13.0+
-- Claude Code（配置 Hook）
-
----
-
-## 反馈
-
-这是我作为新手做的第一个 macOS App，还很粗糙，很多地方可以改进。如果你有任何意见、建议或想法，欢迎交流！
-
-扫码添加飞书联系：
-
-<img src="assets/qrcode.png" width="200">
+- Claude Code (with hooks configured)
 
 ---
 
 <div align="center">
-<sub>用 ❤️ 和 Claude 一起做的</sub>
+<sub>Made with ❤️ and Claude</sub>
 </div>
