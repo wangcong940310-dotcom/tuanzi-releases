@@ -35,13 +35,35 @@
 
 ### 20+ 种动效
 
-| 分类 | 动效 |
-|---|---|
-| **日常** | 待机、伸懒腰、舔爪子、睡觉、喝水 |
-| **交互** | 戳一下、摸摸撒娇、提起拖拽、滚动追逐 |
-| **工作** | 搜索翻书、思考、敲键盘、工作 |
-| **状态** | 完成提醒、报错、消息通知 |
-| **吸附** | 走到侧边、侧边待机、侧边走出、侧边提醒 |
+#### 日常
+待机 · 伸懒腰 · 舔爪子 · 睡觉 · 喝水
+
+<!-- 在这里放日常动效 GIF -->
+<!-- <img src="assets/gif/idle.gif" width="120"> <img src="assets/gif/stretch.gif" width="120"> <img src="assets/gif/lick.gif" width="120"> <img src="assets/gif/sleep.gif" width="120"> <img src="assets/gif/drink.gif" width="120"> -->
+
+#### 交互
+戳一下 · 摸摸撒娇 · 提起拖拽 · 滚动追逐
+
+<!-- 在这里放交互动效 GIF -->
+<!-- <img src="assets/gif/poke.gif" width="120"> <img src="assets/gif/pet.gif" width="120"> <img src="assets/gif/drag.gif" width="120"> <img src="assets/gif/chase.gif" width="120"> -->
+
+#### 工作
+搜索翻书 · 思考 · 敲键盘 · 工作
+
+<!-- 在这里放工作动效 GIF -->
+<!-- <img src="assets/gif/search.gif" width="120"> <img src="assets/gif/think.gif" width="120"> <img src="assets/gif/typing.gif" width="120"> <img src="assets/gif/working.gif" width="120"> -->
+
+#### 状态
+完成提醒 · 报错 · 消息通知
+
+<!-- 在这里放状态动效 GIF -->
+<!-- <img src="assets/gif/done.gif" width="120"> <img src="assets/gif/error.gif" width="120"> <img src="assets/gif/notify.gif" width="120"> -->
+
+#### 吸附
+走到侧边 · 侧边待机 · 侧边走出 · 侧边提醒
+
+<!-- 在这里放吸附动效 GIF -->
+<!-- <img src="assets/gif/snap-enter.gif" width="120"> <img src="assets/gif/snap-idle.gif" width="120"> <img src="assets/gif/snap-exit.gif" width="120"> <img src="assets/gif/snap-remind.gif" width="120"> -->
 
 ### 侧边吸附 + 终端会话面板
 
