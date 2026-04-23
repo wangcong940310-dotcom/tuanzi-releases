@@ -46,9 +46,9 @@
 戳一下 · 摸摸撒娇 · 提起拖拽 · 敲键盘
 
 #### 工作
-<img src="assets/gif/search.gif" width="120"> <img src="assets/gif/think.gif" width="120">
+<img src="assets/gif/search.gif" width="120"> <img src="assets/gif/think.gif" width="120"> <img src="assets/gif/working.gif" width="120">
 
-搜索翻书 · 思考
+搜索翻书 · 思考 · 工作
 
 #### 状态
 <img src="assets/gif/done.gif" width="120"> <img src="assets/gif/notify.gif" width="120">
