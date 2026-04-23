@@ -41,9 +41,9 @@
 待机 · 伸懒腰 · 舔爪子 · 睡觉 · 喝水
 
 #### 交互
-<img src="assets/gif/poke.gif" width="120"> <img src="assets/gif/pet.gif" width="120"> <img src="assets/gif/typing.gif" width="120">
+<img src="assets/gif/poke.gif" width="120"> <img src="assets/gif/pet.gif" width="120"> <img src="assets/gif/drag.gif" width="120"> <img src="assets/gif/typing.gif" width="120">
 
-戳一下 · 摸摸撒娇 · 敲键盘
+戳一下 · 摸摸撒娇 · 提起拖拽 · 敲键盘
 
 #### 工作
 <img src="assets/gif/search.gif" width="120"> <img src="assets/gif/think.gif" width="120">
