@@ -36,24 +36,22 @@
 ### 20+ 种动效
 
 #### 日常
-<img src="assets/gif/idle.gif" width="120"> <img src="assets/gif/stretch.gif" width="120"> <img src="assets/gif/lick.gif" width="120"> <img src="assets/gif/sleep.gif" width="120"> <img src="assets/gif/drink.gif" width="120">
 
-待机 · 伸懒腰 · 舔爪子 · 睡觉 · 喝水
+| 待机 | 伸懒腰 | 舔爪子 | 睡觉 | 喝水 |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> |
 
 #### 交互
-<img src="assets/gif/poke.gif" width="120"> <img src="assets/gif/pet.gif" width="120"> <img src="assets/gif/drag.gif" width="120"> <img src="assets/gif/typing.gif" width="120">
 
-戳一下 · 摸摸撒娇 · 提起拖拽 · 敲键盘
+| 戳一下 | 摸摸撒娇 | 提起拖拽 | 敲键盘 |
+|:---:|:---:|:---:|:---:|
+| <img src="assets/gif/poke.gif" width="100"> | <img src="assets/gif/pet.gif" width="100"> | <img src="assets/gif/drag.gif" width="100"> | <img src="assets/gif/typing.gif" width="100"> |
 
-#### 工作
-<img src="assets/gif/search.gif" width="120"> <img src="assets/gif/think.gif" width="120"> <img src="assets/gif/working.gif" width="120">
+#### 工作 & 状态
 
-搜索翻书 · 思考 · 工作
-
-#### 状态
-<img src="assets/gif/done.gif" width="120"> <img src="assets/gif/notify.gif" width="120">
-
-完成提醒 · 消息通知
+| 搜索翻书 | 思考 | 工作 | 完成提醒 | 消息通知 |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="assets/gif/search.gif" width="100"> | <img src="assets/gif/think.gif" width="100"> | <img src="assets/gif/working.gif" width="100"> | <img src="assets/gif/done.gif" width="100"> | <img src="assets/gif/notify.gif" width="100"> |
 
 ### 侧边吸附 + 终端会话面板
 
