@@ -287,6 +287,7 @@ class ViewController: NSViewController {
         // startChaseTimer()  // 追鼠标功能暂时关闭
         setupWebhookServer()
         installHooksOnFirstLaunch()
+        requestAutomationPermissionOnFirstLaunch()
         NotificationCenter.default.addObserver(self, selector: #selector(applySettings), name: .petSettingsChanged, object: nil)
         loadSessionsFromDisk()
         startProcessDiscovery()
@@ -1720,7 +1721,7 @@ class ViewController: NSViewController {
             for pid in pids {
                 let infoTask = Process()
                 infoTask.launchPath = "/bin/bash"
-                infoTask.arguments = ["-c", "ps -o tty=,comm= -p \(pid) 2>/dev/null"]
+                infoTask.arguments = ["-c", "ps -o tty=,args= -p \(pid) 2>/dev/null"]
                 let infoPipe = Pipe()
                 infoTask.standardOutput = infoPipe
                 infoTask.standardError = Pipe()
@@ -2769,19 +2770,33 @@ class ViewController: NSViewController {
 
     // 检测辅助功能授权状态，授权后自动重注册全局监听器（无需手动重启 app）
     func setupAccessibilityCheck() {
-        guard !AXIsProcessTrusted() else { return }
-        accessibilityCheckTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] timer in
-            guard let self else { timer.invalidate(); return }
-            if AXIsProcessTrusted() {
-                timer.invalidate()
-                self.accessibilityCheckTimer = nil
-                if let m = self.globalMouseMonitor { NSEvent.removeMonitor(m) }
-                if let k = self.globalKeyboardMonitor { NSEvent.removeMonitor(k) }
-                self.setupGlobalMonitors()
+        if !AXIsProcessTrusted() {
+            let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true] as CFDictionary
+            AXIsProcessTrustedWithOptions(options)
+
+            accessibilityCheckTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] timer in
+                guard let self else { timer.invalidate(); return }
+                if AXIsProcessTrusted() {
+                    timer.invalidate()
+                    self.accessibilityCheckTimer = nil
+                    if let m = self.globalMouseMonitor { NSEvent.removeMonitor(m) }
+                    if let k = self.globalKeyboardMonitor { NSEvent.removeMonitor(k) }
+                    self.setupGlobalMonitors()
+                }
             }
         }
     }
-    
+
+    func requestAutomationPermissionOnFirstLaunch() {
+        guard !UserDefaults.standard.bool(forKey: "hasRequestedAutomation") else { return }
+        UserDefaults.standard.set(true, forKey: "hasRequestedAutomation")
+        DispatchQueue.global(qos: .utility).async {
+            let script = NSAppleScript(source: "tell application \"Terminal\" to name of front window")
+            var err: NSDictionary?
+            script?.executeAndReturnError(&err)
+        }
+    }
+
     func updateCursorHover(event: NSEvent) {
         guard !isCurrentlyDragging else { return }
         if isMouseOverPet { NSCursor.openHand.set() }
@@ -3290,13 +3305,30 @@ struct TerminalSessionPanelView: View {
             dividerColor.frame(height: 1)
 
             if sessions.isEmpty {
-                VStack(spacing: 8) {
+                VStack(spacing: 10) {
                     Image(systemName: "terminal.fill")
                         .font(TuanziTokens.Fonts.largeIcon)
                         .foregroundColor(TuanziTokens.Colors.textDimmed)
-                    Text("没有活跃的终端会话")
-                        .font(TuanziTokens.Fonts.body)
+                    Text("没有活跃的 AI 会话")
+                        .font(TuanziTokens.Fonts.bodySemi)
                         .foregroundColor(TuanziTokens.Colors.textTertiary)
+                    Text("打开终端运行 AI 助手，团子会自动识别")
+                        .font(TuanziTokens.Fonts.footnote)
+                        .foregroundColor(TuanziTokens.Colors.textDimmed)
+                        .multilineTextAlignment(.center)
+                    Button(action: onSettings) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "gearshape")
+                            Text("管理 Hook")
+                        }
+                        .font(TuanziTokens.Fonts.footnote)
+                        .foregroundColor(TuanziTokens.Colors.accentCyanBright)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(TuanziTokens.Colors.accentCyanSoft.opacity(0.1))
+                        .cornerRadius(TuanziTokens.Radius.md)
+                    }
+                    .buttonStyle(.plain)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 24)

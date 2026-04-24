@@ -74,7 +74,7 @@ class SettingsWindowController: NSWindowController {
         win.titlebarAppearsTransparent = true
         win.titleVisibility = .hidden
         win.isReleasedWhenClosed = false
-        win.backgroundColor = TuanziTokens.Colors.windowBgNS
+        win.backgroundColor = .windowBackgroundColor
         if #available(macOS 13.0, *) {
             win.contentView = NSHostingView(rootView: SettingsRootView())
         }
@@ -173,13 +173,13 @@ struct SettingsRootView: View {
             .padding(.bottom, TuanziTokens.Spacing.rowH)
             .frame(width: TuanziTokens.Layout.sidebarWidth)
             .frame(maxHeight: .infinity)
-            .background(TuanziTokens.Colors.sidebarBg)
+            .background(Color(.windowBackgroundColor).opacity(0.95))
 
             DetailView(tab: selected)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(width: TuanziTokens.Layout.settingsWidth, height: TuanziTokens.Layout.settingsHeight)
-        .background(TuanziTokens.Colors.windowBg)
+        .background(Color(.windowBackgroundColor))
     }
 }
 
@@ -271,9 +271,9 @@ private struct SettingsGroup<Content: View>: View {
                     .padding(.bottom, TuanziTokens.Spacing.groupLabelBottom)
             }
             VStack(spacing: 0) { content }
-                .background(TuanziTokens.Colors.glassBg)
+                .background(Color(.controlBackgroundColor))
                 .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xl))
-                .overlay(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xl).stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.strokeWidth))
+                .overlay(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xl).stroke(Color(.separatorColor), lineWidth: TuanziTokens.Layout.strokeWidth))
         }
     }
 }
