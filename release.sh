@@ -54,7 +54,17 @@ if [ -z "$SIGNATURE" ]; then
 fi
 echo "🔑 签名: $SIGNATURE"
 
-# 4. 更新 appcast.xml
+# 4. 读取更新说明
+NOTES_FILE="$RELEASES_DIR/release_notes.html"
+if [ -f "$NOTES_FILE" ]; then
+    RELEASE_NOTES=$(cat "$NOTES_FILE")
+    echo "📋 已读取 release_notes.html"
+else
+    RELEASE_NOTES="<ul><li>Bug fixes and improvements</li></ul>"
+    echo "⚠️  未找到 release_notes.html，使用默认说明"
+fi
+
+# 5. 更新 appcast.xml
 echo "📝 更新 appcast.xml..."
 ENCODED_ZIP_NAME=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${ZIP_NAME}'))")
 DOWNLOAD_URL="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v${VERSION}/${ENCODED_ZIP_NAME}"
@@ -74,6 +84,7 @@ cat > "$RELEASES_DIR/appcast.xml" << EOF
             <sparkle:version>$(echo $VERSION | tr -d '.')</sparkle:version>
             <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[${RELEASE_NOTES}]]></description>
             <enclosure
                 url="${DOWNLOAD_URL}"
                 sparkle:edDSASignature="${SIGNATURE}"
@@ -84,7 +95,7 @@ cat > "$RELEASES_DIR/appcast.xml" << EOF
 </rss>
 EOF
 
-# 5. 推送 appcast.xml
+# 6. 推送 appcast.xml
 echo "🚀 推送 appcast.xml..."
 cd "$RELEASES_DIR"
 git add appcast.xml
