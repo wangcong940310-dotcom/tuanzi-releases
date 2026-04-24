@@ -6,5 +6,9 @@
 	<string>https://raw.githubusercontent.com/wangcong940310-dotcom/tuanzi-releases/main/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>YXmKmND2Lpob1wADZ5EBo+IxxAz0jLV44FDwGm2N6cQ=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>
