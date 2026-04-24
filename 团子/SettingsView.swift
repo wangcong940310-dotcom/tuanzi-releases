@@ -2,6 +2,7 @@ import Cocoa
 import SwiftUI
 import Combine
 import ServiceManagement
+import Sparkle
 
 // MARK: - PetSettings 持久化设置
 
@@ -69,9 +70,11 @@ class SettingsWindowController: NSWindowController {
             backing: .buffered,
             defer: false
         )
-        win.title = "团子"
-        win.titlebarAppearsTransparent = false
+        win.title = ""
+        win.titlebarAppearsTransparent = true
+        win.titleVisibility = .hidden
         win.isReleasedWhenClosed = false
+        win.backgroundColor = TuanziTokens.Colors.windowBgNS
         if #available(macOS 13.0, *) {
             win.contentView = NSHostingView(rootView: SettingsRootView())
         }
@@ -83,6 +86,17 @@ class SettingsWindowController: NSWindowController {
         window?.center()
         showWindow(nil)
         NSApp.activate(ignoringOtherApps: true)
+        if let titlebarView = window?.standardWindowButton(.closeButton)?.superview {
+            titlebarView.wantsLayer = true
+            for button in [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton] {
+                if let btn = window?.standardWindowButton(button) {
+                    var f = btn.frame
+                    f.origin.x += 12
+                    f.origin.y -= 6
+                    btn.frame = f
+                }
+            }
+        }
     }
 }
 
@@ -90,36 +104,44 @@ class SettingsWindowController: NSWindowController {
 
 private enum SettingsTab: String, CaseIterable, Identifiable {
     case general   = "通用"
+    case agents    = "AI 助手"
     case reminder  = "提醒"
     case shortcuts = "快捷键"
     case about     = "关于"
+    case contact   = "反馈"
 
     var id: String { rawValue }
 
     var icon: String {
         switch self {
         case .general:   return "gearshape.fill"
+        case .agents:    return "cpu.fill"
         case .reminder:  return "bell.badge.fill"
         case .shortcuts: return "keyboard.fill"
         case .about:     return "info.circle.fill"
+        case .contact:   return "bubble.left.fill"
         }
     }
 
     var iconColor: Color {
         switch self {
-        case .general:   return Color(red: 0.55, green: 0.55, blue: 0.60)
-        case .reminder:  return Color(red: 0.95, green: 0.30, blue: 0.30)
-        case .shortcuts: return Color(red: 0.95, green: 0.25, blue: 0.65)
-        case .about:     return Color(red: 0.20, green: 0.60, blue: 0.95)
+        case .general:   return TuanziTokens.Colors.tabGeneral
+        case .agents:    return TuanziTokens.Colors.tabAgents
+        case .reminder:  return TuanziTokens.Colors.tabReminder
+        case .shortcuts: return TuanziTokens.Colors.tabShortcuts
+        case .about:     return TuanziTokens.Colors.tabAbout
+        case .contact:   return TuanziTokens.Colors.tabContact
         }
     }
 
     var description: String {
         switch self {
         case .general:   return "登录启动、消息监听等基本设置"
+        case .agents:    return "管理 AI 助手 Hook 安装状态"
         case .reminder:  return "任务完成提示音与通知偏好"
         case .shortcuts: return "权限弹窗的键盘快捷键"
         case .about:     return "团子版本信息"
+        case .contact:   return "问题反馈与建议"
         }
     }
 }
@@ -130,8 +152,15 @@ struct SettingsRootView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            // MARK: 侧边栏
             VStack(alignment: .leading, spacing: 2) {
+                if let appIcon = NSImage(named: "AppIcon") {
+                    Image(nsImage: appIcon)
+                        .resizable()
+                        .frame(width: TuanziTokens.Layout.appIconSize, height: TuanziTokens.Layout.appIconSize)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.appIcon))
+                        .padding(.bottom, 8)
+                        .frame(maxWidth: .infinity)
+                }
                 ForEach(SettingsTab.allCases) { tab in
                     SidebarButton(tab: tab, isSelected: selected == tab) {
                         selected = tab
@@ -139,18 +168,18 @@ struct SettingsRootView: View {
                 }
                 Spacer()
             }
-            .padding(.top, 12)
-            .padding(.horizontal, 8)
-            .frame(width: 160)
-            .background(.background)
+            .padding(.top, TuanziTokens.Spacing.xxxl)
+            .padding(.horizontal, TuanziTokens.Spacing.rowH)
+            .padding(.bottom, TuanziTokens.Spacing.rowH)
+            .frame(width: TuanziTokens.Layout.sidebarWidth)
+            .frame(maxHeight: .infinity)
+            .background(TuanziTokens.Colors.sidebarBg)
 
-            Divider()
-
-            // MARK: 内容区
             DetailView(tab: selected)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(width: 650, height: 480)
+        .frame(width: TuanziTokens.Layout.settingsWidth, height: TuanziTokens.Layout.settingsHeight)
+        .background(TuanziTokens.Colors.windowBg)
     }
 }
 
@@ -164,22 +193,22 @@ private struct SidebarButton: View {
         Button(action: action) {
             HStack(spacing: 8) {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 5)
+                    RoundedRectangle(cornerRadius: TuanziTokens.Radius.sm)
                         .fill(tab.iconColor)
-                        .frame(width: 20, height: 20)
+                        .frame(width: TuanziTokens.Layout.sidebarIconBox, height: TuanziTokens.Layout.sidebarIconBox)
                     Image(systemName: tab.icon)
-                        .font(.system(size: 11, weight: .semibold))
+                        .font(TuanziTokens.Fonts.sidebarIcon)
                         .foregroundColor(.white)
                 }
                 Text(tab.rawValue)
-                    .font(.system(size: 13))
+                    .font(TuanziTokens.Fonts.control)
                     .foregroundStyle(isSelected ? .white : .primary)
                 Spacer()
             }
-            .padding(.horizontal, 8)
+            .padding(.horizontal, TuanziTokens.Spacing.md)
             .padding(.vertical, 5)
             .background(isSelected ? Color.accentColor : Color.clear)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -196,41 +225,26 @@ private struct DetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                // 顶部 header
-                VStack(spacing: 6) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 14)
-                            .fill(tab.iconColor)
-                            .frame(width: 56, height: 56)
-                        Image(systemName: tab.icon)
-                            .font(.system(size: 26, weight: .medium))
-                            .foregroundStyle(.white)
-                    }
-                    .padding(.bottom, 2)
-                    Text(tab.rawValue)
-                        .font(.system(size: 20, weight: .bold))
-                    Text(tab.description)
-                        .font(.system(size: 12))
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.top, 32)
-                .padding(.bottom, 20)
-
-                Divider()
+                Text(tab.rawValue)
+                    .font(TuanziTokens.Fonts.title)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, TuanziTokens.Spacing.xxl)
+                    .padding(.bottom, TuanziTokens.Spacing.lg)
+                    .padding(.horizontal, TuanziTokens.Spacing.contentInset)
 
                 // 内容
                 VStack(spacing: 16) {
                     switch tab {
                     case .general:   GeneralPane(settings: settings)
+                    case .agents:    AgentsPane()
                     case .reminder:  ReminderPane(settings: settings)
                     case .shortcuts: ShortcutsPane(settings: settings)
                     case .about:     AboutPane()
+                    case .contact:   ContactPane()
                     }
                 }
-                .padding(.horizontal, 40)
-                .padding(.vertical, 20)
+                .padding(.horizontal, TuanziTokens.Spacing.contentInset)
+                .padding(.vertical, TuanziTokens.Spacing.xxl)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -251,22 +265,22 @@ private struct SettingsGroup<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
             if let label {
                 Text(label.uppercased())
-                    .font(.system(size: 11, weight: .medium))
+                    .font(TuanziTokens.Fonts.footnoteMed)
                     .foregroundStyle(.secondary)
-                    .padding(.leading, 16)
-                    .padding(.bottom, 6)
+                    .padding(.leading, TuanziTokens.Spacing.groupLabelLeading)
+                    .padding(.bottom, TuanziTokens.Spacing.groupLabelBottom)
             }
             VStack(spacing: 0) { content }
-                .background(.quaternary.opacity(0.5))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(.separator, lineWidth: 0.5))
+                .background(TuanziTokens.Colors.glassBg)
+                .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xl))
+                .overlay(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xl).stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.strokeWidth))
         }
     }
 }
 
 private struct RowDivider: View {
     var body: some View {
-        Divider().padding(.leading, 16)
+        Divider().padding(.leading, TuanziTokens.Spacing.groupLabelLeading)
     }
 }
 
@@ -278,16 +292,16 @@ private struct ToggleRow: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text(title).font(.system(size: 13))
+                Text(title).font(TuanziTokens.Fonts.control)
                 if let sub = subtitle {
-                    Text(sub).font(.system(size: 11)).foregroundStyle(.secondary)
+                    Text(sub).font(TuanziTokens.Fonts.footnote).foregroundStyle(.secondary)
                 }
             }
             Spacer()
-            Toggle("", isOn: $value).labelsHidden()
+            Toggle("", isOn: $value).labelsHidden().toggleStyle(.switch).scaleEffect(TuanziTokens.Layout.toggleScale, anchor: .trailing)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, subtitle != nil ? 10 : 11)
+        .padding(.horizontal, TuanziTokens.Spacing.xl)
+        .padding(.vertical, subtitle != nil ? TuanziTokens.Spacing.rowH : TuanziTokens.Spacing.rowV)
     }
 }
 
@@ -302,17 +316,17 @@ private struct SliderRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(title).font(.system(size: 13))
+                Text(title).font(TuanziTokens.Fonts.control)
                 Spacer()
                 Text(decimals == 0 ? "\(Int(value))\(unit)" : String(format: "%.\(decimals)f\(unit)", value))
-                    .font(.system(size: 12, design: .monospaced))
+                    .font(TuanziTokens.Fonts.bodyMono)
                     .foregroundStyle(.secondary)
                     .monospacedDigit()
             }
             Slider(value: $value, in: range, step: step)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .padding(.horizontal, TuanziTokens.Spacing.xl)
+        .padding(.vertical, TuanziTokens.Spacing.lg)
     }
 }
 
@@ -323,6 +337,20 @@ private struct GeneralPane: View {
     var body: some View {
         SettingsGroup(label: "系统") {
             ToggleRow(title: "登录时打开", value: $settings.launchAtLogin)
+        }
+        SettingsGroup(label: "侧边面板") {
+            ToggleRow(
+                title: "悬停时展开面板",
+                subtitle: "吸附侧边后，鼠标悬停自动弹出终端会话列表",
+                value: $settings.showPanelOnHover
+            )
+            RowDivider()
+            SliderRow(title: "悬停延迟", range: 0.1...2.0, unit: "s", step: 0.05, decimals: 2, value: $settings.hoverDelay)
+        }
+        SettingsGroup(label: "动画") {
+            SliderRow(title: "空闲超时", range: 10...120, unit: "s", step: 5, decimals: 0, value: $settings.idleTimeout)
+            RowDivider()
+            SliderRow(title: "打字停止超时", range: 1...15, unit: "s", step: 1, decimals: 0, value: $settings.typingTimeout)
         }
         SettingsGroup(label: "IM 监听") {
             ToggleRow(
@@ -380,13 +408,13 @@ private struct KeyBadge: View {
     let label: String
     var body: some View {
         Text(label)
-            .font(.system(size: 12, weight: .medium, design: .monospaced))
+            .font(TuanziTokens.Fonts.keyCap)
             .foregroundStyle(.primary)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
+            .padding(.horizontal, TuanziTokens.Spacing.md)
+            .padding(.vertical, TuanziTokens.Spacing.sm)
             .background(.quaternary)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            .overlay(RoundedRectangle(cornerRadius: 6).stroke(.separator, lineWidth: 0.5))
+            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md))
+            .overlay(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md).stroke(TuanziTokens.Colors.borderStroke, lineWidth: TuanziTokens.Layout.strokeWidth))
     }
 }
 
@@ -398,13 +426,13 @@ private struct KeyCaptureButton: View {
     var body: some View {
         Button(action: startCapture) {
             Text(isCapturing ? "·" : key.uppercased())
-                .font(.system(size: 13, weight: .semibold, design: .monospaced))
+                .font(TuanziTokens.Fonts.keyCapSemi)
                 .frame(minWidth: 32)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
+                .padding(.horizontal, TuanziTokens.Spacing.md)
+                .padding(.vertical, TuanziTokens.Spacing.sm)
                 .background(isCapturing ? Color.accentColor.opacity(0.15) : Color(.controlBackgroundColor))
-                .clipShape(RoundedRectangle(cornerRadius: 6))
-                .overlay(RoundedRectangle(cornerRadius: 6).stroke(isCapturing ? Color.accentColor : Color(.separatorColor), lineWidth: 0.5))
+                .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md))
+                .overlay(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md).stroke(isCapturing ? Color.accentColor : TuanziTokens.Colors.borderStroke, lineWidth: TuanziTokens.Layout.strokeWidth))
         }
         .buttonStyle(.plain)
     }
@@ -435,16 +463,16 @@ private struct CustomShortcutRow: View {
 
     var body: some View {
         HStack {
-            Text(title).font(.system(size: 13))
+            Text(title).font(TuanziTokens.Fonts.control)
             Spacer()
             HStack(spacing: 4) {
                 KeyBadge(label: modSymbol)
-                Text("+").font(.system(size: 11)).foregroundStyle(.secondary)
+                Text("+").font(TuanziTokens.Fonts.footnote).foregroundStyle(.secondary)
                 KeyCaptureButton(key: $key)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 10)
+        .padding(.horizontal, TuanziTokens.Spacing.xl)
+        .padding(.vertical, TuanziTokens.Spacing.rowH)
     }
 }
 
@@ -463,7 +491,7 @@ private struct ShortcutsPane: View {
         // 修饰键
         SettingsGroup(label: "修饰键") {
             HStack {
-                Text("修饰键").font(.system(size: 13))
+                Text("修饰键").font(TuanziTokens.Fonts.control)
                 Spacer()
                 Picker("", selection: $settings.permissionModifier) {
                     Text("⌃ Control").tag("control")
@@ -474,8 +502,8 @@ private struct ShortcutsPane: View {
                 .labelsHidden()
                 .frame(width: 130)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 10)
+            .padding(.horizontal, TuanziTokens.Spacing.xl)
+            .padding(.vertical, TuanziTokens.Spacing.rowH)
         }
 
         // 权限弹窗快捷键
@@ -492,44 +520,180 @@ private struct ShortcutsPane: View {
         }
 
         Text("点击字母可重新绑定。自动批准后续不再弹窗，重启重置。")
-            .font(.system(size: 11))
+            .font(TuanziTokens.Fonts.footnote)
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 4)
     }
 }
 
+// MARK: - AI 助手管理
+
+private struct AgentRowData: Identifiable {
+    let id: String
+    let name: String
+    let configPath: String
+    let groupLabel: String
+}
+
+private struct AgentsPane: View {
+    @State private var hookStates: [String: Bool] = [:]
+    @State private var dirExists: [String: Bool] = [:]
+
+    private let claudeFamily: [AgentRowData] = [
+        AgentRowData(id: "claude", name: "Claude Code", configPath: "~/.claude/settings.json", groupLabel: ""),
+        AgentRowData(id: "qoder", name: "Qoder", configPath: "~/.qoder/settings.json", groupLabel: ""),
+        AgentRowData(id: "qwen", name: "Qwen Code", configPath: "~/.qwen/settings.json", groupLabel: ""),
+        AgentRowData(id: "factory", name: "Factory", configPath: "~/.factory/settings.json", groupLabel: ""),
+        AgentRowData(id: "codebuddy", name: "CodeBuddy", configPath: "~/.codebuddy/settings.json", groupLabel: ""),
+    ]
+
+    private let otherAgents: [AgentRowData] = [
+        AgentRowData(id: "codex", name: "Codex CLI", configPath: "~/.codex/config.toml", groupLabel: ""),
+        AgentRowData(id: "gemini", name: "Gemini CLI", configPath: "~/.gemini/settings.json", groupLabel: ""),
+        AgentRowData(id: "kimi", name: "Kimi CLI", configPath: "~/.kimi/config.toml", groupLabel: ""),
+        AgentRowData(id: "cursor", name: "Cursor", configPath: "~/.cursor/hooks.json", groupLabel: ""),
+        AgentRowData(id: "opencode", name: "OpenCode", configPath: "~/.config/opencode/plugins/", groupLabel: ""),
+    ]
+
+    var body: some View {
+        SettingsGroup(label: "Claude 系列") {
+            ForEach(Array(claudeFamily.enumerated()), id: \.element.id) { index, agent in
+                if index > 0 { RowDivider() }
+                agentRow(agent)
+            }
+        }
+
+        SettingsGroup(label: "其他 AI 助手") {
+            ForEach(Array(otherAgents.enumerated()), id: \.element.id) { index, agent in
+                if index > 0 { RowDivider() }
+                agentRow(agent)
+            }
+        }
+
+        Text("开启后，团子会在对应 AI 助手的配置文件中注入 Hook，使团子能响应该助手的状态变化。")
+            .font(TuanziTokens.Fonts.footnote)
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading, 4)
+    }
+
+    private func agentRow(_ agent: AgentRowData) -> some View {
+        let exists = dirExists[agent.id] ?? false
+        let installed = hookStates[agent.id] ?? false
+
+        return HStack {
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 6) {
+                    Circle()
+                        .fill(installed ? TuanziTokens.Colors.statusGreen : (exists ? TuanziTokens.Colors.statusGray : TuanziTokens.Colors.statusRedDim))
+                        .frame(width: TuanziTokens.Layout.statusDotSize, height: TuanziTokens.Layout.statusDotSize)
+                    Text(agent.name).font(TuanziTokens.Fonts.control)
+                }
+                Text(agent.configPath)
+                    .font(TuanziTokens.Fonts.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            Toggle("", isOn: Binding(
+                get: { hookStates[agent.id] ?? false },
+                set: { newValue in
+                    hookStates[agent.id] = newValue
+                    toggleHook(agentId: agent.id, enabled: newValue)
+                }
+            ))
+            .labelsHidden()
+            .toggleStyle(.switch)
+            .scaleEffect(TuanziTokens.Layout.toggleScale, anchor: .trailing)
+            .disabled(!exists)
+        }
+        .padding(.horizontal, TuanziTokens.Spacing.xl)
+        .padding(.vertical, TuanziTokens.Spacing.rowH)
+        .opacity(exists ? 1.0 : 0.5)
+        .onAppear { refreshState(agent.id) }
+    }
+
+    private func refreshState(_ agentId: String) {
+        guard let agent = AgentRegistry.allAgents.first(where: { $0.id == agentId }) else { return }
+        let home = NSHomeDirectory()
+        let configDir = (home + "/" + agent.configPath) as NSString
+        var isDir: ObjCBool = false
+        let exists = FileManager.default.fileExists(atPath: configDir.deletingLastPathComponent, isDirectory: &isDir) && isDir.boolValue
+        dirExists[agentId] = exists
+
+        if exists, let content = try? String(contentsOfFile: home + "/" + agent.configPath, encoding: .utf8) {
+            hookStates[agentId] = content.contains(".clawd/hook") || content.contains("127.0.0.1:23333")
+        } else {
+            hookStates[agentId] = false
+        }
+    }
+
+    private func toggleHook(agentId: String, enabled: Bool) {
+        guard let agent = AgentRegistry.allAgents.first(where: { $0.id == agentId }) else { return }
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let vc = NSApp.windows.first?.contentViewController as? ViewController {
+                if enabled { vc.installHooksForAgent(agent) }
+                else { vc.uninstallHooksForAgent(agent) }
+            }
+        }
+    }
+}
+
 private struct AboutPane: View {
+    private let updater = (NSApp.delegate as? AppDelegate)?.updaterController.updater
+
     var body: some View {
         SettingsGroup {
             HStack(spacing: 14) {
-                Text("🐱").font(.system(size: 36))
+                if let appIcon = NSImage(named: "AppIcon") {
+                    Image(nsImage: appIcon)
+                        .resizable()
+                        .frame(width: TuanziTokens.Layout.settingsAppIcon, height: TuanziTokens.Layout.settingsAppIcon)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Layout.settingsAppIconRadius))
+                }
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("团子").font(.system(size: 14, weight: .semibold))
-                    Text("版本 1.0.0").font(.system(size: 12)).foregroundStyle(.secondary)
+                    Text("团子").font(TuanziTokens.Fonts.headline)
+                    Text("版本 \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
+                        .font(TuanziTokens.Fonts.body).foregroundStyle(.secondary)
                 }
                 Spacer()
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, TuanziTokens.Spacing.xl)
             .padding(.vertical, 14)
             RowDivider()
             HStack {
-                Text("Webhook 端口").font(.system(size: 13))
+                Text("检查更新").font(TuanziTokens.Fonts.control)
                 Spacer()
-                Text("23333")
-                    .font(.system(size: 12, design: .monospaced))
+                Button("检查更新") {
+                    updater?.checkForUpdates()
+                }
+                .disabled(updater?.canCheckForUpdates == false)
+            }
+            .padding(.horizontal, TuanziTokens.Spacing.xl)
+            .padding(.vertical, TuanziTokens.Spacing.rowV)
+        }
+    }
+}
+
+private struct ContactPane: View {
+    var body: some View {
+        SettingsGroup {
+            VStack(spacing: 12) {
+                Text("扫描二维码反馈问题或建议")
+                    .font(TuanziTokens.Fonts.control)
                     .foregroundStyle(.secondary)
+                    .padding(.top, 14)
+                if let img = NSImage(named: "feishu_qr") {
+                    Image(nsImage: img)
+                        .resizable()
+                        .interpolation(.high)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: TuanziTokens.Layout.qrMaxSize, maxHeight: TuanziTokens.Layout.qrMaxSize)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xxl))
+                }
+                Spacer().frame(height: 2)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 11)
-            RowDivider()
-            HStack {
-                Text("开发者").font(.system(size: 13))
-                Spacer()
-                Text("王聪").font(.system(size: 12)).foregroundStyle(.secondary)
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 11)
+            .frame(maxWidth: .infinity)
         }
     }
 }

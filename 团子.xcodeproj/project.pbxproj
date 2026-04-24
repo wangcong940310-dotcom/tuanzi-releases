@@ -903,8 +903,7 @@
 		6EA31B932F9719740051BB6E /* 左提醒_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B3A2F9719740051BB6E /* 左提醒_7.png */; };
 		6EA31B942F9719740051BB6E /* 左提醒_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B3D2F9719740051BB6E /* 左提醒_10.png */; };
 		6EA31B952F9719740051BB6E /* 左提醒_42.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B5D2F9719740051BB6E /* 左提醒_42.png */; };
-		6EC4C4142F8E2E7E00F0818E /* Frame 2090062065.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4C4132F8E2E7E00F0818E /* Frame 2090062065.png */; };
-		6EC4D2782F8F6D0100F0818E /* 狗叫.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2742F8F6D0100F0818E /* 狗叫.mp3 */; };
+		6EA31B9A2F98A4B30051BB6E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA31B992F98A4B30051BB6E /* Sparkle */; };
 		6EC4D2792F8F6D0100F0818E /* 提醒.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2762F8F6D0100F0818E /* 提醒.mp3 */; };
 		6EC4D27A2F8F6D0100F0818E /* 确认提示.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2752F8F6D0100F0818E /* 确认提示.mp3 */; };
 		6EC4D27B2F8F6D0100F0818E /* claude提示.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2772F8F6D0100F0818E /* claude提示.mp3 */; };
@@ -1697,11 +1696,8 @@
 		6EC4DEB42F8FB3A000F0818E /* 工作_93.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE132F8FB3A000F0818E /* 工作_93.webp */; };
 		6EC4DEB52F8FB3A000F0818E /* 工作_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFC2F8FB3A000F0818E /* 工作_70.webp */; };
 		6EC4DEB62F8FB3A000F0818E /* 工作_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD42F8FB3A000F0818E /* 工作_30.webp */; };
-		6EC4E1652F91C87300F0818E /* 提起_65.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01E2F91C87300F0818E /* 提起_65.webp */; };
 		6EC4E1662F91C87300F0818E /* 完成_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E13B2F91C87300F0818E /* 完成_40.webp */; };
-		6EC4E1682F91C87300F0818E /* 提起_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE22F91C87300F0818E /* 提起_5.webp */; };
 		6EC4E1692F91C87300F0818E /* 伸懒腰_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFCF2F91C87300F0818E /* 伸懒腰_68.webp */; };
-		6EC4E16A2F91C87300F0818E /* 提起_91.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0382F91C87300F0818E /* 提起_91.webp */; };
 		6EC4E16B2F91C87300F0818E /* 伸懒腰_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF8F2F91C87300F0818E /* 伸懒腰_4.webp */; };
 		6EC4E16C2F91C87300F0818E /* 提起_215.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0B42F91C87300F0818E /* 提起_215.webp */; };
 		6EC4E16D2F91C87300F0818E /* 摸摸_36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEDB2F91C87300F0818E /* 摸摸_36.webp */; };
@@ -1722,13 +1718,11 @@
 		6EC4E17F2F91C87300F0818E /* 摸摸_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE72F91C87300F0818E /* 摸摸_48.webp */; };
 		6EC4E1802F91C87300F0818E /* 完成_7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E11A2F91C87300F0818E /* 完成_7.webp */; };
 		6EC4E1812F91C87300F0818E /* 提起_197.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A22F91C87300F0818E /* 提起_197.webp */; };
-		6EC4E1822F91C87300F0818E /* 提起_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEA2F91C87300F0818E /* 提起_13.webp */; };
 		6EC4E1842F91C87300F0818E /* 提起_177.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E08E2F91C87300F0818E /* 提起_177.webp */; };
 		6EC4E1852F91C87300F0818E /* 伸懒腰_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF932F91C87300F0818E /* 伸懒腰_8.webp */; };
 		6EC4E1862F91C87300F0818E /* 完成_28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E12F2F91C87300F0818E /* 完成_28.webp */; };
 		6EC4E1872F91C87300F0818E /* 敲键盘_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF422F91C87300F0818E /* 敲键盘_57.webp */; };
 		6EC4E1882F91C87300F0818E /* 伸懒腰_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFB92F91C87300F0818E /* 伸懒腰_46.webp */; };
-		6EC4E1892F91C87300F0818E /* 提起_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE32F91C87300F0818E /* 提起_6.webp */; };
 		6EC4E18A2F91C87300F0818E /* 提起_134.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0632F91C87300F0818E /* 提起_134.webp */; };
 		6EC4E18B2F91C87300F0818E /* 伸懒腰_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF982F91C87300F0818E /* 伸懒腰_13.webp */; };
 		6EC4E18C2F91C87300F0818E /* 完成_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1592F91C87300F0818E /* 完成_70.webp */; };
@@ -1745,13 +1739,10 @@
 		6EC4E1972F91C87300F0818E /* 摸摸_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEFC2F91C87300F0818E /* 摸摸_69.webp */; };
 		6EC4E1982F91C87300F0818E /* 摸摸_73.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF002F91C87300F0818E /* 摸摸_73.webp */; };
 		6EC4E1992F91C87300F0818E /* 完成_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1532F91C87300F0818E /* 完成_64.webp */; };
-		6EC4E19A2F91C87300F0818E /* 提起_127.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E05C2F91C87300F0818E /* 提起_127.webp */; };
 		6EC4E19B2F91C87300F0818E /* 提起_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFC2F91C87300F0818E /* 提起_31.webp */; };
-		6EC4E19C2F91C87300F0818E /* 提起_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01D2F91C87300F0818E /* 提起_64.webp */; };
 		6EC4E19D2F91C87300F0818E /* 提起_185.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0962F91C87300F0818E /* 提起_185.webp */; };
 		6EC4E19E2F91C87300F0818E /* 提起_187.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0982F91C87300F0818E /* 提起_187.webp */; };
 		6EC4E19F2F91C87300F0818E /* 摸摸_65.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEF82F91C87300F0818E /* 摸摸_65.webp */; };
-		6EC4E1A02F91C87300F0818E /* 提起_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE02F91C87300F0818E /* 提起_3.webp */; };
 		6EC4E1A12F91C87300F0818E /* 伸懒腰_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD12F91C87300F0818E /* 伸懒腰_70.webp */; };
 		6EC4E1A22F91C87300F0818E /* 敲键盘_35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF2C2F91C87300F0818E /* 敲键盘_35.webp */; };
 		6EC4E1A32F91C87300F0818E /* 完成_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1172F91C87300F0818E /* 完成_4.webp */; };
@@ -1759,7 +1750,6 @@
 		6EC4E1A52F91C87300F0818E /* 伸懒腰_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA32F91C87300F0818E /* 伸懒腰_24.webp */; };
 		6EC4E1A62F91C87300F0818E /* 完成_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1232F91C87300F0818E /* 完成_16.webp */; };
 		6EC4E1A72F91C87300F0818E /* 提起_149.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0722F91C87300F0818E /* 提起_149.webp */; };
-		6EC4E1A82F91C87300F0818E /* 提起_104.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0452F91C87300F0818E /* 提起_104.webp */; };
 		6EC4E1AA2F91C87300F0818E /* 摸摸_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC32F91C87300F0818E /* 摸摸_12.webp */; };
 		6EC4E1AB2F91C87300F0818E /* 敲键盘_97.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF6A2F91C87300F0818E /* 敲键盘_97.webp */; };
 		6EC4E1AC2F91C87300F0818E /* 完成_15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1222F91C87300F0818E /* 完成_15.webp */; };
@@ -1779,7 +1769,6 @@
 		6EC4E1BA2F91C87300F0818E /* 完成_67.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1562F91C87300F0818E /* 完成_67.webp */; };
 		6EC4E1BB2F91C87300F0818E /* 提起_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF52F91C87300F0818E /* 提起_24.webp */; };
 		6EC4E1BC2F91C87300F0818E /* 提起_159.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E07C2F91C87300F0818E /* 提起_159.webp */; };
-		6EC4E1BD2F91C87300F0818E /* 提起_118.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0532F91C87300F0818E /* 提起_118.webp */; };
 		6EC4E1BE2F91C87300F0818E /* 摸摸_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF032F91C87300F0818E /* 摸摸_76.webp */; };
 		6EC4E1BF2F91C87300F0818E /* 完成_65.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1542F91C87300F0818E /* 完成_65.webp */; };
 		6EC4E1C12F91C87300F0818E /* 摸摸_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEDC2F91C87300F0818E /* 摸摸_37.webp */; };
@@ -1792,7 +1781,6 @@
 		6EC4E1C92F91C87300F0818E /* 提起_154.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0772F91C87300F0818E /* 提起_154.webp */; };
 		6EC4E1CA2F91C87300F0818E /* 提起_38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0032F91C87300F0818E /* 提起_38.webp */; };
 		6EC4E1CB2F91C87300F0818E /* 提起_146.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06F2F91C87300F0818E /* 提起_146.webp */; };
-		6EC4E1CC2F91C87300F0818E /* 提起_105.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0462F91C87300F0818E /* 提起_105.webp */; };
 		6EC4E1CD2F91C87300F0818E /* 敲键盘_51.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF3C2F91C87300F0818E /* 敲键盘_51.webp */; };
 		6EC4E1CE2F91C87300F0818E /* 敲键盘_94.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF672F91C87300F0818E /* 敲键盘_94.webp */; };
 		6EC4E1D02F91C87300F0818E /* 提起_202.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A72F91C87300F0818E /* 提起_202.webp */; };
@@ -1801,7 +1789,6 @@
 		6EC4E1D32F91C87300F0818E /* 摸摸_67.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEFA2F91C87300F0818E /* 摸摸_67.webp */; };
 		6EC4E1D52F91C87300F0818E /* 提起_194.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E09F2F91C87300F0818E /* 提起_194.webp */; };
 		6EC4E1D62F91C87300F0818E /* 敲键盘_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF312F91C87300F0818E /* 敲键盘_40.webp */; };
-		6EC4E1D72F91C87300F0818E /* 提起_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE82F91C87300F0818E /* 提起_11.webp */; };
 		6EC4E1D82F91C87300F0818E /* 提起_52.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0112F91C87300F0818E /* 提起_52.webp */; };
 		6EC4E1D92F91C87300F0818E /* 敲键盘_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF542F91C87300F0818E /* 敲键盘_75.webp */; };
 		6EC4E1DA2F91C87300F0818E /* 伸懒腰_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF902F91C87300F0818E /* 伸懒腰_5.webp */; };
@@ -1812,10 +1799,8 @@
 		6EC4E1DF2F91C87300F0818E /* 完成_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1192F91C87300F0818E /* 完成_6.webp */; };
 		6EC4E1E02F91C87300F0818E /* 摸摸_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE82F91C87300F0818E /* 摸摸_49.webp */; };
 		6EC4E1E12F91C87300F0818E /* 完成_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1572F91C87300F0818E /* 完成_68.webp */; };
-		6EC4E1E22F91C87300F0818E /* 提起_15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEC2F91C87300F0818E /* 提起_15.webp */; };
 		6EC4E1E42F91C87300F0818E /* 摸摸_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEBF2F91C87300F0818E /* 摸摸_8.webp */; };
 		6EC4E1E72F91C87300F0818E /* 敲键盘_27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF242F91C87300F0818E /* 敲键盘_27.webp */; };
-		6EC4E1E82F91C87300F0818E /* 提起_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02D2F91C87300F0818E /* 提起_80.webp */; };
 		6EC4E1E92F91C87300F0818E /* 敲键盘_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF592F91C87300F0818E /* 敲键盘_80.webp */; };
 		6EC4E1EB2F91C87300F0818E /* 敲键盘_60.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF452F91C87300F0818E /* 敲键盘_60.webp */; };
 		6EC4E1EC2F91C87300F0818E /* 敲键盘_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF2A2F91C87300F0818E /* 敲键盘_33.webp */; };
@@ -1824,7 +1809,6 @@
 		6EC4E1EF2F91C87300F0818E /* 提起_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0062F91C87300F0818E /* 提起_41.webp */; };
 		6EC4E1F02F91C87300F0818E /* 伸懒腰_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC62F91C87300F0818E /* 伸懒腰_59.webp */; };
 		6EC4E1F12F91C87300F0818E /* 敲键盘_39.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF302F91C87300F0818E /* 敲键盘_39.webp */; };
-		6EC4E1F32F91C87300F0818E /* 提起_79.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02C2F91C87300F0818E /* 提起_79.webp */; };
 		6EC4E1F42F91C87300F0818E /* 完成_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E12B2F91C87300F0818E /* 完成_24.webp */; };
 		6EC4E1F52F91C87300F0818E /* 伸懒腰_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA22F91C87300F0818E /* 伸懒腰_23.webp */; };
 		6EC4E1F82F91C87300F0818E /* 完成_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1612F91C87300F0818E /* 完成_78.webp */; };
@@ -1835,14 +1819,11 @@
 		6EC4E1FD2F91C87300F0818E /* 提起_142.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06B2F91C87300F0818E /* 提起_142.webp */; };
 		6EC4E1FE2F91C87300F0818E /* 摸摸_50.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE92F91C87300F0818E /* 摸摸_50.webp */; };
 		6EC4E1FF2F91C87300F0818E /* 敲键盘_127.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF882F91C87300F0818E /* 敲键盘_127.webp */; };
-		6EC4E2002F91C87300F0818E /* 提起_81.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02E2F91C87300F0818E /* 提起_81.webp */; };
 		6EC4E2012F91C87300F0818E /* 伸懒腰_43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFB62F91C87300F0818E /* 伸懒腰_43.webp */; };
-		6EC4E2022F91C87300F0818E /* 提起_96.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03D2F91C87300F0818E /* 提起_96.webp */; };
 		6EC4E2032F91C87300F0818E /* 敲键盘_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF162F91C87300F0818E /* 敲键盘_13.webp */; };
 		6EC4E2042F91C87300F0818E /* 敲键盘_102.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF6F2F91C87300F0818E /* 敲键盘_102.webp */; };
 		6EC4E2052F91C87300F0818E /* 提起_186.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0972F91C87300F0818E /* 提起_186.webp */; };
 		6EC4E2072F91C87300F0818E /* 完成_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1182F91C87300F0818E /* 完成_5.webp */; };
-		6EC4E2082F91C87300F0818E /* 提起_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFED2F91C87300F0818E /* 提起_16.webp */; };
 		6EC4E2092F91C87300F0818E /* 完成_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1162F91C87300F0818E /* 完成_3.webp */; };
 		6EC4E20A2F91C87300F0818E /* 完成_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1632F91C87300F0818E /* 完成_80.webp */; };
 		6EC4E20B2F91C87300F0818E /* 摸摸_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEDF2F91C87300F0818E /* 摸摸_40.webp */; };
@@ -1850,26 +1831,19 @@
 		6EC4E20D2F91C87300F0818E /* 完成_27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E12E2F91C87300F0818E /* 完成_27.webp */; };
 		6EC4E20E2F91C87300F0818E /* 敲键盘_98.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF6B2F91C87300F0818E /* 敲键盘_98.webp */; };
 		6EC4E2102F91C87300F0818E /* 伸懒腰_21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA02F91C87300F0818E /* 伸懒腰_21.webp */; };
-		6EC4E2112F91C87300F0818E /* 提起_121.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0562F91C87300F0818E /* 提起_121.webp */; };
 		6EC4E2122F91C87300F0818E /* 敲键盘_28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF252F91C87300F0818E /* 敲键盘_28.webp */; };
 		6EC4E2132F91C87300F0818E /* 敲键盘_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF0C2F91C87300F0818E /* 敲键盘_3.webp */; };
-		6EC4E2142F91C87300F0818E /* 提起_2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDF2F91C87300F0818E /* 提起_2.webp */; };
 		6EC4E2152F91C87300F0818E /* 摸摸_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DECF2F91C87300F0818E /* 摸摸_24.webp */; };
 		6EC4E2162F91C87300F0818E /* 敲键盘_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF0D2F91C87300F0818E /* 敲键盘_4.webp */; };
-		6EC4E2172F91C87300F0818E /* 提起_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02B2F91C87300F0818E /* 提起_78.webp */; };
 		6EC4E2182F91C87300F0818E /* 伸懒腰_2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF8D2F91C87300F0818E /* 伸懒腰_2.webp */; };
 		6EC4E2192F91C87300F0818E /* 摸摸_34.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED92F91C87300F0818E /* 摸摸_34.webp */; };
 		6EC4E21A2F91C87300F0818E /* 伸懒腰_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFAC2F91C87300F0818E /* 伸懒腰_33.webp */; };
-		6EC4E21B2F91C87300F0818E /* 提起_109.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04A2F91C87300F0818E /* 提起_109.webp */; };
 		6EC4E21C2F91C87300F0818E /* 敲键盘_108.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF752F91C87300F0818E /* 敲键盘_108.webp */; };
 		6EC4E21D2F91C87300F0818E /* 提起_165.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0822F91C87300F0818E /* 提起_165.webp */; };
 		6EC4E21E2F91C87300F0818E /* 敲键盘_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF392F91C87300F0818E /* 敲键盘_48.webp */; };
-		6EC4E21F2F91C87300F0818E /* 提起_100.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0412F91C87300F0818E /* 提起_100.webp */; };
 		6EC4E2202F91C87300F0818E /* 提起_221.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0BA2F91C87300F0818E /* 提起_221.webp */; };
 		6EC4E2212F91C87300F0818E /* 伸懒腰_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD32F91C87300F0818E /* 伸懒腰_72.webp */; };
-		6EC4E2222F91C87300F0818E /* 提起_90.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0372F91C87300F0818E /* 提起_90.webp */; };
 		6EC4E2232F91C87300F0818E /* 敲键盘_106.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF732F91C87300F0818E /* 敲键盘_106.webp */; };
-		6EC4E2242F91C87300F0818E /* 提起_103.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0442F91C87300F0818E /* 提起_103.webp */; };
 		6EC4E2262F91C87300F0818E /* 提起_29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFA2F91C87300F0818E /* 提起_29.webp */; };
 		6EC4E2272F91C87300F0818E /* 敲键盘_85.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF5E2F91C87300F0818E /* 敲键盘_85.webp */; };
 		6EC4E2282F91C87300F0818E /* 敲键盘_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF0F2F91C87300F0818E /* 敲键盘_6.webp */; };
@@ -1877,12 +1851,8 @@
 		6EC4E22A2F91C87300F0818E /* 敲键盘_110.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF772F91C87300F0818E /* 敲键盘_110.webp */; };
 		6EC4E22B2F91C87300F0818E /* 完成_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E12D2F91C87300F0818E /* 完成_26.webp */; };
 		6EC4E22C2F91C87300F0818E /* 摸摸_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEFB2F91C87300F0818E /* 摸摸_68.webp */; };
-		6EC4E22D2F91C87300F0818E /* 提起_128.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E05D2F91C87300F0818E /* 提起_128.webp */; };
 		6EC4E22E2F91C87300F0818E /* 伸懒腰_20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF9F2F91C87300F0818E /* 伸懒腰_20.webp */; };
-		6EC4E22F2F91C87300F0818E /* 提起_97.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03E2F91C87300F0818E /* 提起_97.webp */; };
-		6EC4E2302F91C87300F0818E /* 提起_82.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02F2F91C87300F0818E /* 提起_82.webp */; };
 		6EC4E2312F91C87300F0818E /* 提起_34.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFF2F91C87300F0818E /* 提起_34.webp */; };
-		6EC4E2322F91C87300F0818E /* 提起_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0252F91C87300F0818E /* 提起_72.webp */; };
 		6EC4E2342F91C87300F0818E /* 敲键盘_100.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF6D2F91C87300F0818E /* 敲键盘_100.webp */; };
 		6EC4E2352F91C87300F0818E /* 提起_195.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A02F91C87300F0818E /* 提起_195.webp */; };
 		6EC4E2362F91C87300F0818E /* 提起_144.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06D2F91C87300F0818E /* 提起_144.webp */; };
@@ -1892,17 +1862,12 @@
 		6EC4E23B2F91C87300F0818E /* 伸懒腰_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC32F91C87300F0818E /* 伸懒腰_56.webp */; };
 		6EC4E23C2F91C87300F0818E /* 伸懒腰_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF8C2F91C87300F0818E /* 伸懒腰_1.webp */; };
 		6EC4E23D2F91C87300F0818E /* 敲键盘_29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF262F91C87300F0818E /* 敲键盘_29.webp */; };
-		6EC4E23F2F91C87300F0818E /* 提起_112.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04D2F91C87300F0818E /* 提起_112.webp */; };
-		6EC4E2402F91C87300F0818E /* 提起_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0222F91C87300F0818E /* 提起_69.webp */; };
-		6EC4E2412F91C87300F0818E /* 提起_99.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0402F91C87300F0818E /* 提起_99.webp */; };
 		6EC4E2442F91C87300F0818E /* 敲键盘_38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF2F2F91C87300F0818E /* 敲键盘_38.webp */; };
 		6EC4E2452F91C87300F0818E /* 提起_160.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E07D2F91C87300F0818E /* 提起_160.webp */; };
 		6EC4E2462F91C87300F0818E /* 伸懒腰_9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF942F91C87300F0818E /* 伸懒腰_9.webp */; };
 		6EC4E2472F91C87300F0818E /* 完成_44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E13F2F91C87300F0818E /* 完成_44.webp */; };
 		6EC4E2482F91C87300F0818E /* 摸摸_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEB82F91C87300F0818E /* 摸摸_1.webp */; };
 		6EC4E2492F91C87300F0818E /* 摸摸_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF012F91C87300F0818E /* 摸摸_74.webp */; };
-		6EC4E24B2F91C87300F0818E /* 提起_10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE72F91C87300F0818E /* 提起_10.webp */; };
-		6EC4E24C2F91C87300F0818E /* 提起_60.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0192F91C87300F0818E /* 提起_60.webp */; };
 		6EC4E24D2F91C87300F0818E /* 完成_77.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1602F91C87300F0818E /* 完成_77.webp */; };
 		6EC4E24E2F91C87300F0818E /* 完成_10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E11D2F91C87300F0818E /* 完成_10.webp */; };
 		6EC4E24F2F91C87300F0818E /* 敲键盘_17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF1A2F91C87300F0818E /* 敲键盘_17.webp */; };
@@ -1910,7 +1875,6 @@
 		6EC4E2512F91C87300F0818E /* 敲键盘_112.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF792F91C87300F0818E /* 敲键盘_112.webp */; };
 		6EC4E2522F91C87300F0818E /* 伸懒腰_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD22F91C87300F0818E /* 伸懒腰_71.webp */; };
 		6EC4E2532F91C87300F0818E /* 完成_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E15F2F91C87300F0818E /* 完成_76.webp */; };
-		6EC4E2542F91C87300F0818E /* 提起_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0282F91C87300F0818E /* 提起_75.webp */; };
 		6EC4E2552F91C87300F0818E /* 提起_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0022F91C87300F0818E /* 提起_37.webp */; };
 		6EC4E2562F91C87300F0818E /* 伸懒腰_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC82F91C87300F0818E /* 伸懒腰_61.webp */; };
 		6EC4E2572F91C87300F0818E /* 提起_44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0092F91C87300F0818E /* 提起_44.webp */; };
@@ -1918,7 +1882,6 @@
 		6EC4E2592F91C87300F0818E /* 提起_151.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0742F91C87300F0818E /* 提起_151.webp */; };
 		6EC4E25A2F91C87300F0818E /* 敲键盘_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF502F91C87300F0818E /* 敲键盘_71.webp */; };
 		6EC4E25B2F91C87300F0818E /* 提起_206.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0AB2F91C87300F0818E /* 提起_206.webp */; };
-		6EC4E25C2F91C87300F0818E /* 提起_63.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01C2F91C87300F0818E /* 提起_63.webp */; };
 		6EC4E25D2F91C87300F0818E /* 伸懒腰_54.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC12F91C87300F0818E /* 伸懒腰_54.webp */; };
 		6EC4E25E2F91C87300F0818E /* 提起_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFD2F91C87300F0818E /* 提起_32.webp */; };
 		6EC4E25F2F91C87300F0818E /* 完成_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E15B2F91C87300F0818E /* 完成_72.webp */; };
@@ -1930,7 +1893,6 @@
 		6EC4E2652F91C87300F0818E /* 敲键盘_58.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF432F91C87300F0818E /* 敲键盘_58.webp */; };
 		6EC4E2662F91C87300F0818E /* 提起_198.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A32F91C87300F0818E /* 提起_198.webp */; };
 		6EC4E2672F91C87300F0818E /* 伸懒腰_38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFB12F91C87300F0818E /* 伸懒腰_38.webp */; };
-		6EC4E2682F91C87300F0818E /* 提起_93.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03A2F91C87300F0818E /* 提起_93.webp */; };
 		6EC4E2692F91C87300F0818E /* 敲键盘_101.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF6E2F91C87300F0818E /* 敲键盘_101.webp */; };
 		6EC4E26B2F91C87300F0818E /* 完成_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1142F91C87300F0818E /* 完成_1.webp */; };
 		6EC4E26C2F91C87300F0818E /* 提起_193.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E09E2F91C87300F0818E /* 提起_193.webp */; };
@@ -1949,37 +1911,27 @@
 		6EC4E27B2F91C87300F0818E /* 提起_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0162F91C87300F0818E /* 提起_57.webp */; };
 		6EC4E27C2F91C87300F0818E /* 摸摸_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEBC2F91C87300F0818E /* 摸摸_5.webp */; };
 		6EC4E27D2F91C87300F0818E /* 完成_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1322F91C87300F0818E /* 完成_31.webp */; };
-		6EC4E27E2F91C87300F0818E /* 提起_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01A2F91C87300F0818E /* 提起_61.webp */; };
-		6EC4E27F2F91C87300F0818E /* 提起_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE52F91C87300F0818E /* 提起_8.webp */; };
 		6EC4E2802F91C87300F0818E /* 完成_54.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1492F91C87300F0818E /* 完成_54.webp */; };
 		6EC4E2812F91C87300F0818E /* 提起_222.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0BB2F91C87300F0818E /* 提起_222.webp */; };
-		6EC4E2822F91C87300F0818E /* 提起_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE12F91C87300F0818E /* 提起_4.webp */; };
 		6EC4E2832F91C87300F0818E /* 敲键盘_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF152F91C87300F0818E /* 敲键盘_12.webp */; };
 		6EC4E2842F91C87300F0818E /* 敲键盘_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF192F91C87300F0818E /* 敲键盘_16.webp */; };
 		6EC4E2852F91C87300F0818E /* 敲键盘_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF412F91C87300F0818E /* 敲键盘_56.webp */; };
 		6EC4E2862F91C87300F0818E /* 提起_183.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0942F91C87300F0818E /* 提起_183.webp */; };
 		6EC4E2872F91C87300F0818E /* 敲键盘_44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF352F91C87300F0818E /* 敲键盘_44.webp */; };
 		6EC4E2892F91C87300F0818E /* 敲键盘_14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF172F91C87300F0818E /* 敲键盘_14.webp */; };
-		6EC4E28A2F91C87300F0818E /* 提起_126.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E05B2F91C87300F0818E /* 提起_126.webp */; };
 		6EC4E28B2F91C87300F0818E /* 提起_191.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E09C2F91C87300F0818E /* 提起_191.webp */; };
-		6EC4E28C2F91C87300F0818E /* 提起_122.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0572F91C87300F0818E /* 提起_122.webp */; };
 		6EC4E28F2F91C87300F0818E /* 敲键盘_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF212F91C87300F0818E /* 敲键盘_24.webp */; };
 		6EC4E2902F91C87300F0818E /* 敲键盘_120.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF812F91C87300F0818E /* 敲键盘_120.webp */; };
 		6EC4E2912F91C87300F0818E /* 伸懒腰_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFAA2F91C87300F0818E /* 伸懒腰_31.webp */; };
 		6EC4E2922F91C87300F0818E /* 摸摸_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE42F91C87300F0818E /* 摸摸_45.webp */; };
-		6EC4E2932F91C87300F0818E /* 提起_95.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03C2F91C87300F0818E /* 提起_95.webp */; };
 		6EC4E2942F91C87300F0818E /* 敲键盘_79.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF582F91C87300F0818E /* 敲键盘_79.webp */; };
-		6EC4E2952F91C87300F0818E /* 提起_106.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0472F91C87300F0818E /* 提起_106.webp */; };
 		6EC4E2972F91C87300F0818E /* 提起_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFE2F91C87300F0818E /* 提起_33.webp */; };
 		6EC4E2982F91C87300F0818E /* 提起_223.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0BC2F91C87300F0818E /* 提起_223.webp */; };
 		6EC4E2992F91C87300F0818E /* 伸懒腰_63.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFCA2F91C87300F0818E /* 伸懒腰_63.webp */; };
 		6EC4E29A2F91C87300F0818E /* 摸摸_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEF72F91C87300F0818E /* 摸摸_64.webp */; };
-		6EC4E29C2F91C87300F0818E /* 提起_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0242F91C87300F0818E /* 提起_71.webp */; };
 		6EC4E29D2F91C87300F0818E /* 伸懒腰_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF962F91C87300F0818E /* 伸懒腰_11.webp */; };
 		6EC4E29E2F91C87300F0818E /* 摸摸_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEEF2F91C87300F0818E /* 摸摸_56.webp */; };
-		6EC4E29F2F91C87300F0818E /* 提起_101.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0422F91C87300F0818E /* 提起_101.webp */; };
 		6EC4E2A02F91C87300F0818E /* 摸摸_19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DECA2F91C87300F0818E /* 摸摸_19.webp */; };
-		6EC4E2A12F91C87300F0818E /* 提起_110.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04B2F91C87300F0818E /* 提起_110.webp */; };
 		6EC4E2A22F91C87300F0818E /* 摸摸_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF052F91C87300F0818E /* 摸摸_78.webp */; };
 		6EC4E2A32F91C87300F0818E /* 完成_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E13C2F91C87300F0818E /* 完成_41.webp */; };
 		6EC4E2A42F91C87300F0818E /* 敲键盘_42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF332F91C87300F0818E /* 敲键盘_42.webp */; };
@@ -1988,29 +1940,23 @@
 		6EC4E2A82F91C87300F0818E /* 完成_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1402F91C87300F0818E /* 完成_45.webp */; };
 		6EC4E2A92F91C87300F0818E /* 摸摸_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC22F91C87300F0818E /* 摸摸_11.webp */; };
 		6EC4E2AB2F91C87300F0818E /* 提起_157.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E07A2F91C87300F0818E /* 提起_157.webp */; };
-		6EC4E2AD2F91C87300F0818E /* 提起_88.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0352F91C87300F0818E /* 提起_88.webp */; };
 		6EC4E2AE2F91C87300F0818E /* 敲键盘_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF202F91C87300F0818E /* 敲键盘_23.webp */; };
 		6EC4E2AF2F91C87300F0818E /* 提起_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0152F91C87300F0818E /* 提起_56.webp */; };
-		6EC4E2B02F91C87300F0818E /* 提起_77.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E02A2F91C87300F0818E /* 提起_77.webp */; };
 		6EC4E2B12F91C87300F0818E /* 摸摸_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEFE2F91C87300F0818E /* 摸摸_71.webp */; };
 		6EC4E2B32F91C87300F0818E /* 摸摸_43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE22F91C87300F0818E /* 摸摸_43.webp */; };
 		6EC4E2B42F91C87300F0818E /* 摸摸_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEBA2F91C87300F0818E /* 摸摸_3.webp */; };
 		6EC4E2B52F91C87300F0818E /* 摸摸_25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED02F91C87300F0818E /* 摸摸_25.webp */; };
 		6EC4E2B62F91C87300F0818E /* 伸懒腰_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBC2F91C87300F0818E /* 伸懒腰_49.webp */; };
-		6EC4E2B72F91C87300F0818E /* 提起_113.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04E2F91C87300F0818E /* 提起_113.webp */; };
 		6EC4E2B82F91C87300F0818E /* 完成_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1442F91C87300F0818E /* 完成_49.webp */; };
 		6EC4E2B92F91C87300F0818E /* 摸摸_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEFD2F91C87300F0818E /* 摸摸_70.webp */; };
 		6EC4E2BA2F91C87300F0818E /* 完成_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E11F2F91C87300F0818E /* 完成_12.webp */; };
 		6EC4E2BB2F91C87300F0818E /* 提起_36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0012F91C87300F0818E /* 提起_36.webp */; };
-		6EC4E2BC2F91C87300F0818E /* 提起_114.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04F2F91C87300F0818E /* 提起_114.webp */; };
 		6EC4E2BD2F91C87300F0818E /* 提起_55.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0142F91C87300F0818E /* 提起_55.webp */; };
-		6EC4E2BE2F91C87300F0818E /* 提起_66.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01F2F91C87300F0818E /* 提起_66.webp */; };
 		6EC4E2C02F91C87300F0818E /* 伸懒腰_35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFAE2F91C87300F0818E /* 伸懒腰_35.webp */; };
 		6EC4E2C12F91C87300F0818E /* 提起_161.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E07E2F91C87300F0818E /* 提起_161.webp */; };
 		6EC4E2C22F91C87300F0818E /* 提起_226.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0BF2F91C87300F0818E /* 提起_226.webp */; };
 		6EC4E2C32F91C87300F0818E /* 摸摸_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEBB2F91C87300F0818E /* 摸摸_4.webp */; };
 		6EC4E2C42F91C87300F0818E /* 敲键盘_90.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF632F91C87300F0818E /* 敲键盘_90.webp */; };
-		6EC4E2C52F91C87300F0818E /* 提起_115.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0502F91C87300F0818E /* 提起_115.webp */; };
 		6EC4E2C62F91C87300F0818E /* 敲键盘_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF282F91C87300F0818E /* 敲键盘_31.webp */; };
 		6EC4E2C72F91C87300F0818E /* 摸摸_51.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEEA2F91C87300F0818E /* 摸摸_51.webp */; };
 		6EC4E2C82F91C87300F0818E /* 提起_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E00D2F91C87300F0818E /* 提起_48.webp */; };
@@ -2020,32 +1966,26 @@
 		6EC4E2CC2F91C87300F0818E /* 伸懒腰_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD62F91C87300F0818E /* 伸懒腰_75.webp */; };
 		6EC4E2CD2F91C87300F0818E /* 完成_47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1422F91C87300F0818E /* 完成_47.webp */; };
 		6EC4E2CE2F91C87300F0818E /* 伸懒腰_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA52F91C87300F0818E /* 伸懒腰_26.webp */; };
-		6EC4E2D02F91C87300F0818E /* 提起_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0232F91C87300F0818E /* 提起_70.webp */; };
 		6EC4E2D12F91C87300F0818E /* 提起_21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF22F91C87300F0818E /* 提起_21.webp */; };
 		6EC4E2D22F91C87300F0818E /* 摸摸_22.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DECD2F91C87300F0818E /* 摸摸_22.webp */; };
 		6EC4E2D32F91C87300F0818E /* 完成_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E14B2F91C87300F0818E /* 完成_56.webp */; };
 		6EC4E2D42F91C87300F0818E /* 敲键盘_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF512F91C87300F0818E /* 敲键盘_72.webp */; };
 		6EC4E2D52F91C87300F0818E /* 提起_47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E00C2F91C87300F0818E /* 提起_47.webp */; };
 		6EC4E2D62F91C87300F0818E /* 伸懒腰_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF972F91C87300F0818E /* 伸懒腰_12.webp */; };
-		6EC4E2D72F91C87300F0818E /* 提起_116.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0512F91C87300F0818E /* 提起_116.webp */; };
 		6EC4E2DB2F91C87300F0818E /* 敲键盘_105.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF722F91C87300F0818E /* 敲键盘_105.webp */; };
 		6EC4E2DC2F91C87300F0818E /* 伸懒腰_66.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFCD2F91C87300F0818E /* 伸懒腰_66.webp */; };
 		6EC4E2DD2F91C87300F0818E /* 提起_155.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0782F91C87300F0818E /* 提起_155.webp */; };
 		6EC4E2DE2F91C87300F0818E /* 敲键盘_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF232F91C87300F0818E /* 敲键盘_26.webp */; };
-		6EC4E2DF2F91C87300F0818E /* 提起_73.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0262F91C87300F0818E /* 提起_73.webp */; };
 		6EC4E2E02F91C87300F0818E /* 敲键盘_103.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF702F91C87300F0818E /* 敲键盘_103.webp */; };
 		6EC4E2E12F91C87300F0818E /* 敲键盘_19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF1C2F91C87300F0818E /* 敲键盘_19.webp */; };
 		6EC4E2E22F91C87300F0818E /* 提起_143.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06C2F91C87300F0818E /* 提起_143.webp */; };
 		6EC4E2E32F91C87300F0818E /* 敲键盘_87.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF602F91C87300F0818E /* 敲键盘_87.webp */; };
 		6EC4E2E42F91C87300F0818E /* 完成_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E15D2F91C87300F0818E /* 完成_74.webp */; };
 		6EC4E2E52F91C87300F0818E /* 敲键盘_54.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF3F2F91C87300F0818E /* 敲键盘_54.webp */; };
-		6EC4E2E72F91C87300F0818E /* 提起_92.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0392F91C87300F0818E /* 提起_92.webp */; };
 		6EC4E2E82F91C87300F0818E /* 完成_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E15E2F91C87300F0818E /* 完成_75.webp */; };
 		6EC4E2E92F91C87300F0818E /* 摸摸_10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC12F91C87300F0818E /* 摸摸_10.webp */; };
 		6EC4E2EA2F91C87300F0818E /* 敲键盘_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF2E2F91C87300F0818E /* 敲键盘_37.webp */; };
-		6EC4E2EB2F91C87300F0818E /* 提起_124.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0592F91C87300F0818E /* 提起_124.webp */; };
 		6EC4E2EC2F91C87300F0818E /* 提起_168.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0852F91C87300F0818E /* 提起_168.webp */; };
-		6EC4E2ED2F91C87300F0818E /* 提起_125.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E05A2F91C87300F0818E /* 提起_125.webp */; };
 		6EC4E2EE2F91C87300F0818E /* 敲键盘_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF572F91C87300F0818E /* 敲键盘_78.webp */; };
 		6EC4E2EF2F91C87300F0818E /* 敲键盘_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF3A2F91C87300F0818E /* 敲键盘_49.webp */; };
 		6EC4E2F02F91C87300F0818E /* 敲键盘_21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF1E2F91C87300F0818E /* 敲键盘_21.webp */; };
@@ -2069,7 +2009,6 @@
 		6EC4E3022F91C87300F0818E /* 完成_55.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E14A2F91C87300F0818E /* 完成_55.webp */; };
 		6EC4E3032F91C87300F0818E /* 敲键盘_84.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF5D2F91C87300F0818E /* 敲键盘_84.webp */; };
 		6EC4E3042F91C87300F0818E /* 提起_216.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0B52F91C87300F0818E /* 提起_216.webp */; };
-		6EC4E3052F91C87300F0818E /* 提起_14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEB2F91C87300F0818E /* 提起_14.webp */; };
 		6EC4E3062F91C87300F0818E /* 提起_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF42F91C87300F0818E /* 提起_23.webp */; };
 		6EC4E3072F91C87300F0818E /* 摸摸_17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC82F91C87300F0818E /* 摸摸_17.webp */; };
 		6EC4E3082F91C87300F0818E /* 完成_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1342F91C87300F0818E /* 完成_33.webp */; };
@@ -2077,18 +2016,13 @@
 		6EC4E30A2F91C87300F0818E /* 敲键盘_47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF382F91C87300F0818E /* 敲键盘_47.webp */; };
 		6EC4E30B2F91C87300F0818E /* 摸摸_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED52F91C87300F0818E /* 摸摸_30.webp */; };
 		6EC4E30C2F91C87300F0818E /* 敲键盘_111.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF782F91C87300F0818E /* 敲键盘_111.webp */; };
-		6EC4E30D2F91C87300F0818E /* 提起_102.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0432F91C87300F0818E /* 提起_102.webp */; };
 		6EC4E30E2F91C87300F0818E /* 摸摸_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE52F91C87300F0818E /* 摸摸_46.webp */; };
 		6EC4E30F2F91C87300F0818E /* 伸懒腰_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFB42F91C87300F0818E /* 伸懒腰_41.webp */; };
 		6EC4E3102F91C87300F0818E /* 提起_20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF12F91C87300F0818E /* 提起_20.webp */; };
 		6EC4E3112F91C87300F0818E /* 敲键盘_115.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF7C2F91C87300F0818E /* 敲键盘_115.webp */; };
 		6EC4E3122F91C87300F0818E /* 伸懒腰_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDB2F91C87300F0818E /* 伸懒腰_80.webp */; };
 		6EC4E3142F91C87300F0818E /* 伸懒腰_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD92F91C87300F0818E /* 伸懒腰_78.webp */; };
-		6EC4E3152F91C87300F0818E /* 提起_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0272F91C87300F0818E /* 提起_74.webp */; };
 		6EC4E3162F91C87300F0818E /* 伸懒腰_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB2F91C87300F0818E /* 伸懒腰_48.webp */; };
-		6EC4E3172F91C87300F0818E /* 提起_117.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0522F91C87300F0818E /* 提起_117.webp */; };
-		6EC4E3182F91C87300F0818E /* 提起_111.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E04C2F91C87300F0818E /* 提起_111.webp */; };
-		6EC4E3192F91C87300F0818E /* 提起_83.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0302F91C87300F0818E /* 提起_83.webp */; };
 		6EC4E31A2F91C87300F0818E /* 敲键盘_121.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF822F91C87300F0818E /* 敲键盘_121.webp */; };
 		6EC4E31B2F91C87300F0818E /* 完成_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1412F91C87300F0818E /* 完成_46.webp */; };
 		6EC4E31C2F91C87300F0818E /* 完成_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E15A2F91C87300F0818E /* 完成_71.webp */; };
@@ -2101,7 +2035,6 @@
 		6EC4E3242F91C87300F0818E /* 摸摸_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEF02F91C87300F0818E /* 摸摸_57.webp */; };
 		6EC4E3262F91C87300F0818E /* 提起_201.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A62F91C87300F0818E /* 提起_201.webp */; };
 		6EC4E3272F91C87300F0818E /* 伸懒腰_50.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBD2F91C87300F0818E /* 伸懒腰_50.webp */; };
-		6EC4E3282F91C87300F0818E /* 提起_84.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0312F91C87300F0818E /* 提起_84.webp */; };
 		6EC4E32A2F91C87300F0818E /* 摸摸_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC42F91C87300F0818E /* 摸摸_13.webp */; };
 		6EC4E32B2F91C87300F0818E /* 完成_60.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E14F2F91C87300F0818E /* 完成_60.webp */; };
 		6EC4E32D2F91C87300F0818E /* 摸摸_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED82F91C87300F0818E /* 摸摸_33.webp */; };
@@ -2116,11 +2049,9 @@
 		6EC4E3392F91C87300F0818E /* 伸懒腰_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF8E2F91C87300F0818E /* 伸懒腰_3.webp */; };
 		6EC4E33A2F91C87300F0818E /* 敲键盘_81.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF5A2F91C87300F0818E /* 敲键盘_81.webp */; };
 		6EC4E33B2F91C87300F0818E /* 敲键盘_92.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF652F91C87300F0818E /* 敲键盘_92.webp */; };
-		6EC4E33C2F91C87300F0818E /* 提起_85.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0322F91C87300F0818E /* 提起_85.webp */; };
 		6EC4E33D2F91C87300F0818E /* 伸懒腰_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC42F91C87300F0818E /* 伸懒腰_57.webp */; };
 		6EC4E33E2F91C87300F0818E /* 摸摸_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DECE2F91C87300F0818E /* 摸摸_23.webp */; };
 		6EC4E33F2F91C87300F0818E /* 敲键盘_52.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF3D2F91C87300F0818E /* 敲键盘_52.webp */; };
-		6EC4E3402F91C87300F0818E /* 提起_9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE62F91C87300F0818E /* 提起_9.webp */; };
 		6EC4E3412F91C87300F0818E /* 伸懒腰_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFB82F91C87300F0818E /* 伸懒腰_45.webp */; };
 		6EC4E3422F91C87300F0818E /* 提起_53.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0122F91C87300F0818E /* 提起_53.webp */; };
 		6EC4E3442F91C87300F0818E /* 完成_2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1152F91C87300F0818E /* 完成_2.webp */; };
@@ -2133,7 +2064,6 @@
 		6EC4E34D2F91C87300F0818E /* 伸懒腰_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA92F91C87300F0818E /* 伸懒腰_30.webp */; };
 		6EC4E34E2F91C87300F0818E /* 提起_43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0082F91C87300F0818E /* 提起_43.webp */; };
 		6EC4E34F2F91C87300F0818E /* 完成_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1252F91C87300F0818E /* 完成_18.webp */; };
-		6EC4E3502F91C87300F0818E /* 提起_86.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0332F91C87300F0818E /* 提起_86.webp */; };
 		6EC4E3522F91C87300F0818E /* 伸懒腰_25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA42F91C87300F0818E /* 伸懒腰_25.webp */; };
 		6EC4E3532F91C87300F0818E /* 敲键盘_86.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF5F2F91C87300F0818E /* 敲键盘_86.webp */; };
 		6EC4E3542F91C87300F0818E /* 敲键盘_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF492F91C87300F0818E /* 敲键盘_64.webp */; };
@@ -2145,7 +2075,6 @@
 		6EC4E35B2F91C87300F0818E /* 摸摸_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC72F91C87300F0818E /* 摸摸_16.webp */; };
 		6EC4E35C2F91C87300F0818E /* 提起_178.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E08F2F91C87300F0818E /* 提起_178.webp */; };
 		6EC4E35D2F91C87300F0818E /* 敲键盘_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF462F91C87300F0818E /* 敲键盘_61.webp */; };
-		6EC4E35E2F91C87300F0818E /* 提起_108.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0492F91C87300F0818E /* 提起_108.webp */; };
 		6EC4E3612F91C87300F0818E /* 提起_167.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0842F91C87300F0818E /* 提起_167.webp */; };
 		6EC4E3622F91C87300F0818E /* 提起_141.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06A2F91C87300F0818E /* 提起_141.webp */; };
 		6EC4E3632F91C87300F0818E /* 摸摸_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEBD2F91C87300F0818E /* 摸摸_6.webp */; };
@@ -2166,7 +2095,6 @@
 		6EC4E3762F91C87300F0818E /* 提起_182.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0932F91C87300F0818E /* 提起_182.webp */; };
 		6EC4E3772F91C87300F0818E /* 提起_153.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0762F91C87300F0818E /* 提起_153.webp */; };
 		6EC4E3782F91C87300F0818E /* 摸摸_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEF42F91C87300F0818E /* 摸摸_61.webp */; };
-		6EC4E3792F91C87300F0818E /* 提起_120.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0552F91C87300F0818E /* 提起_120.webp */; };
 		6EC4E37A2F91C87300F0818E /* 提起_179.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0902F91C87300F0818E /* 提起_179.webp */; };
 		6EC4E37B2F91C87300F0818E /* 摸摸_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEC92F91C87300F0818E /* 摸摸_18.webp */; };
 		6EC4E37C2F91C87300F0818E /* 摸摸_42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE12F91C87300F0818E /* 摸摸_42.webp */; };
@@ -2177,7 +2105,6 @@
 		6EC4E3822F91C87300F0818E /* 敲键盘_77.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF562F91C87300F0818E /* 敲键盘_77.webp */; };
 		6EC4E3842F91C87300F0818E /* 摸摸_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEE02F91C87300F0818E /* 摸摸_41.webp */; };
 		6EC4E3852F91C87300F0818E /* 提起_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFFB2F91C87300F0818E /* 提起_30.webp */; };
-		6EC4E3862F91C87300F0818E /* 提起_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE92F91C87300F0818E /* 提起_12.webp */; };
 		6EC4E3872F91C87300F0818E /* 完成_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1432F91C87300F0818E /* 完成_48.webp */; };
 		6EC4E3882F91C87300F0818E /* 提起_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E00A2F91C87300F0818E /* 提起_45.webp */; };
 		6EC4E3892F91C87300F0818E /* 敲键盘_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF472F91C87300F0818E /* 敲键盘_62.webp */; };
@@ -2194,13 +2121,11 @@
 		6EC4E3952F91C87300F0818E /* 提起_51.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0102F91C87300F0818E /* 提起_51.webp */; };
 		6EC4E3972F91C87300F0818E /* 完成_35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1362F91C87300F0818E /* 完成_35.webp */; };
 		6EC4E3992F91C87300F0818E /* 完成_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1382F91C87300F0818E /* 完成_37.webp */; };
-		6EC4E39A2F91C87300F0818E /* 提起_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0292F91C87300F0818E /* 提起_76.webp */; };
 		6EC4E39B2F91C87300F0818E /* 提起_199.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A42F91C87300F0818E /* 提起_199.webp */; };
 		6EC4E39D2F91C87300F0818E /* 摸摸_58.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEF12F91C87300F0818E /* 摸摸_58.webp */; };
 		6EC4E39F2F91C87300F0818E /* 敲键盘_73.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF522F91C87300F0818E /* 敲键盘_73.webp */; };
 		6EC4E3A02F91C87300F0818E /* 提起_147.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0702F91C87300F0818E /* 提起_147.webp */; };
 		6EC4E3A12F91C87300F0818E /* 提起_218.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0B72F91C87300F0818E /* 提起_218.webp */; };
-		6EC4E3A32F91C87300F0818E /* 提起_94.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03B2F91C87300F0818E /* 提起_94.webp */; };
 		6EC4E3A42F91C87300F0818E /* 完成_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1332F91C87300F0818E /* 完成_32.webp */; };
 		6EC4E3A52F91C87300F0818E /* 摸摸_52.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEEB2F91C87300F0818E /* 摸摸_52.webp */; };
 		6EC4E3A62F91C87300F0818E /* 敲键盘_117.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF7E2F91C87300F0818E /* 敲键盘_117.webp */; };
@@ -2216,19 +2141,14 @@
 		6EC4E3B12F91C87300F0818E /* 伸懒腰_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD02F91C87300F0818E /* 伸懒腰_69.webp */; };
 		6EC4E3B22F91C87300F0818E /* 摸摸_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED62F91C87300F0818E /* 摸摸_31.webp */; };
 		6EC4E3B32F91C87300F0818E /* 敲键盘_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF372F91C87300F0818E /* 敲键盘_46.webp */; };
-		6EC4E3B42F91C87300F0818E /* 提起_0.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDD2F91C87300F0818E /* 提起_0.webp */; };
-		6EC4E3B52F91C87300F0818E /* 提起_89.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0362F91C87300F0818E /* 提起_89.webp */; };
 		6EC4E3B62F91C87300F0818E /* 完成_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1512F91C87300F0818E /* 完成_62.webp */; };
 		6EC4E3B72F91C87300F0818E /* 敲键盘_113.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF7A2F91C87300F0818E /* 敲键盘_113.webp */; };
 		6EC4E3B82F91C87300F0818E /* 提起_145.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E06E2F91C87300F0818E /* 提起_145.webp */; };
 		6EC4E3B92F91C87300F0818E /* 完成_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E14E2F91C87300F0818E /* 完成_59.webp */; };
-		6EC4E3BB2F91C87300F0818E /* 提起_17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEE2F91C87300F0818E /* 提起_17.webp */; };
 		6EC4E3BC2F91C87300F0818E /* 提起_203.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0A82F91C87300F0818E /* 提起_203.webp */; };
-		6EC4E3BD2F91C87300F0818E /* 提起_67.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0202F91C87300F0818E /* 提起_67.webp */; };
 		6EC4E3BE2F91C87300F0818E /* 敲键盘_88.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF612F91C87300F0818E /* 敲键盘_88.webp */; };
 		6EC4E3BF2F91C87300F0818E /* 提起_130.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E05F2F91C87300F0818E /* 提起_130.webp */; };
 		6EC4E3C02F91C87300F0818E /* 伸懒腰_36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFAF2F91C87300F0818E /* 伸懒腰_36.webp */; };
-		6EC4E3C12F91C87300F0818E /* 提起_119.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0542F91C87300F0818E /* 提起_119.webp */; };
 		6EC4E3C22F91C87300F0818E /* 提起_132.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0612F91C87300F0818E /* 提起_132.webp */; };
 		6EC4E3C32F91C87300F0818E /* 摸摸_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED72F91C87300F0818E /* 摸摸_32.webp */; };
 		6EC4E3C42F91C87300F0818E /* 完成_58.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E14D2F91C87300F0818E /* 完成_58.webp */; };
@@ -2243,8 +2163,6 @@
 		6EC4E3CE2F91C87300F0818E /* 提起_169.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0862F91C87300F0818E /* 提起_169.webp */; };
 		6EC4E3CF2F91C87300F0818E /* 完成_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E11B2F91C87300F0818E /* 完成_8.webp */; };
 		6EC4E3D02F91C87300F0818E /* 伸懒腰_19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF9E2F91C87300F0818E /* 伸懒腰_19.webp */; };
-		6EC4E3D12F91C87300F0818E /* 提起_7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFE42F91C87300F0818E /* 提起_7.webp */; };
-		6EC4E3D22F91C87300F0818E /* 提起_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E01B2F91C87300F0818E /* 提起_62.webp */; };
 		6EC4E3D32F91C87300F0818E /* 摸摸_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF022F91C87300F0818E /* 摸摸_75.webp */; };
 		6EC4E3D52F91C87300F0818E /* 提起_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0182F91C87300F0818E /* 提起_59.webp */; };
 		6EC4E3D62F91C87300F0818E /* 敲键盘_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF1B2F91C87300F0818E /* 敲键盘_18.webp */; };
@@ -2254,8 +2172,6 @@
 		6EC4E3DA2F91C87300F0818E /* 敲键盘_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF4E2F91C87300F0818E /* 敲键盘_69.webp */; };
 		6EC4E3DB2F91C87300F0818E /* 提起_39.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0042F91C87300F0818E /* 提起_39.webp */; };
 		6EC4E3DE2F91C87300F0818E /* 敲键盘_96.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF692F91C87300F0818E /* 敲键盘_96.webp */; };
-		6EC4E3DF2F91C87300F0818E /* 提起_87.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0342F91C87300F0818E /* 提起_87.webp */; };
-		6EC4E3E02F91C87300F0818E /* 提起_98.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E03F2F91C87300F0818E /* 提起_98.webp */; };
 		6EC4E3E12F91C87300F0818E /* 敲键盘_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF4D2F91C87300F0818E /* 敲键盘_68.webp */; };
 		6EC4E3E22F91C87300F0818E /* 伸懒腰_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD52F91C87300F0818E /* 伸懒腰_74.webp */; };
 		6EC4E3E32F91C87300F0818E /* 完成_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1502F91C87300F0818E /* 完成_61.webp */; };
@@ -2274,9 +2190,7 @@
 		6EC4E3F22F91C87300F0818E /* 提起_133.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0622F91C87300F0818E /* 提起_133.webp */; };
 		6EC4E3F32F91C87300F0818E /* 敲键盘_55.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF402F91C87300F0818E /* 敲键盘_55.webp */; };
 		6EC4E3F42F91C87300F0818E /* 摸摸_53.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DEEC2F91C87300F0818E /* 摸摸_53.webp */; };
-		6EC4E3F52F91C87300F0818E /* 提起_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0212F91C87300F0818E /* 提起_68.webp */; };
 		6EC4E3F72F91C87300F0818E /* 伸懒腰_14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF992F91C87300F0818E /* 伸懒腰_14.webp */; };
-		6EC4E3F82F91C87300F0818E /* 提起_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDE2F91C87300F0818E /* 提起_1.webp */; };
 		6EC4E3F92F91C87300F0818E /* 完成_42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E13D2F91C87300F0818E /* 完成_42.webp */; };
 		6EC4E3FA2F91C87300F0818E /* 提起_180.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0912F91C87300F0818E /* 提起_180.webp */; };
 		6EC4E3FB2F91C87300F0818E /* 敲键盘_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF292F91C87300F0818E /* 敲键盘_32.webp */; };
@@ -2290,12 +2204,10 @@
 		6EC4E4042F91C87300F0818E /* 摸摸_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DED12F91C87300F0818E /* 摸摸_26.webp */; };
 		6EC4E4052F91C87300F0818E /* 提起_175.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E08C2F91C87300F0818E /* 提起_175.webp */; };
 		6EC4E4062F91C87300F0818E /* 敲键盘_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF442F91C87300F0818E /* 敲键盘_59.webp */; };
-		6EC4E4072F91C87300F0818E /* 提起_123.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0582F91C87300F0818E /* 提起_123.webp */; };
 		6EC4E4082F91C87300F0818E /* 敲键盘_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF142F91C87300F0818E /* 敲键盘_11.webp */; };
 		6EC4E4092F91C87300F0818E /* 敲键盘_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF552F91C87300F0818E /* 敲键盘_76.webp */; };
 		6EC4E40A2F91C87300F0818E /* 完成_79.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E1622F91C87300F0818E /* 完成_79.webp */; };
 		6EC4E40B2F91C87300F0818E /* 敲键盘_91.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF642F91C87300F0818E /* 敲键盘_91.webp */; };
-		6EC4E40C2F91C87300F0818E /* 提起_107.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E0482F91C87300F0818E /* 提起_107.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3215,8 +3127,6 @@
 		6EC4C3E62F8E2C8000F0818E /* 团子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "团子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC4C3F62F8E2C8400F0818E /* 团子Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团子Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC4C4002F8E2C8400F0818E /* 团子UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团子UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EC4C4132F8E2E7E00F0818E /* Frame 2090062065.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Frame 2090062065.png"; sourceTree = "<group>"; };
-		6EC4D2742F8F6D0100F0818E /* 狗叫.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "狗叫.mp3"; sourceTree = "<group>"; };
 		6EC4D2752F8F6D0100F0818E /* 确认提示.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "确认提示.mp3"; sourceTree = "<group>"; };
 		6EC4D2762F8F6D0100F0818E /* 提醒.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "提醒.mp3"; sourceTree = "<group>"; };
 		6EC4D2772F8F6D0100F0818E /* claude提示.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "claude提示.mp3"; sourceTree = "<group>"; };
@@ -4300,24 +4210,6 @@
 		6EC4DFD92F91C87300F0818E /* 伸懒腰_78.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "伸懒腰_78.webp"; sourceTree = "<group>"; };
 		6EC4DFDA2F91C87300F0818E /* 伸懒腰_79.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "伸懒腰_79.webp"; sourceTree = "<group>"; };
 		6EC4DFDB2F91C87300F0818E /* 伸懒腰_80.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "伸懒腰_80.webp"; sourceTree = "<group>"; };
-		6EC4DFDD2F91C87300F0818E /* 提起_0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_0.webp"; sourceTree = "<group>"; };
-		6EC4DFDE2F91C87300F0818E /* 提起_1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_1.webp"; sourceTree = "<group>"; };
-		6EC4DFDF2F91C87300F0818E /* 提起_2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_2.webp"; sourceTree = "<group>"; };
-		6EC4DFE02F91C87300F0818E /* 提起_3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_3.webp"; sourceTree = "<group>"; };
-		6EC4DFE12F91C87300F0818E /* 提起_4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_4.webp"; sourceTree = "<group>"; };
-		6EC4DFE22F91C87300F0818E /* 提起_5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_5.webp"; sourceTree = "<group>"; };
-		6EC4DFE32F91C87300F0818E /* 提起_6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_6.webp"; sourceTree = "<group>"; };
-		6EC4DFE42F91C87300F0818E /* 提起_7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_7.webp"; sourceTree = "<group>"; };
-		6EC4DFE52F91C87300F0818E /* 提起_8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_8.webp"; sourceTree = "<group>"; };
-		6EC4DFE62F91C87300F0818E /* 提起_9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_9.webp"; sourceTree = "<group>"; };
-		6EC4DFE72F91C87300F0818E /* 提起_10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_10.webp"; sourceTree = "<group>"; };
-		6EC4DFE82F91C87300F0818E /* 提起_11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_11.webp"; sourceTree = "<group>"; };
-		6EC4DFE92F91C87300F0818E /* 提起_12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_12.webp"; sourceTree = "<group>"; };
-		6EC4DFEA2F91C87300F0818E /* 提起_13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_13.webp"; sourceTree = "<group>"; };
-		6EC4DFEB2F91C87300F0818E /* 提起_14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_14.webp"; sourceTree = "<group>"; };
-		6EC4DFEC2F91C87300F0818E /* 提起_15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_15.webp"; sourceTree = "<group>"; };
-		6EC4DFED2F91C87300F0818E /* 提起_16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_16.webp"; sourceTree = "<group>"; };
-		6EC4DFEE2F91C87300F0818E /* 提起_17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_17.webp"; sourceTree = "<group>"; };
 		6EC4DFEF2F91C87300F0818E /* 提起_18.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_18.webp"; sourceTree = "<group>"; };
 		6EC4DFF02F91C87300F0818E /* 提起_19.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_19.webp"; sourceTree = "<group>"; };
 		6EC4DFF12F91C87300F0818E /* 提起_20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_20.webp"; sourceTree = "<group>"; };
@@ -4360,75 +4252,6 @@
 		6EC4E0162F91C87300F0818E /* 提起_57.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_57.webp"; sourceTree = "<group>"; };
 		6EC4E0172F91C87300F0818E /* 提起_58.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_58.webp"; sourceTree = "<group>"; };
 		6EC4E0182F91C87300F0818E /* 提起_59.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_59.webp"; sourceTree = "<group>"; };
-		6EC4E0192F91C87300F0818E /* 提起_60.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_60.webp"; sourceTree = "<group>"; };
-		6EC4E01A2F91C87300F0818E /* 提起_61.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_61.webp"; sourceTree = "<group>"; };
-		6EC4E01B2F91C87300F0818E /* 提起_62.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_62.webp"; sourceTree = "<group>"; };
-		6EC4E01C2F91C87300F0818E /* 提起_63.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_63.webp"; sourceTree = "<group>"; };
-		6EC4E01D2F91C87300F0818E /* 提起_64.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_64.webp"; sourceTree = "<group>"; };
-		6EC4E01E2F91C87300F0818E /* 提起_65.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_65.webp"; sourceTree = "<group>"; };
-		6EC4E01F2F91C87300F0818E /* 提起_66.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_66.webp"; sourceTree = "<group>"; };
-		6EC4E0202F91C87300F0818E /* 提起_67.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_67.webp"; sourceTree = "<group>"; };
-		6EC4E0212F91C87300F0818E /* 提起_68.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_68.webp"; sourceTree = "<group>"; };
-		6EC4E0222F91C87300F0818E /* 提起_69.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_69.webp"; sourceTree = "<group>"; };
-		6EC4E0232F91C87300F0818E /* 提起_70.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_70.webp"; sourceTree = "<group>"; };
-		6EC4E0242F91C87300F0818E /* 提起_71.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_71.webp"; sourceTree = "<group>"; };
-		6EC4E0252F91C87300F0818E /* 提起_72.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_72.webp"; sourceTree = "<group>"; };
-		6EC4E0262F91C87300F0818E /* 提起_73.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_73.webp"; sourceTree = "<group>"; };
-		6EC4E0272F91C87300F0818E /* 提起_74.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_74.webp"; sourceTree = "<group>"; };
-		6EC4E0282F91C87300F0818E /* 提起_75.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_75.webp"; sourceTree = "<group>"; };
-		6EC4E0292F91C87300F0818E /* 提起_76.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_76.webp"; sourceTree = "<group>"; };
-		6EC4E02A2F91C87300F0818E /* 提起_77.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_77.webp"; sourceTree = "<group>"; };
-		6EC4E02B2F91C87300F0818E /* 提起_78.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_78.webp"; sourceTree = "<group>"; };
-		6EC4E02C2F91C87300F0818E /* 提起_79.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_79.webp"; sourceTree = "<group>"; };
-		6EC4E02D2F91C87300F0818E /* 提起_80.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_80.webp"; sourceTree = "<group>"; };
-		6EC4E02E2F91C87300F0818E /* 提起_81.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_81.webp"; sourceTree = "<group>"; };
-		6EC4E02F2F91C87300F0818E /* 提起_82.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_82.webp"; sourceTree = "<group>"; };
-		6EC4E0302F91C87300F0818E /* 提起_83.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_83.webp"; sourceTree = "<group>"; };
-		6EC4E0312F91C87300F0818E /* 提起_84.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_84.webp"; sourceTree = "<group>"; };
-		6EC4E0322F91C87300F0818E /* 提起_85.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_85.webp"; sourceTree = "<group>"; };
-		6EC4E0332F91C87300F0818E /* 提起_86.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_86.webp"; sourceTree = "<group>"; };
-		6EC4E0342F91C87300F0818E /* 提起_87.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_87.webp"; sourceTree = "<group>"; };
-		6EC4E0352F91C87300F0818E /* 提起_88.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_88.webp"; sourceTree = "<group>"; };
-		6EC4E0362F91C87300F0818E /* 提起_89.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_89.webp"; sourceTree = "<group>"; };
-		6EC4E0372F91C87300F0818E /* 提起_90.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_90.webp"; sourceTree = "<group>"; };
-		6EC4E0382F91C87300F0818E /* 提起_91.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_91.webp"; sourceTree = "<group>"; };
-		6EC4E0392F91C87300F0818E /* 提起_92.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_92.webp"; sourceTree = "<group>"; };
-		6EC4E03A2F91C87300F0818E /* 提起_93.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_93.webp"; sourceTree = "<group>"; };
-		6EC4E03B2F91C87300F0818E /* 提起_94.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_94.webp"; sourceTree = "<group>"; };
-		6EC4E03C2F91C87300F0818E /* 提起_95.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_95.webp"; sourceTree = "<group>"; };
-		6EC4E03D2F91C87300F0818E /* 提起_96.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_96.webp"; sourceTree = "<group>"; };
-		6EC4E03E2F91C87300F0818E /* 提起_97.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_97.webp"; sourceTree = "<group>"; };
-		6EC4E03F2F91C87300F0818E /* 提起_98.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_98.webp"; sourceTree = "<group>"; };
-		6EC4E0402F91C87300F0818E /* 提起_99.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_99.webp"; sourceTree = "<group>"; };
-		6EC4E0412F91C87300F0818E /* 提起_100.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_100.webp"; sourceTree = "<group>"; };
-		6EC4E0422F91C87300F0818E /* 提起_101.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_101.webp"; sourceTree = "<group>"; };
-		6EC4E0432F91C87300F0818E /* 提起_102.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_102.webp"; sourceTree = "<group>"; };
-		6EC4E0442F91C87300F0818E /* 提起_103.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_103.webp"; sourceTree = "<group>"; };
-		6EC4E0452F91C87300F0818E /* 提起_104.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_104.webp"; sourceTree = "<group>"; };
-		6EC4E0462F91C87300F0818E /* 提起_105.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_105.webp"; sourceTree = "<group>"; };
-		6EC4E0472F91C87300F0818E /* 提起_106.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_106.webp"; sourceTree = "<group>"; };
-		6EC4E0482F91C87300F0818E /* 提起_107.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_107.webp"; sourceTree = "<group>"; };
-		6EC4E0492F91C87300F0818E /* 提起_108.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_108.webp"; sourceTree = "<group>"; };
-		6EC4E04A2F91C87300F0818E /* 提起_109.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_109.webp"; sourceTree = "<group>"; };
-		6EC4E04B2F91C87300F0818E /* 提起_110.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_110.webp"; sourceTree = "<group>"; };
-		6EC4E04C2F91C87300F0818E /* 提起_111.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_111.webp"; sourceTree = "<group>"; };
-		6EC4E04D2F91C87300F0818E /* 提起_112.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_112.webp"; sourceTree = "<group>"; };
-		6EC4E04E2F91C87300F0818E /* 提起_113.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_113.webp"; sourceTree = "<group>"; };
-		6EC4E04F2F91C87300F0818E /* 提起_114.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_114.webp"; sourceTree = "<group>"; };
-		6EC4E0502F91C87300F0818E /* 提起_115.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_115.webp"; sourceTree = "<group>"; };
-		6EC4E0512F91C87300F0818E /* 提起_116.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_116.webp"; sourceTree = "<group>"; };
-		6EC4E0522F91C87300F0818E /* 提起_117.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_117.webp"; sourceTree = "<group>"; };
-		6EC4E0532F91C87300F0818E /* 提起_118.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_118.webp"; sourceTree = "<group>"; };
-		6EC4E0542F91C87300F0818E /* 提起_119.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_119.webp"; sourceTree = "<group>"; };
-		6EC4E0552F91C87300F0818E /* 提起_120.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_120.webp"; sourceTree = "<group>"; };
-		6EC4E0562F91C87300F0818E /* 提起_121.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_121.webp"; sourceTree = "<group>"; };
-		6EC4E0572F91C87300F0818E /* 提起_122.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_122.webp"; sourceTree = "<group>"; };
-		6EC4E0582F91C87300F0818E /* 提起_123.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_123.webp"; sourceTree = "<group>"; };
-		6EC4E0592F91C87300F0818E /* 提起_124.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_124.webp"; sourceTree = "<group>"; };
-		6EC4E05A2F91C87300F0818E /* 提起_125.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_125.webp"; sourceTree = "<group>"; };
-		6EC4E05B2F91C87300F0818E /* 提起_126.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_126.webp"; sourceTree = "<group>"; };
-		6EC4E05C2F91C87300F0818E /* 提起_127.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_127.webp"; sourceTree = "<group>"; };
-		6EC4E05D2F91C87300F0818E /* 提起_128.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_128.webp"; sourceTree = "<group>"; };
 		6EC4E05E2F91C87300F0818E /* 提起_129.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_129.webp"; sourceTree = "<group>"; };
 		6EC4E05F2F91C87300F0818E /* 提起_130.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_130.webp"; sourceTree = "<group>"; };
 		6EC4E0602F91C87300F0818E /* 提起_131.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提起_131.webp"; sourceTree = "<group>"; };
@@ -4633,6 +4456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA31B9A2F98A4B30051BB6E /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5666,7 +5490,6 @@
 				6EC4D69F2F8F932E00F0818E /* 搜索 */,
 				6EC4D7B52F8F932E00F0818E /* 提醒 */,
 				6EC4D2C02F8F822900F0818E /* 戳 */,
-				6EC4D2742F8F6D0100F0818E /* 狗叫.mp3 */,
 				6E0735B32F91EA3800053827 /* logo 256.png */,
 				6E0735B42F91EA3800053827 /* logo512.png */,
 				6EC4D2752F8F6D0100F0818E /* 确认提示.mp3 */,
@@ -5676,7 +5499,6 @@
 				6EC4C3F92F8E2C8400F0818E /* 团子Tests */,
 				6EC4C4032F8E2C8400F0818E /* 团子UITests */,
 				6EC4C3E72F8E2C8000F0818E /* Products */,
-				6EC4C4132F8E2E7E00F0818E /* Frame 2090062065.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -6843,24 +6665,6 @@
 		6EC4E0C02F91C87300F0818E /* 提起 */ = {
 			isa = PBXGroup;
 			children = (
-				6EC4DFDD2F91C87300F0818E /* 提起_0.webp */,
-				6EC4DFDE2F91C87300F0818E /* 提起_1.webp */,
-				6EC4DFDF2F91C87300F0818E /* 提起_2.webp */,
-				6EC4DFE02F91C87300F0818E /* 提起_3.webp */,
-				6EC4DFE12F91C87300F0818E /* 提起_4.webp */,
-				6EC4DFE22F91C87300F0818E /* 提起_5.webp */,
-				6EC4DFE32F91C87300F0818E /* 提起_6.webp */,
-				6EC4DFE42F91C87300F0818E /* 提起_7.webp */,
-				6EC4DFE52F91C87300F0818E /* 提起_8.webp */,
-				6EC4DFE62F91C87300F0818E /* 提起_9.webp */,
-				6EC4DFE72F91C87300F0818E /* 提起_10.webp */,
-				6EC4DFE82F91C87300F0818E /* 提起_11.webp */,
-				6EC4DFE92F91C87300F0818E /* 提起_12.webp */,
-				6EC4DFEA2F91C87300F0818E /* 提起_13.webp */,
-				6EC4DFEB2F91C87300F0818E /* 提起_14.webp */,
-				6EC4DFEC2F91C87300F0818E /* 提起_15.webp */,
-				6EC4DFED2F91C87300F0818E /* 提起_16.webp */,
-				6EC4DFEE2F91C87300F0818E /* 提起_17.webp */,
 				6EC4DFEF2F91C87300F0818E /* 提起_18.webp */,
 				6EC4DFF02F91C87300F0818E /* 提起_19.webp */,
 				6EC4DFF12F91C87300F0818E /* 提起_20.webp */,
@@ -6903,75 +6707,6 @@
 				6EC4E0162F91C87300F0818E /* 提起_57.webp */,
 				6EC4E0172F91C87300F0818E /* 提起_58.webp */,
 				6EC4E0182F91C87300F0818E /* 提起_59.webp */,
-				6EC4E0192F91C87300F0818E /* 提起_60.webp */,
-				6EC4E01A2F91C87300F0818E /* 提起_61.webp */,
-				6EC4E01B2F91C87300F0818E /* 提起_62.webp */,
-				6EC4E01C2F91C87300F0818E /* 提起_63.webp */,
-				6EC4E01D2F91C87300F0818E /* 提起_64.webp */,
-				6EC4E01E2F91C87300F0818E /* 提起_65.webp */,
-				6EC4E01F2F91C87300F0818E /* 提起_66.webp */,
-				6EC4E0202F91C87300F0818E /* 提起_67.webp */,
-				6EC4E0212F91C87300F0818E /* 提起_68.webp */,
-				6EC4E0222F91C87300F0818E /* 提起_69.webp */,
-				6EC4E0232F91C87300F0818E /* 提起_70.webp */,
-				6EC4E0242F91C87300F0818E /* 提起_71.webp */,
-				6EC4E0252F91C87300F0818E /* 提起_72.webp */,
-				6EC4E0262F91C87300F0818E /* 提起_73.webp */,
-				6EC4E0272F91C87300F0818E /* 提起_74.webp */,
-				6EC4E0282F91C87300F0818E /* 提起_75.webp */,
-				6EC4E0292F91C87300F0818E /* 提起_76.webp */,
-				6EC4E02A2F91C87300F0818E /* 提起_77.webp */,
-				6EC4E02B2F91C87300F0818E /* 提起_78.webp */,
-				6EC4E02C2F91C87300F0818E /* 提起_79.webp */,
-				6EC4E02D2F91C87300F0818E /* 提起_80.webp */,
-				6EC4E02E2F91C87300F0818E /* 提起_81.webp */,
-				6EC4E02F2F91C87300F0818E /* 提起_82.webp */,
-				6EC4E0302F91C87300F0818E /* 提起_83.webp */,
-				6EC4E0312F91C87300F0818E /* 提起_84.webp */,
-				6EC4E0322F91C87300F0818E /* 提起_85.webp */,
-				6EC4E0332F91C87300F0818E /* 提起_86.webp */,
-				6EC4E0342F91C87300F0818E /* 提起_87.webp */,
-				6EC4E0352F91C87300F0818E /* 提起_88.webp */,
-				6EC4E0362F91C87300F0818E /* 提起_89.webp */,
-				6EC4E0372F91C87300F0818E /* 提起_90.webp */,
-				6EC4E0382F91C87300F0818E /* 提起_91.webp */,
-				6EC4E0392F91C87300F0818E /* 提起_92.webp */,
-				6EC4E03A2F91C87300F0818E /* 提起_93.webp */,
-				6EC4E03B2F91C87300F0818E /* 提起_94.webp */,
-				6EC4E03C2F91C87300F0818E /* 提起_95.webp */,
-				6EC4E03D2F91C87300F0818E /* 提起_96.webp */,
-				6EC4E03E2F91C87300F0818E /* 提起_97.webp */,
-				6EC4E03F2F91C87300F0818E /* 提起_98.webp */,
-				6EC4E0402F91C87300F0818E /* 提起_99.webp */,
-				6EC4E0412F91C87300F0818E /* 提起_100.webp */,
-				6EC4E0422F91C87300F0818E /* 提起_101.webp */,
-				6EC4E0432F91C87300F0818E /* 提起_102.webp */,
-				6EC4E0442F91C87300F0818E /* 提起_103.webp */,
-				6EC4E0452F91C87300F0818E /* 提起_104.webp */,
-				6EC4E0462F91C87300F0818E /* 提起_105.webp */,
-				6EC4E0472F91C87300F0818E /* 提起_106.webp */,
-				6EC4E0482F91C87300F0818E /* 提起_107.webp */,
-				6EC4E0492F91C87300F0818E /* 提起_108.webp */,
-				6EC4E04A2F91C87300F0818E /* 提起_109.webp */,
-				6EC4E04B2F91C87300F0818E /* 提起_110.webp */,
-				6EC4E04C2F91C87300F0818E /* 提起_111.webp */,
-				6EC4E04D2F91C87300F0818E /* 提起_112.webp */,
-				6EC4E04E2F91C87300F0818E /* 提起_113.webp */,
-				6EC4E04F2F91C87300F0818E /* 提起_114.webp */,
-				6EC4E0502F91C87300F0818E /* 提起_115.webp */,
-				6EC4E0512F91C87300F0818E /* 提起_116.webp */,
-				6EC4E0522F91C87300F0818E /* 提起_117.webp */,
-				6EC4E0532F91C87300F0818E /* 提起_118.webp */,
-				6EC4E0542F91C87300F0818E /* 提起_119.webp */,
-				6EC4E0552F91C87300F0818E /* 提起_120.webp */,
-				6EC4E0562F91C87300F0818E /* 提起_121.webp */,
-				6EC4E0572F91C87300F0818E /* 提起_122.webp */,
-				6EC4E0582F91C87300F0818E /* 提起_123.webp */,
-				6EC4E0592F91C87300F0818E /* 提起_124.webp */,
-				6EC4E05A2F91C87300F0818E /* 提起_125.webp */,
-				6EC4E05B2F91C87300F0818E /* 提起_126.webp */,
-				6EC4E05C2F91C87300F0818E /* 提起_127.webp */,
-				6EC4E05D2F91C87300F0818E /* 提起_128.webp */,
 				6EC4E05E2F91C87300F0818E /* 提起_129.webp */,
 				6EC4E05F2F91C87300F0818E /* 提起_130.webp */,
 				6EC4E0602F91C87300F0818E /* 提起_131.webp */,
@@ -7182,6 +6917,7 @@
 			);
 			name = "团子";
 			packageProductDependencies = (
+				6EA31B992F98A4B30051BB6E /* Sparkle */,
 			);
 			productName = "团子";
 			productReference = 6EC4C3E62F8E2C8000F0818E /* 团子.app */;
@@ -7262,9 +6998,13 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6EC4C3DD2F8E2C8000F0818E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6EC4C3E72F8E2C8000F0818E /* Products */;
 			projectDirPath = "";
@@ -7282,7 +7022,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC4D2782F8F6D0100F0818E /* 狗叫.mp3 in Resources */,
 				6EC4D2792F8F6D0100F0818E /* 提醒.mp3 in Resources */,
 				6EC4D27A2F8F6D0100F0818E /* 确认提示.mp3 in Resources */,
 				6EC4D27B2F8F6D0100F0818E /* claude提示.mp3 in Resources */,
@@ -7649,11 +7388,8 @@
 				6EC4DA0D2F8F932E00F0818E /* 待机_97.webp in Resources */,
 				6EC4DA0E2F8F932E00F0818E /* 待机_34.webp in Resources */,
 				6EC4DA112F8F932E00F0818E /* 思考_50.webp in Resources */,
-				6EC4E1652F91C87300F0818E /* 提起_65.webp in Resources */,
 				6EC4E1662F91C87300F0818E /* 完成_40.webp in Resources */,
-				6EC4E1682F91C87300F0818E /* 提起_5.webp in Resources */,
 				6EC4E1692F91C87300F0818E /* 伸懒腰_68.webp in Resources */,
-				6EC4E16A2F91C87300F0818E /* 提起_91.webp in Resources */,
 				6EC4E16B2F91C87300F0818E /* 伸懒腰_4.webp in Resources */,
 				6EC4E16C2F91C87300F0818E /* 提起_215.webp in Resources */,
 				6EC4E16D2F91C87300F0818E /* 摸摸_36.webp in Resources */,
@@ -7674,13 +7410,11 @@
 				6EC4E17F2F91C87300F0818E /* 摸摸_48.webp in Resources */,
 				6EC4E1802F91C87300F0818E /* 完成_7.webp in Resources */,
 				6EC4E1812F91C87300F0818E /* 提起_197.webp in Resources */,
-				6EC4E1822F91C87300F0818E /* 提起_13.webp in Resources */,
 				6EC4E1842F91C87300F0818E /* 提起_177.webp in Resources */,
 				6EC4E1852F91C87300F0818E /* 伸懒腰_8.webp in Resources */,
 				6EC4E1862F91C87300F0818E /* 完成_28.webp in Resources */,
 				6EC4E1872F91C87300F0818E /* 敲键盘_57.webp in Resources */,
 				6EC4E1882F91C87300F0818E /* 伸懒腰_46.webp in Resources */,
-				6EC4E1892F91C87300F0818E /* 提起_6.webp in Resources */,
 				6EC4E18A2F91C87300F0818E /* 提起_134.webp in Resources */,
 				6EC4E18B2F91C87300F0818E /* 伸懒腰_13.webp in Resources */,
 				6EC4E18C2F91C87300F0818E /* 完成_70.webp in Resources */,
@@ -7697,13 +7431,10 @@
 				6EC4E1972F91C87300F0818E /* 摸摸_69.webp in Resources */,
 				6EC4E1982F91C87300F0818E /* 摸摸_73.webp in Resources */,
 				6EC4E1992F91C87300F0818E /* 完成_64.webp in Resources */,
-				6EC4E19A2F91C87300F0818E /* 提起_127.webp in Resources */,
 				6EC4E19B2F91C87300F0818E /* 提起_31.webp in Resources */,
-				6EC4E19C2F91C87300F0818E /* 提起_64.webp in Resources */,
 				6EC4E19D2F91C87300F0818E /* 提起_185.webp in Resources */,
 				6EC4E19E2F91C87300F0818E /* 提起_187.webp in Resources */,
 				6EC4E19F2F91C87300F0818E /* 摸摸_65.webp in Resources */,
-				6EC4E1A02F91C87300F0818E /* 提起_3.webp in Resources */,
 				6EC4E1A12F91C87300F0818E /* 伸懒腰_70.webp in Resources */,
 				6EC4E1A22F91C87300F0818E /* 敲键盘_35.webp in Resources */,
 				6EC4E1A32F91C87300F0818E /* 完成_4.webp in Resources */,
@@ -7711,7 +7442,6 @@
 				6EC4E1A52F91C87300F0818E /* 伸懒腰_24.webp in Resources */,
 				6EC4E1A62F91C87300F0818E /* 完成_16.webp in Resources */,
 				6EC4E1A72F91C87300F0818E /* 提起_149.webp in Resources */,
-				6EC4E1A82F91C87300F0818E /* 提起_104.webp in Resources */,
 				6EC4E1AA2F91C87300F0818E /* 摸摸_12.webp in Resources */,
 				6EC4E1AB2F91C87300F0818E /* 敲键盘_97.webp in Resources */,
 				6EC4E1AC2F91C87300F0818E /* 完成_15.webp in Resources */,
@@ -7731,7 +7461,6 @@
 				6EC4E1BA2F91C87300F0818E /* 完成_67.webp in Resources */,
 				6EC4E1BB2F91C87300F0818E /* 提起_24.webp in Resources */,
 				6EC4E1BC2F91C87300F0818E /* 提起_159.webp in Resources */,
-				6EC4E1BD2F91C87300F0818E /* 提起_118.webp in Resources */,
 				6EC4E1BE2F91C87300F0818E /* 摸摸_76.webp in Resources */,
 				6EC4E1BF2F91C87300F0818E /* 完成_65.webp in Resources */,
 				6EC4E1C12F91C87300F0818E /* 摸摸_37.webp in Resources */,
@@ -7744,7 +7473,6 @@
 				6EC4E1C92F91C87300F0818E /* 提起_154.webp in Resources */,
 				6EC4E1CA2F91C87300F0818E /* 提起_38.webp in Resources */,
 				6EC4E1CB2F91C87300F0818E /* 提起_146.webp in Resources */,
-				6EC4E1CC2F91C87300F0818E /* 提起_105.webp in Resources */,
 				6EC4E1CD2F91C87300F0818E /* 敲键盘_51.webp in Resources */,
 				6EC4E1CE2F91C87300F0818E /* 敲键盘_94.webp in Resources */,
 				6EC4E1D02F91C87300F0818E /* 提起_202.webp in Resources */,
@@ -7753,7 +7481,6 @@
 				6EC4E1D32F91C87300F0818E /* 摸摸_67.webp in Resources */,
 				6EC4E1D52F91C87300F0818E /* 提起_194.webp in Resources */,
 				6EC4E1D62F91C87300F0818E /* 敲键盘_40.webp in Resources */,
-				6EC4E1D72F91C87300F0818E /* 提起_11.webp in Resources */,
 				6EC4E1D82F91C87300F0818E /* 提起_52.webp in Resources */,
 				6EC4E1D92F91C87300F0818E /* 敲键盘_75.webp in Resources */,
 				6EC4E1DA2F91C87300F0818E /* 伸懒腰_5.webp in Resources */,
@@ -7764,10 +7491,8 @@
 				6EC4E1DF2F91C87300F0818E /* 完成_6.webp in Resources */,
 				6EC4E1E02F91C87300F0818E /* 摸摸_49.webp in Resources */,
 				6EC4E1E12F91C87300F0818E /* 完成_68.webp in Resources */,
-				6EC4E1E22F91C87300F0818E /* 提起_15.webp in Resources */,
 				6EC4E1E42F91C87300F0818E /* 摸摸_8.webp in Resources */,
 				6EC4E1E72F91C87300F0818E /* 敲键盘_27.webp in Resources */,
-				6EC4E1E82F91C87300F0818E /* 提起_80.webp in Resources */,
 				6EC4E1E92F91C87300F0818E /* 敲键盘_80.webp in Resources */,
 				6EC4E1EB2F91C87300F0818E /* 敲键盘_60.webp in Resources */,
 				6EC4E1EC2F91C87300F0818E /* 敲键盘_33.webp in Resources */,
@@ -7776,7 +7501,6 @@
 				6EC4E1EF2F91C87300F0818E /* 提起_41.webp in Resources */,
 				6EC4E1F02F91C87300F0818E /* 伸懒腰_59.webp in Resources */,
 				6EC4E1F12F91C87300F0818E /* 敲键盘_39.webp in Resources */,
-				6EC4E1F32F91C87300F0818E /* 提起_79.webp in Resources */,
 				6EC4E1F42F91C87300F0818E /* 完成_24.webp in Resources */,
 				6EC4E1F52F91C87300F0818E /* 伸懒腰_23.webp in Resources */,
 				6EC4E1F82F91C87300F0818E /* 完成_78.webp in Resources */,
@@ -7787,14 +7511,11 @@
 				6EC4E1FD2F91C87300F0818E /* 提起_142.webp in Resources */,
 				6EC4E1FE2F91C87300F0818E /* 摸摸_50.webp in Resources */,
 				6EC4E1FF2F91C87300F0818E /* 敲键盘_127.webp in Resources */,
-				6EC4E2002F91C87300F0818E /* 提起_81.webp in Resources */,
 				6EC4E2012F91C87300F0818E /* 伸懒腰_43.webp in Resources */,
-				6EC4E2022F91C87300F0818E /* 提起_96.webp in Resources */,
 				6EC4E2032F91C87300F0818E /* 敲键盘_13.webp in Resources */,
 				6EC4E2042F91C87300F0818E /* 敲键盘_102.webp in Resources */,
 				6EC4E2052F91C87300F0818E /* 提起_186.webp in Resources */,
 				6EC4E2072F91C87300F0818E /* 完成_5.webp in Resources */,
-				6EC4E2082F91C87300F0818E /* 提起_16.webp in Resources */,
 				6EC4E2092F91C87300F0818E /* 完成_3.webp in Resources */,
 				6EC4E20A2F91C87300F0818E /* 完成_80.webp in Resources */,
 				6EC4E20B2F91C87300F0818E /* 摸摸_40.webp in Resources */,
@@ -7802,26 +7523,19 @@
 				6EC4E20D2F91C87300F0818E /* 完成_27.webp in Resources */,
 				6EC4E20E2F91C87300F0818E /* 敲键盘_98.webp in Resources */,
 				6EC4E2102F91C87300F0818E /* 伸懒腰_21.webp in Resources */,
-				6EC4E2112F91C87300F0818E /* 提起_121.webp in Resources */,
 				6EC4E2122F91C87300F0818E /* 敲键盘_28.webp in Resources */,
 				6EC4E2132F91C87300F0818E /* 敲键盘_3.webp in Resources */,
-				6EC4E2142F91C87300F0818E /* 提起_2.webp in Resources */,
 				6EC4E2152F91C87300F0818E /* 摸摸_24.webp in Resources */,
 				6EC4E2162F91C87300F0818E /* 敲键盘_4.webp in Resources */,
-				6EC4E2172F91C87300F0818E /* 提起_78.webp in Resources */,
 				6EC4E2182F91C87300F0818E /* 伸懒腰_2.webp in Resources */,
 				6EC4E2192F91C87300F0818E /* 摸摸_34.webp in Resources */,
 				6EC4E21A2F91C87300F0818E /* 伸懒腰_33.webp in Resources */,
-				6EC4E21B2F91C87300F0818E /* 提起_109.webp in Resources */,
 				6EC4E21C2F91C87300F0818E /* 敲键盘_108.webp in Resources */,
 				6EC4E21D2F91C87300F0818E /* 提起_165.webp in Resources */,
 				6EC4E21E2F91C87300F0818E /* 敲键盘_48.webp in Resources */,
-				6EC4E21F2F91C87300F0818E /* 提起_100.webp in Resources */,
 				6EC4E2202F91C87300F0818E /* 提起_221.webp in Resources */,
 				6EC4E2212F91C87300F0818E /* 伸懒腰_72.webp in Resources */,
-				6EC4E2222F91C87300F0818E /* 提起_90.webp in Resources */,
 				6EC4E2232F91C87300F0818E /* 敲键盘_106.webp in Resources */,
-				6EC4E2242F91C87300F0818E /* 提起_103.webp in Resources */,
 				6EC4E2262F91C87300F0818E /* 提起_29.webp in Resources */,
 				6EC4E2272F91C87300F0818E /* 敲键盘_85.webp in Resources */,
 				6EC4E2282F91C87300F0818E /* 敲键盘_6.webp in Resources */,
@@ -7829,12 +7543,8 @@
 				6EC4E22A2F91C87300F0818E /* 敲键盘_110.webp in Resources */,
 				6EC4E22B2F91C87300F0818E /* 完成_26.webp in Resources */,
 				6EC4E22C2F91C87300F0818E /* 摸摸_68.webp in Resources */,
-				6EC4E22D2F91C87300F0818E /* 提起_128.webp in Resources */,
 				6EC4E22E2F91C87300F0818E /* 伸懒腰_20.webp in Resources */,
-				6EC4E22F2F91C87300F0818E /* 提起_97.webp in Resources */,
-				6EC4E2302F91C87300F0818E /* 提起_82.webp in Resources */,
 				6EC4E2312F91C87300F0818E /* 提起_34.webp in Resources */,
-				6EC4E2322F91C87300F0818E /* 提起_72.webp in Resources */,
 				6EC4E2342F91C87300F0818E /* 敲键盘_100.webp in Resources */,
 				6EC4E2352F91C87300F0818E /* 提起_195.webp in Resources */,
 				6EC4E2362F91C87300F0818E /* 提起_144.webp in Resources */,
@@ -7844,17 +7554,12 @@
 				6EC4E23B2F91C87300F0818E /* 伸懒腰_56.webp in Resources */,
 				6EC4E23C2F91C87300F0818E /* 伸懒腰_1.webp in Resources */,
 				6EC4E23D2F91C87300F0818E /* 敲键盘_29.webp in Resources */,
-				6EC4E23F2F91C87300F0818E /* 提起_112.webp in Resources */,
-				6EC4E2402F91C87300F0818E /* 提起_69.webp in Resources */,
-				6EC4E2412F91C87300F0818E /* 提起_99.webp in Resources */,
 				6EC4E2442F91C87300F0818E /* 敲键盘_38.webp in Resources */,
 				6EC4E2452F91C87300F0818E /* 提起_160.webp in Resources */,
 				6EC4E2462F91C87300F0818E /* 伸懒腰_9.webp in Resources */,
 				6EC4E2472F91C87300F0818E /* 完成_44.webp in Resources */,
 				6EC4E2482F91C87300F0818E /* 摸摸_1.webp in Resources */,
 				6EC4E2492F91C87300F0818E /* 摸摸_74.webp in Resources */,
-				6EC4E24B2F91C87300F0818E /* 提起_10.webp in Resources */,
-				6EC4E24C2F91C87300F0818E /* 提起_60.webp in Resources */,
 				6EC4E24D2F91C87300F0818E /* 完成_77.webp in Resources */,
 				6EC4E24E2F91C87300F0818E /* 完成_10.webp in Resources */,
 				6EC4E24F2F91C87300F0818E /* 敲键盘_17.webp in Resources */,
@@ -7862,7 +7567,6 @@
 				6EC4E2512F91C87300F0818E /* 敲键盘_112.webp in Resources */,
 				6EC4E2522F91C87300F0818E /* 伸懒腰_71.webp in Resources */,
 				6EC4E2532F91C87300F0818E /* 完成_76.webp in Resources */,
-				6EC4E2542F91C87300F0818E /* 提起_75.webp in Resources */,
 				6EC4E2552F91C87300F0818E /* 提起_37.webp in Resources */,
 				6EC4E2562F91C87300F0818E /* 伸懒腰_61.webp in Resources */,
 				6EC4E2572F91C87300F0818E /* 提起_44.webp in Resources */,
@@ -7870,7 +7574,6 @@
 				6EC4E2592F91C87300F0818E /* 提起_151.webp in Resources */,
 				6EC4E25A2F91C87300F0818E /* 敲键盘_71.webp in Resources */,
 				6EC4E25B2F91C87300F0818E /* 提起_206.webp in Resources */,
-				6EC4E25C2F91C87300F0818E /* 提起_63.webp in Resources */,
 				6EC4E25D2F91C87300F0818E /* 伸懒腰_54.webp in Resources */,
 				6EC4E25E2F91C87300F0818E /* 提起_32.webp in Resources */,
 				6EC4E25F2F91C87300F0818E /* 完成_72.webp in Resources */,
@@ -7882,7 +7585,6 @@
 				6EC4E2652F91C87300F0818E /* 敲键盘_58.webp in Resources */,
 				6EC4E2662F91C87300F0818E /* 提起_198.webp in Resources */,
 				6EC4E2672F91C87300F0818E /* 伸懒腰_38.webp in Resources */,
-				6EC4E2682F91C87300F0818E /* 提起_93.webp in Resources */,
 				6EC4E2692F91C87300F0818E /* 敲键盘_101.webp in Resources */,
 				6EC4E26B2F91C87300F0818E /* 完成_1.webp in Resources */,
 				6EC4E26C2F91C87300F0818E /* 提起_193.webp in Resources */,
@@ -7901,37 +7603,27 @@
 				6EC4E27B2F91C87300F0818E /* 提起_57.webp in Resources */,
 				6EC4E27C2F91C87300F0818E /* 摸摸_5.webp in Resources */,
 				6EC4E27D2F91C87300F0818E /* 完成_31.webp in Resources */,
-				6EC4E27E2F91C87300F0818E /* 提起_61.webp in Resources */,
-				6EC4E27F2F91C87300F0818E /* 提起_8.webp in Resources */,
 				6EC4E2802F91C87300F0818E /* 完成_54.webp in Resources */,
 				6EC4E2812F91C87300F0818E /* 提起_222.webp in Resources */,
-				6EC4E2822F91C87300F0818E /* 提起_4.webp in Resources */,
 				6EC4E2832F91C87300F0818E /* 敲键盘_12.webp in Resources */,
 				6EC4E2842F91C87300F0818E /* 敲键盘_16.webp in Resources */,
 				6EC4E2852F91C87300F0818E /* 敲键盘_56.webp in Resources */,
 				6EC4E2862F91C87300F0818E /* 提起_183.webp in Resources */,
 				6EC4E2872F91C87300F0818E /* 敲键盘_44.webp in Resources */,
 				6EC4E2892F91C87300F0818E /* 敲键盘_14.webp in Resources */,
-				6EC4E28A2F91C87300F0818E /* 提起_126.webp in Resources */,
 				6EC4E28B2F91C87300F0818E /* 提起_191.webp in Resources */,
-				6EC4E28C2F91C87300F0818E /* 提起_122.webp in Resources */,
 				6EC4E28F2F91C87300F0818E /* 敲键盘_24.webp in Resources */,
 				6EC4E2902F91C87300F0818E /* 敲键盘_120.webp in Resources */,
 				6EC4E2912F91C87300F0818E /* 伸懒腰_31.webp in Resources */,
 				6EC4E2922F91C87300F0818E /* 摸摸_45.webp in Resources */,
-				6EC4E2932F91C87300F0818E /* 提起_95.webp in Resources */,
 				6EC4E2942F91C87300F0818E /* 敲键盘_79.webp in Resources */,
-				6EC4E2952F91C87300F0818E /* 提起_106.webp in Resources */,
 				6EC4E2972F91C87300F0818E /* 提起_33.webp in Resources */,
 				6EC4E2982F91C87300F0818E /* 提起_223.webp in Resources */,
 				6EC4E2992F91C87300F0818E /* 伸懒腰_63.webp in Resources */,
 				6EC4E29A2F91C87300F0818E /* 摸摸_64.webp in Resources */,
-				6EC4E29C2F91C87300F0818E /* 提起_71.webp in Resources */,
 				6EC4E29D2F91C87300F0818E /* 伸懒腰_11.webp in Resources */,
 				6EC4E29E2F91C87300F0818E /* 摸摸_56.webp in Resources */,
-				6EC4E29F2F91C87300F0818E /* 提起_101.webp in Resources */,
 				6EC4E2A02F91C87300F0818E /* 摸摸_19.webp in Resources */,
-				6EC4E2A12F91C87300F0818E /* 提起_110.webp in Resources */,
 				6EC4E2A22F91C87300F0818E /* 摸摸_78.webp in Resources */,
 				6EC4E2A32F91C87300F0818E /* 完成_41.webp in Resources */,
 				6EC4E2A42F91C87300F0818E /* 敲键盘_42.webp in Resources */,
@@ -7940,29 +7632,23 @@
 				6EC4E2A82F91C87300F0818E /* 完成_45.webp in Resources */,
 				6EC4E2A92F91C87300F0818E /* 摸摸_11.webp in Resources */,
 				6EC4E2AB2F91C87300F0818E /* 提起_157.webp in Resources */,
-				6EC4E2AD2F91C87300F0818E /* 提起_88.webp in Resources */,
 				6EC4E2AE2F91C87300F0818E /* 敲键盘_23.webp in Resources */,
 				6EC4E2AF2F91C87300F0818E /* 提起_56.webp in Resources */,
-				6EC4E2B02F91C87300F0818E /* 提起_77.webp in Resources */,
 				6EC4E2B12F91C87300F0818E /* 摸摸_71.webp in Resources */,
 				6EC4E2B32F91C87300F0818E /* 摸摸_43.webp in Resources */,
 				6EC4E2B42F91C87300F0818E /* 摸摸_3.webp in Resources */,
 				6EC4E2B52F91C87300F0818E /* 摸摸_25.webp in Resources */,
 				6EC4E2B62F91C87300F0818E /* 伸懒腰_49.webp in Resources */,
-				6EC4E2B72F91C87300F0818E /* 提起_113.webp in Resources */,
 				6EC4E2B82F91C87300F0818E /* 完成_49.webp in Resources */,
 				6EC4E2B92F91C87300F0818E /* 摸摸_70.webp in Resources */,
 				6EC4E2BA2F91C87300F0818E /* 完成_12.webp in Resources */,
 				6EC4E2BB2F91C87300F0818E /* 提起_36.webp in Resources */,
-				6EC4E2BC2F91C87300F0818E /* 提起_114.webp in Resources */,
 				6EC4E2BD2F91C87300F0818E /* 提起_55.webp in Resources */,
-				6EC4E2BE2F91C87300F0818E /* 提起_66.webp in Resources */,
 				6EC4E2C02F91C87300F0818E /* 伸懒腰_35.webp in Resources */,
 				6EC4E2C12F91C87300F0818E /* 提起_161.webp in Resources */,
 				6EC4E2C22F91C87300F0818E /* 提起_226.webp in Resources */,
 				6EC4E2C32F91C87300F0818E /* 摸摸_4.webp in Resources */,
 				6EC4E2C42F91C87300F0818E /* 敲键盘_90.webp in Resources */,
-				6EC4E2C52F91C87300F0818E /* 提起_115.webp in Resources */,
 				6EC4E2C62F91C87300F0818E /* 敲键盘_31.webp in Resources */,
 				6EC4E2C72F91C87300F0818E /* 摸摸_51.webp in Resources */,
 				6EC4E2C82F91C87300F0818E /* 提起_48.webp in Resources */,
@@ -7972,32 +7658,26 @@
 				6EC4E2CC2F91C87300F0818E /* 伸懒腰_75.webp in Resources */,
 				6EC4E2CD2F91C87300F0818E /* 完成_47.webp in Resources */,
 				6EC4E2CE2F91C87300F0818E /* 伸懒腰_26.webp in Resources */,
-				6EC4E2D02F91C87300F0818E /* 提起_70.webp in Resources */,
 				6EC4E2D12F91C87300F0818E /* 提起_21.webp in Resources */,
 				6EC4E2D22F91C87300F0818E /* 摸摸_22.webp in Resources */,
 				6EC4E2D32F91C87300F0818E /* 完成_56.webp in Resources */,
 				6EC4E2D42F91C87300F0818E /* 敲键盘_72.webp in Resources */,
 				6EC4E2D52F91C87300F0818E /* 提起_47.webp in Resources */,
 				6EC4E2D62F91C87300F0818E /* 伸懒腰_12.webp in Resources */,
-				6EC4E2D72F91C87300F0818E /* 提起_116.webp in Resources */,
 				6EC4E2DB2F91C87300F0818E /* 敲键盘_105.webp in Resources */,
 				6EC4E2DC2F91C87300F0818E /* 伸懒腰_66.webp in Resources */,
 				6EC4E2DD2F91C87300F0818E /* 提起_155.webp in Resources */,
 				6EC4E2DE2F91C87300F0818E /* 敲键盘_26.webp in Resources */,
-				6EC4E2DF2F91C87300F0818E /* 提起_73.webp in Resources */,
 				6EC4E2E02F91C87300F0818E /* 敲键盘_103.webp in Resources */,
 				6EC4E2E12F91C87300F0818E /* 敲键盘_19.webp in Resources */,
 				6EC4E2E22F91C87300F0818E /* 提起_143.webp in Resources */,
 				6EC4E2E32F91C87300F0818E /* 敲键盘_87.webp in Resources */,
 				6EC4E2E42F91C87300F0818E /* 完成_74.webp in Resources */,
 				6EC4E2E52F91C87300F0818E /* 敲键盘_54.webp in Resources */,
-				6EC4E2E72F91C87300F0818E /* 提起_92.webp in Resources */,
 				6EC4E2E82F91C87300F0818E /* 完成_75.webp in Resources */,
 				6EC4E2E92F91C87300F0818E /* 摸摸_10.webp in Resources */,
 				6EC4E2EA2F91C87300F0818E /* 敲键盘_37.webp in Resources */,
-				6EC4E2EB2F91C87300F0818E /* 提起_124.webp in Resources */,
 				6EC4E2EC2F91C87300F0818E /* 提起_168.webp in Resources */,
-				6EC4E2ED2F91C87300F0818E /* 提起_125.webp in Resources */,
 				6EC4E2EE2F91C87300F0818E /* 敲键盘_78.webp in Resources */,
 				6EC4E2EF2F91C87300F0818E /* 敲键盘_49.webp in Resources */,
 				6EC4E2F02F91C87300F0818E /* 敲键盘_21.webp in Resources */,
@@ -8021,7 +7701,6 @@
 				6EC4E3022F91C87300F0818E /* 完成_55.webp in Resources */,
 				6EC4E3032F91C87300F0818E /* 敲键盘_84.webp in Resources */,
 				6EC4E3042F91C87300F0818E /* 提起_216.webp in Resources */,
-				6EC4E3052F91C87300F0818E /* 提起_14.webp in Resources */,
 				6EC4E3062F91C87300F0818E /* 提起_23.webp in Resources */,
 				6EC4E3072F91C87300F0818E /* 摸摸_17.webp in Resources */,
 				6EC4E3082F91C87300F0818E /* 完成_33.webp in Resources */,
@@ -8029,18 +7708,13 @@
 				6EC4E30A2F91C87300F0818E /* 敲键盘_47.webp in Resources */,
 				6EC4E30B2F91C87300F0818E /* 摸摸_30.webp in Resources */,
 				6EC4E30C2F91C87300F0818E /* 敲键盘_111.webp in Resources */,
-				6EC4E30D2F91C87300F0818E /* 提起_102.webp in Resources */,
 				6EC4E30E2F91C87300F0818E /* 摸摸_46.webp in Resources */,
 				6EC4E30F2F91C87300F0818E /* 伸懒腰_41.webp in Resources */,
 				6EC4E3102F91C87300F0818E /* 提起_20.webp in Resources */,
 				6EC4E3112F91C87300F0818E /* 敲键盘_115.webp in Resources */,
 				6EC4E3122F91C87300F0818E /* 伸懒腰_80.webp in Resources */,
 				6EC4E3142F91C87300F0818E /* 伸懒腰_78.webp in Resources */,
-				6EC4E3152F91C87300F0818E /* 提起_74.webp in Resources */,
 				6EC4E3162F91C87300F0818E /* 伸懒腰_48.webp in Resources */,
-				6EC4E3172F91C87300F0818E /* 提起_117.webp in Resources */,
-				6EC4E3182F91C87300F0818E /* 提起_111.webp in Resources */,
-				6EC4E3192F91C87300F0818E /* 提起_83.webp in Resources */,
 				6EC4E31A2F91C87300F0818E /* 敲键盘_121.webp in Resources */,
 				6EC4E31B2F91C87300F0818E /* 完成_46.webp in Resources */,
 				6EC4E31C2F91C87300F0818E /* 完成_71.webp in Resources */,
@@ -8053,7 +7727,6 @@
 				6EC4E3242F91C87300F0818E /* 摸摸_57.webp in Resources */,
 				6EC4E3262F91C87300F0818E /* 提起_201.webp in Resources */,
 				6EC4E3272F91C87300F0818E /* 伸懒腰_50.webp in Resources */,
-				6EC4E3282F91C87300F0818E /* 提起_84.webp in Resources */,
 				6EC4E32A2F91C87300F0818E /* 摸摸_13.webp in Resources */,
 				6EC4E32B2F91C87300F0818E /* 完成_60.webp in Resources */,
 				6EC4E32D2F91C87300F0818E /* 摸摸_33.webp in Resources */,
@@ -8068,11 +7741,9 @@
 				6EC4E3392F91C87300F0818E /* 伸懒腰_3.webp in Resources */,
 				6EC4E33A2F91C87300F0818E /* 敲键盘_81.webp in Resources */,
 				6EC4E33B2F91C87300F0818E /* 敲键盘_92.webp in Resources */,
-				6EC4E33C2F91C87300F0818E /* 提起_85.webp in Resources */,
 				6EC4E33D2F91C87300F0818E /* 伸懒腰_57.webp in Resources */,
 				6EC4E33E2F91C87300F0818E /* 摸摸_23.webp in Resources */,
 				6EC4E33F2F91C87300F0818E /* 敲键盘_52.webp in Resources */,
-				6EC4E3402F91C87300F0818E /* 提起_9.webp in Resources */,
 				6EC4E3412F91C87300F0818E /* 伸懒腰_45.webp in Resources */,
 				6EC4E3422F91C87300F0818E /* 提起_53.webp in Resources */,
 				6EC4E3442F91C87300F0818E /* 完成_2.webp in Resources */,
@@ -8085,7 +7756,6 @@
 				6EC4E34D2F91C87300F0818E /* 伸懒腰_30.webp in Resources */,
 				6EC4E34E2F91C87300F0818E /* 提起_43.webp in Resources */,
 				6EC4E34F2F91C87300F0818E /* 完成_18.webp in Resources */,
-				6EC4E3502F91C87300F0818E /* 提起_86.webp in Resources */,
 				6EC4E3522F91C87300F0818E /* 伸懒腰_25.webp in Resources */,
 				6EC4E3532F91C87300F0818E /* 敲键盘_86.webp in Resources */,
 				6EC4E3542F91C87300F0818E /* 敲键盘_64.webp in Resources */,
@@ -8097,7 +7767,6 @@
 				6EC4E35B2F91C87300F0818E /* 摸摸_16.webp in Resources */,
 				6EC4E35C2F91C87300F0818E /* 提起_178.webp in Resources */,
 				6EC4E35D2F91C87300F0818E /* 敲键盘_61.webp in Resources */,
-				6EC4E35E2F91C87300F0818E /* 提起_108.webp in Resources */,
 				6EC4E3612F91C87300F0818E /* 提起_167.webp in Resources */,
 				6EC4E3622F91C87300F0818E /* 提起_141.webp in Resources */,
 				6EC4E3632F91C87300F0818E /* 摸摸_6.webp in Resources */,
@@ -8118,7 +7787,6 @@
 				6EC4E3762F91C87300F0818E /* 提起_182.webp in Resources */,
 				6EC4E3772F91C87300F0818E /* 提起_153.webp in Resources */,
 				6EC4E3782F91C87300F0818E /* 摸摸_61.webp in Resources */,
-				6EC4E3792F91C87300F0818E /* 提起_120.webp in Resources */,
 				6EC4E37A2F91C87300F0818E /* 提起_179.webp in Resources */,
 				6EC4E37B2F91C87300F0818E /* 摸摸_18.webp in Resources */,
 				6EC4E37C2F91C87300F0818E /* 摸摸_42.webp in Resources */,
@@ -8129,7 +7797,6 @@
 				6EC4E3822F91C87300F0818E /* 敲键盘_77.webp in Resources */,
 				6EC4E3842F91C87300F0818E /* 摸摸_41.webp in Resources */,
 				6EC4E3852F91C87300F0818E /* 提起_30.webp in Resources */,
-				6EC4E3862F91C87300F0818E /* 提起_12.webp in Resources */,
 				6EC4E3872F91C87300F0818E /* 完成_48.webp in Resources */,
 				6EC4E3882F91C87300F0818E /* 提起_45.webp in Resources */,
 				6EC4E3892F91C87300F0818E /* 敲键盘_62.webp in Resources */,
@@ -8146,13 +7813,11 @@
 				6EC4E3952F91C87300F0818E /* 提起_51.webp in Resources */,
 				6EC4E3972F91C87300F0818E /* 完成_35.webp in Resources */,
 				6EC4E3992F91C87300F0818E /* 完成_37.webp in Resources */,
-				6EC4E39A2F91C87300F0818E /* 提起_76.webp in Resources */,
 				6EC4E39B2F91C87300F0818E /* 提起_199.webp in Resources */,
 				6EC4E39D2F91C87300F0818E /* 摸摸_58.webp in Resources */,
 				6EC4E39F2F91C87300F0818E /* 敲键盘_73.webp in Resources */,
 				6EC4E3A02F91C87300F0818E /* 提起_147.webp in Resources */,
 				6EC4E3A12F91C87300F0818E /* 提起_218.webp in Resources */,
-				6EC4E3A32F91C87300F0818E /* 提起_94.webp in Resources */,
 				6EC4E3A42F91C87300F0818E /* 完成_32.webp in Resources */,
 				6EC4E3A52F91C87300F0818E /* 摸摸_52.webp in Resources */,
 				6EC4E3A62F91C87300F0818E /* 敲键盘_117.webp in Resources */,
@@ -8168,15 +7833,11 @@
 				6EC4E3B12F91C87300F0818E /* 伸懒腰_69.webp in Resources */,
 				6EC4E3B22F91C87300F0818E /* 摸摸_31.webp in Resources */,
 				6EC4E3B32F91C87300F0818E /* 敲键盘_46.webp in Resources */,
-				6EC4E3B42F91C87300F0818E /* 提起_0.webp in Resources */,
-				6EC4E3B52F91C87300F0818E /* 提起_89.webp in Resources */,
 				6EC4E3B62F91C87300F0818E /* 完成_62.webp in Resources */,
 				6EC4E3B72F91C87300F0818E /* 敲键盘_113.webp in Resources */,
 				6EC4E3B82F91C87300F0818E /* 提起_145.webp in Resources */,
 				6EC4E3B92F91C87300F0818E /* 完成_59.webp in Resources */,
-				6EC4E3BB2F91C87300F0818E /* 提起_17.webp in Resources */,
 				6EC4E3BC2F91C87300F0818E /* 提起_203.webp in Resources */,
-				6EC4E3BD2F91C87300F0818E /* 提起_67.webp in Resources */,
 				6EC4E3BE2F91C87300F0818E /* 敲键盘_88.webp in Resources */,
 				6E0735622F91E94500053827 /* 舔爪子_38.webp in Resources */,
 				6E0735632F91E94500053827 /* 舔爪子_7.webp in Resources */,
@@ -8261,7 +7922,6 @@
 				6E0735B22F91E94500053827 /* 舔爪子_42.webp in Resources */,
 				6EC4E3BF2F91C87300F0818E /* 提起_130.webp in Resources */,
 				6EC4E3C02F91C87300F0818E /* 伸懒腰_36.webp in Resources */,
-				6EC4E3C12F91C87300F0818E /* 提起_119.webp in Resources */,
 				6EC4E3C22F91C87300F0818E /* 提起_132.webp in Resources */,
 				6EC4E3C32F91C87300F0818E /* 摸摸_32.webp in Resources */,
 				6EC4E3C42F91C87300F0818E /* 完成_58.webp in Resources */,
@@ -8748,8 +8408,6 @@
 				6EC4E3CE2F91C87300F0818E /* 提起_169.webp in Resources */,
 				6EC4E3CF2F91C87300F0818E /* 完成_8.webp in Resources */,
 				6EC4E3D02F91C87300F0818E /* 伸懒腰_19.webp in Resources */,
-				6EC4E3D12F91C87300F0818E /* 提起_7.webp in Resources */,
-				6EC4E3D22F91C87300F0818E /* 提起_62.webp in Resources */,
 				6EC4E3D32F91C87300F0818E /* 摸摸_75.webp in Resources */,
 				6EC4E3D52F91C87300F0818E /* 提起_59.webp in Resources */,
 				6EC4E3D62F91C87300F0818E /* 敲键盘_18.webp in Resources */,
@@ -8759,8 +8417,6 @@
 				6EC4E3DA2F91C87300F0818E /* 敲键盘_69.webp in Resources */,
 				6EC4E3DB2F91C87300F0818E /* 提起_39.webp in Resources */,
 				6EC4E3DE2F91C87300F0818E /* 敲键盘_96.webp in Resources */,
-				6EC4E3DF2F91C87300F0818E /* 提起_87.webp in Resources */,
-				6EC4E3E02F91C87300F0818E /* 提起_98.webp in Resources */,
 				6EC4E3E12F91C87300F0818E /* 敲键盘_68.webp in Resources */,
 				6EC4E3E22F91C87300F0818E /* 伸懒腰_74.webp in Resources */,
 				6EC4E3E32F91C87300F0818E /* 完成_61.webp in Resources */,
@@ -8779,9 +8435,7 @@
 				6EC4E3F22F91C87300F0818E /* 提起_133.webp in Resources */,
 				6EC4E3F32F91C87300F0818E /* 敲键盘_55.webp in Resources */,
 				6EC4E3F42F91C87300F0818E /* 摸摸_53.webp in Resources */,
-				6EC4E3F52F91C87300F0818E /* 提起_68.webp in Resources */,
 				6EC4E3F72F91C87300F0818E /* 伸懒腰_14.webp in Resources */,
-				6EC4E3F82F91C87300F0818E /* 提起_1.webp in Resources */,
 				6EC4E3F92F91C87300F0818E /* 完成_42.webp in Resources */,
 				6EC4E3FA2F91C87300F0818E /* 提起_180.webp in Resources */,
 				6EC4E3FB2F91C87300F0818E /* 敲键盘_32.webp in Resources */,
@@ -8795,12 +8449,10 @@
 				6EC4E4042F91C87300F0818E /* 摸摸_26.webp in Resources */,
 				6EC4E4052F91C87300F0818E /* 提起_175.webp in Resources */,
 				6EC4E4062F91C87300F0818E /* 敲键盘_59.webp in Resources */,
-				6EC4E4072F91C87300F0818E /* 提起_123.webp in Resources */,
 				6EC4E4082F91C87300F0818E /* 敲键盘_11.webp in Resources */,
 				6EC4E4092F91C87300F0818E /* 敲键盘_76.webp in Resources */,
 				6EC4E40A2F91C87300F0818E /* 完成_79.webp in Resources */,
 				6EC4E40B2F91C87300F0818E /* 敲键盘_91.webp in Resources */,
-				6EC4E40C2F91C87300F0818E /* 提起_107.webp in Resources */,
 				6EC4DA132F8F932E00F0818E /* 待机_223.webp in Resources */,
 				6EC4DA142F8F932E00F0818E /* 搜索_26.webp in Resources */,
 				6EC4DA182F8F932E00F0818E /* 睡觉_138.webp in Resources */,
@@ -9570,7 +9222,6 @@
 				6EC4D2EF2F8F822900F0818E /* 戳_26.webp in Resources */,
 				6EC4D2F02F8F822900F0818E /* 戳_21.webp in Resources */,
 				6EC4D2F12F8F822900F0818E /* 戳_11.webp in Resources */,
-				6EC4C4142F8E2E7E00F0818E /* Frame 2090062065.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9756,7 +9407,7 @@
 				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -9767,6 +9418,7 @@
 				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "---Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "团子";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "团子需要查看程序坞来提醒新消息";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -9777,7 +9429,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
@@ -9790,7 +9442,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -9803,7 +9455,7 @@
 				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -9814,6 +9466,7 @@
 				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "---Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "团子";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "团子需要查看程序坞来提醒新消息";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -9824,7 +9477,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
@@ -9837,7 +9490,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -9847,17 +9500,17 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/团子.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/团子";
 			};
@@ -9868,17 +9521,17 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/团子.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/团子";
 			};
@@ -9888,16 +9541,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "团子";
 			};
@@ -9907,16 +9560,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "团子";
 			};
@@ -9962,6 +9615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EA31B992F98A4B30051BB6E /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6EC4C3DE2F8E2C8000F0818E /* Project object */;
 }

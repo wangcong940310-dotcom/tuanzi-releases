@@ -6,6 +6,122 @@ import Network
 // 企业定制版飞书的 bundle ID（小米办公Pro）
 private let feishuBundleID = "com.larksuite.feishu.ka.saxmsa667.mac"
 
+// MARK: - Agent 注册表
+
+enum AgentConfigFormat {
+    case claudeJSON
+    case toml
+    case cursorJSON
+    case openCodePlugin
+}
+
+struct AgentDefinition {
+    let id: String
+    let displayName: String
+    let processNames: [String]
+    let configFormat: AgentConfigFormat
+    let configPath: String
+    let badgeColor: (r: Double, g: Double, b: Double)
+}
+
+struct AgentRegistry {
+    static let allAgents: [AgentDefinition] = [
+        AgentDefinition(id: "claude", displayName: "Claude", processNames: ["claude"],
+                        configFormat: .claudeJSON, configPath: ".claude/settings.json",
+                        badgeColor: (1.0, 0.6, 0.15)),
+        AgentDefinition(id: "qoder", displayName: "Qoder", processNames: ["qoder"],
+                        configFormat: .claudeJSON, configPath: ".qoder/settings.json",
+                        badgeColor: (0.3, 0.8, 0.5)),
+        AgentDefinition(id: "qwen", displayName: "Qwen Code", processNames: ["qwen"],
+                        configFormat: .claudeJSON, configPath: ".qwen/settings.json",
+                        badgeColor: (0.4, 0.5, 0.95)),
+        AgentDefinition(id: "factory", displayName: "Factory", processNames: ["factory"],
+                        configFormat: .claudeJSON, configPath: ".factory/settings.json",
+                        badgeColor: (0.85, 0.35, 0.35)),
+        AgentDefinition(id: "codebuddy", displayName: "CodeBuddy", processNames: ["codebuddy"],
+                        configFormat: .claudeJSON, configPath: ".codebuddy/settings.json",
+                        badgeColor: (0.2, 0.7, 0.9)),
+        AgentDefinition(id: "codex", displayName: "Codex", processNames: ["codex"],
+                        configFormat: .toml, configPath: ".codex/config.toml",
+                        badgeColor: (0.0, 0.75, 0.45)),
+        AgentDefinition(id: "gemini", displayName: "Gemini", processNames: ["gemini"],
+                        configFormat: .claudeJSON, configPath: ".gemini/settings.json",
+                        badgeColor: (0.25, 0.55, 0.95)),
+        AgentDefinition(id: "kimi", displayName: "Kimi", processNames: ["kimi"],
+                        configFormat: .toml, configPath: ".kimi/config.toml",
+                        badgeColor: (0.55, 0.35, 0.85)),
+        AgentDefinition(id: "cursor", displayName: "Cursor", processNames: ["cursor"],
+                        configFormat: .cursorJSON, configPath: ".cursor/hooks.json",
+                        badgeColor: (0.95, 0.4, 0.6)),
+        AgentDefinition(id: "opencode", displayName: "OpenCode", processNames: ["opencode"],
+                        configFormat: .openCodePlugin, configPath: ".config/opencode/plugins/tuanzi.js",
+                        badgeColor: (0.6, 0.8, 0.2)),
+    ]
+
+    static let processPattern: String = {
+        allAgents.flatMap(\.processNames).joined(separator: "|")
+    }()
+
+    static func agent(forProcessName name: String) -> AgentDefinition? {
+        allAgents.first { agent in agent.processNames.contains(where: { name.contains($0) }) }
+    }
+}
+
+// MARK: - 终端/IDE 注册表
+
+enum TerminalJumpMethod {
+    case appleScriptTTY
+    case bundleActivation
+    case cliOpen(String)
+    case tmux
+}
+
+struct TerminalDefinition {
+    let id: String
+    let displayName: String
+    let bundleId: String
+    let jumpMethod: TerminalJumpMethod
+}
+
+struct TerminalRegistry {
+    static let allTerminals: [TerminalDefinition] = [
+        // 终端模拟器
+        TerminalDefinition(id: "iterm2", displayName: "iTerm2", bundleId: "com.googlecode.iterm2", jumpMethod: .appleScriptTTY),
+        TerminalDefinition(id: "terminal", displayName: "Terminal", bundleId: "com.apple.Terminal", jumpMethod: .appleScriptTTY),
+        TerminalDefinition(id: "kitty", displayName: "Kitty", bundleId: "net.kovidgoyal.kitty", jumpMethod: .bundleActivation),
+        TerminalDefinition(id: "wezterm", displayName: "WezTerm", bundleId: "com.github.wez.wezterm", jumpMethod: .bundleActivation),
+        TerminalDefinition(id: "ghostty", displayName: "Ghostty", bundleId: "com.mitchellh.ghostty", jumpMethod: .bundleActivation),
+        TerminalDefinition(id: "warp", displayName: "Warp", bundleId: "dev.warp.Warp-Stable", jumpMethod: .bundleActivation),
+        TerminalDefinition(id: "kaku", displayName: "Kaku", bundleId: "", jumpMethod: .bundleActivation),
+        // 终端复用器
+        TerminalDefinition(id: "tmux", displayName: "tmux", bundleId: "", jumpMethod: .tmux),
+        TerminalDefinition(id: "cmux", displayName: "cmux", bundleId: "", jumpMethod: .bundleActivation),
+        TerminalDefinition(id: "zellij", displayName: "Zellij", bundleId: "", jumpMethod: .bundleActivation),
+        // 编辑器 / IDE
+        TerminalDefinition(id: "vscode", displayName: "VS Code", bundleId: "com.microsoft.VSCode", jumpMethod: .cliOpen("code")),
+        TerminalDefinition(id: "vscode-insiders", displayName: "VS Code Insiders", bundleId: "com.microsoft.VSCodeInsiders", jumpMethod: .cliOpen("code-insiders")),
+        TerminalDefinition(id: "cursor-ide", displayName: "Cursor IDE", bundleId: "com.todesktop.230313mzl4w4u92", jumpMethod: .cliOpen("cursor")),
+        TerminalDefinition(id: "windsurf", displayName: "Windsurf", bundleId: "com.codeium.windsurf", jumpMethod: .cliOpen("windsurf")),
+        TerminalDefinition(id: "trae", displayName: "Trae", bundleId: "com.trae.app", jumpMethod: .cliOpen("trae")),
+        TerminalDefinition(id: "trae-cn", displayName: "Trae", bundleId: "cn.trae.app", jumpMethod: .cliOpen("trae-cn")),
+        TerminalDefinition(id: "idea", displayName: "IntelliJ IDEA", bundleId: "com.jetbrains.intellij", jumpMethod: .cliOpen("idea")),
+        TerminalDefinition(id: "webstorm", displayName: "WebStorm", bundleId: "com.jetbrains.WebStorm", jumpMethod: .cliOpen("webstorm")),
+        TerminalDefinition(id: "pycharm", displayName: "PyCharm", bundleId: "com.jetbrains.pycharm", jumpMethod: .cliOpen("pycharm")),
+        TerminalDefinition(id: "goland", displayName: "GoLand", bundleId: "com.jetbrains.goland", jumpMethod: .cliOpen("goland")),
+        TerminalDefinition(id: "clion", displayName: "CLion", bundleId: "com.jetbrains.clion", jumpMethod: .cliOpen("clion")),
+        TerminalDefinition(id: "rubymine", displayName: "RubyMine", bundleId: "com.jetbrains.rubymine", jumpMethod: .cliOpen("rubymine")),
+        TerminalDefinition(id: "phpstorm", displayName: "PhpStorm", bundleId: "com.jetbrains.PhpStorm", jumpMethod: .cliOpen("phpstorm")),
+        TerminalDefinition(id: "rider", displayName: "Rider", bundleId: "com.jetbrains.rider", jumpMethod: .cliOpen("rider")),
+        TerminalDefinition(id: "rustrover", displayName: "RustRover", bundleId: "com.jetbrains.rustrover", jumpMethod: .cliOpen("rustrover")),
+    ]
+
+    static let terminalBundleIds: [String] = allTerminals.filter { !$0.bundleId.isEmpty }.map(\.bundleId)
+
+    static func terminal(forBundleId bid: String) -> TerminalDefinition? {
+        allTerminals.first { $0.bundleId == bid }
+    }
+}
+
 class ViewController: NSViewController {
 
     // MARK: - Properties 属性
@@ -85,6 +201,7 @@ class ViewController: NSViewController {
     var feishuAlertTimer: Timer?
     var chaseTimer: Timer?
     var accessibilityCheckTimer: Timer?
+    var processDiscoveryTimer: Timer?
 
     // 状态
     var isSleeping = false
@@ -105,10 +222,8 @@ class ViewController: NSViewController {
     var isMouseInTerminalPanel = false
     var terminalHoverShowTimer: Timer?
     var terminalAutoHideTimer: Timer?
-    var terminalHoverCooldownUntil: Date?
     var terminalHoverShowDelay: TimeInterval { PetSettings.shared.hoverDelay }
-    let terminalAutoHideDelay: TimeInterval = 0.5
-    let terminalHoverCooldownDuration: TimeInterval = 0.5
+    let terminalAutoHideDelay: TimeInterval = 0.3
     var isSnappedToSide = false
     var snappedSide: Int = 0  // -1 = left, 1 = right, 0 = none
     // Claude 事件处理期间为 true，阻止其他动画打断
@@ -118,6 +233,9 @@ class ViewController: NSViewController {
     var isMenuOpen = false
     var permissionDialogWindow: NSWindow?
     var permissionKeyMonitors: [Any] = []
+    var pendingPermissionSessionId: String?  // 当前权限弹窗对应的 session
+    var permissionStaleCheckTimer: Timer?    // 定时检查权限弹窗是否已失效
+    var permissionDialogShownAt: Double = 0  // 弹窗弹出时的时间戳
     var autoApproveEnabled = false
     var isSnapReminding = false
     var snapReminderTimer: Timer?
@@ -126,6 +244,34 @@ class ViewController: NSViewController {
     var isInteracting: Bool { isCurrentlyDragging || isChasing || isPetting || isSnappedToSide }
 
     var webhookServer: ClaudeWebhookServer?
+    // 团子自己维护的 Claude session 列表，不依赖 vibe-island
+    var claudeSessions: [String: [String: Any]] = [:]
+
+    private var sessionsFileURL: URL {
+        let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
+        let dir = support.appendingPathComponent("团子")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("sessions.json")
+    }
+
+    func loadSessionsFromDisk() {
+        guard let data = try? Data(contentsOf: sessionsFileURL),
+              let dict = try? JSONSerialization.jsonObject(with: data) as? [String: [String: Any]] else { return }
+        let cutoff = Date().timeIntervalSince1970 - 86400  // 24小时
+        for (key, val) in dict {
+            guard (val["lastActivityAt"] as? Double ?? 0) > cutoff else { continue }
+            guard val["status"] as? String != "ended" else { continue }
+            var updated = val
+            updated["status"] = "idle"  // 重启后重置为空闲
+            claudeSessions[key] = updated
+        }
+    }
+
+    func saveSessionsToDisk() {
+        let toSave = claudeSessions.filter { !$0.key.hasPrefix("tty-") && !$0.key.hasPrefix("pid-") }
+        guard let data = try? JSONSerialization.data(withJSONObject: toSave) else { return }
+        try? data.write(to: sessionsFileURL)
+    }
 
     // MARK: - Lifecycle 生命周期
 
@@ -140,7 +286,10 @@ class ViewController: NSViewController {
         if PetSettings.shared.enableFeishuMonitor { startFeishuMonitor() }
         // startChaseTimer()  // 追鼠标功能暂时关闭
         setupWebhookServer()
+        installHooksOnFirstLaunch()
         NotificationCenter.default.addObserver(self, selector: #selector(applySettings), name: .petSettingsChanged, object: nil)
+        loadSessionsFromDisk()
+        startProcessDiscovery()
     }
 
     override func viewDidAppear() {
@@ -156,6 +305,8 @@ class ViewController: NSViewController {
         view.trackingAreas.forEach { view.removeTrackingArea($0) }
         let trackingArea = NSTrackingArea(rect: view.bounds, options: [.activeAlways, .mouseEnteredAndExited, .inVisibleRect], owner: self, userInfo: nil)
         view.addTrackingArea(trackingArea)
+        view.discardCursorRects()
+        view.addCursorRect(view.bounds, cursor: .openHand)
     }
 
     deinit {
@@ -172,20 +323,20 @@ class ViewController: NSViewController {
         feishuTimer?.invalidate(); feishuAlertTimer?.invalidate()
         chaseTimer?.invalidate()
         accessibilityCheckTimer?.invalidate()
+        processDiscoveryTimer?.invalidate()
         webhookServer?.stop()
     }
 
     override func mouseEntered(with event: NSEvent) {
         super.mouseEntered(with: event)
         isMouseOverPet = true
-        if waterTimer?.isValid == true { countdownContainer?.isHidden = false }
+        if waterTimer?.isValid == true && !isSnappedToSide { countdownContainer?.isHidden = false }
         stopSnapReminder()
 
         // 终端面板：仅侧边吸附时触发，权限弹窗显示期间不触发
         guard isSnappedToSide else { return }
         guard permissionDialogWindow == nil else { return }
         terminalAutoHideTimer?.invalidate(); terminalAutoHideTimer = nil
-        if let cooldown = terminalHoverCooldownUntil, Date() < cooldown { return }
         if terminalPanelWindow?.isVisible == true { return }  // 已显示则不重复触发
         terminalHoverShowTimer?.invalidate()
         terminalHoverShowTimer = Timer.scheduledTimer(withTimeInterval: terminalHoverShowDelay, repeats: false) { [weak self] _ in
@@ -243,6 +394,9 @@ class ViewController: NSViewController {
             self?.isThinkingOnClaudeProxy = true
             self?.lastClaudeState = "working"
             self?.startWorkingAnimationLoop()
+            if self?.pendingPermissionSessionId != nil {
+                self?.dismissPermissionDialogIfNeeded()
+            }
         }
 
         // PostToolUseFailure / StopFailure
@@ -275,14 +429,24 @@ class ViewController: NSViewController {
             self?.isClaudeStateActive = false
             self?.isThinkingOnClaudeProxy = false
             self?.lastClaudeState = ""
-            self?.startIdleAnimation()
+            if self?.isSnappedToSide == true {
+                self?.restoreSnapIdleIfNeeded()
+            } else {
+                self?.startIdleAnimation()
+            }
         }
 
         // SessionEnd
         webhookServer?.onSleeping = { [weak self] in
-            self?.isClaudeStateActive = true
-            self?.isThinkingOnClaudeProxy = false
-            self?.enterSleep()
+            if self?.isSnappedToSide == true {
+                self?.isClaudeStateActive = false
+                self?.isThinkingOnClaudeProxy = false
+                self?.restoreSnapIdleIfNeeded()
+            } else {
+                self?.isClaudeStateActive = true
+                self?.isThinkingOnClaudeProxy = false
+                self?.enterSleep()
+            }
         }
 
         // 兼容旧版 /claude/start 和 /claude/stop 路由
@@ -294,7 +458,11 @@ class ViewController: NSViewController {
         webhookServer?.onClaudeStop = { [weak self] in
             self?.isClaudeStateActive = false
             self?.isThinkingOnClaudeProxy = false
-            self?.stopThinkingAnimation()
+            if self?.isSnappedToSide == true {
+                self?.restoreSnapIdleIfNeeded()
+            } else {
+                self?.stopThinkingAnimation()
+            }
         }
 
         // PermissionRequest：持有 HTTP 连接直到用户点击确认/拒绝
@@ -304,19 +472,545 @@ class ViewController: NSViewController {
                 return
             }
 
+            // 记录当前权限弹窗对应的 session，用于自动关闭
+            let permSessionId = payload["session_id"] as? String
+            self.pendingPermissionSessionId = permSessionId
+            self.permissionDialogShownAt = Date().timeIntervalSince1970
+            // 启动定时器：每 2 秒检查 session 弹窗之后是否有新活动（OVI stale check 模式）
+            self.permissionStaleCheckTimer?.invalidate()
+            if let sid = permSessionId {
+                let shownAt = self.permissionDialogShownAt
+                self.permissionStaleCheckTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
+                    guard let self else { return }
+                    // 弹窗后有新活动 → 说明权限已在编辑器中被批准
+                    if let lastActivity = self.claudeSessions[sid]?["lastActivityAt"] as? Double,
+                       lastActivity > shownAt + 2 {
+                        self.dismissPermissionDialogIfNeeded()
+                        return
+                    }
+                    // session 已结束
+                    let status = (self.claudeSessions[sid]?["status"] as? String) ?? ""
+                    if status == "idle" || status == "ended" {
+                        self.dismissPermissionDialogIfNeeded()
+                    }
+                }
+            }
+
             let toolName = payload["tool_name"] as? String ?? "Unknown"
             let toolInput = payload["tool_input"] as? [String: Any] ?? [:]
+
+            if toolName == "AskUserQuestion",
+               let questions = toolInput["questions"] as? [[String: Any]],
+               let first = questions.first,
+               let options = first["options"] as? [[String: Any]], !options.isEmpty {
+                let questionText = first["question"] as? String ?? "请选择"
+                let labels = options.map { ($0["label"] as? String ?? "") + (($0["description"] as? String).map { " — \($0)" } ?? "") }
+                self.showAskUserQuestionDialog(prompt: questionText, options: labels) { selectedIndex in
+                    let selectedLabel = options[selectedIndex]["label"] as? String ?? ""
+                    var updatedInput = toolInput
+                    updatedInput["answers"] = [questionText: selectedLabel]
+                    completion(["hookSpecificOutput": [
+                        "hookEventName": "PermissionRequest",
+                        "decision": [
+                            "behavior": "allow",
+                            "updatedInput": updatedInput
+                        ]
+                    ]])
+                }
+                return
+            }
+
             let command = toolInput["command"] as? String
                 ?? toolInput["description"] as? String
                 ?? toolInput.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
             let suggestions = payload["permission_suggestions"] as? [[String: Any]] ?? []
 
-            showPermissionDialog(toolName: toolName, command: command, suggestions: suggestions, in: window) { decision in
-                completion(["hookSpecificOutput": ["hookEventName": "PermissionRequest", "decision": decision]])
+            if self.isSnappedToSide {
+                self.showInlinePermission(toolName: toolName, command: command, suggestions: suggestions) { decision in
+                    completion(["hookSpecificOutput": ["hookEventName": "PermissionRequest", "decision": decision]])
+                }
+            } else {
+                self.showPermissionDialog(toolName: toolName, command: command, suggestions: suggestions, in: window) { decision in
+                    completion(["hookSpecificOutput": ["hookEventName": "PermissionRequest", "decision": decision]])
+                }
+            }
+        }
+
+        // TCP 断开也尝试关闭弹窗（辅助检测）
+        webhookServer?.onPermissionConnectionClosed = { [weak self] in
+            self?.dismissPermissionDialogIfNeeded()
+        }
+
+        // Elicitation：Claude 提问，等用户选择
+        webhookServer?.onElicitationRequest = { [weak self] payload, completion in
+            guard let self, let window = self.view.window else {
+                completion(["action": "cancel"])
+                return
+            }
+            let prompt  = payload["prompt"]  as? String ?? "请选择一个选项"
+            let options = payload["options"] as? [String] ?? []
+            if self.isSnappedToSide {
+                self.showInlineElicitation(prompt: prompt, options: options) { result in
+                    completion(result)
+                }
+            } else {
+                self.showElicitationDialog(prompt: prompt, options: options, in: window) { result in
+                    completion(result)
+                }
+            }
+        }
+
+        webhookServer?.onSessionUpdate = { [weak self] sessionData in
+            guard let self, let sessionId = sessionData["sessionId"] as? String, !sessionId.isEmpty else { return }
+
+            // 用户在编辑器中批准权限后，后续 hook 会更新 session（参照 OVI actionableStateResolved）
+            // 检测弹窗后有新活动就关闭团子的权限弹窗
+            if let pendingSid = self.pendingPermissionSessionId,
+               sessionId == pendingSid {
+                let shownAt = self.permissionDialogShownAt
+                if let lastActivity = sessionData["lastActivityAt"] as? Double,
+                   lastActivity > shownAt + 2 {
+                    self.dismissPermissionDialogIfNeeded()
+                } else if let status = sessionData["status"] as? String,
+                          status == "idle" || status == "ended" {
+                    self.dismissPermissionDialogIfNeeded()
+                }
+            }
+
+            if sessionData["status"] as? String == "ended" {
+                self.claudeSessions.removeValue(forKey: sessionId)
+                self.saveSessionsToDisk()
+            } else {
+                // 首次注册时去重：移除同终端的旧 session（包括持久化的旧 session）
+                let isNew = self.claudeSessions[sessionId] == nil
+                if isNew {
+                    let hookTsid = sessionData["termSessionId"] as? String ?? ""
+                    let hookTty  = sessionData["tty"]  as? String ?? ""
+                    let hookCwd  = sessionData["cwd"]  as? String ?? ""
+                    let dupKey: String? = {
+                        // 1. TERM_SESSION_ID 精确匹配（最可靠）
+                        if !hookTsid.isEmpty {
+                            let byTsid = self.claudeSessions.keys.first { k in
+                                k != sessionId &&
+                                (self.claudeSessions[k]?["termSessionId"] as? String) == hookTsid
+                            }
+                            if byTsid != nil { return byTsid }
+                        }
+                        // 2. tty 精确匹配（任意 session，不限 tty-/pid- 前缀）
+                        if !hookTty.isEmpty {
+                            let byTty = self.claudeSessions.keys.first { k in
+                                k != sessionId &&
+                                (self.claudeSessions[k]?["tty"] as? String) == hookTty
+                            }
+                            if byTty != nil { return byTty }
+                        }
+                        // 3. cwd 兜底，仅移除扫描占位（避免误杀真实 session）
+                        if !hookCwd.isEmpty {
+                            return self.claudeSessions.keys.first { k in
+                                k != sessionId &&
+                                (k.hasPrefix("pid-") || k.hasPrefix("tty-")) &&
+                                (self.claudeSessions[k]?["cwd"] as? String) == hookCwd
+                            }
+                        }
+                        return nil
+                    }()
+                    if let dup = dupKey { self.claudeSessions.removeValue(forKey: dup) }
+                }
+                var existing = self.claudeSessions[sessionId] ?? [:]
+                if existing["startedAt"] == nil { existing["startedAt"] = Date().timeIntervalSince1970 }
+                for (k, v) in sessionData {
+                    if k == "firstUserMessage", let s = v as? String, s.isEmpty { continue }
+                    if k == "lastAssistantMessage", let s = v as? String, s.isEmpty { continue }
+                    existing[k] = v
+                }
+                // 推断 terminalApp（参照 open-vibe-island inferTerminalApp 优先级）
+                existing["terminalApp"] = Self.inferTerminalApp(from: existing)
+                self.claudeSessions[sessionId] = existing
+                self.saveSessionsToDisk()
             }
         }
 
         webhookServer?.start(port: 23333)
+    }
+
+    // MARK: - Hook 安装引擎
+
+    private var hookScriptPath: String { NSHomeDirectory() + "/.clawd/hook.sh" }
+
+    func ensureHookScript() {
+        let dir = NSHomeDirectory() + "/.clawd"
+        let fm = FileManager.default
+        try? fm.createDirectory(atPath: dir, withIntermediateDirectories: true)
+        let script = """
+        #!/bin/bash
+        STATE="$1"
+        [ -z "$STATE" ] && exit 0
+        BODY=$(cat 2>/dev/null)
+        SESSION_ID=$(echo "$BODY" | python3 -c \\
+          "import sys,json; d=json.load(sys.stdin); print(d.get('session_id','default'))" \\
+          2>/dev/null || echo "default")
+        curl -sf -X POST http://127.0.0.1:23333/state \\
+          -H "Content-Type: application/json" \\
+          -d "{\\"state\\":\\"${STATE}\\",\\"session_id\\":\\"${SESSION_ID}\\"}" \\
+          --max-time 1 --connect-timeout 0.5 > /dev/null 2>&1 || true
+        exit 0
+        """
+        let path = hookScriptPath
+        if let existing = try? String(contentsOfFile: path, encoding: .utf8), existing.contains("127.0.0.1:23333") { return }
+        try? script.write(toFile: path, atomically: true, encoding: .utf8)
+        chmod(path, 0o755)
+    }
+
+    private func chmod(_ path: String, _ mode: mode_t) {
+        Darwin.chmod(path, mode)
+    }
+
+    private func tuanziHookMarker(_ agentId: String) -> String { ".clawd/hook" }
+
+    private func sessionTrackingCommand(status: String, agentId: String) -> String {
+        // 参照 open-vibe-island inferTerminalApp，上报所有关键环境变量
+        return """
+        body=$(cat); echo "$body" | jq -c \
+          --arg cwd "$(pwd)" \
+          --arg tty "$(python3 -c 'import os; print(os.ttyname(2))' 2>/dev/null || ps -o tty= -p $PPID 2>/dev/null | tr -d ' ' | grep -v '^[?]*$' | head -1 | sed 's,^,/dev/,')" \
+          --arg ts "$(date +%s)" \
+          --arg tsid "${TERM_SESSION_ID:-}" \
+          --arg termapp "${TERM_PROGRAM:-}" \
+          --arg termemu "${TERMINAL_EMULATOR:-}" \
+          --arg cursortrace "${CURSOR_TRACE_ID:-}" \
+          --arg cmuxid "${CMUX_WORKSPACE_ID:-}" \
+          --arg zellij "${ZELLIJ:-}" \
+          --arg itermsid "${ITERM_SESSION_ID:-}" \
+          --arg warplocal "${WARP_IS_LOCAL_SHELL_SESSION:-}" \
+          --arg ghosttyres "${GHOSTTY_RESOURCES_DIR:-}" \
+          --arg cfbundle "${__CFBundleIdentifier:-}" \
+          --arg agent "\(agentId)" \
+          '{sessionId:(.session_id//""),cwd:$cwd,tty:$tty,termSessionId:$tsid,terminalApp:$termapp,terminalEmulator:$termemu,cursorTraceId:$cursortrace,cmuxWorkspaceId:$cmuxid,zellij:$zellij,itermSessionId:$itermsid,warpLocal:$warplocal,ghosttyResources:$ghosttyres,cfBundleIdentifier:$cfbundle,agentId:$agent,status:"\(status)",toolTarget:(.tool_name//""),lastActivityAt:($ts|tonumber)}' \
+          2>/dev/null | curl -s -X POST http://127.0.0.1:23333/session -H 'Content-Type: application/json' -d @- --max-time 5 2>/dev/null || true
+        """
+    }
+
+    func installHooksForAgent(_ agent: AgentDefinition) {
+        ensureHookScript()
+        let home = NSHomeDirectory()
+        let configFullPath = home + "/" + agent.configPath
+
+        switch agent.configFormat {
+        case .claudeJSON:
+            installClaudeJSONHooks(agent: agent, configPath: configFullPath)
+        case .toml:
+            installTOMLHooks(agent: agent, configPath: configFullPath)
+        case .cursorJSON:
+            installCursorJSONHooks(agent: agent, configPath: configFullPath)
+        case .openCodePlugin:
+            installOpenCodePlugin(agent: agent, pluginPath: configFullPath)
+        }
+
+        UserDefaults.standard.set(true, forKey: "hookEnabled_\(agent.id)")
+        print("✅ Hook 已安装: \(agent.displayName)")
+    }
+
+    func uninstallHooksForAgent(_ agent: AgentDefinition) {
+        let home = NSHomeDirectory()
+        let configFullPath = home + "/" + agent.configPath
+
+        switch agent.configFormat {
+        case .claudeJSON:
+            uninstallClaudeJSONHooks(configPath: configFullPath)
+        case .toml:
+            uninstallTOMLHooks(configPath: configFullPath)
+        case .cursorJSON:
+            uninstallCursorJSONHooks(configPath: configFullPath)
+        case .openCodePlugin:
+            try? FileManager.default.removeItem(atPath: configFullPath)
+        }
+
+        UserDefaults.standard.set(false, forKey: "hookEnabled_\(agent.id)")
+        print("🗑 Hook 已卸载: \(agent.displayName)")
+    }
+
+    func isHookInstalled(for agent: AgentDefinition) -> Bool {
+        let home = NSHomeDirectory()
+        let configFullPath = home + "/" + agent.configPath
+        guard let content = try? String(contentsOfFile: configFullPath, encoding: .utf8) else { return false }
+        return content.contains(".clawd/hook") || content.contains("127.0.0.1:23333")
+    }
+
+    func agentConfigDirExists(_ agent: AgentDefinition) -> Bool {
+        let home = NSHomeDirectory()
+        let dir = (home + "/" + agent.configPath) as NSString
+        var isDir: ObjCBool = false
+        return FileManager.default.fileExists(atPath: dir.deletingLastPathComponent, isDirectory: &isDir) && isDir.boolValue
+    }
+
+    func installHooksOnFirstLaunch() {
+        guard !UserDefaults.standard.bool(forKey: "hasAutoInstalledHooks") else { return }
+        for agent in AgentRegistry.allAgents {
+            if agentConfigDirExists(agent) {
+                installHooksForAgent(agent)
+            }
+        }
+        UserDefaults.standard.set(true, forKey: "hasAutoInstalledHooks")
+    }
+
+    // MARK: Claude JSON Hook 安装
+
+    private func installClaudeJSONHooks(agent: AgentDefinition, configPath: String) {
+        let fm = FileManager.default
+        let dir = (configPath as NSString).deletingLastPathComponent
+        try? fm.createDirectory(atPath: dir, withIntermediateDirectories: true)
+
+        // 备份
+        if fm.fileExists(atPath: configPath) {
+            try? fm.copyItem(atPath: configPath, toPath: configPath + ".tuanzi-backup")
+        }
+
+        var config: [String: Any] = [:]
+        if let data = fm.contents(atPath: configPath),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            config = json
+        }
+
+        var hooks = config["hooks"] as? [String: Any] ?? [:]
+        let hookPath = hookScriptPath
+        let agentId = agent.id
+
+        let stateHooks: [(String, String)] = [
+            ("UserPromptSubmit", "thinking"),
+            ("PreToolUse", "working"),
+            ("PostToolUse", "working"),
+            ("PostToolUseFailure", "error"),
+            ("Stop", "attention"),
+            ("StopFailure", "error"),
+            ("Notification", "notification"),
+            ("Elicitation", "notification"),
+            ("SessionStart", "idle"),
+            ("SessionEnd", "sleeping"),
+        ]
+
+        for (event, state) in stateHooks {
+            var eventHooks = hooks[event] as? [[String: Any]] ?? []
+            eventHooks.removeAll { entry in
+                let innerHooks = entry["hooks"] as? [[String: Any]] ?? []
+                return innerHooks.contains { ($0["command"] as? String ?? "").contains(".clawd/hook") }
+            }
+            let newEntry: [String: Any] = [
+                "matcher": "",
+                "hooks": [["type": "command", "command": "bash \(hookPath) \(state)"]]
+            ]
+            eventHooks.insert(newEntry, at: 0)
+            hooks[event] = eventHooks
+        }
+
+        // Session tracking hooks
+        let sessionTrackEvents: [(String, String)] = [
+            ("SessionStart", "idle"),
+            ("PreToolUse", "working"),
+            ("SessionEnd", "ended"),
+        ]
+        for (event, status) in sessionTrackEvents {
+            var eventHooks = hooks[event] as? [[String: Any]] ?? []
+            eventHooks.removeAll { entry in
+                let innerHooks = entry["hooks"] as? [[String: Any]] ?? []
+                return innerHooks.contains { ($0["command"] as? String ?? "").contains("127.0.0.1:23333/session") }
+            }
+            let trackEntry: [String: Any] = [
+                "matcher": "*",
+                "hooks": [["type": "command", "command": sessionTrackingCommand(status: status, agentId: agentId)]]
+            ]
+            eventHooks.append(trackEntry)
+            hooks[event] = eventHooks
+        }
+
+        // Permission hook
+        var permHooks = hooks["PermissionRequest"] as? [[String: Any]] ?? []
+        permHooks.removeAll { entry in
+            let innerHooks = entry["hooks"] as? [[String: Any]] ?? []
+            return innerHooks.contains { ($0["command"] as? String ?? "").contains("127.0.0.1:23333/permission") }
+        }
+        permHooks.insert([
+            "matcher": "",
+            "hooks": [["type": "command", "command": "curl -s -X POST http://127.0.0.1:23333/permission -H 'Content-Type: application/json' -d @- --max-time 600"]]
+        ], at: 0)
+        hooks["PermissionRequest"] = permHooks
+
+        config["hooks"] = hooks
+        if let data = try? JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys]) {
+            try? data.write(to: URL(fileURLWithPath: configPath))
+        }
+    }
+
+    private func uninstallClaudeJSONHooks(configPath: String) {
+        guard let data = FileManager.default.contents(atPath: configPath),
+              var config = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              var hooks = config["hooks"] as? [String: Any] else { return }
+
+        for (event, var eventHooks) in hooks {
+            guard var arr = eventHooks as? [[String: Any]] else { continue }
+            arr.removeAll { entry in
+                let innerHooks = entry["hooks"] as? [[String: Any]] ?? []
+                return innerHooks.contains {
+                    let cmd = $0["command"] as? String ?? ""
+                    return cmd.contains(".clawd/hook") || cmd.contains("127.0.0.1:23333")
+                }
+            }
+            hooks[event] = arr
+        }
+
+        config["hooks"] = hooks
+        if let data = try? JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys]) {
+            try? data.write(to: URL(fileURLWithPath: configPath))
+        }
+    }
+
+    // MARK: TOML Hook 安装 (Codex/Kimi)
+
+    private let tomlMarkerStart = "# --- tuanzi-hooks-start ---"
+    private let tomlMarkerEnd = "# --- tuanzi-hooks-end ---"
+
+    private func installTOMLHooks(agent: AgentDefinition, configPath: String) {
+        let fm = FileManager.default
+        let dir = (configPath as NSString).deletingLastPathComponent
+        try? fm.createDirectory(atPath: dir, withIntermediateDirectories: true)
+
+        if fm.fileExists(atPath: configPath) {
+            try? fm.copyItem(atPath: configPath, toPath: configPath + ".tuanzi-backup")
+        }
+
+        var content = (try? String(contentsOfFile: configPath, encoding: .utf8)) ?? ""
+
+        // 移除旧的团子 hook 块
+        if let startRange = content.range(of: tomlMarkerStart),
+           let endRange = content.range(of: tomlMarkerEnd) {
+            content.removeSubrange(startRange.lowerBound...endRange.upperBound)
+            content = content.trimmingCharacters(in: .newlines)
+        }
+
+        let hookPath = hookScriptPath
+        let events: [(String, String)] = [
+            ("SessionStart", "idle"),
+            ("UserPromptSubmit", "thinking"),
+            ("PreToolUse", "working"),
+            ("PostToolUse", "working"),
+            ("Stop", "attention"),
+            ("SessionEnd", "sleeping"),
+        ]
+
+        var tomlBlock = "\n\n\(tomlMarkerStart)\n"
+        for (event, state) in events {
+            tomlBlock += """
+            [[hooks]]
+            event = "\(event)"
+            command = ["bash", "\(hookPath)", "\(state)"]
+
+            """
+        }
+        tomlBlock += "\(tomlMarkerEnd)\n"
+
+        content += tomlBlock
+        try? content.write(toFile: configPath, atomically: true, encoding: .utf8)
+    }
+
+    private func uninstallTOMLHooks(configPath: String) {
+        guard var content = try? String(contentsOfFile: configPath, encoding: .utf8) else { return }
+        if let startRange = content.range(of: tomlMarkerStart),
+           let endRange = content.range(of: tomlMarkerEnd) {
+            content.removeSubrange(startRange.lowerBound...endRange.upperBound)
+            content = content.trimmingCharacters(in: .newlines) + "\n"
+            try? content.write(toFile: configPath, atomically: true, encoding: .utf8)
+        }
+    }
+
+    // MARK: Cursor JSON Hook 安装
+
+    private func installCursorJSONHooks(agent: AgentDefinition, configPath: String) {
+        let fm = FileManager.default
+        let dir = (configPath as NSString).deletingLastPathComponent
+        try? fm.createDirectory(atPath: dir, withIntermediateDirectories: true)
+
+        if fm.fileExists(atPath: configPath) {
+            try? fm.copyItem(atPath: configPath, toPath: configPath + ".tuanzi-backup")
+        }
+
+        var config: [String: Any] = [:]
+        if let data = fm.contents(atPath: configPath),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            config = json
+        }
+
+        let hookPath = hookScriptPath
+        let cursorEvents: [(String, String)] = [
+            ("beforeSubmitPrompt", "thinking"),
+            ("beforeShellExecution", "working"),
+            ("beforeMCPExecution", "working"),
+            ("beforeReadFile", "working"),
+            ("afterFileEdit", "working"),
+            ("afterAgentResponse", "attention"),
+        ]
+
+        var hooks = config["hooks"] as? [String: Any] ?? [:]
+        for (event, state) in cursorEvents {
+            var arr = hooks[event] as? [[String: Any]] ?? []
+            arr.removeAll { ($0["command"] as? String ?? "").contains(".clawd/hook") }
+            arr.insert(["command": "bash \(hookPath) \(state)"], at: 0)
+            hooks[event] = arr
+        }
+        config["hooks"] = hooks
+
+        if let data = try? JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys]) {
+            try? data.write(to: URL(fileURLWithPath: configPath))
+        }
+    }
+
+    private func uninstallCursorJSONHooks(configPath: String) {
+        guard let data = FileManager.default.contents(atPath: configPath),
+              var config = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              var hooks = config["hooks"] as? [String: Any] else { return }
+
+        for (event, _) in hooks {
+            guard var arr = hooks[event] as? [[String: Any]] else { continue }
+            arr.removeAll { ($0["command"] as? String ?? "").contains(".clawd/hook") }
+            hooks[event] = arr
+        }
+        config["hooks"] = hooks
+
+        if let data = try? JSONSerialization.data(withJSONObject: config, options: [.prettyPrinted, .sortedKeys]) {
+            try? data.write(to: URL(fileURLWithPath: configPath))
+        }
+    }
+
+    // MARK: OpenCode Plugin 安装
+
+    private func installOpenCodePlugin(agent: AgentDefinition, pluginPath: String) {
+        let fm = FileManager.default
+        let dir = (pluginPath as NSString).deletingLastPathComponent
+        try? fm.createDirectory(atPath: dir, withIntermediateDirectories: true)
+
+        let plugin = """
+        // Tuanzi plugin for OpenCode
+        const http = require('http');
+        function notify(state) {
+          const data = JSON.stringify({ state });
+          const req = http.request({
+            hostname: '127.0.0.1', port: 23333, path: '/state',
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'Content-Length': data.length },
+            timeout: 1000
+          });
+          req.on('error', () => {});
+          req.write(data);
+          req.end();
+        }
+        module.exports = {
+          onSessionStart: () => notify('idle'),
+          onSessionEnd: () => notify('sleeping'),
+          onUserPrompt: () => notify('thinking'),
+          onToolUse: () => notify('working'),
+          onToolResult: () => notify('working'),
+          onComplete: () => notify('attention'),
+          onError: () => notify('error'),
+        };
+        """
+        try? plugin.write(toFile: pluginPath, atomically: true, encoding: .utf8)
     }
 
     // MARK: - Setup 初始化与素材加载
@@ -349,7 +1043,7 @@ class ViewController: NSViewController {
 
         enterWorkingTextures  = loadTextures(named: "工作",       0..<59)
         workingLoopTextures   = loadTextures(named: "工作",       59..<78)
-        exitWorkingTextures   = loadTextures(named: "工作",       82..<127)
+        exitWorkingTextures   = loadTextures(named: "工作",       78..<127)
 
         drinkWaterTextures    = loadTextures(named: "喝水",       0..<80)
         messageTextures       = loadTextures(named: "提醒",   0..<48)
@@ -438,6 +1132,17 @@ class ViewController: NSViewController {
                 label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10)
             ])
         }
+    }
+
+    // MARK: - Snap Idle 恢复吸附待机
+    func restoreSnapIdleIfNeeded() {
+        guard isSnappedToSide, !isCurrentlyDragging, !isPetting, !isSnapReminding else { return }
+        guard spriteNode.action(forKey: "snapSequence") == nil,
+              spriteNode.action(forKey: "snapReminderSequence") == nil else { return }
+        let textures = snappedSide == -1 ? snapLeftIdleTextures : snapRightIdleTextures
+        guard !textures.isEmpty else { return }
+        spriteNode.removeAllActions()
+        spriteNode.run(SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.05)), withKey: "snapSequence")
     }
 
     // MARK: - Animation 动画控制
@@ -564,7 +1269,7 @@ class ViewController: NSViewController {
         isSnappedToSide = true
         snappedSide = snapLeft ? -1 : 1
         spriteNode.xScale = abs(spriteNode.xScale)
-        let targetX: CGFloat = snapLeft ? sf.minX : sf.maxX - wf.width
+        let targetX: CGFloat = snapLeft ? sf.minX - 70 : sf.maxX - wf.width + 100
         NSAnimationContext.runAnimationGroup { ctx in
             ctx.duration = 0.3
             ctx.timingFunction = CAMediaTimingFunction(name: .easeOut)
@@ -647,6 +1352,7 @@ class ViewController: NSViewController {
 
     func stopThinkingAnimation() {
         isClaudeStateActive = false
+        if isSnappedToSide { restoreSnapIdleIfNeeded(); return }
         spriteNode.removeAllActions()
         guard !exitSearchTextures.isEmpty else { startIdleAnimation(); return }
         spriteNode.run(SKAction.sequence([SKAction.animate(with: exitSearchTextures, timePerFrame: 0.05), SKAction.run { [weak self] in self?.startIdleAnimation() }]), withKey: "exitSearchSequence")
@@ -661,6 +1367,7 @@ class ViewController: NSViewController {
     }
 
     func stopPonderAnimation() {
+        if isSnappedToSide { restoreSnapIdleIfNeeded(); return }
         spriteNode.removeAllActions()
         guard !exitThinkingTextures.isEmpty else { startIdleAnimation(); return }
         spriteNode.run(SKAction.sequence([SKAction.animate(with: exitThinkingTextures, timePerFrame: 0.05), SKAction.run { [weak self] in self?.startIdleAnimation() }]), withKey: "exitPonderSequence")
@@ -691,6 +1398,7 @@ class ViewController: NSViewController {
     }
 
     func stopWorkingAnimation() {
+        if isSnappedToSide { restoreSnapIdleIfNeeded(); return }
         spriteNode.removeAllActions()
         guard !exitWorkingTextures.isEmpty else { startIdleAnimation(); return }
         spriteNode.run(SKAction.sequence([SKAction.animate(with: exitWorkingTextures, timePerFrame: 0.05), SKAction.run { [weak self] in self?.startIdleAnimation() }]), withKey: "exitWorkingSequence")
@@ -741,7 +1449,84 @@ class ViewController: NSViewController {
         else { startIdleAnimation() }
     }
 
+    // MARK: - Elicitation Dialog 选项弹窗
+    var elicitationDialogWindow: NSWindow?
+
+    func showElicitationDialog(prompt: String, options: [String], in window: NSWindow, completion: @escaping ([String: Any]) -> Void) {
+        guard elicitationDialogWindow == nil else { return }
+
+        let dismiss: ([String: Any]) -> Void = { [weak self] result in
+            self?.elicitationDialogWindow?.close()
+            self?.elicitationDialogWindow = nil
+            completion(result)
+        }
+
+        let view = ElicitationDialogView(
+            prompt: prompt,
+            options: options,
+            onSelect: { selected in dismiss(["action": "accept", "selected": selected]) },
+            onCancel: { dismiss(["action": "cancel"]) }
+        )
+
+        let dialogW: CGFloat = 320
+        let baseH:   CGFloat = 130  // 标题 + 问题 + 取消按钮
+        let optionH: CGFloat = 44   // 每个选项
+        let dialogH = baseH + CGFloat(options.count) * optionH
+
+        let hosting = NSHostingView(rootView: view)
+        hosting.frame = NSRect(x: 0, y: 0, width: dialogW, height: dialogH)
+
+        let panel = NSPanel(
+            contentRect: NSRect(x: 0, y: 0, width: dialogW, height: dialogH),
+            styleMask: [.borderless, .nonactivatingPanel],
+            backing: .buffered,
+            defer: false
+        )
+        panel.contentView = hosting
+        panel.backgroundColor = .clear
+        panel.isOpaque = false
+        panel.hasShadow = true
+        panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
+        panel.isMovableByWindowBackground = true
+
+        let petFrame = window.frame
+        let dialogOrigin: NSPoint
+        if isSnappedToSide {
+            let dialogX = snappedSide == -1
+                ? petFrame.maxX - 80
+                : petFrame.minX - dialogW + 80
+            dialogOrigin = NSPoint(x: dialogX, y: petFrame.midY - dialogH / 2)
+        } else {
+            dialogOrigin = NSPoint(x: petFrame.midX - dialogW / 2, y: petFrame.maxY + 8)
+        }
+        panel.setFrameOrigin(dialogOrigin)
+
+        elicitationDialogWindow = panel
+        panel.makeKeyAndOrderFront(nil)
+        NSSound(named: "确认提示")?.play()
+    }
+
     // MARK: - Permission Dialog 权限弹窗
+
+    /// 关闭权限弹窗（参照 OVI actionableStateResolved 清除 permissionRequest）
+    func dismissPermissionDialogIfNeeded() {
+        pendingPermissionSessionId = nil
+        permissionStaleCheckTimer?.invalidate()
+        permissionStaleCheckTimer = nil
+        if permissionDialogWindow != nil {
+            permissionKeyMonitors.forEach { NSEvent.removeMonitor($0) }
+            permissionKeyMonitors = []
+            permissionDialogWindow?.close()
+            permissionDialogWindow = nil
+        }
+        if inlinePermissionWindow != nil {
+            permissionKeyMonitors.forEach { NSEvent.removeMonitor($0) }
+            permissionKeyMonitors = []
+            inlinePermissionWindow?.close()
+            inlinePermissionWindow = nil
+        }
+    }
+
     func showPermissionDialog(toolName: String, command: String, suggestions: [[String: Any]], in window: NSWindow, completion: @escaping ([String: Any]) -> Void) {
         guard permissionDialogWindow == nil else { return }
 
@@ -781,13 +1566,17 @@ class ViewController: NSViewController {
         )
 
         let dialogW: CGFloat = 320
-        let dialogH: CGFloat = 430
 
         let hosting = NSHostingView(rootView: view)
+        hosting.frame = NSRect(x: 0, y: 0, width: dialogW, height: 100)
+        // 让 SwiftUI 根据内容自己算高度
+        let fittingH = hosting.fittingSize.height
+        let dialogH = max(fittingH, 200)
         hosting.frame = NSRect(x: 0, y: 0, width: dialogW, height: dialogH)
 
         let panel = NSPanel(
-            contentRect: NSRect(x: 0, y: 0, width: dialogW, height: dialogH),            styleMask: [.borderless, .nonactivatingPanel],
+            contentRect: NSRect(x: 0, y: 0, width: dialogW, height: dialogH),
+            styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered,
             defer: false
         )
@@ -795,7 +1584,7 @@ class ViewController: NSViewController {
         panel.backgroundColor = .clear
         panel.isOpaque = false
         panel.hasShadow = true
-        panel.level = .floating
+        panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
         panel.isMovableByWindowBackground = true
 
         // 吸附状态时弹窗显示在侧边，否则显示在上方居中
@@ -857,9 +1646,7 @@ class ViewController: NSViewController {
     }
 
     func focusTerminal() {
-        let ids = ["com.googlecode.iterm2", "com.apple.Terminal",
-                   "net.kovidgoyal.kitty", "com.github.wez.wezterm"]
-        for bid in ids {
+        for bid in TerminalRegistry.terminalBundleIds {
             if let app = NSRunningApplication.runningApplications(withBundleIdentifier: bid).first {
                 app.activate(options: .activateIgnoringOtherApps)
                 return
@@ -869,13 +1656,193 @@ class ViewController: NSViewController {
 
     // MARK: - Terminal Panel 终端会话面板
 
+    // 用 lsof 获取进程的 cwd
+    private func cwdForPID(_ pid: String) -> String {
+        let task = Process()
+        task.launchPath = "/bin/bash"
+        task.arguments = ["-c", "lsof -p \(pid) 2>/dev/null | awk '$4==\"cwd\"{print $9}' | head -1"]
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.standardError = Pipe()
+        try? task.run()
+        task.waitUntilExit()
+        return String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    }
+
+    // 用 lsof 获取进程的 cwd（供 openTerminalSession tty 为空时回退查找）
+    private func processInfo(pid: String) -> (cwd: String, tty: String) {
+        let task = Process()
+        task.launchPath = "/bin/bash"
+        task.arguments = ["-c", """
+            cwd=$(lsof -p \(pid) 2>/dev/null | awk '$4=="cwd"{print $9}' | head -1)
+            tty=$(ps -p \(pid) -o tty= 2>/dev/null | tr -d ' ')
+            echo "$cwd|$tty"
+        """]
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.standardError = Pipe()
+        try? task.run()
+        task.waitUntilExit()
+        let out = String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let parts = out.split(separator: "|", maxSplits: 1).map(String.init)
+        let cwd = parts.first ?? ""
+        let ttyRaw = parts.count > 1 ? parts[1] : ""
+        let tty = ttyRaw == "??" || ttyRaw.isEmpty ? "" : "/dev/\(ttyRaw)"
+        return (cwd: cwd, tty: tty)
+    }
+
+    // MARK: - Process Discovery 进程发现
+    func startProcessDiscovery() {
+        processDiscoveryTimer?.invalidate()
+        processDiscoveryTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+            self?.discoverAgentProcesses()
+        }
+    }
+
+    func discoverAgentProcesses() {
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            let pattern = AgentRegistry.processPattern
+            let task = Process()
+            task.launchPath = "/bin/bash"
+            task.arguments = ["-c", "pgrep -f '\(pattern)' 2>/dev/null | head -40"]
+            let pipe = Pipe()
+            task.standardOutput = pipe
+            task.standardError = Pipe()
+            try? task.run()
+            task.waitUntilExit()
+            let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
+            let pids = output.split(separator: "\n").map(String.init).filter { !$0.isEmpty }
+            guard !pids.isEmpty else { return }
+
+            var discovered: [(pid: String, tty: String, cwd: String, agentId: String)] = []
+            for pid in pids {
+                let infoTask = Process()
+                infoTask.launchPath = "/bin/bash"
+                infoTask.arguments = ["-c", "ps -o tty=,comm= -p \(pid) 2>/dev/null"]
+                let infoPipe = Pipe()
+                infoTask.standardOutput = infoPipe
+                infoTask.standardError = Pipe()
+                try? infoTask.run()
+                infoTask.waitUntilExit()
+                let info = String(data: infoPipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)?
+                    .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                let matchedAgent = AgentRegistry.agent(forProcessName: info)
+                guard matchedAgent != nil else { continue }
+                let parts = info.split(separator: " ", maxSplits: 1)
+                let ttyRaw = parts.first.map(String.init) ?? ""
+                let tty = (ttyRaw == "??" || ttyRaw.isEmpty) ? "" : "/dev/\(ttyRaw)"
+                let cwdTask = Process()
+                cwdTask.launchPath = "/bin/bash"
+                cwdTask.arguments = ["-c", "lsof -p \(pid) 2>/dev/null | awk '$4==\"cwd\"{print $9}' | head -1"]
+                let cwdPipe = Pipe()
+                cwdTask.standardOutput = cwdPipe
+                cwdTask.standardError = Pipe()
+                try? cwdTask.run()
+                cwdTask.waitUntilExit()
+                let cwd = String(data: cwdPipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)?
+                    .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                if !cwd.isEmpty { discovered.append((pid: pid, tty: tty, cwd: cwd, agentId: matchedAgent!.id)) }
+            }
+
+            let activeTtys = Set(discovered.map(\.tty).filter { !$0.isEmpty })
+            let activeCwds = Set(discovered.map(\.cwd).filter { !$0.isEmpty })
+
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                let now = Date().timeIntervalSince1970
+                let graceWindow: Double = 120
+
+                for proc in discovered {
+                    let alreadyTracked = self.claudeSessions.values.contains { dict in
+                        let sTty = dict["tty"] as? String ?? ""
+                        let sCwd = dict["cwd"] as? String ?? ""
+                        return (!sTty.isEmpty && sTty == proc.tty) || (!sCwd.isEmpty && sCwd == proc.cwd)
+                    }
+                    if !alreadyTracked {
+                        let key = "pid-\(proc.pid)"
+                        self.claudeSessions[key] = [
+                            "sessionId": key, "cwd": proc.cwd, "tty": proc.tty,
+                            "agentId": proc.agentId,
+                            "status": "working", "lastActivityAt": now, "startedAt": now
+                        ]
+                    }
+                }
+
+                var keysToRemove: [String] = []
+                for (key, dict) in self.claudeSessions {
+                    let sTty = dict["tty"] as? String ?? ""
+                    let sCwd = dict["cwd"] as? String ?? ""
+                    let lastActive = dict["lastActivityAt"] as? Double ?? 0
+                    let isAlive = (!sTty.isEmpty && activeTtys.contains(sTty)) ||
+                                  (!sCwd.isEmpty && activeCwds.contains(sCwd))
+                    if !isAlive && (now - lastActive) > graceWindow {
+                        keysToRemove.append(key)
+                    }
+                }
+                for key in keysToRemove { self.claudeSessions.removeValue(forKey: key) }
+                if !keysToRemove.isEmpty { self.saveSessionsToDisk() }
+            }
+        }
+    }
+
+    // 刷新面板内容（从内存读取，不再扫描 tty）
+    func refreshTerminalSessionsAsync() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self, let panel = self.terminalPanelWindow, panel.isVisible else { return }
+                let sessions = self.loadTerminalSessions()
+                let panelW: CGFloat = 373
+                let rowH = sessions.map { s -> Int in
+                    var h = 50
+                    if !s.shortMessage.isEmpty { h += 16 }
+                    if !s.lastAssistantMessage.isEmpty { h += s.lastAssistantMessage.count > 60 ? 30 : 16 }
+                    if !s.toolTarget.isEmpty && s.isProcessing { h += 16 }
+                    return h
+                }.reduce(0, +)
+                let panelH: CGFloat = min(CGFloat(56 + rowH + 20 + 38), 500)
+                let panelView = TerminalSessionPanelView(
+                    sessions: sessions,
+                    waterCountdown: self.waterCountdownString,
+                    onSelect: { [weak self] session in self?.openTerminalSession(session) },
+                    onSettings: { SettingsWindowController.shared.open() },
+                    onMouseEnter: { [weak self] in
+                        self?.isMouseInTerminalPanel = true
+                        self?.terminalAutoHideTimer?.invalidate()
+                    },
+                    onMouseExit: { [weak self] in
+                        self?.isMouseInTerminalPanel = false
+                        self?.terminalAutoHideTimer?.invalidate()
+                        self?.terminalAutoHideTimer = Timer.scheduledTimer(withTimeInterval: self?.terminalAutoHideDelay ?? 0.5, repeats: false) { [weak self] _ in
+                            guard let self, !self.isMouseOverPet, !self.isMouseInTerminalPanel else { return }
+                            self.hideTerminalPanel()
+                        }
+                    }
+                )
+                if let existing = panel.contentView as? FirstMouseHostingView<TerminalSessionPanelView> {
+                    existing.rootView = panelView
+                } else {
+                    let hosting = FirstMouseHostingView(rootView: panelView)
+                    hosting.wantsLayer = true
+                    hosting.layer?.backgroundColor = NSColor.clear.cgColor
+                    hosting.layer?.cornerRadius = TuanziTokens.Radius.xxl
+                    hosting.layer?.masksToBounds = true
+                    panel.contentView = hosting
+                }
+                panel.setContentSize(NSSize(width: panelW, height: panelH))
+            }
+        }
+    }
+
     func loadTerminalSessions() -> [TerminalSession] {
-        let path = (NSString("~/Library/Application Support/vibe-island/session-terminals.json")).expandingTildeInPath
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String: [String: Any]]
-        else { return [] }
-        return json.compactMap { id, dict in
-            guard let cwd = dict["cwd"] as? String else { return nil }
+        return claudeSessions.compactMap { id, dict in
+            guard let cwd = dict["cwd"] as? String, !cwd.isEmpty else { return nil }
+            // 过滤幽灵会话：没有任何消息内容的空壳 session
+            let firstMsg = dict["firstUserMessage"] as? String ?? ""
+            let lastMsg = dict["lastAssistantMessage"] as? String ?? ""
+            if firstMsg.isEmpty && lastMsg.isEmpty { return nil }
+            let termApp = Self.inferTerminalApp(from: dict)
             return TerminalSession(
                 id: id,
                 cwd: cwd,
@@ -884,28 +1851,496 @@ class ViewController: NSViewController {
                 status: dict["status"] as? String ?? "",
                 toolTarget: dict["toolTarget"] as? String ?? "",
                 tty: dict["tty"] as? String ?? "",
-                lastActivityAt: dict["lastActivityAt"] as? Double ?? 0
+                lastActivityAt: dict["lastActivityAt"] as? Double ?? 0,
+                termSessionId: dict["termSessionId"] as? String ?? "",
+                terminalApp: termApp,
+                startedAt: dict["startedAt"] as? Double ?? 0,
+                agentId: dict["agentId"] as? String ?? "claude"
             )
         }.sorted { $0.lastActivityAt > $1.lastActivityAt }
     }
 
     func openTerminalSession(_ session: TerminalSession) {
         hideTerminalPanel()
+        let termApp = resolveTerminalApp(session)
+        let def = TerminalRegistry.terminal(forBundleId: termApp)
+
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            switch def?.jumpMethod {
+            case .cliOpen:
+                // 编辑器（VS Code / Trae / Cursor 等）：直接 open -b 激活，不改变 workspace
+                self?.activateByBundle(termApp)
+                return
+            case .bundleActivation:
+                // Ghostty / WezTerm / Kitty / Warp：open -b 激活
+                self?.activateByBundle(termApp)
+                return
+            default:
+                break
+            }
+            // AppleScript / tmux 跳转链
+            if self?.jumpToTerminal(session) == true { return }
+            if self?.jumpViaTmux(session) == true { return }
+            if self?.jumpByCwd(session) == true { return }
+            DispatchQueue.main.async { self?.focusTerminal() }
+        }
+    }
+
+    /// 通过 open -b 激活应用（任何线程安全，参照 OVI TerminalJumpService）
+    private func activateByBundle(_ bundleId: String) {
+        let task = Process()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-b", bundleId]
+        task.standardOutput = Pipe()
+        task.standardError = Pipe()
+        try? task.run()
+        task.waitUntilExit()
+    }
+
+    private func jumpViaTmux(_ session: TerminalSession) -> Bool {
+        guard !session.cwd.isEmpty else { return false }
+        let task = Process()
+        task.launchPath = "/bin/bash"
+        task.arguments = ["-c", "which tmux >/dev/null 2>&1 && tmux list-panes -a -F '#{pane_current_path} #{session_name}:#{window_index}.#{pane_index}' 2>/dev/null"]
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.standardError = Pipe()
+        try? task.run()
+        task.waitUntilExit()
+        let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8) ?? ""
+        for line in output.split(separator: "\n") {
+            let parts = line.split(separator: " ", maxSplits: 1)
+            guard parts.count == 2 else { continue }
+            if String(parts[0]) == session.cwd {
+                let target = String(parts[1])
+                let selectTask = Process()
+                selectTask.launchPath = "/bin/bash"
+                selectTask.arguments = ["-c", "tmux select-pane -t '\(target)' && tmux select-window -t '\(target)'"]
+                selectTask.standardOutput = Pipe()
+                selectTask.standardError = Pipe()
+                try? selectTask.run()
+                return true
+            }
+        }
+        return false
+    }
+
+    private func jumpToTerminal(_ session: TerminalSession) -> Bool {
         let tty = session.tty
-        guard !tty.isEmpty else { return }
-        let script = """
-        tell application "Terminal"
-            repeat with wi from 1 to (count of windows)
-                repeat with ti from 1 to (count of tabs of window wi)
-                    if tty of tab ti of window wi is "\(tty)" then
-                        set selected tab of window wi to tab ti of window wi
-                        set miniaturized of window wi to false
-                        set index of window wi to 1
-                        activate
-                        return
-                    end if
+        guard !tty.isEmpty else { return false }
+
+        let termApp = resolveTerminalApp(session)
+        var script: String?
+
+        switch termApp {
+        case "com.googlecode.iterm2":
+            script = """
+            tell application "iTerm2"
+                repeat with w in windows
+                    repeat with t in tabs of w
+                        repeat with s in sessions of t
+                            if tty of s is "\(tty)" then
+                                select t
+                                set index of w to 1
+                                activate
+                                return
+                            end if
+                        end repeat
+                    end repeat
                 end repeat
-            end repeat
+            end tell
+            """
+        case "com.apple.Terminal":
+            script = """
+            tell application "Terminal"
+                repeat with wi from 1 to (count of windows)
+                    repeat with ti from 1 to (count of tabs of window wi)
+                        if tty of tab ti of window wi is "\(tty)" then
+                            set selected tab of window wi to tab ti of window wi
+                            set miniaturized of window wi to false
+                            set index of window wi to 1
+                            activate
+                            return
+                        end if
+                    end repeat
+                end repeat
+            end tell
+            """
+        default:
+            // 其他终端：用 open -b 激活（线程安全）
+            if !termApp.isEmpty {
+                activateByBundle(termApp)
+                return true
+            }
+            script = """
+            tell application "Terminal"
+                repeat with wi from 1 to (count of windows)
+                    repeat with ti from 1 to (count of tabs of window wi)
+                        if tty of tab ti of window wi is "\(tty)" then
+                            set selected tab of window wi to tab ti of window wi
+                            set miniaturized of window wi to false
+                            set index of window wi to 1
+                            activate
+                            return
+                        end if
+                    end repeat
+                end repeat
+            end tell
+            """
+        }
+
+        guard let src = script else { return false }
+        if let as_ = NSAppleScript(source: src) {
+            var err: NSDictionary?
+            as_.executeAndReturnError(&err)
+            return err == nil
+        }
+        return false
+    }
+
+    private func jumpByCwd(_ session: TerminalSession) -> Bool {
+        let cwd = session.cwd
+        guard !cwd.isEmpty else { return false }
+
+        let ids = ["com.googlecode.iterm2", "com.apple.Terminal"]
+        for bid in ids {
+            guard NSRunningApplication.runningApplications(withBundleIdentifier: bid).first != nil else { continue }
+
+            let script: String
+            if bid == "com.googlecode.iterm2" {
+                script = """
+                tell application "iTerm2"
+                    repeat with w in windows
+                        repeat with t in tabs of w
+                            repeat with s in sessions of t
+                                set sName to name of s
+                                if sName contains "\(session.projectName)" then
+                                    select t
+                                    set index of w to 1
+                                    activate
+                                    return "found"
+                                end if
+                            end repeat
+                        end repeat
+                    end repeat
+                end tell
+                """
+            } else {
+                script = """
+                tell application "Terminal"
+                    repeat with wi from 1 to (count of windows)
+                        repeat with ti from 1 to (count of tabs of window wi)
+                            set cProcs to processes of tab ti of window wi
+                            if (count of cProcs) > 0 then
+                                set tabName to name of tab ti of window wi
+                                if tabName contains "\(session.projectName)" then
+                                    set selected tab of window wi to tab ti of window wi
+                                    set miniaturized of window wi to false
+                                    set index of window wi to 1
+                                    activate
+                                    return "found"
+                                end if
+                            end if
+                        end repeat
+                    end repeat
+                end tell
+                """
+            }
+
+            if let as_ = NSAppleScript(source: script) {
+                var err: NSDictionary?
+                let result = as_.executeAndReturnError(&err)
+                if let str = result.stringValue, str == "found" { return true }
+            }
+        }
+        return false
+    }
+
+    private func resolveTerminalApp(_ session: TerminalSession) -> String {
+        if !session.terminalApp.isEmpty {
+            return Self.normalizeTerminalApp(session.terminalApp)
+        }
+        for bid in TerminalRegistry.terminalBundleIds {
+            if NSRunningApplication.runningApplications(withBundleIdentifier: bid).first != nil {
+                return bid
+            }
+        }
+        return "com.apple.Terminal"
+    }
+
+    /// 将 $TERM_PROGRAM 等值标准化为 bundleId（参照 open-vibe-island inferTerminalApp）
+    static func normalizeTerminalApp(_ raw: String) -> String {
+        // 已经是 bundleId 格式
+        if raw.contains(".") && raw.filter({ $0 == "." }).count >= 2 { return raw }
+
+        let lower = raw.lowercased()
+        // 精确匹配 $TERM_PROGRAM 值 → bundleId
+        switch lower {
+        case "apple_terminal":
+            return "com.apple.Terminal"
+        case "iterm.app", "iterm2":
+            return "com.googlecode.iterm2"
+        case "vscode":
+            return "com.microsoft.VSCode"
+        case "vscode-insiders":
+            return "com.microsoft.VSCode"  // 归为同一类
+        case "trae":
+            return "com.trae.app"
+        case "windsurf":
+            return "com.codeium.windsurf"
+        case "wezterm":
+            return "com.github.wez.wezterm"
+        case "kaku":
+            return raw  // 无 bundleId
+        default:
+            break
+        }
+        // 模糊匹配
+        if lower.contains("warp") { return "dev.warp.Warp-Stable" }
+        if lower.contains("ghostty") { return "com.mitchellh.ghostty" }
+        if lower.contains("kitty") { return "net.kovidgoyal.kitty" }
+        if lower.contains("cursor") { return "com.todesktop.230313mzl4w4u92" }
+        // JetBrains 系列
+        if lower.contains("intellij") { return "com.jetbrains.intellij" }
+        if lower.contains("webstorm") { return "com.jetbrains.WebStorm" }
+        if lower.contains("pycharm") { return "com.jetbrains.pycharm" }
+        if lower.contains("goland") { return "com.jetbrains.goland" }
+        if lower.contains("clion") { return "com.jetbrains.clion" }
+        if lower.contains("rubymine") { return "com.jetbrains.rubymine" }
+        if lower.contains("phpstorm") { return "com.jetbrains.PhpStorm" }
+        if lower.contains("rider") { return "com.jetbrains.rider" }
+        if lower.contains("rustrover") { return "com.jetbrains.rustrover" }
+        // 兜底：尝试 TerminalRegistry 模糊匹配
+        let cleaned = lower.replacingOccurrences(of: "_", with: "").replacingOccurrences(of: " ", with: "")
+        if let def = TerminalRegistry.allTerminals.first(where: {
+            cleaned.contains($0.id.lowercased()) ||
+            $0.displayName.lowercased().replacingOccurrences(of: " ", with: "") == cleaned
+        }), !def.bundleId.isEmpty {
+            return def.bundleId
+        }
+        return raw
+    }
+
+    /// 从 session 数据的环境变量推断 terminalApp bundleId
+    /// 优先级参照 open-vibe-island inferTerminalApp
+    static func inferTerminalApp(from dict: [String: Any]) -> String {
+        let rawTermApp = dict["terminalApp"] as? String ?? ""
+        let termEmu = dict["terminalEmulator"] as? String ?? ""
+        let cursorTrace = dict["cursorTraceId"] as? String ?? ""
+        let cmuxId = dict["cmuxWorkspaceId"] as? String ?? ""
+        let zellij = dict["zellij"] as? String ?? ""
+        let itermSid = dict["itermSessionId"] as? String ?? ""
+        let warpLocal = dict["warpLocal"] as? String ?? ""
+        let ghosttyRes = dict["ghosttyResources"] as? String ?? ""
+        let cfBundle = dict["cfBundleIdentifier"] as? String ?? ""
+
+        // 优先级 1：多路复用器
+        if !cmuxId.isEmpty { return "" }  // cmux 无 bundleId
+        if !zellij.isEmpty { return "" }  // zellij 无 bundleId
+
+        // 优先级 2：TERM_PROGRAM（最权威）
+        if !rawTermApp.isEmpty {
+            var normalized = normalizeTerminalApp(rawTermApp)
+            // Cursor 也设 TERM_PROGRAM=vscode，用 CURSOR_TRACE_ID 区分
+            if normalized == "com.microsoft.VSCode" && !cursorTrace.isEmpty {
+                normalized = "com.todesktop.230313mzl4w4u92"
+            }
+            return normalized
+        }
+
+        // 优先级 3：特定应用环境变量（兜底，容易被跨应用继承污染）
+        if !itermSid.isEmpty { return "com.googlecode.iterm2" }
+        if !warpLocal.isEmpty { return "dev.warp.Warp-Stable" }
+        if !ghosttyRes.isEmpty { return "com.mitchellh.ghostty" }
+
+        // 优先级 4：JetBrains TERMINAL_EMULATOR
+        if termEmu.lowercased().contains("jetbrains") {
+            let bid = cfBundle.lowercased()
+            if bid.contains("webstorm") { return "com.jetbrains.WebStorm" }
+            if bid.contains("pycharm") { return "com.jetbrains.pycharm" }
+            if bid.contains("goland") { return "com.jetbrains.goland" }
+            if bid.contains("clion") { return "com.jetbrains.clion" }
+            if bid.contains("rubymine") { return "com.jetbrains.rubymine" }
+            if bid.contains("phpstorm") { return "com.jetbrains.PhpStorm" }
+            if bid.contains("rider") { return "com.jetbrains.rider" }
+            if bid.contains("rustrover") { return "com.jetbrains.rustrover" }
+            return "com.jetbrains.intellij"
+        }
+
+        // 优先级 5：__CFBundleIdentifier 兜底
+        // VS Code 扩展环境没有 TERM_PROGRAM，但有 __CFBundleIdentifier
+        if !cfBundle.isEmpty {
+            // 直接就是 bundleId 格式，检查是否为已知应用
+            if TerminalRegistry.terminal(forBundleId: cfBundle) != nil {
+                return cfBundle
+            }
+            // 模糊匹配（部分 bundleId 大小写不同）
+            let lowerBid = cfBundle.lowercased()
+            if let def = TerminalRegistry.allTerminals.first(where: {
+                !$0.bundleId.isEmpty && $0.bundleId.lowercased() == lowerBid
+            }) {
+                return def.bundleId
+            }
+        }
+
+        return rawTermApp
+    }
+
+    // MARK: - Inline Permission 侧边内联权限审批
+    var inlinePermissionWindow: NSPanel?
+
+    func showInlinePermission(toolName: String, command: String, suggestions: [[String: Any]], completion: @escaping ([String: Any]) -> Void) {
+        guard inlinePermissionWindow == nil else { return }
+
+        if autoApproveEnabled {
+            completion(["behavior": "allow"]); return
+        }
+
+        let dismiss: ([String: Any]) -> Void = { [weak self] decision in
+            self?.permissionKeyMonitors.forEach { NSEvent.removeMonitor($0) }
+            self?.permissionKeyMonitors = []
+            self?.inlinePermissionWindow?.close()
+            self?.inlinePermissionWindow = nil
+            completion(decision)
+        }
+
+        let s = PetSettings.shared
+        let modSym: String
+        switch s.permissionModifier {
+        case "option":  modSym = "⌥"
+        case "command": modSym = "⌘"
+        default:        modSym = "⌃"
+        }
+
+        let view = PermissionDialogView(
+            toolName: toolName, command: command, hasSuggestions: !suggestions.isEmpty,
+            shortcutApprove: "\(modSym)\(s.shortcutApprove.uppercased())",
+            shortcutDeny: "\(modSym)\(s.shortcutDeny.uppercased())",
+            shortcutAlwaysAllow: "\(modSym)\(s.shortcutAlwaysAllow.uppercased())",
+            onAllow:       { dismiss(["behavior": "allow"]) },
+            onAlwaysAllow: { dismiss(["behavior": "allow", "updatedPermissions": suggestions]) },
+            onDeny:        { dismiss(["behavior": "deny"]) }
+        )
+
+        let panelW: CGFloat = 320
+        let hosting = NSHostingView(rootView: view)
+        hosting.frame = NSRect(x: 0, y: 0, width: panelW, height: 100)
+        let panelH = max(hosting.fittingSize.height, 200)
+        hosting.frame = NSRect(x: 0, y: 0, width: panelW, height: panelH)
+
+        let panel = NSPanel(
+            contentRect: NSRect(x: 0, y: 0, width: panelW, height: panelH),
+            styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false
+        )
+        panel.contentView = hosting
+        panel.backgroundColor = .clear; panel.isOpaque = false
+        panel.hasShadow = true; panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
+
+        guard let petWindow = self.view.window else { dismiss(["behavior": "deny"]); return }
+        let screen = petWindow.screen ?? NSScreen.main
+        let screenMaxX = screen?.visibleFrame.maxX ?? 1440
+        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
+        let startX: CGFloat = snappedSide == 1 ? screenMaxX : -panelW
+        let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+
+        panel.setFrame(NSRect(x: startX, y: targetY, width: panelW, height: panelH), display: false)
+        panel.orderFrontRegardless()
+        let anim = NSViewAnimation(viewAnimations: [[
+            NSViewAnimation.Key.target: panel,
+            NSViewAnimation.Key.startFrame: NSValue(rect: NSRect(x: startX, y: targetY, width: panelW, height: panelH)),
+            NSViewAnimation.Key.endFrame: NSValue(rect: NSRect(x: targetX, y: targetY, width: panelW, height: panelH))
+        ]])
+        anim.duration = 0.25; anim.animationCurve = .easeOut; anim.start()
+        inlinePermissionWindow = panel
+        NSSound(named: "确认提示")?.play()
+
+        let handler: (NSEvent) -> Void = { [weak self] event in
+            guard self?.inlinePermissionWindow != nil else { return }
+            let cfg = PetSettings.shared
+            let expectedMod: NSEvent.ModifierFlags
+            switch cfg.permissionModifier {
+            case "option":  expectedMod = .option
+            case "command": expectedMod = .command
+            default:        expectedMod = .control
+            }
+            let mod = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+            guard mod == expectedMod else { return }
+            let char = event.charactersIgnoringModifiers?.lowercased()
+            switch char {
+            case cfg.shortcutApprove:
+                DispatchQueue.main.async { dismiss(["behavior": "allow"]) }
+            case cfg.shortcutDeny:
+                DispatchQueue.main.async { dismiss(["behavior": "deny"]) }
+            case cfg.shortcutAlwaysAllow where !suggestions.isEmpty:
+                DispatchQueue.main.async { dismiss(["behavior": "allow", "updatedPermissions": suggestions]) }
+            case cfg.shortcutAutoApprove:
+                DispatchQueue.main.async { self?.autoApproveEnabled = true; dismiss(["behavior": "allow"]) }
+            case cfg.shortcutFocusTerminal:
+                DispatchQueue.main.async { self?.focusTerminal() }
+            default: break
+            }
+        }
+        if let global = NSEvent.addGlobalMonitorForEvents(matching: .keyDown, handler: handler) {
+            permissionKeyMonitors.append(global)
+        }
+        if let local = NSEvent.addLocalMonitorForEvents(matching: .keyDown, handler: { event in handler(event); return event }) {
+            permissionKeyMonitors.append(local)
+        }
+    }
+
+    // MARK: - Inline Elicitation 侧边内联选项
+    var inlineElicitationWindow: NSPanel?
+
+    // MARK: - AskUserQuestion 选项弹窗
+    var askUserQuestionWindow: NSPanel?
+
+    func showAskUserQuestionDialog(prompt: String, options: [String], completion: @escaping (Int) -> Void) {
+        guard askUserQuestionWindow == nil else { return }
+
+        let dismiss: (Int) -> Void = { [weak self] index in
+            self?.askUserQuestionWindow?.close()
+            self?.askUserQuestionWindow = nil
+            completion(index)
+        }
+
+        let view = AskUserQuestionView(prompt: prompt, options: options, onSelect: dismiss)
+
+        let panelW: CGFloat = 340
+        let panelH: CGFloat = CGFloat(100 + options.count * 48)
+        let hosting = NSHostingView(rootView: view)
+        hosting.frame = NSRect(x: 0, y: 0, width: panelW, height: panelH)
+
+        let panel = NSPanel(
+            contentRect: NSRect(x: 0, y: 0, width: panelW, height: panelH),
+            styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false
+        )
+        panel.contentView = hosting
+        panel.backgroundColor = .clear; panel.isOpaque = false
+        panel.hasShadow = true
+        panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
+
+        guard let petWindow = self.view.window else { dismiss(0); return }
+        if isSnappedToSide {
+            let screen = petWindow.screen ?? NSScreen.main
+            let screenMaxX = screen?.visibleFrame.maxX ?? 1440
+            let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
+            let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+            panel.setFrameOrigin(NSPoint(x: targetX, y: targetY))
+        } else {
+            let petFrame = petWindow.frame
+            panel.setFrameOrigin(NSPoint(x: petFrame.midX - panelW / 2, y: petFrame.maxY + 8))
+        }
+
+        askUserQuestionWindow = panel
+        panel.makeKeyAndOrderFront(nil)
+        NSSound(named: "确认提示")?.play()
+    }
+
+    func typeInTerminal(_ text: String) {
+        let escaped = text.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"")
+        let script = """
+        tell application "System Events"
+            keystroke "\(escaped)"
         end tell
         """
         DispatchQueue.global(qos: .userInitiated).async {
@@ -916,11 +2351,67 @@ class ViewController: NSViewController {
         }
     }
 
+    func showInlineElicitation(prompt: String, options: [String], completion: @escaping ([String: Any]) -> Void) {
+        guard inlineElicitationWindow == nil else { return }
+
+        let dismiss: ([String: Any]) -> Void = { [weak self] result in
+            self?.inlineElicitationWindow?.close()
+            self?.inlineElicitationWindow = nil
+            completion(result)
+        }
+
+        let view = ElicitationDialogView(
+            prompt: prompt, options: options,
+            onSelect: { selected in dismiss(["action": "accept", "selected": selected]) },
+            onCancel: { dismiss(["action": "cancel"]) }
+        )
+
+        let panelW: CGFloat = 320
+        let panelH: CGFloat = CGFloat(130 + options.count * 44)
+        let hosting = NSHostingView(rootView: view)
+        hosting.frame = NSRect(x: 0, y: 0, width: panelW, height: panelH)
+
+        let panel = NSPanel(
+            contentRect: NSRect(x: 0, y: 0, width: panelW, height: panelH),
+            styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false
+        )
+        panel.contentView = hosting
+        panel.backgroundColor = .clear; panel.isOpaque = false
+        panel.hasShadow = true; panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
+
+        guard let petWindow = self.view.window else { dismiss(["action": "cancel"]); return }
+        let screen = petWindow.screen ?? NSScreen.main
+        let screenMaxX = screen?.visibleFrame.maxX ?? 1440
+        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
+        let startX: CGFloat = snappedSide == 1 ? screenMaxX : -panelW
+        let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+
+        panel.setFrame(NSRect(x: startX, y: targetY, width: panelW, height: panelH), display: false)
+        panel.orderFrontRegardless()
+        let anim = NSViewAnimation(viewAnimations: [[
+            NSViewAnimation.Key.target: panel,
+            NSViewAnimation.Key.startFrame: NSValue(rect: NSRect(x: startX, y: targetY, width: panelW, height: panelH)),
+            NSViewAnimation.Key.endFrame: NSValue(rect: NSRect(x: targetX, y: targetY, width: panelW, height: panelH))
+        ]])
+        anim.duration = 0.25; anim.animationCurve = .easeOut; anim.start()
+        inlineElicitationWindow = panel
+        NSSound(named: "确认提示")?.play()
+    }
+
     func showTerminalPanel() {
         guard view.window != nil else { return }
+        // 异步刷新（不阻塞渲染，扫完自动更新面板内容）
+        refreshTerminalSessionsAsync()
         let sessions = loadTerminalSessions()
-        let panelW: CGFloat = 280
-        let panelH: CGFloat = min(CGFloat(56 + sessions.count * 62 + 20 + 38), 400)
+        let panelW: CGFloat = 373
+        let rowH = sessions.map { s -> Int in
+                    var h = 50
+                    if !s.shortMessage.isEmpty { h += 16 }
+                    if !s.lastAssistantMessage.isEmpty { h += s.lastAssistantMessage.count > 60 ? 30 : 16 }
+                    if !s.toolTarget.isEmpty && s.isProcessing { h += 16 }
+                    return h
+                }.reduce(0, +)
+                let panelH: CGFloat = min(CGFloat(56 + rowH + 20 + 38), 500)
 
         if terminalPanelWindow == nil {
             let panel = NSPanel(
@@ -931,7 +2422,7 @@ class ViewController: NSViewController {
             panel.backgroundColor = .clear
             panel.isOpaque = false
             panel.hasShadow = true
-            panel.level = .floating
+            panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
             panel.acceptsMouseMovedEvents = true
             panel.isReleasedWhenClosed = false
             terminalPanelWindow = panel
@@ -939,6 +2430,7 @@ class ViewController: NSViewController {
 
         let panelView = TerminalSessionPanelView(
             sessions: sessions,
+            waterCountdown: waterCountdownString,
             onSelect: { [weak self] session in self?.openTerminalSession(session) },
             onSettings: { SettingsWindowController.shared.open() },
             onMouseEnter: { [weak self] in
@@ -952,15 +2444,16 @@ class ViewController: NSViewController {
                 self?.terminalAutoHideTimer = Timer.scheduledTimer(withTimeInterval: self?.terminalAutoHideDelay ?? 0.5, repeats: false) { [weak self] _ in
                     guard let self, !self.isMouseOverPet, !self.isMouseInTerminalPanel else { return }
                     self.hideTerminalPanel()
-                    self.terminalHoverCooldownUntil = Date().addingTimeInterval(self.terminalHoverCooldownDuration)
                 }
             }
         )
         let hosting = FirstMouseHostingView(rootView: panelView)
         hosting.frame = NSRect(x: 0, y: 0, width: panelW, height: panelH)
         hosting.wantsLayer = true
-        hosting.layer?.cornerRadius = 12
+        hosting.layer?.backgroundColor = NSColor.clear.cgColor
+        hosting.layer?.cornerRadius = TuanziTokens.Radius.xxl
         hosting.layer?.masksToBounds = true
+
         terminalPanelWindow?.contentView = hosting
         terminalPanelWindow?.setContentSize(NSSize(width: panelW, height: panelH))
 
@@ -970,7 +2463,7 @@ class ViewController: NSViewController {
         let screenMaxX = screen?.visibleFrame.maxX ?? NSScreen.main?.visibleFrame.maxX ?? 1440
         // 右侧吸附：面板贴右边缘（与左侧对称），从右侧屏幕外飞入
         // 左侧吸附：面板贴左边缘 50px，从左侧屏幕外飞入
-        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 : 50
+        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
         let startX:  CGFloat = snappedSide == 1 ? screenMaxX               : -panelW
         let targetY = max(petWindow.frame.midY - panelH / 2, 8)
         let startFrame = NSRect(x: startX,   y: targetY, width: panelW, height: panelH)
@@ -1001,12 +2494,11 @@ class ViewController: NSViewController {
             NSViewAnimation.Key.startFrame: NSValue(rect: panel.frame),
             NSViewAnimation.Key.endFrame:   NSValue(rect: endFrame)
         ]])
-        anim.duration = 0.2
+        anim.duration = 0.15
         anim.animationCurve = .easeIn
         anim.start()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self, weak panel] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak panel] in
             panel?.orderOut(nil)
-            self?.terminalHoverCooldownUntil = Date().addingTimeInterval(self?.terminalHoverCooldownDuration ?? 0.5)
         }
     }
 
@@ -1053,7 +2545,7 @@ class ViewController: NSViewController {
     func playSnapReminderCycle() {
         guard isSnappedToSide, isSnapReminding else { stopSnapReminder(); return }
         snapReminderCycleCount += 1
-        guard snapReminderCycleCount <= 3 else { stopSnapReminder(); return }
+        guard snapReminderCycleCount <= 1 else { stopSnapReminder(); return }
 
         let snapIdleTextures = snappedSide == -1 ? snapLeftIdleTextures : snapRightIdleTextures
         let reminderTextures = snappedSide == -1 ? snapReminder2Textures : snapReminder1Textures
@@ -1132,7 +2624,7 @@ class ViewController: NSViewController {
         waterTimer?.invalidate(); countdownTimer?.invalidate()
         waterReminderIntervalSeconds = minutes * 60
         waterReminderEndDate = Date().addingTimeInterval(waterReminderIntervalSeconds)
-        countdownContainer?.isHidden = !isMouseOverPet
+        countdownContainer?.isHidden = isSnappedToSide || !isMouseOverPet
         updateCountdownDisplay()
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in self?.updateCountdownDisplay() }
         waterTimer = Timer.scheduledTimer(withTimeInterval: waterReminderIntervalSeconds, repeats: true) { [weak self] _ in self?.playDrinkWaterAnimation() }
@@ -1142,9 +2634,19 @@ class ViewController: NSViewController {
         guard waterReminderIntervalSeconds > 0, waterTimer?.isValid == true else { return }
         countdownTimer?.invalidate()
         waterReminderEndDate = Date().addingTimeInterval(waterReminderIntervalSeconds)
-        countdownContainer?.isHidden = !isMouseOverPet
+        countdownContainer?.isHidden = isSnappedToSide || !isMouseOverPet
         updateCountdownDisplay()
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in self?.updateCountdownDisplay() }
+    }
+
+    var waterCountdownString: String {
+        guard let endDate = waterReminderEndDate else { return "" }
+        let remaining = endDate.timeIntervalSince(Date())
+        guard remaining > 0 else { return "" }
+        let h = Int(remaining) / 3600
+        let m = (Int(remaining) % 3600) / 60
+        let s = Int(remaining) % 60
+        return h > 0 ? String(format: "%d:%02d:%02d", h, m, s) : String(format: "%02d:%02d", m, s)
     }
 
     func updateCountdownDisplay() {
@@ -1152,16 +2654,21 @@ class ViewController: NSViewController {
         let remaining = endDate.timeIntervalSince(Date())
         if remaining <= 0 { stopCountdown(); return }
 
-        let hours = Int(remaining) / 3600
-        let minutes = (Int(remaining) % 3600) / 60
-        let seconds = Int(remaining) % 60
-        let timeString = hours > 0 ? String(format: "%d:%02d:%02d", hours, minutes, seconds) : String(format: "%02d:%02d", minutes, seconds)
-        countdownLabel?.stringValue = "💧 \(timeString)"
-        countdownLabel?.alignment = .center
+        if isSnappedToSide {
+            countdownContainer?.isHidden = true
+            if terminalPanelWindow?.isVisible == true { refreshTerminalSessionsAsync() }
+        } else {
+            let hours = Int(remaining) / 3600
+            let minutes = (Int(remaining) % 3600) / 60
+            let seconds = Int(remaining) % 60
+            let timeString = hours > 0 ? String(format: "%d:%02d:%02d", hours, minutes, seconds) : String(format: "%02d:%02d", minutes, seconds)
+            countdownLabel?.stringValue = "💧 \(timeString)"
+            countdownLabel?.alignment = .center
+        }
     }
 
     func stopCountdown() { countdownTimer?.invalidate(); countdownTimer = nil; waterReminderEndDate = nil; countdownContainer?.isHidden = true }
-    func cancelWaterReminder() { waterTimer?.invalidate(); stopCountdown() }
+    func cancelWaterReminder() { waterTimer?.invalidate(); stopCountdown(); refreshTerminalSessionsAsync() }
 
     // MARK: - Timers 定时任务
     func startChaseTimer() {
@@ -1252,7 +2759,7 @@ class ViewController: NSViewController {
     // MARK: - Event Monitors 全局事件监听
     func setupGlobalMonitors() {
         localMouseMonitor = NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
-            self?.resetIdleTimer(); self?.updateCursorHover(event: event); return event
+            self?.resetIdleTimer(); return event
         }
         globalMouseMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] _ in self?.resetIdleTimer() }
 
@@ -1277,11 +2784,7 @@ class ViewController: NSViewController {
     
     func updateCursorHover(event: NSEvent) {
         guard !isCurrentlyDragging else { return }
-        let locationInView = skView.convert(event.locationInWindow, from: nil)
-        guard let scene = skView.scene else { return }
-        let locationInScene = scene.convertPoint(fromView: locationInView)
-        let node = scene.atPoint(locationInScene)
-        if node.name == "petSprite" || node.parent?.name == "petSprite" { NSCursor.openHand.set() }
+        if isMouseOverPet { NSCursor.openHand.set() }
         else { NSCursor.arrow.set() }
     }
     
@@ -1366,142 +2869,318 @@ struct PermissionDialogView: View {
 
     var body: some View {
         ZStack {
-            // 背景
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color(red: 0.13, green: 0.13, blue: 0.15))
+            VisualEffectView(material: .hudWindow, blendingMode: .behindWindow, cornerRadius: TuanziTokens.Radius.dialog)
+            RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                .fill(TuanziTokens.Colors.dialogBg.opacity(0.82))
                 .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                        .stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.borderWidth)
                 )
 
             VStack(alignment: .leading, spacing: 0) {
                 // 标题行
                 HStack(spacing: 10) {
                     Image(systemName: "lock.shield")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(Color(red: 1.0, green: 0.7, blue: 0.2))
+                        .font(TuanziTokens.Fonts.icon)
+                        .foregroundColor(TuanziTokens.Colors.accentWarning)
                     Text("Claude 请求权限")
-                        .font(.system(size: 15, weight: .semibold))
+                        .font(TuanziTokens.Fonts.subheading)
                         .foregroundColor(.white)
                     Spacer()
                 }
-                .padding(.top, 20)
-                .padding(.horizontal, 20)
+                .padding(.top, TuanziTokens.Spacing.xxl)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
 
-                // 分隔线
                 Divider()
-                    .background(Color.white.opacity(0.08))
-                    .padding(.top, 12)
+                    .background(TuanziTokens.Colors.divider)
+                    .padding(.top, TuanziTokens.Spacing.lg)
 
                 // 工具标签
                 HStack(spacing: 6) {
                     Text("工具")
-                        .font(.system(size: 11, weight: .medium))
-                        .foregroundColor(Color.white.opacity(0.4))
-                        .padding(.horizontal, 8)
+                        .font(TuanziTokens.Fonts.footnoteMed)
+                        .foregroundColor(TuanziTokens.Colors.textTertiary)
+                        .padding(.horizontal, TuanziTokens.Spacing.md)
                         .padding(.vertical, 3)
                         .background(Color.white.opacity(0.07))
                         .clipShape(Capsule())
                     Text(toolName)
                         .font(.system(size: 13, weight: .medium, design: .monospaced))
-                        .foregroundColor(Color(red: 0.4, green: 0.8, blue: 1.0))
+                        .foregroundColor(TuanziTokens.Colors.accentCyan)
                 }
                 .padding(.top, 14)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
 
-                // 命令内容
+                // 命令内容：文字少保持现有高度，文字多自动翻倍
                 CommandScrollView(text: command)
-                    .frame(height: 140)
-                    .background(Color.black.opacity(0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .padding(.top, 10)
-                    .padding(.horizontal, 20)
+                    .frame(minHeight: 60, maxHeight: command.count > 150 ? 400 : 200)
+                    .background(TuanziTokens.Colors.commandBg)
+                    .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
+                    .padding(.top, TuanziTokens.Spacing.rowH)
+                    .padding(.horizontal, TuanziTokens.Spacing.xxl)
 
                 // 按钮区
                 VStack(spacing: 8) {
-                    // 永久允许（仅当有 suggestions 时显示）
                     if hasSuggestions {
                         Button(action: onAlwaysAllow) {
                             HStack {
                                 Text("始终允许")
-                                    .font(.system(size: 13, weight: .medium))
+                                    .font(TuanziTokens.Fonts.controlMed)
                                     .foregroundColor(.white)
                                 Spacer()
                                 Text(shortcutAlwaysAllow)
                                     .font(.system(size: 10, weight: .semibold, design: .monospaced))
-                                    .foregroundColor(.white.opacity(0.65))
+                                    .foregroundColor(TuanziTokens.Colors.textLabel)
                                     .padding(.horizontal, 5)
-                                    .padding(.vertical, 2)
+                                    .padding(.vertical, TuanziTokens.Spacing.xs)
                                     .background(Color.white.opacity(0.15))
-                                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                                    .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
                             }
                             .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 12)
+                            .padding(.horizontal, TuanziTokens.Spacing.lg)
                             .padding(.vertical, 9)
-                            .background(Color(red: 0.15, green: 0.72, blue: 0.45))
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .background(TuanziTokens.Colors.accentGreen)
+                            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
                         }
                         .buttonStyle(.plain)
                         .keyboardShortcut("a", modifiers: .control)
                     }
 
-                    // 允许一次
                     Button(action: onAllow) {
                         HStack {
                             Text("允许一次")
-                                .font(.system(size: 13, weight: .medium))
+                                .font(TuanziTokens.Fonts.controlMed)
                                 .foregroundColor(.white)
                             Spacer()
                             Text(shortcutApprove)
                                 .font(.system(size: 10, weight: .semibold, design: .monospaced))
-                                .foregroundColor(.white.opacity(0.65))
+                                .foregroundColor(TuanziTokens.Colors.textLabel)
                                 .padding(.horizontal, 5)
-                                .padding(.vertical, 2)
+                                .padding(.vertical, TuanziTokens.Spacing.xs)
                                 .background(Color.white.opacity(0.15))
-                                .clipShape(RoundedRectangle(cornerRadius: 4))
+                                .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.horizontal, 12)
+                        .padding(.horizontal, TuanziTokens.Spacing.lg)
                         .padding(.vertical, 9)
-                        .background(Color(red: 0.25, green: 0.55, blue: 1.0))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .background(TuanziTokens.Colors.accentBlue)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
                     }
                     .buttonStyle(.plain)
                     .keyboardShortcut("y", modifiers: .control)
 
-                    // 拒绝
                     Button(action: onDeny) {
                         HStack {
                             Text("拒绝")
-                                .font(.system(size: 13, weight: .medium))
+                                .font(TuanziTokens.Fonts.controlMed)
                                 .foregroundColor(Color.white.opacity(0.7))
                             Spacer()
                             Text(shortcutDeny)
                                 .font(.system(size: 10, weight: .semibold, design: .monospaced))
-                                .foregroundColor(.white.opacity(0.5))
+                                .foregroundColor(TuanziTokens.Colors.textIcon)
                                 .padding(.horizontal, 5)
-                                .padding(.vertical, 2)
-                                .background(Color.white.opacity(0.10))
-                                .clipShape(RoundedRectangle(cornerRadius: 4))
+                                .padding(.vertical, TuanziTokens.Spacing.xs)
+                                .background(TuanziTokens.Colors.buttonCountBg)
+                                .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.horizontal, 12)
+                        .padding(.horizontal, TuanziTokens.Spacing.lg)
                         .padding(.vertical, 9)
-                        .background(Color.white.opacity(0.08))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .background(TuanziTokens.Colors.border)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
                     }
                     .buttonStyle(.plain)
                     .keyboardShortcut("n", modifiers: .control)
                 }
                 .padding(.top, 14)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+                .padding(.bottom, TuanziTokens.Spacing.xxl)
             }
         }
-        .frame(width: 320)
+        .frame(width: TuanziTokens.Layout.dialogWidth)
     }
 }
 
+// MARK: - ElicitationDialogView 选项弹窗
+struct ElicitationDialogView: View {
+    let prompt: String
+    let options: [String]
+    let onSelect: (String) -> Void
+    let onCancel: () -> Void
+
+    @State private var selected: String? = nil
+
+    var body: some View {
+        ZStack {
+            VisualEffectView(material: .hudWindow, blendingMode: .behindWindow, cornerRadius: TuanziTokens.Radius.dialog)
+            RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                .fill(TuanziTokens.Colors.dialogBg.opacity(0.82))
+                .overlay(
+                    RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                        .stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.borderWidth)
+                )
+
+            VStack(alignment: .leading, spacing: 0) {
+                // 标题行
+                HStack(spacing: 10) {
+                    Image(systemName: "questionmark.circle")
+                        .font(TuanziTokens.Fonts.icon)
+                        .foregroundColor(TuanziTokens.Colors.accentCyan)
+                    Text("Claude 需要你选择")
+                        .font(TuanziTokens.Fonts.subheading)
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding(.top, 18)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+
+                // 问题
+                Text(prompt)
+                    .font(TuanziTokens.Fonts.body)
+                    .foregroundColor(TuanziTokens.Colors.textSecondary)
+                    .padding(.top, 6)
+                    .padding(.horizontal, TuanziTokens.Spacing.xxl)
+
+                Divider()
+                    .background(TuanziTokens.Colors.divider)
+                    .padding(.top, TuanziTokens.Spacing.rowH)
+
+                // 选项列表
+                VStack(spacing: 6) {
+                    ForEach(options, id: \.self) { option in
+                        Button(action: { onSelect(option) }) {
+                            HStack(spacing: 10) {
+                                ZStack {
+                                    Circle()
+                                        .stroke(selected == option
+                                            ? TuanziTokens.Colors.accentBlue
+                                            : Color.white.opacity(0.25),
+                                            lineWidth: TuanziTokens.Layout.radioBorderWidth)
+                                        .frame(width: TuanziTokens.Layout.radioSize, height: TuanziTokens.Layout.radioSize)
+                                    if selected == option {
+                                        Circle()
+                                            .fill(TuanziTokens.Colors.accentBlue)
+                                            .frame(width: TuanziTokens.Layout.checkSize, height: TuanziTokens.Layout.checkSize)
+                                    }
+                                }
+                                Text(option)
+                                    .font(TuanziTokens.Fonts.control)
+                                    .foregroundColor(.white)
+                                    .lineLimit(2)
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal, TuanziTokens.Spacing.lg)
+                            .padding(.vertical, TuanziTokens.Spacing.rowH)
+                            .background(selected == option
+                                ? TuanziTokens.Colors.accentBlue.opacity(0.15)
+                                : TuanziTokens.Colors.buttonDimBg)
+                            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg)
+                                    .stroke(selected == option
+                                        ? TuanziTokens.Colors.accentBlue.opacity(0.5)
+                                        : Color.clear, lineWidth: TuanziTokens.Layout.borderWidth)
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .simultaneousGesture(TapGesture().onEnded { selected = option })
+                    }
+                }
+                .padding(.top, TuanziTokens.Spacing.rowH)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+
+                // 取消
+                Button(action: onCancel) {
+                    Text("取消")
+                        .font(TuanziTokens.Fonts.controlMed)
+                        .foregroundColor(TuanziTokens.Colors.textIcon)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 9)
+                        .background(TuanziTokens.Colors.buttonDimBg)
+                        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
+                }
+                .buttonStyle(.plain)
+                .padding(.top, TuanziTokens.Spacing.rowH)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+                .padding(.bottom, TuanziTokens.Spacing.xl)
+            }
+        }
+        .frame(width: TuanziTokens.Layout.dialogWidth)
+    }
+}
+
+// MARK: - AskUserQuestionView 选项弹窗视图
+struct AskUserQuestionView: View {
+    let prompt: String
+    let options: [String]
+    let onSelect: (Int) -> Void
+
+    var body: some View {
+        ZStack {
+            VisualEffectView(material: .hudWindow, blendingMode: .behindWindow, cornerRadius: TuanziTokens.Radius.dialog)
+            RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                .fill(TuanziTokens.Colors.dialogBg.opacity(0.82))
+                .overlay(
+                    RoundedRectangle(cornerRadius: TuanziTokens.Radius.dialog)
+                        .stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.borderWidth)
+                )
+
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 10) {
+                    Image(systemName: "list.bullet.circle")
+                        .font(TuanziTokens.Fonts.icon)
+                        .foregroundColor(TuanziTokens.Colors.accentCyan)
+                    Text("Claude 想问你")
+                        .font(TuanziTokens.Fonts.subheading)
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding(.top, 18)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+
+                Text(prompt)
+                    .font(TuanziTokens.Fonts.body)
+                    .foregroundColor(TuanziTokens.Colors.textSecondary)
+                    .padding(.top, 6)
+                    .padding(.horizontal, TuanziTokens.Spacing.xxl)
+
+                Divider().background(TuanziTokens.Colors.divider).padding(.top, TuanziTokens.Spacing.rowH)
+
+                VStack(spacing: 6) {
+                    ForEach(Array(options.enumerated()), id: \.offset) { index, option in
+                        Button(action: { onSelect(index) }) {
+                            HStack(spacing: 10) {
+                                Text("\(index + 1)")
+                                    .font(TuanziTokens.Fonts.footnoteBold)
+                                    .foregroundColor(TuanziTokens.Colors.textIcon)
+                                    .frame(width: TuanziTokens.Layout.optionNumSize, height: TuanziTokens.Layout.optionNumSize)
+                                    .background(TuanziTokens.Colors.buttonCountBg)
+                                    .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
+                                Text(option)
+                                    .font(TuanziTokens.Fonts.control)
+                                    .foregroundColor(.white)
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal, TuanziTokens.Spacing.lg)
+                            .padding(.vertical, TuanziTokens.Spacing.rowH)
+                            .background(TuanziTokens.Colors.buttonDimBg)
+                            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.lg))
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.top, TuanziTokens.Spacing.rowH)
+                .padding(.horizontal, TuanziTokens.Spacing.xxl)
+                .padding(.bottom, TuanziTokens.Spacing.xl)
+            }
+        }
+        .frame(width: TuanziTokens.Layout.questionWidth)
+    }
+}
 
 // MARK: - TerminalSession 数据模型
 struct TerminalSession: Identifiable {
@@ -1513,57 +3192,111 @@ struct TerminalSession: Identifiable {
     let toolTarget: String
     let tty: String
     let lastActivityAt: Double
+    let termSessionId: String
+    let terminalApp: String
+    let startedAt: Double
+    let agentId: String
 
     var projectName: String { URL(fileURLWithPath: cwd).lastPathComponent }
     var shortMessage: String {
         let s = firstUserMessage
         return s.count > 60 ? String(s.prefix(60)) + "…" : s
     }
-    var isProcessing: Bool { status == "processing" }
+    var isProcessing: Bool { status == "working" }
+    var isDone: Bool { status == "idle" }
+
+    var agentDisplayName: String {
+        AgentRegistry.allAgents.first { $0.id == agentId }?.displayName ?? "Claude"
+    }
+
+    var agentBadgeColor: Color {
+        guard let agent = AgentRegistry.allAgents.first(where: { $0.id == agentId }) else {
+            return Color(red: 1.0, green: 0.6, blue: 0.15)
+        }
+        return Color(red: agent.badgeColor.r, green: agent.badgeColor.g, blue: agent.badgeColor.b)
+    }
+
+    var editorDisplayName: String {
+        guard !terminalApp.isEmpty else { return "" }
+        // 先按 bundleId 精确匹配
+        if let def = TerminalRegistry.terminal(forBundleId: terminalApp) {
+            return def.displayName
+        }
+        // 按 id 或 displayName 模糊匹配（terminalApp 可能是 "Apple_Terminal" 等格式）
+        let lower = terminalApp.lowercased().replacingOccurrences(of: "_", with: "")
+        if let def = TerminalRegistry.allTerminals.first(where: {
+            lower.contains($0.id.lowercased()) || lower.contains($0.displayName.lowercased().replacingOccurrences(of: " ", with: ""))
+        }) {
+            return def.displayName
+        }
+        // 兜底：把下划线替换为空格
+        return terminalApp.replacingOccurrences(of: "_", with: " ")
+    }
+
+    var elapsedTime: String {
+        guard startedAt > 0 else { return "" }
+        let elapsed = Int(Date().timeIntervalSince1970 - startedAt)
+        if elapsed < 60 { return "\(elapsed)s" }
+        if elapsed < 3600 { return "\(elapsed / 60)m\(elapsed % 60)s" }
+        return "\(elapsed / 3600)h\(elapsed / 60 % 60)m"
+    }
 }
 
 // MARK: - TerminalSessionPanelView 终端会话面板视图
 struct TerminalSessionPanelView: View {
     let sessions: [TerminalSession]
+    let waterCountdown: String
     let onSelect: (TerminalSession) -> Void
     let onSettings: () -> Void
     let onMouseEnter: () -> Void
     let onMouseExit: () -> Void
 
-    private let bg = Color(red: 0.1, green: 0.1, blue: 0.1)
-    private let dividerColor = Color.white.opacity(0.08)
+    private let bg = TuanziTokens.Colors.panelBg
+    private let dividerColor = TuanziTokens.Colors.divider
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // 标题栏
             HStack {
-                Image(systemName: "terminal")
-                    .foregroundColor(.white.opacity(0.5))
-                Text("终端会话")
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundColor(.white.opacity(0.85))
+                Image(systemName: "cpu")
+                    .foregroundColor(TuanziTokens.Colors.textIcon)
+                Text("AI 会话")
+                    .font(TuanziTokens.Fonts.bodySemi)
+                    .foregroundColor(TuanziTokens.Colors.textHeader)
                 Spacer()
-                Text("\(sessions.count)")
-                    .font(.system(size: 11))
-                    .foregroundColor(.white.opacity(0.5))
+                if !waterCountdown.isEmpty {
+                    HStack(spacing: 3) {
+                        Text("💧")
+                            .font(TuanziTokens.Fonts.caption)
+                        Text(waterCountdown)
+                            .font(TuanziTokens.Fonts.captionMono)
+                            .foregroundColor(TuanziTokens.Colors.accentCyanSoft)
+                    }
                     .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(Color.white.opacity(0.1))
-                    .cornerRadius(8)
+                    .padding(.vertical, TuanziTokens.Spacing.xs)
+                    .background(TuanziTokens.Colors.accentCyanSoft.opacity(0.1))
+                    .cornerRadius(TuanziTokens.Radius.md)
+                }
+                Text("\(sessions.count)")
+                    .font(TuanziTokens.Fonts.footnote)
+                    .foregroundColor(TuanziTokens.Colors.textIcon)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, TuanziTokens.Spacing.xs)
+                    .background(TuanziTokens.Colors.buttonCountBg)
+                    .cornerRadius(TuanziTokens.Radius.lg)
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
+            .padding(.horizontal, TuanziTokens.Spacing.lg)
+            .padding(.vertical, TuanziTokens.Spacing.rowH)
 
             dividerColor.frame(height: 1)
 
             if sessions.isEmpty {
                 VStack(spacing: 8) {
                     Image(systemName: "terminal.fill")
-                        .font(.system(size: 28))
-                        .foregroundColor(.white.opacity(0.2))
+                        .font(TuanziTokens.Fonts.largeIcon)
+                        .foregroundColor(TuanziTokens.Colors.textDimmed)
                     Text("没有活跃的终端会话")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white.opacity(0.4))
+                        .font(TuanziTokens.Fonts.body)
+                        .foregroundColor(TuanziTokens.Colors.textTertiary)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 24)
@@ -1575,12 +3308,12 @@ struct TerminalSessionPanelView: View {
                                 onSelect(session)
                             }
                             if session.id != sessions.last?.id {
-                                dividerColor.frame(height: 1).padding(.leading, 12)
+                                dividerColor.frame(height: 1).padding(.leading, TuanziTokens.Spacing.lg)
                             }
                         }
                     }
                 }
-                .frame(maxHeight: 280)
+                .frame(maxHeight: TuanziTokens.Layout.panelMaxHeight)
             }
             // 底部工具栏
             dividerColor.frame(height: 1)
@@ -1588,23 +3321,60 @@ struct TerminalSessionPanelView: View {
                 Spacer()
                 Button(action: onSettings) {
                     Image(systemName: "gearshape")
-                        .font(.system(size: 13))
-                        .foregroundColor(.white.opacity(0.45))
+                        .font(TuanziTokens.Fonts.control)
+                        .foregroundColor(TuanziTokens.Colors.textIcon)
                         .padding(7)
                         .background(Color.white.opacity(0.06))
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                 }
                 .buttonStyle(.plain)
             }
-            .padding(.horizontal, 10)
+            .padding(.horizontal, TuanziTokens.Spacing.rowH)
             .padding(.vertical, 6)
         }
-        .frame(width: 280)
+        .frame(width: TuanziTokens.Layout.panelWidth)
         .background(bg)
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: .black.opacity(0.5), radius: 20, x: 0, y: 6)
+        .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xxl))
+        .overlay(
+            RoundedRectangle(cornerRadius: TuanziTokens.Radius.xxl)
+                .stroke(TuanziTokens.Colors.glassStroke, lineWidth: TuanziTokens.Layout.strokeWidth)
+        )
+        .shadow(color: TuanziTokens.Shadow.panelColor, radius: TuanziTokens.Shadow.panelRadius, x: 0, y: TuanziTokens.Shadow.panelY)
+        .shadow(color: TuanziTokens.Shadow.glowColor, radius: TuanziTokens.Shadow.glowRadius)
         .onHover { hovering in
             if hovering { onMouseEnter() } else { onMouseExit() }
+        }
+    }
+}
+
+struct SessionStatusIcon: View {
+    let isProcessing: Bool
+    let hasDoneTask: Bool  // 跑过任务且已完成
+    @State private var rotation: Double = 0
+
+    var body: some View {
+        if isProcessing {
+            // 缺一角的圆弧旋转 spinner
+            Circle()
+                .trim(from: 0.15, to: 1.0)
+                .stroke(TuanziTokens.Colors.accentCyanBright, style: StrokeStyle(lineWidth: 1.8, lineCap: .round))
+                .frame(width: TuanziTokens.Layout.spinnerSize, height: TuanziTokens.Layout.spinnerSize)
+                .rotationEffect(.degrees(rotation))
+                .onAppear {
+                    withAnimation(.linear(duration: TuanziTokens.Animation.spinnerDuration).repeatForever(autoreverses: false)) {
+                        rotation = 360
+                    }
+                }
+        } else if hasDoneTask {
+            // 对号（跑过任务，已完成）
+            Image(systemName: "checkmark")
+                .font(TuanziTokens.Fonts.micro)
+                .foregroundColor(TuanziTokens.Colors.textIcon)
+        } else {
+            // 灰色圆点（普通空闲终端）
+            Circle()
+                .fill(TuanziTokens.Colors.textDimmed)
+                .frame(width: TuanziTokens.Layout.idleDotSize, height: TuanziTokens.Layout.idleDotSize)
         }
     }
 }
@@ -1614,35 +3384,105 @@ struct SessionRowView: View {
     let onTap: () -> Void
     @State private var isHovered = false
 
+    private var timeAgo: String {
+        let diff = Date().timeIntervalSince1970 - session.lastActivityAt
+        if diff < 60 { return "<1m" }
+        if diff < 3600 { return "\(Int(diff / 60))m" }
+        return "\(Int(diff / 3600))h"
+    }
+
+    private var renderedMarkdown: AttributedString {
+        let raw = session.lastAssistantMessage
+        if let md = try? AttributedString(markdown: raw, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)) {
+            return md
+        }
+        return AttributedString(raw)
+    }
+
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 10) {
-                Circle()
-                    .fill(session.isProcessing ? Color(red: 0.2, green: 0.9, blue: 0.4) : Color.white.opacity(0.2))
-                    .frame(width: 7, height: 7)
-                    .padding(.leading, 2)
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(alignment: .center, spacing: 6) {
+                    SessionStatusIcon(isProcessing: session.isProcessing, hasDoneTask: !session.firstUserMessage.isEmpty)
+                        .frame(width: TuanziTokens.Layout.sessionIconSize, height: TuanziTokens.Layout.sessionIconSize)
 
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(session.projectName)
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(.white.opacity(0.9))
-                        .lineLimit(1)
-                    if !session.shortMessage.isEmpty {
-                        Text(session.shortMessage)
-                            .font(.system(size: 11))
-                            .foregroundColor(.white.opacity(0.45))
+                    HStack(spacing: 0) {
+                        Text(session.projectName)
+                            .font(TuanziTokens.Fonts.bodySemi)
+                            .foregroundColor(TuanziTokens.Colors.textPrimary)
                             .lineLimit(1)
+                        if !session.firstUserMessage.isEmpty {
+                            Text(" · \(session.firstUserMessage)")
+                                .font(TuanziTokens.Fonts.body)
+                                .foregroundColor(TuanziTokens.Colors.textSecondary)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                    HStack(spacing: 4) {
+                        if session.isProcessing, !session.elapsedTime.isEmpty {
+                            Text(session.elapsedTime)
+                                .font(TuanziTokens.Fonts.captionMono)
+                                .foregroundColor(TuanziTokens.Colors.accentCyanBright.opacity(0.7))
+                        } else {
+                            Text(timeAgo)
+                                .font(TuanziTokens.Fonts.caption)
+                                .foregroundColor(TuanziTokens.Colors.textMuted)
+                        }
+                        if !session.editorDisplayName.isEmpty {
+                            Text(session.editorDisplayName)
+                                .font(TuanziTokens.Fonts.caption)
+                                .foregroundColor(TuanziTokens.Colors.textMuted)
+                                .padding(.horizontal, 4).padding(.vertical, TuanziTokens.Spacing.xs)
+                                .background(Color.white.opacity(0.08))
+                                .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
+                        }
+                        Text(session.agentDisplayName)
+                            .font(TuanziTokens.Fonts.captionMed)
+                            .foregroundColor(session.agentBadgeColor)
+                            .padding(.horizontal, 5).padding(.vertical, TuanziTokens.Spacing.xs)
+                            .background(session.agentBadgeColor.opacity(0.15))
+                            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.xs))
                     }
                 }
-                Spacer()
-                Image(systemName: "arrow.up.right")
-                    .font(.system(size: 10))
-                    .foregroundColor(.white.opacity(0.3))
+
+                if !session.shortMessage.isEmpty {
+                    Text("你: \(session.shortMessage)")
+                        .font(TuanziTokens.Fonts.footnote)
+                        .foregroundColor(TuanziTokens.Colors.textTertiary)
+                        .lineLimit(1)
+                        .padding(.leading, TuanziTokens.Spacing.xxl)
+                }
+
+                if !session.lastAssistantMessage.isEmpty {
+                    Text(renderedMarkdown)
+                        .font(TuanziTokens.Fonts.footnote)
+                        .foregroundColor(TuanziTokens.Colors.textSubtle)
+                        .lineLimit(2)
+                        .padding(.leading, TuanziTokens.Spacing.xxl)
+                }
+
+                if !session.toolTarget.isEmpty && session.isProcessing {
+                    HStack(spacing: 4) {
+                        Image(systemName: "gearshape.2")
+                            .font(TuanziTokens.Fonts.tiny)
+                            .foregroundColor(TuanziTokens.Colors.textDimmed)
+                        Text(session.toolTarget)
+                            .font(TuanziTokens.Fonts.captionMono)
+                            .foregroundColor(Color.white.opacity(0.3))
+                            .lineLimit(1)
+                    }
+                    .padding(.leading, TuanziTokens.Spacing.xxl)
+                }
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, TuanziTokens.Spacing.lg)
             .padding(.vertical, 9)
-            .background(isHovered ? Color.white.opacity(0.08) : Color.clear)
+            .background(isHovered ? TuanziTokens.Colors.buttonHover : Color.clear)
+            .clipShape(RoundedRectangle(cornerRadius: TuanziTokens.Radius.md))
             .contentShape(Rectangle())
+            .animation(.easeInOut(duration: 0.15), value: isHovered)
         }
         .buttonStyle(.plain)
         .onHover { h in isHovered = h }
@@ -1653,15 +3493,21 @@ struct SessionRowView: View {
 struct VisualEffectView: NSViewRepresentable {
     let material: NSVisualEffectView.Material
     let blendingMode: NSVisualEffectView.BlendingMode
+    var cornerRadius: CGFloat = 0
 
     func makeNSView(context: Context) -> NSVisualEffectView {
         let v = NSVisualEffectView()
         v.material = material
         v.blendingMode = blendingMode
         v.state = .active
+        v.wantsLayer = true
+        v.layer?.cornerRadius = cornerRadius
+        v.layer?.masksToBounds = true
         return v
     }
-    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+        nsView.layer?.cornerRadius = cornerRadius
+    }
 }
 
 // MARK: - FirstMouseHostingView 接受首次点击
@@ -1691,6 +3537,14 @@ class ClaudeWebhookServer {
 
     // 权限请求回调（HTTP hook，Claude 等待响应）
     var onPermissionRequest: ((_ payload: [String: Any], _ completion: @escaping ([String: Any]) -> Void) -> Void)?
+    // 权限请求连接断开回调（用户在编辑器中直接批准后 curl 被杀）
+    var onPermissionConnectionClosed: (() -> Void)?
+
+    // Elicitation 回调（HTTP hook，Claude 等待用户选择）
+    var onElicitationRequest: ((_ payload: [String: Any], _ completion: @escaping ([String: Any]) -> Void) -> Void)?
+
+    // Session 更新回调（SessionStart/Stop/PreToolUse 等）
+    var onSessionUpdate: ((_ sessionData: [String: Any]) -> Void)?
 
     func start(port: UInt16) {
         do {
@@ -1700,7 +3554,7 @@ class ClaudeWebhookServer {
                 self?.handleConnection(connection)
             }
             listener?.start(queue: .global(qos: .background))
-            print("📡 狗蛋 Webhook 监听已启动: 端口 \(port)")
+            print("📡 Webhook 监听已启动: 端口 \(port)")
         } catch {
             print("❌ Webhook 监听启动失败: \(error.localizedDescription)")
         }
@@ -1731,11 +3585,65 @@ class ClaudeWebhookServer {
                 return try? JSONSerialization.jsonObject(with: d) as? [String: Any]
             }()
 
+            // /session 路由：session 状态上报（SessionStart/Stop/PreToolUse）
+            if request.contains("POST /session") {
+                if let payload = json {
+                    DispatchQueue.main.async { self.onSessionUpdate?(payload) }
+                }
+                sendOK(); return
+            }
+
+            // /elicitation 路由：Claude 提问，等用户选择后响应
+            if request.contains("POST /elicitation") {
+                guard let payload = json else { sendOK(); return }
+                DispatchQueue.main.async {
+                    self.onElicitationRequest?(payload) { responseDict in
+                        let body = (try? JSONSerialization.data(withJSONObject: responseDict))
+                            .flatMap { String(data: $0, encoding: .utf8) } ?? "{}"
+                        let r = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: \(body.utf8.count)\r\n\r\n\(body)"
+                        connection.send(content: r.data(using: .utf8)!, completion: .contentProcessed { _ in connection.cancel() })
+                    }
+                }
+                return
+            }
+
             // /permission 路由：持有连接，等用户点击后再响应
             if request.contains("POST /permission") {
                 guard let payload = json else { sendOK(); return }
+                // 监听连接断开（用户在编辑器中直接批准时 curl 被杀，连接断开）
+                var dismissed = false
+                let dismissLock = NSLock()
+                let notifyClose: () -> Void = {
+                    dismissLock.lock()
+                    let alreadyDismissed = dismissed
+                    dismissed = true
+                    dismissLock.unlock()
+                    guard !alreadyDismissed else { return }
+                    DispatchQueue.main.async {
+                        self.onPermissionConnectionClosed?()
+                    }
+                }
+                // 方式1: state 变化
+                connection.stateUpdateHandler = { state in
+                    if case .cancelled = state { notifyClose() }
+                    if case .failed = state { notifyClose() }
+                }
+                // 方式2: 持续读取，TCP 对端关闭时 isComplete=true 或 error
+                func watchDisconnect() {
+                    connection.receive(minimumIncompleteLength: 1, maximumLength: 1) { _, _, isComplete, error in
+                        if isComplete || error != nil {
+                            notifyClose()
+                        } else {
+                            watchDisconnect()
+                        }
+                    }
+                }
+                watchDisconnect()
                 DispatchQueue.main.async {
                     self.onPermissionRequest?(payload) { responseDict in
+                        dismissLock.lock()
+                        dismissed = true
+                        dismissLock.unlock()
                         let body = (try? JSONSerialization.data(withJSONObject: responseDict))
                             .flatMap { String(data: $0, encoding: .utf8) } ?? "{}"
                         let r = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: \(body.utf8.count)\r\n\r\n\(body)"
@@ -1759,15 +3667,34 @@ class ClaudeWebhookServer {
             guard request.contains("POST /state") || request.contains("POST /update"),
                   let state = json?["state"] as? String else { sendOK(); return }
 
+            let sessionId = json?["session_id"] as? String
             DispatchQueue.main.async {
                 switch state {
                 case "thinking":     self.onThinking?()
                 case "working":      self.onWorking?()
                 case "error":        self.onError?()
-                case "attention":    self.onAttention?()
+                case "attention":
+                    self.onAttention?()
+                    // Stop 事件：直接将 session 状态更新为 idle
+                    if let sid = sessionId, !sid.isEmpty, sid != "default" {
+                        self.onSessionUpdate?([
+                            "sessionId": sid,
+                            "status": "idle",
+                            "lastActivityAt": Date().timeIntervalSince1970
+                        ])
+                    }
                 case "notification": self.onNotification?()
                 case "idle":         self.onIdle?()
-                case "sleeping":     self.onSleeping?()
+                case "sleeping":
+                    self.onSleeping?()
+                    // SessionEnd 事件：将 session 状态更新为 ended
+                    if let sid = sessionId, !sid.isEmpty, sid != "default" {
+                        self.onSessionUpdate?([
+                            "sessionId": sid,
+                            "status": "ended",
+                            "lastActivityAt": Date().timeIntervalSince1970
+                        ])
+                    }
                 default: break
                 }
             }
@@ -1790,6 +3717,9 @@ class PetScene: SKScene, NSMenuDelegate {
     override func update(_ currentTime: TimeInterval) {
         guard let vc = viewController, !vc.isCurrentlyDragging, !vc.isMenuOpen else { return }
         guard let window = self.view?.window else { return }
+
+        // 安全网：吸附状态下动画丢失时自动恢复
+        vc.restoreSnapIdleIfNeeded()
 
         let mouseLoc = NSEvent.mouseLocation
         let windowFrame = window.frame
