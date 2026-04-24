@@ -745,13 +745,11 @@ class ViewController: NSViewController {
     }
 
     func installHooksOnFirstLaunch() {
-        guard !UserDefaults.standard.bool(forKey: "hasAutoInstalledHooks") else { return }
         for agent in AgentRegistry.allAgents {
-            if agentConfigDirExists(agent) {
+            if agentConfigDirExists(agent) && !isHookInstalled(for: agent) {
                 installHooksForAgent(agent)
             }
         }
-        UserDefaults.standard.set(true, forKey: "hasAutoInstalledHooks")
     }
 
     // MARK: Claude JSON Hook 安装
