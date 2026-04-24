@@ -26,11 +26,13 @@
 
 ## 功能
 
-### Claude Code 实时联动
+### 多 Agent 集成
 
-团子通过 Webhook 监听 Claude Code 的 Hook 事件，实时切换动画状态：
+团子通过 Webhook 监听 Hook 事件，实时切换动画状态。支持 **10 款终端 AI 助手**一键安装，设置页统一管理：
 
-| Claude 状态 | 团子反应 |
+**Claude Code** · **Cursor** · **Gemini CLI** · **Qoder** · **Qwen Code** · **Factory** · **CodeBuddy** · **Codex** · **Kimi** · **OpenCode**
+
+| AI 状态 | 团子反应 |
 |---|---|
 | 用户提交 Prompt | 翻书搜索 |
 | 工具调用中 | 敲键盘工作 |
@@ -80,12 +82,19 @@
 | WezTerm | ✅ | - |
 | Ghostty | - | ✅ |
 
+### 权限交互
+
+- **内联权限弹窗** — 侧边吸附时直接在面板内审批，不打断工作流
+- **Elicitation 弹窗** — Claude 提问时弹出选项，直接点选回复
+- **权限快捷键** — 可配置修饰键 + 按键，不用鼠标点
+- **自动关闭** — 在编辑器中批准后，团子弹窗自动消失
+
 ### 其他功能
 
+- **Sparkle 自动更新** — 有新版本时自动提示升级
 - **飞书消息监听** — Dock 角标变化时播放提醒动画
 - **喝水提醒** — 自定义间隔，支持秒/分/时
-- **权限快捷键** — 可配置修饰键 + 按键，不用鼠标点
-- **进程发现** — 自动发现未通过 Hook 注册的 Claude 会话
+- **进程发现** — 自动发现未通过 Hook 注册的 AI 会话
 - **拖拽 & 摸摸** — 拖着玩、来回划触发撒娇动画
 
 ---
@@ -96,9 +105,11 @@
 
 前往 [Releases](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest) 下载最新 zip，解压后拖入「应用程序」文件夹。
 
-### 2. 配置 Claude Code Hook
+### 2. 配置 Hook
 
-首次打开团子时会自动配置。如需手动配置，在 `~/.claude/settings.json` 的 `hooks` 中添加：
+首次打开团子时会自动检测已安装的 AI 助手并配置 Hook。也可以在设置页「AI 助手」tab 手动管理。
+
+如需手动配置 Claude Code，在 `~/.claude/settings.json` 的 `hooks` 中添加：
 
 ```json
 {

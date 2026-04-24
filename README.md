@@ -26,11 +26,13 @@ Flips through books while thinking, types while working, celebrates when done �
 
 ## Features
 
-### Real-time Claude Code Integration
+### Multi-Agent Integration
 
-Tuanzi listens to Claude Code hook events via Webhook and switches animations in real time:
+Tuanzi listens to hook events via Webhook and switches animations in real time. Supports **10 terminal AI agents** with one-click hook setup, managed from the settings page:
 
-| Claude Status | Tuanzi Reaction |
+**Claude Code** · **Cursor** · **Gemini CLI** · **Qoder** · **Qwen Code** · **Factory** · **CodeBuddy** · **Codex** · **Kimi** · **OpenCode**
+
+| AI Status | Tuanzi Reaction |
 |---|---|
 | User submits prompt | Flips through books |
 | Tool call in progress | Types on keyboard |
@@ -80,12 +82,19 @@ Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel
 | WezTerm | ✅ | - |
 | Ghostty | - | ✅ |
 
+### Permission Interaction
+
+- **Inline permission prompt** — Approve directly in the docked panel without leaving your workflow
+- **Elicitation dialog** — When Claude asks a question, pick an option right from the popup
+- **Permission hotkey** — Configurable modifier + key combo, no mouse needed
+- **Auto-dismiss** — Approve in the editor and Tuanzi's popup closes automatically
+
 ### Other Features
 
+- **Sparkle auto-update** — Get notified when a new version is available
 - **Lark notification listener** — Plays alert animation on Dock badge changes
 - **Hydration reminder** — Custom intervals in seconds / minutes / hours
-- **Permission hotkey** — Configurable modifier + key combo, no mouse needed
-- **Process discovery** — Auto-detects Claude sessions not registered via hooks
+- **Process discovery** — Auto-detects AI sessions not registered via hooks
 - **Drag & pet** — Drag to play, swipe back and forth to trigger purring animation
 
 ---
@@ -96,9 +105,11 @@ Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel
 
 Go to [Releases](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
 
-### 2. Configure Claude Code Hooks
+### 2. Configure Hooks
 
-Tuanzi auto-configures on first launch. For manual setup, add the following to `hooks` in `~/.claude/settings.json`:
+Tuanzi auto-detects installed AI agents and configures hooks on first launch. You can also manage hooks from the "AI Agents" tab in Settings.
+
+For manual Claude Code setup, add the following to `hooks` in `~/.claude/settings.json`:
 
 ```json
 {
