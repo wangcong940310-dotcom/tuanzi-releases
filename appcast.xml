@@ -6,15 +6,15 @@
         <description>团子最新版本</description>
         <language>zh-cn</language>
         <item>
-            <title>版本 1.0.1</title>
-            <pubDate>Thu, 23 Apr 2026 15:41:33 +0800</pubDate>
-            <sparkle:version>101</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <title>版本 1.0.2</title>
+            <pubDate>Fri, 24 Apr 2026 15:43:28 +0800</pubDate>
+            <sparkle:version>102</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <enclosure
-                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.1/团子-1.0.1.zip"
-                sparkle:edDSASignature="sparkle:edSignature="loS8TTGjMnoxbd6Gy6yUmlIX8Av6KdcdjG1O5u2VnZyovtzfDwRXIZiLzpfIUTxfCctXd0HV1k6s7HJcYo1JBg==" length="45286136""
-                length="45286136"
+                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.2/团子-1.0.2.zip"
+                sparkle:edDSASignature="sparkle:edSignature="Sua5KtJK8US3yTK0fsYY7SeEtagIdGCtuXk8ewv9+LNJ8FPMRmKJb0NkNLznSgJ8cU0Q1g2ljl9XhAyyQMLzAA==" length="44564660""
+                length="44564660"
                 type="application/octet-stream"/>
         </item>
     </channel>
