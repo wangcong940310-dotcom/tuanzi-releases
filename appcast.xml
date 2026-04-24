@@ -20,7 +20,7 @@
 </ul>]]></description>
             <enclosure
                 url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.5/tuanzi-1.0.5.zip"
-                sparkle:edDSASignature="mT6BJwFTv7zM4vx5hxsZNkTpFKQhLeMdH+GX3GPuHUbmx7Bh6wCUmPObwAAV/pyjq687UXg+vQv+9wJUl4/JDw=="
+                sparkle:edSignature="mT6BJwFTv7zM4vx5hxsZNkTpFKQhLeMdH+GX3GPuHUbmx7Bh6wCUmPObwAAV/pyjq687UXg+vQv+9wJUl4/JDw=="
                 length="44571460"
                 type="application/octet-stream"/>
         </item>

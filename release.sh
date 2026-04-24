@@ -86,7 +86,7 @@ cat > "$RELEASES_DIR/appcast.xml" << EOF
             <description><![CDATA[${RELEASE_NOTES}]]></description>
             <enclosure
                 url="${DOWNLOAD_URL}"
-                sparkle:edDSASignature="${SIGNATURE}"
+                sparkle:edSignature="${SIGNATURE}"
                 length="${FILE_SIZE}"
                 type="application/octet-stream"/>
         </item>
