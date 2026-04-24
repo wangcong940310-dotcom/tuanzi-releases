@@ -19,7 +19,7 @@ echo "📦 发布版本: $VERSION"
 
 # 打包路径
 ARCHIVE_PATH="/tmp/${APP_NAME}.xcarchive"
-ZIP_NAME="${APP_NAME}-${VERSION}.zip"
+ZIP_NAME="tuanzi-${VERSION}.zip"
 ZIP_PATH="$RELEASES_DIR/$ZIP_NAME"
 
 # 1. Archive
@@ -66,8 +66,7 @@ fi
 
 # 5. 更新 appcast.xml
 echo "📝 更新 appcast.xml..."
-ENCODED_ZIP_NAME=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${ZIP_NAME}'))")
-DOWNLOAD_URL="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v${VERSION}/${ENCODED_ZIP_NAME}"
+DOWNLOAD_URL="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v${VERSION}/${ZIP_NAME}"
 PUB_DATE=$(date -R)
 
 cat > "$RELEASES_DIR/appcast.xml" << EOF

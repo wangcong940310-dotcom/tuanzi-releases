@@ -19,7 +19,7 @@
 <li><b>空状态引导</b> — 无会话时显示操作提示</li>
 </ul>]]></description>
             <enclosure
-                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.4/%E5%9B%A2%E5%AD%90-1.0.4.zip"
+                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.4/tuanzi-1.0.4.zip"
                 sparkle:edDSASignature="sCDY1KQLDSn0rxMNINPpu4wXZqtFx2t3XdzyUZion7OBh23+rq68lSROJmp03D/y2R3mna9HTn4mH+kQQ10QDQ=="
                 length="44571237"
                 type="application/octet-stream"/>
