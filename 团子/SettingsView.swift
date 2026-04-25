@@ -2,7 +2,6 @@ import Cocoa
 import SwiftUI
 import Combine
 import ServiceManagement
-import Sparkle
 
 // MARK: - PetSettings 持久化设置
 
@@ -640,7 +639,12 @@ private struct AgentsPane: View {
 }
 
 private struct AboutPane: View {
-    private let updater = (NSApp.delegate as? AppDelegate)?.updaterController.updater
+    @State private var isChecking = false
+    @State private var statusText = ""
+
+    private var currentVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+    }
 
     var body: some View {
         SettingsGroup {
@@ -653,7 +657,7 @@ private struct AboutPane: View {
                 }
                 VStack(alignment: .leading, spacing: 3) {
                     Text("团子").font(TuanziTokens.Fonts.headline)
-                    Text("版本 \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
+                    Text("版本 \(currentVersion)")
                         .font(TuanziTokens.Fonts.body).foregroundStyle(.secondary)
                 }
                 Spacer()
@@ -664,14 +668,82 @@ private struct AboutPane: View {
             HStack {
                 Text("检查更新").font(TuanziTokens.Fonts.control)
                 Spacer()
-                Button("检查更新") {
-                    updater?.checkForUpdates()
+                if !statusText.isEmpty {
+                    Text(statusText)
+                        .font(TuanziTokens.Fonts.footnote)
+                        .foregroundStyle(.secondary)
                 }
-                .disabled(updater?.canCheckForUpdates == false)
+                Button("检查更新") { checkForUpdate() }
+                    .disabled(isChecking)
             }
             .padding(.horizontal, TuanziTokens.Spacing.xl)
             .padding(.vertical, TuanziTokens.Spacing.rowV)
         }
+    }
+
+    private func checkForUpdate() {
+        isChecking = true
+        statusText = "检查中..."
+        UpdateChecker.check { result in
+            DispatchQueue.main.async {
+                isChecking = false
+                switch result {
+                case .newVersion(let version, let url):
+                    statusText = ""
+                    showUpdateAlert(version: version, url: url)
+                case .upToDate:
+                    statusText = "已是最新版本"
+                case .error:
+                    statusText = "检查失败"
+                }
+            }
+        }
+    }
+
+    private func showUpdateAlert(version: String, url: URL) {
+        let alert = NSAlert()
+        alert.messageText = "发现新版本 \(version)"
+        alert.informativeText = "当前版本 \(currentVersion)，点击下载更新。"
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "下载更新")
+        alert.addButton(withTitle: "稍后")
+        if alert.runModal() == .alertFirstButtonReturn {
+            NSWorkspace.shared.open(url)
+        }
+    }
+}
+
+enum UpdateCheckResult {
+    case newVersion(String, URL)
+    case upToDate
+    case error
+}
+
+struct UpdateChecker {
+    static let repo = "wangcong940310-dotcom/tuanzi-releases"
+    static let apiURL = "https://api.github.com/repos/\(repo)/releases/latest"
+    static let releasePage = "https://github.com/\(repo)/releases/latest"
+
+    static func check(completion: @escaping (UpdateCheckResult) -> Void) {
+        guard let url = URL(string: apiURL) else { completion(.error); return }
+        var request = URLRequest(url: url)
+        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
+        request.timeoutInterval = 10
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard error == nil, let data,
+                  let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                  let tagName = json["tag_name"] as? String else {
+                completion(.error); return
+            }
+            let remote = tagName.replacingOccurrences(of: "v", with: "")
+            let current = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
+            if remote.compare(current, options: .numeric) == .orderedDescending {
+                let downloadURL = URL(string: releasePage)!
+                completion(.newVersion(remote, downloadURL))
+            } else {
+                completion(.upToDate)
+            }
+        }.resume()
     }
 }
 

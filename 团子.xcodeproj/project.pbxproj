@@ -903,7 +903,134 @@
 		6EA31B932F9719740051BB6E /* 左提醒_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B3A2F9719740051BB6E /* 左提醒_7.png */; };
 		6EA31B942F9719740051BB6E /* 左提醒_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B3D2F9719740051BB6E /* 左提醒_10.png */; };
 		6EA31B952F9719740051BB6E /* 左提醒_42.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31B5D2F9719740051BB6E /* 左提醒_42.png */; };
-		6EA31B9A2F98A4B30051BB6E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA31B992F98A4B30051BB6E /* Sparkle */; };
+		6EA31D102F9C81D40051BB6E /* 工作_39.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB62F9C81D40051BB6E /* 工作_39.webp */; };
+		6EA31D112F9C81D40051BB6E /* 工作_14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9D2F9C81D40051BB6E /* 工作_14.webp */; };
+		6EA31D122F9C81D40051BB6E /* 工作_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC82F9C81D40051BB6E /* 工作_57.webp */; };
+		6EA31D132F9C81D40051BB6E /* 工作_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA12F9C81D40051BB6E /* 工作_18.webp */; };
+		6EA31D142F9C81D40051BB6E /* 工作_53.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC42F9C81D40051BB6E /* 工作_53.webp */; };
+		6EA31D152F9C81D40051BB6E /* 工作_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB42F9C81D40051BB6E /* 工作_37.webp */; };
+		6EA31D162F9C81D40051BB6E /* 工作_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB82F9C81D40051BB6E /* 工作_41.webp */; };
+		6EA31D172F9C81D40051BB6E /* 工作_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC02F9C81D40051BB6E /* 工作_49.webp */; };
+		6EA31D182F9C81D40051BB6E /* 工作_96.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CEF2F9C81D40051BB6E /* 工作_96.webp */; };
+		6EA31D192F9C81D40051BB6E /* 工作_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C952F9C81D40051BB6E /* 工作_6.webp */; };
+		6EA31D1A2F9C81D40051BB6E /* 工作_58.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC92F9C81D40051BB6E /* 工作_58.webp */; };
+		6EA31D1B2F9C81D40051BB6E /* 工作_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9C2F9C81D40051BB6E /* 工作_13.webp */; };
+		6EA31D1C2F9C81D40051BB6E /* 工作_29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAC2F9C81D40051BB6E /* 工作_29.webp */; };
+		6EA31D1D2F9C81D40051BB6E /* 工作_88.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE72F9C81D40051BB6E /* 工作_88.webp */; };
+		6EA31D1E2F9C81D40051BB6E /* 工作_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCC2F9C81D40051BB6E /* 工作_61.webp */; };
+		6EA31D1F2F9C81D40051BB6E /* 工作_91.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CEA2F9C81D40051BB6E /* 工作_91.webp */; };
+		6EA31D202F9C81D40051BB6E /* 工作_117.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D042F9C81D40051BB6E /* 工作_117.webp */; };
+		6EA31D212F9C81D40051BB6E /* 工作_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAD2F9C81D40051BB6E /* 工作_30.webp */; };
+		6EA31D222F9C81D40051BB6E /* 工作_25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA82F9C81D40051BB6E /* 工作_25.webp */; };
+		6EA31D232F9C81D40051BB6E /* 工作_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAF2F9C81D40051BB6E /* 工作_32.webp */; };
+		6EA31D242F9C81D40051BB6E /* 工作_55.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC62F9C81D40051BB6E /* 工作_55.webp */; };
+		6EA31D252F9C81D40051BB6E /* 工作_93.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CEC2F9C81D40051BB6E /* 工作_93.webp */; };
+		6EA31D262F9C81D40051BB6E /* 工作_2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C912F9C81D40051BB6E /* 工作_2.webp */; };
+		6EA31D272F9C81D40051BB6E /* 工作_89.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE82F9C81D40051BB6E /* 工作_89.webp */; };
+		6EA31D282F9C81D40051BB6E /* 工作_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD32F9C81D40051BB6E /* 工作_68.webp */; };
+		6EA31D292F9C81D40051BB6E /* 工作_120.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D072F9C81D40051BB6E /* 工作_120.webp */; };
+		6EA31D2A2F9C81D40051BB6E /* 工作_21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA42F9C81D40051BB6E /* 工作_21.webp */; };
+		6EA31D2B2F9C81D40051BB6E /* 工作_113.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D002F9C81D40051BB6E /* 工作_113.webp */; };
+		6EA31D2C2F9C81D40051BB6E /* 工作_85.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE42F9C81D40051BB6E /* 工作_85.webp */; };
+		6EA31D2D2F9C81D40051BB6E /* 工作_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD52F9C81D40051BB6E /* 工作_70.webp */; };
+		6EA31D2E2F9C81D40051BB6E /* 工作_104.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF72F9C81D40051BB6E /* 工作_104.webp */; };
+		6EA31D2F2F9C81D40051BB6E /* 工作_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9F2F9C81D40051BB6E /* 工作_16.webp */; };
+		6EA31D302F9C81D40051BB6E /* 工作_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA72F9C81D40051BB6E /* 工作_24.webp */; };
+		6EA31D312F9C81D40051BB6E /* 工作_116.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D032F9C81D40051BB6E /* 工作_116.webp */; };
+		6EA31D322F9C81D40051BB6E /* 工作_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C932F9C81D40051BB6E /* 工作_4.webp */; };
+		6EA31D332F9C81D40051BB6E /* 工作_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD62F9C81D40051BB6E /* 工作_71.webp */; };
+		6EA31D342F9C81D40051BB6E /* 工作_92.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CEB2F9C81D40051BB6E /* 工作_92.webp */; };
+		6EA31D352F9C81D40051BB6E /* 工作_73.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD82F9C81D40051BB6E /* 工作_73.webp */; };
+		6EA31D362F9C81D40051BB6E /* 工作_35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB22F9C81D40051BB6E /* 工作_35.webp */; };
+		6EA31D372F9C81D40051BB6E /* 工作_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDF2F9C81D40051BB6E /* 工作_80.webp */; };
+		6EA31D382F9C81D40051BB6E /* 工作_107.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFA2F9C81D40051BB6E /* 工作_107.webp */; };
+		6EA31D392F9C81D40051BB6E /* 工作_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD42F9C81D40051BB6E /* 工作_69.webp */; };
+		6EA31D3A2F9C81D40051BB6E /* 工作_127.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D0E2F9C81D40051BB6E /* 工作_127.webp */; };
+		6EA31D3B2F9C81D40051BB6E /* 工作_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C922F9C81D40051BB6E /* 工作_3.webp */; };
+		6EA31D3C2F9C81D40051BB6E /* 工作_118.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D052F9C81D40051BB6E /* 工作_118.webp */; };
+		6EA31D3D2F9C81D40051BB6E /* 工作_99.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF22F9C81D40051BB6E /* 工作_99.webp */; };
+		6EA31D3E2F9C81D40051BB6E /* 工作_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAE2F9C81D40051BB6E /* 工作_31.webp */; };
+		6EA31D3F2F9C81D40051BB6E /* 工作_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9A2F9C81D40051BB6E /* 工作_11.webp */; };
+		6EA31D402F9C81D40051BB6E /* 工作_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCA2F9C81D40051BB6E /* 工作_59.webp */; };
+		6EA31D412F9C81D40051BB6E /* 工作_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD72F9C81D40051BB6E /* 工作_72.webp */; };
+		6EA31D422F9C81D40051BB6E /* 工作_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCF2F9C81D40051BB6E /* 工作_64.webp */; };
+		6EA31D432F9C81D40051BB6E /* 工作_121.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D082F9C81D40051BB6E /* 工作_121.webp */; };
+		6EA31D442F9C81D40051BB6E /* 工作_100.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF32F9C81D40051BB6E /* 工作_100.webp */; };
+		6EA31D452F9C81D40051BB6E /* 工作_63.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCE2F9C81D40051BB6E /* 工作_63.webp */; };
+		6EA31D462F9C81D40051BB6E /* 工作_122.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D092F9C81D40051BB6E /* 工作_122.webp */; };
+		6EA31D472F9C81D40051BB6E /* 工作_106.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF92F9C81D40051BB6E /* 工作_106.webp */; };
+		6EA31D482F9C81D40051BB6E /* 工作_123.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D0A2F9C81D40051BB6E /* 工作_123.webp */; };
+		6EA31D492F9C81D40051BB6E /* 工作_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCD2F9C81D40051BB6E /* 工作_62.webp */; };
+		6EA31D4A2F9C81D40051BB6E /* 工作_94.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CED2F9C81D40051BB6E /* 工作_94.webp */; };
+		6EA31D4B2F9C81D40051BB6E /* 工作_28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAB2F9C81D40051BB6E /* 工作_28.webp */; };
+		6EA31D4C2F9C81D40051BB6E /* 工作_19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA22F9C81D40051BB6E /* 工作_19.webp */; };
+		6EA31D4D2F9C81D40051BB6E /* 工作_20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA32F9C81D40051BB6E /* 工作_20.webp */; };
+		6EA31D4E2F9C81D40051BB6E /* 工作_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9B2F9C81D40051BB6E /* 工作_12.webp */; };
+		6EA31D4F2F9C81D40051BB6E /* 工作_97.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF02F9C81D40051BB6E /* 工作_97.webp */; };
+		6EA31D502F9C81D40051BB6E /* 工作_52.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC32F9C81D40051BB6E /* 工作_52.webp */; };
+		6EA31D512F9C81D40051BB6E /* 工作_38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB52F9C81D40051BB6E /* 工作_38.webp */; };
+		6EA31D522F9C81D40051BB6E /* 工作_77.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDC2F9C81D40051BB6E /* 工作_77.webp */; };
+		6EA31D532F9C81D40051BB6E /* 工作_67.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD22F9C81D40051BB6E /* 工作_67.webp */; };
+		6EA31D542F9C81D40051BB6E /* 工作_114.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D012F9C81D40051BB6E /* 工作_114.webp */; };
+		6EA31D552F9C81D40051BB6E /* 工作_126.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D0D2F9C81D40051BB6E /* 工作_126.webp */; };
+		6EA31D562F9C81D40051BB6E /* 工作_112.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFF2F9C81D40051BB6E /* 工作_112.webp */; };
+		6EA31D572F9C81D40051BB6E /* 工作_27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CAA2F9C81D40051BB6E /* 工作_27.webp */; };
+		6EA31D582F9C81D40051BB6E /* 工作_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDB2F9C81D40051BB6E /* 工作_76.webp */; };
+		6EA31D592F9C81D40051BB6E /* 工作_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C902F9C81D40051BB6E /* 工作_1.webp */; };
+		6EA31D5A2F9C81D40051BB6E /* 工作_111.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFE2F9C81D40051BB6E /* 工作_111.webp */; };
+		6EA31D5B2F9C81D40051BB6E /* 工作_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C942F9C81D40051BB6E /* 工作_5.webp */; };
+		6EA31D5C2F9C81D40051BB6E /* 工作_10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C992F9C81D40051BB6E /* 工作_10.webp */; };
+		6EA31D5D2F9C81D40051BB6E /* 工作_17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA02F9C81D40051BB6E /* 工作_17.webp */; };
+		6EA31D5E2F9C81D40051BB6E /* 工作_15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C9E2F9C81D40051BB6E /* 工作_15.webp */; };
+		6EA31D5F2F9C81D40051BB6E /* 工作_22.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA52F9C81D40051BB6E /* 工作_22.webp */; };
+		6EA31D602F9C81D40051BB6E /* 工作_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C972F9C81D40051BB6E /* 工作_8.webp */; };
+		6EA31D612F9C81D40051BB6E /* 工作_124.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D0B2F9C81D40051BB6E /* 工作_124.webp */; };
+		6EA31D622F9C81D40051BB6E /* 工作_43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBA2F9C81D40051BB6E /* 工作_43.webp */; };
+		6EA31D632F9C81D40051BB6E /* 工作_83.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE22F9C81D40051BB6E /* 工作_83.webp */; };
+		6EA31D642F9C81D40051BB6E /* 工作_115.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D022F9C81D40051BB6E /* 工作_115.webp */; };
+		6EA31D652F9C81D40051BB6E /* 工作_50.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC12F9C81D40051BB6E /* 工作_50.webp */; };
+		6EA31D662F9C81D40051BB6E /* 工作_110.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFD2F9C81D40051BB6E /* 工作_110.webp */; };
+		6EA31D672F9C81D40051BB6E /* 工作_86.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE52F9C81D40051BB6E /* 工作_86.webp */; };
+		6EA31D682F9C81D40051BB6E /* 工作_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC72F9C81D40051BB6E /* 工作_56.webp */; };
+		6EA31D692F9C81D40051BB6E /* 工作_34.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB12F9C81D40051BB6E /* 工作_34.webp */; };
+		6EA31D6A2F9C81D40051BB6E /* 工作_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA62F9C81D40051BB6E /* 工作_23.webp */; };
+		6EA31D6B2F9C81D40051BB6E /* 工作_44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBB2F9C81D40051BB6E /* 工作_44.webp */; };
+		6EA31D6C2F9C81D40051BB6E /* 工作_125.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D0C2F9C81D40051BB6E /* 工作_125.webp */; };
+		6EA31D6D2F9C81D40051BB6E /* 工作_42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB92F9C81D40051BB6E /* 工作_42.webp */; };
+		6EA31D6E2F9C81D40051BB6E /* 工作_119.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31D062F9C81D40051BB6E /* 工作_119.webp */; };
+		6EA31D6F2F9C81D40051BB6E /* 工作_98.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF12F9C81D40051BB6E /* 工作_98.webp */; };
+		6EA31D702F9C81D40051BB6E /* 工作_79.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDE2F9C81D40051BB6E /* 工作_79.webp */; };
+		6EA31D712F9C81D40051BB6E /* 工作_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBF2F9C81D40051BB6E /* 工作_48.webp */; };
+		6EA31D722F9C81D40051BB6E /* 工作_66.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD12F9C81D40051BB6E /* 工作_66.webp */; };
+		6EA31D732F9C81D40051BB6E /* 工作_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD92F9C81D40051BB6E /* 工作_74.webp */; };
+		6EA31D742F9C81D40051BB6E /* 工作_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDA2F9C81D40051BB6E /* 工作_75.webp */; };
+		6EA31D752F9C81D40051BB6E /* 工作_108.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFB2F9C81D40051BB6E /* 工作_108.webp */; };
+		6EA31D762F9C81D40051BB6E /* 工作_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CDD2F9C81D40051BB6E /* 工作_78.webp */; };
+		6EA31D772F9C81D40051BB6E /* 工作_7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C962F9C81D40051BB6E /* 工作_7.webp */; };
+		6EA31D782F9C81D40051BB6E /* 工作_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB72F9C81D40051BB6E /* 工作_40.webp */; };
+		6EA31D792F9C81D40051BB6E /* 工作_65.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CD02F9C81D40051BB6E /* 工作_65.webp */; };
+		6EA31D7A2F9C81D40051BB6E /* 工作_47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBE2F9C81D40051BB6E /* 工作_47.webp */; };
+		6EA31D7B2F9C81D40051BB6E /* 工作_103.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF62F9C81D40051BB6E /* 工作_103.webp */; };
+		6EA31D7C2F9C81D40051BB6E /* 工作_95.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CEE2F9C81D40051BB6E /* 工作_95.webp */; };
+		6EA31D7D2F9C81D40051BB6E /* 工作_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBD2F9C81D40051BB6E /* 工作_46.webp */; };
+		6EA31D7E2F9C81D40051BB6E /* 工作_87.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE62F9C81D40051BB6E /* 工作_87.webp */; };
+		6EA31D7F2F9C81D40051BB6E /* 工作_105.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF82F9C81D40051BB6E /* 工作_105.webp */; };
+		6EA31D802F9C81D40051BB6E /* 工作_60.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CCB2F9C81D40051BB6E /* 工作_60.webp */; };
+		6EA31D812F9C81D40051BB6E /* 工作_54.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC52F9C81D40051BB6E /* 工作_54.webp */; };
+		6EA31D822F9C81D40051BB6E /* 工作_9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C982F9C81D40051BB6E /* 工作_9.webp */; };
+		6EA31D832F9C81D40051BB6E /* 工作_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CBC2F9C81D40051BB6E /* 工作_45.webp */; };
+		6EA31D842F9C81D40051BB6E /* 工作_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CA92F9C81D40051BB6E /* 工作_26.webp */; };
+		6EA31D852F9C81D40051BB6E /* 工作_102.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF52F9C81D40051BB6E /* 工作_102.webp */; };
+		6EA31D862F9C81D40051BB6E /* 工作_36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB32F9C81D40051BB6E /* 工作_36.webp */; };
+		6EA31D872F9C81D40051BB6E /* 工作_84.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE32F9C81D40051BB6E /* 工作_84.webp */; };
+		6EA31D882F9C81D40051BB6E /* 工作_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CB02F9C81D40051BB6E /* 工作_33.webp */; };
+		6EA31D892F9C81D40051BB6E /* 工作_109.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CFC2F9C81D40051BB6E /* 工作_109.webp */; };
+		6EA31D8A2F9C81D40051BB6E /* 工作_82.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE12F9C81D40051BB6E /* 工作_82.webp */; };
+		6EA31D8B2F9C81D40051BB6E /* 工作_0.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31C8F2F9C81D40051BB6E /* 工作_0.webp */; };
+		6EA31D8C2F9C81D40051BB6E /* 工作_90.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE92F9C81D40051BB6E /* 工作_90.webp */; };
+		6EA31D8D2F9C81D40051BB6E /* 工作_81.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CE02F9C81D40051BB6E /* 工作_81.webp */; };
+		6EA31D8E2F9C81D40051BB6E /* 工作_101.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CF42F9C81D40051BB6E /* 工作_101.webp */; };
+		6EA31D8F2F9C81D40051BB6E /* 工作_51.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EA31CC22F9C81D40051BB6E /* 工作_51.webp */; };
 		6EC4D2792F8F6D0100F0818E /* 提醒.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2762F8F6D0100F0818E /* 提醒.mp3 */; };
 		6EC4D27A2F8F6D0100F0818E /* 确认提示.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2752F8F6D0100F0818E /* 确认提示.mp3 */; };
 		6EC4D27B2F8F6D0100F0818E /* claude提示.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D2772F8F6D0100F0818E /* claude提示.mp3 */; };
@@ -1568,134 +1695,6 @@
 		6EC4DDAA2F8F932E00F0818E /* 思考_20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D6112F8F932E00F0818E /* 思考_20.webp */; };
 		6EC4DDB42F8F932E00F0818E /* 搜索_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D68C2F8F932E00F0818E /* 搜索_62.webp */; };
 		6EC4DDB52F8F932E00F0818E /* 待机_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4D3042F8F932E00F0818E /* 待机_18.webp */; };
-		6EC4DE372F8FB3A000F0818E /* 工作_53.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDEB2F8FB3A000F0818E /* 工作_53.webp */; };
-		6EC4DE382F8FB3A000F0818E /* 工作_51.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE92F8FB3A000F0818E /* 工作_51.webp */; };
-		6EC4DE392F8FB3A000F0818E /* 工作_26.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD02F8FB3A000F0818E /* 工作_26.webp */; };
-		6EC4DE3A2F8FB3A000F0818E /* 工作_118.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2C2F8FB3A000F0818E /* 工作_118.webp */; };
-		6EC4DE3B2F8FB3A000F0818E /* 工作_108.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE222F8FB3A000F0818E /* 工作_108.webp */; };
-		6EC4DE3C2F8FB3A000F0818E /* 工作_16.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC62F8FB3A000F0818E /* 工作_16.webp */; };
-		6EC4DE3D2F8FB3A000F0818E /* 工作_65.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF72F8FB3A000F0818E /* 工作_65.webp */; };
-		6EC4DE3E2F8FB3A000F0818E /* 工作_37.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDB2F8FB3A000F0818E /* 工作_37.webp */; };
-		6EC4DE3F2F8FB3A000F0818E /* 工作_2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDB82F8FB3A000F0818E /* 工作_2.webp */; };
-		6EC4DE402F8FB3A000F0818E /* 工作_46.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE42F8FB3A000F0818E /* 工作_46.webp */; };
-		6EC4DE412F8FB3A000F0818E /* 工作_106.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE202F8FB3A000F0818E /* 工作_106.webp */; };
-		6EC4DE422F8FB3A000F0818E /* 工作_19.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC92F8FB3A000F0818E /* 工作_19.webp */; };
-		6EC4DE432F8FB3A000F0818E /* 工作_127.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE352F8FB3A000F0818E /* 工作_127.webp */; };
-		6EC4DE442F8FB3A000F0818E /* 工作_96.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE162F8FB3A000F0818E /* 工作_96.webp */; };
-		6EC4DE452F8FB3A000F0818E /* 工作_47.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE52F8FB3A000F0818E /* 工作_47.webp */; };
-		6EC4DE462F8FB3A000F0818E /* 工作_116.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2A2F8FB3A000F0818E /* 工作_116.webp */; };
-		6EC4DE472F8FB3A000F0818E /* 工作_45.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE32F8FB3A000F0818E /* 工作_45.webp */; };
-		6EC4DE482F8FB3A000F0818E /* 工作_11.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC12F8FB3A000F0818E /* 工作_11.webp */; };
-		6EC4DE492F8FB3A000F0818E /* 工作_97.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE172F8FB3A000F0818E /* 工作_97.webp */; };
-		6EC4DE4A2F8FB3A000F0818E /* 工作_114.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE282F8FB3A000F0818E /* 工作_114.webp */; };
-		6EC4DE4B2F8FB3A000F0818E /* 工作_110.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE242F8FB3A000F0818E /* 工作_110.webp */; };
-		6EC4DE4C2F8FB3A000F0818E /* 工作_75.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE012F8FB3A000F0818E /* 工作_75.webp */; };
-		6EC4DE4D2F8FB3A000F0818E /* 工作_7.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBD2F8FB3A000F0818E /* 工作_7.webp */; };
-		6EC4DE4E2F8FB3A000F0818E /* 工作_56.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDEE2F8FB3A000F0818E /* 工作_56.webp */; };
-		6EC4DE4F2F8FB3A000F0818E /* 工作_15.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC52F8FB3A000F0818E /* 工作_15.webp */; };
-		6EC4DE502F8FB3A000F0818E /* 工作_123.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE312F8FB3A000F0818E /* 工作_123.webp */; };
-		6EC4DE512F8FB3A000F0818E /* 工作_14.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC42F8FB3A000F0818E /* 工作_14.webp */; };
-		6EC4DE522F8FB3A000F0818E /* 工作_72.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFE2F8FB3A000F0818E /* 工作_72.webp */; };
-		6EC4DE532F8FB3A000F0818E /* 工作_20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCA2F8FB3A000F0818E /* 工作_20.webp */; };
-		6EC4DE542F8FB3A000F0818E /* 工作_54.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDEC2F8FB3A000F0818E /* 工作_54.webp */; };
-		6EC4DE552F8FB3A000F0818E /* 工作_49.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE72F8FB3A000F0818E /* 工作_49.webp */; };
-		6EC4DE562F8FB3A000F0818E /* 工作_1.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDB72F8FB3A000F0818E /* 工作_1.webp */; };
-		6EC4DE572F8FB3A000F0818E /* 工作_63.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF52F8FB3A000F0818E /* 工作_63.webp */; };
-		6EC4DE582F8FB3A000F0818E /* 工作_23.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCD2F8FB3A000F0818E /* 工作_23.webp */; };
-		6EC4DE592F8FB3A000F0818E /* 工作_6.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBC2F8FB3A000F0818E /* 工作_6.webp */; };
-		6EC4DE5A2F8FB3A000F0818E /* 工作_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFA2F8FB3A000F0818E /* 工作_68.webp */; };
-		6EC4DE5B2F8FB3A000F0818E /* 工作_48.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE62F8FB3A000F0818E /* 工作_48.webp */; };
-		6EC4DE5C2F8FB3A000F0818E /* 工作_3.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDB92F8FB3A000F0818E /* 工作_3.webp */; };
-		6EC4DE5D2F8FB3A000F0818E /* 工作_22.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCC2F8FB3A000F0818E /* 工作_22.webp */; };
-		6EC4DE5E2F8FB3A000F0818E /* 工作_25.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCF2F8FB3A000F0818E /* 工作_25.webp */; };
-		6EC4DE5F2F8FB3A000F0818E /* 工作_84.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0A2F8FB3A000F0818E /* 工作_84.webp */; };
-		6EC4DE602F8FB3A000F0818E /* 工作_90.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE102F8FB3A000F0818E /* 工作_90.webp */; };
-		6EC4DE612F8FB3A000F0818E /* 工作_52.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDEA2F8FB3A000F0818E /* 工作_52.webp */; };
-		6EC4DE622F8FB3A000F0818E /* 工作_35.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD92F8FB3A000F0818E /* 工作_35.webp */; };
-		6EC4DE632F8FB3A000F0818E /* 工作_104.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1E2F8FB3A000F0818E /* 工作_104.webp */; };
-		6EC4DE642F8FB3A000F0818E /* 工作_73.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFF2F8FB3A000F0818E /* 工作_73.webp */; };
-		6EC4DE652F8FB3A000F0818E /* 工作_8.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBE2F8FB3A000F0818E /* 工作_8.webp */; };
-		6EC4DE662F8FB3A000F0818E /* 工作_17.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC72F8FB3A000F0818E /* 工作_17.webp */; };
-		6EC4DE672F8FB3A000F0818E /* 工作_78.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE042F8FB3A000F0818E /* 工作_78.webp */; };
-		6EC4DE682F8FB3A000F0818E /* 工作_13.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC32F8FB3A000F0818E /* 工作_13.webp */; };
-		6EC4DE692F8FB3A000F0818E /* 工作_32.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD62F8FB3A000F0818E /* 工作_32.webp */; };
-		6EC4DE6A2F8FB3A000F0818E /* 工作_107.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE212F8FB3A000F0818E /* 工作_107.webp */; };
-		6EC4DE6B2F8FB3A000F0818E /* 工作_77.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE032F8FB3A000F0818E /* 工作_77.webp */; };
-		6EC4DE6C2F8FB3A000F0818E /* 工作_29.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD32F8FB3A000F0818E /* 工作_29.webp */; };
-		6EC4DE6D2F8FB3A000F0818E /* 工作_74.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE002F8FB3A000F0818E /* 工作_74.webp */; };
-		6EC4DE6E2F8FB3A000F0818E /* 工作_5.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBB2F8FB3A000F0818E /* 工作_5.webp */; };
-		6EC4DE6F2F8FB3A000F0818E /* 工作_42.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE02F8FB3A000F0818E /* 工作_42.webp */; };
-		6EC4DE702F8FB3A000F0818E /* 工作_61.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF32F8FB3A000F0818E /* 工作_61.webp */; };
-		6EC4DE712F8FB3A000F0818E /* 工作_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBA2F8FB3A000F0818E /* 工作_4.webp */; };
-		6EC4DE722F8FB3A000F0818E /* 工作_111.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE252F8FB3A000F0818E /* 工作_111.webp */; };
-		6EC4DE732F8FB3A000F0818E /* 工作_99.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE192F8FB3A000F0818E /* 工作_99.webp */; };
-		6EC4DE742F8FB3A000F0818E /* 工作_55.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDED2F8FB3A000F0818E /* 工作_55.webp */; };
-		6EC4DE752F8FB3A000F0818E /* 工作_103.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1D2F8FB3A000F0818E /* 工作_103.webp */; };
-		6EC4DE762F8FB3A000F0818E /* 工作_34.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD82F8FB3A000F0818E /* 工作_34.webp */; };
-		6EC4DE772F8FB3A000F0818E /* 工作_88.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0E2F8FB3A000F0818E /* 工作_88.webp */; };
-		6EC4DE782F8FB3A000F0818E /* 工作_112.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE262F8FB3A000F0818E /* 工作_112.webp */; };
-		6EC4DE792F8FB3A000F0818E /* 工作_102.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1C2F8FB3A000F0818E /* 工作_102.webp */; };
-		6EC4DE7A2F8FB3A000F0818E /* 工作_31.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD52F8FB3A000F0818E /* 工作_31.webp */; };
-		6EC4DE7B2F8FB3A000F0818E /* 工作_21.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCB2F8FB3A000F0818E /* 工作_21.webp */; };
-		6EC4DE7C2F8FB3A000F0818E /* 工作_36.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDA2F8FB3A000F0818E /* 工作_36.webp */; };
-		6EC4DE7D2F8FB3A000F0818E /* 工作_18.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC82F8FB3A000F0818E /* 工作_18.webp */; };
-		6EC4DE7E2F8FB3A000F0818E /* 工作_39.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDD2F8FB3A000F0818E /* 工作_39.webp */; };
-		6EC4DE7F2F8FB3A000F0818E /* 工作_100.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1A2F8FB3A000F0818E /* 工作_100.webp */; };
-		6EC4DE802F8FB3A000F0818E /* 工作_41.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDF2F8FB3A000F0818E /* 工作_41.webp */; };
-		6EC4DE812F8FB3A000F0818E /* 工作_95.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE152F8FB3A000F0818E /* 工作_95.webp */; };
-		6EC4DE822F8FB3A000F0818E /* 工作_82.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE082F8FB3A000F0818E /* 工作_82.webp */; };
-		6EC4DE832F8FB3A000F0818E /* 工作_125.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE332F8FB3A000F0818E /* 工作_125.webp */; };
-		6EC4DE842F8FB3A000F0818E /* 工作_92.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE122F8FB3A000F0818E /* 工作_92.webp */; };
-		6EC4DE852F8FB3A000F0818E /* 工作_27.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD12F8FB3A000F0818E /* 工作_27.webp */; };
-		6EC4DE862F8FB3A000F0818E /* 工作_76.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE022F8FB3A000F0818E /* 工作_76.webp */; };
-		6EC4DE872F8FB3A000F0818E /* 工作_105.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1F2F8FB3A000F0818E /* 工作_105.webp */; };
-		6EC4DE882F8FB3A000F0818E /* 工作_117.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2B2F8FB3A000F0818E /* 工作_117.webp */; };
-		6EC4DE892F8FB3A000F0818E /* 工作_80.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE062F8FB3A000F0818E /* 工作_80.webp */; };
-		6EC4DE8A2F8FB3A000F0818E /* 工作_85.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0B2F8FB3A000F0818E /* 工作_85.webp */; };
-		6EC4DE8B2F8FB3A000F0818E /* 工作_87.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0D2F8FB3A000F0818E /* 工作_87.webp */; };
-		6EC4DE8C2F8FB3A000F0818E /* 工作_89.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0F2F8FB3A000F0818E /* 工作_89.webp */; };
-		6EC4DE8D2F8FB3A000F0818E /* 工作_86.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE0C2F8FB3A000F0818E /* 工作_86.webp */; };
-		6EC4DE8E2F8FB3A000F0818E /* 工作_24.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDCE2F8FB3A000F0818E /* 工作_24.webp */; };
-		6EC4DE8F2F8FB3A000F0818E /* 工作_122.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE302F8FB3A000F0818E /* 工作_122.webp */; };
-		6EC4DE902F8FB3A000F0818E /* 工作_33.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD72F8FB3A000F0818E /* 工作_33.webp */; };
-		6EC4DE912F8FB3A000F0818E /* 工作_109.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE232F8FB3A000F0818E /* 工作_109.webp */; };
-		6EC4DE922F8FB3A000F0818E /* 工作_28.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD22F8FB3A000F0818E /* 工作_28.webp */; };
-		6EC4DE932F8FB3A000F0818E /* 工作_115.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE292F8FB3A000F0818E /* 工作_115.webp */; };
-		6EC4DE942F8FB3A000F0818E /* 工作_62.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF42F8FB3A000F0818E /* 工作_62.webp */; };
-		6EC4DE952F8FB3A000F0818E /* 工作_79.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE052F8FB3A000F0818E /* 工作_79.webp */; };
-		6EC4DE962F8FB3A000F0818E /* 工作_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDE2F8FB3A000F0818E /* 工作_40.webp */; };
-		6EC4DE972F8FB3A000F0818E /* 工作_38.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDDC2F8FB3A000F0818E /* 工作_38.webp */; };
-		6EC4DE982F8FB3A000F0818E /* 工作_57.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDEF2F8FB3A000F0818E /* 工作_57.webp */; };
-		6EC4DE992F8FB3A000F0818E /* 工作_126.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE342F8FB3A000F0818E /* 工作_126.webp */; };
-		6EC4DE9A2F8FB3A000F0818E /* 工作_64.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF62F8FB3A000F0818E /* 工作_64.webp */; };
-		6EC4DE9B2F8FB3A000F0818E /* 工作_58.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF02F8FB3A000F0818E /* 工作_58.webp */; };
-		6EC4DE9C2F8FB3A000F0818E /* 工作_50.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE82F8FB3A000F0818E /* 工作_50.webp */; };
-		6EC4DE9D2F8FB3A000F0818E /* 工作_69.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFB2F8FB3A000F0818E /* 工作_69.webp */; };
-		6EC4DE9E2F8FB3A000F0818E /* 工作_124.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE322F8FB3A000F0818E /* 工作_124.webp */; };
-		6EC4DE9F2F8FB3A000F0818E /* 工作_0.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDB62F8FB3A000F0818E /* 工作_0.webp */; };
-		6EC4DEA02F8FB3A000F0818E /* 工作_60.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF22F8FB3A000F0818E /* 工作_60.webp */; };
-		6EC4DEA12F8FB3A000F0818E /* 工作_67.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF92F8FB3A000F0818E /* 工作_67.webp */; };
-		6EC4DEA22F8FB3A000F0818E /* 工作_101.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE1B2F8FB3A000F0818E /* 工作_101.webp */; };
-		6EC4DEA32F8FB3A000F0818E /* 工作_83.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE092F8FB3A000F0818E /* 工作_83.webp */; };
-		6EC4DEA42F8FB3A000F0818E /* 工作_121.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2F2F8FB3A000F0818E /* 工作_121.webp */; };
-		6EC4DEA52F8FB3A000F0818E /* 工作_44.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE22F8FB3A000F0818E /* 工作_44.webp */; };
-		6EC4DEA62F8FB3A000F0818E /* 工作_81.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE072F8FB3A000F0818E /* 工作_81.webp */; };
-		6EC4DEA72F8FB3A000F0818E /* 工作_91.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE112F8FB3A000F0818E /* 工作_91.webp */; };
-		6EC4DEA82F8FB3A000F0818E /* 工作_71.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFD2F8FB3A000F0818E /* 工作_71.webp */; };
-		6EC4DEA92F8FB3A000F0818E /* 工作_66.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF82F8FB3A000F0818E /* 工作_66.webp */; };
-		6EC4DEAA2F8FB3A000F0818E /* 工作_12.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC22F8FB3A000F0818E /* 工作_12.webp */; };
-		6EC4DEAB2F8FB3A000F0818E /* 工作_9.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDBF2F8FB3A000F0818E /* 工作_9.webp */; };
-		6EC4DEAC2F8FB3A000F0818E /* 工作_43.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDE12F8FB3A000F0818E /* 工作_43.webp */; };
-		6EC4DEAD2F8FB3A000F0818E /* 工作_119.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2D2F8FB3A000F0818E /* 工作_119.webp */; };
-		6EC4DEAE2F8FB3A000F0818E /* 工作_113.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE272F8FB3A000F0818E /* 工作_113.webp */; };
-		6EC4DEAF2F8FB3A000F0818E /* 工作_94.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE142F8FB3A000F0818E /* 工作_94.webp */; };
-		6EC4DEB02F8FB3A000F0818E /* 工作_120.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE2E2F8FB3A000F0818E /* 工作_120.webp */; };
-		6EC4DEB12F8FB3A000F0818E /* 工作_59.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDF12F8FB3A000F0818E /* 工作_59.webp */; };
-		6EC4DEB22F8FB3A000F0818E /* 工作_98.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE182F8FB3A000F0818E /* 工作_98.webp */; };
-		6EC4DEB32F8FB3A000F0818E /* 工作_10.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDC02F8FB3A000F0818E /* 工作_10.webp */; };
-		6EC4DEB42F8FB3A000F0818E /* 工作_93.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DE132F8FB3A000F0818E /* 工作_93.webp */; };
-		6EC4DEB52F8FB3A000F0818E /* 工作_70.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDFC2F8FB3A000F0818E /* 工作_70.webp */; };
-		6EC4DEB62F8FB3A000F0818E /* 工作_30.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DDD42F8FB3A000F0818E /* 工作_30.webp */; };
 		6EC4E1662F91C87300F0818E /* 完成_40.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4E13B2F91C87300F0818E /* 完成_40.webp */; };
 		6EC4E1692F91C87300F0818E /* 伸懒腰_68.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DFCF2F91C87300F0818E /* 伸懒腰_68.webp */; };
 		6EC4E16B2F91C87300F0818E /* 伸懒腰_4.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4DF8F2F91C87300F0818E /* 伸懒腰_4.webp */; };
@@ -3124,6 +3123,134 @@
 		6EA31B612F9719740051BB6E /* 左提醒_46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左提醒_46.png"; sourceTree = "<group>"; };
 		6EA31B622F9719740051BB6E /* 左提醒_47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左提醒_47.png"; sourceTree = "<group>"; };
 		6EA31B632F9719740051BB6E /* 左提醒_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左提醒_48.png"; sourceTree = "<group>"; };
+		6EA31C8F2F9C81D40051BB6E /* 工作_0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_0.webp"; sourceTree = "<group>"; };
+		6EA31C902F9C81D40051BB6E /* 工作_1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_1.webp"; sourceTree = "<group>"; };
+		6EA31C912F9C81D40051BB6E /* 工作_2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_2.webp"; sourceTree = "<group>"; };
+		6EA31C922F9C81D40051BB6E /* 工作_3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_3.webp"; sourceTree = "<group>"; };
+		6EA31C932F9C81D40051BB6E /* 工作_4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_4.webp"; sourceTree = "<group>"; };
+		6EA31C942F9C81D40051BB6E /* 工作_5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_5.webp"; sourceTree = "<group>"; };
+		6EA31C952F9C81D40051BB6E /* 工作_6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_6.webp"; sourceTree = "<group>"; };
+		6EA31C962F9C81D40051BB6E /* 工作_7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_7.webp"; sourceTree = "<group>"; };
+		6EA31C972F9C81D40051BB6E /* 工作_8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_8.webp"; sourceTree = "<group>"; };
+		6EA31C982F9C81D40051BB6E /* 工作_9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_9.webp"; sourceTree = "<group>"; };
+		6EA31C992F9C81D40051BB6E /* 工作_10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_10.webp"; sourceTree = "<group>"; };
+		6EA31C9A2F9C81D40051BB6E /* 工作_11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_11.webp"; sourceTree = "<group>"; };
+		6EA31C9B2F9C81D40051BB6E /* 工作_12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_12.webp"; sourceTree = "<group>"; };
+		6EA31C9C2F9C81D40051BB6E /* 工作_13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_13.webp"; sourceTree = "<group>"; };
+		6EA31C9D2F9C81D40051BB6E /* 工作_14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_14.webp"; sourceTree = "<group>"; };
+		6EA31C9E2F9C81D40051BB6E /* 工作_15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_15.webp"; sourceTree = "<group>"; };
+		6EA31C9F2F9C81D40051BB6E /* 工作_16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_16.webp"; sourceTree = "<group>"; };
+		6EA31CA02F9C81D40051BB6E /* 工作_17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_17.webp"; sourceTree = "<group>"; };
+		6EA31CA12F9C81D40051BB6E /* 工作_18.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_18.webp"; sourceTree = "<group>"; };
+		6EA31CA22F9C81D40051BB6E /* 工作_19.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_19.webp"; sourceTree = "<group>"; };
+		6EA31CA32F9C81D40051BB6E /* 工作_20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_20.webp"; sourceTree = "<group>"; };
+		6EA31CA42F9C81D40051BB6E /* 工作_21.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_21.webp"; sourceTree = "<group>"; };
+		6EA31CA52F9C81D40051BB6E /* 工作_22.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_22.webp"; sourceTree = "<group>"; };
+		6EA31CA62F9C81D40051BB6E /* 工作_23.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_23.webp"; sourceTree = "<group>"; };
+		6EA31CA72F9C81D40051BB6E /* 工作_24.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_24.webp"; sourceTree = "<group>"; };
+		6EA31CA82F9C81D40051BB6E /* 工作_25.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_25.webp"; sourceTree = "<group>"; };
+		6EA31CA92F9C81D40051BB6E /* 工作_26.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_26.webp"; sourceTree = "<group>"; };
+		6EA31CAA2F9C81D40051BB6E /* 工作_27.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_27.webp"; sourceTree = "<group>"; };
+		6EA31CAB2F9C81D40051BB6E /* 工作_28.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_28.webp"; sourceTree = "<group>"; };
+		6EA31CAC2F9C81D40051BB6E /* 工作_29.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_29.webp"; sourceTree = "<group>"; };
+		6EA31CAD2F9C81D40051BB6E /* 工作_30.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_30.webp"; sourceTree = "<group>"; };
+		6EA31CAE2F9C81D40051BB6E /* 工作_31.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_31.webp"; sourceTree = "<group>"; };
+		6EA31CAF2F9C81D40051BB6E /* 工作_32.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_32.webp"; sourceTree = "<group>"; };
+		6EA31CB02F9C81D40051BB6E /* 工作_33.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_33.webp"; sourceTree = "<group>"; };
+		6EA31CB12F9C81D40051BB6E /* 工作_34.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_34.webp"; sourceTree = "<group>"; };
+		6EA31CB22F9C81D40051BB6E /* 工作_35.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_35.webp"; sourceTree = "<group>"; };
+		6EA31CB32F9C81D40051BB6E /* 工作_36.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_36.webp"; sourceTree = "<group>"; };
+		6EA31CB42F9C81D40051BB6E /* 工作_37.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_37.webp"; sourceTree = "<group>"; };
+		6EA31CB52F9C81D40051BB6E /* 工作_38.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_38.webp"; sourceTree = "<group>"; };
+		6EA31CB62F9C81D40051BB6E /* 工作_39.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_39.webp"; sourceTree = "<group>"; };
+		6EA31CB72F9C81D40051BB6E /* 工作_40.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_40.webp"; sourceTree = "<group>"; };
+		6EA31CB82F9C81D40051BB6E /* 工作_41.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_41.webp"; sourceTree = "<group>"; };
+		6EA31CB92F9C81D40051BB6E /* 工作_42.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_42.webp"; sourceTree = "<group>"; };
+		6EA31CBA2F9C81D40051BB6E /* 工作_43.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_43.webp"; sourceTree = "<group>"; };
+		6EA31CBB2F9C81D40051BB6E /* 工作_44.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_44.webp"; sourceTree = "<group>"; };
+		6EA31CBC2F9C81D40051BB6E /* 工作_45.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_45.webp"; sourceTree = "<group>"; };
+		6EA31CBD2F9C81D40051BB6E /* 工作_46.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_46.webp"; sourceTree = "<group>"; };
+		6EA31CBE2F9C81D40051BB6E /* 工作_47.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_47.webp"; sourceTree = "<group>"; };
+		6EA31CBF2F9C81D40051BB6E /* 工作_48.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_48.webp"; sourceTree = "<group>"; };
+		6EA31CC02F9C81D40051BB6E /* 工作_49.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_49.webp"; sourceTree = "<group>"; };
+		6EA31CC12F9C81D40051BB6E /* 工作_50.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_50.webp"; sourceTree = "<group>"; };
+		6EA31CC22F9C81D40051BB6E /* 工作_51.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_51.webp"; sourceTree = "<group>"; };
+		6EA31CC32F9C81D40051BB6E /* 工作_52.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_52.webp"; sourceTree = "<group>"; };
+		6EA31CC42F9C81D40051BB6E /* 工作_53.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_53.webp"; sourceTree = "<group>"; };
+		6EA31CC52F9C81D40051BB6E /* 工作_54.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_54.webp"; sourceTree = "<group>"; };
+		6EA31CC62F9C81D40051BB6E /* 工作_55.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_55.webp"; sourceTree = "<group>"; };
+		6EA31CC72F9C81D40051BB6E /* 工作_56.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_56.webp"; sourceTree = "<group>"; };
+		6EA31CC82F9C81D40051BB6E /* 工作_57.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_57.webp"; sourceTree = "<group>"; };
+		6EA31CC92F9C81D40051BB6E /* 工作_58.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_58.webp"; sourceTree = "<group>"; };
+		6EA31CCA2F9C81D40051BB6E /* 工作_59.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_59.webp"; sourceTree = "<group>"; };
+		6EA31CCB2F9C81D40051BB6E /* 工作_60.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_60.webp"; sourceTree = "<group>"; };
+		6EA31CCC2F9C81D40051BB6E /* 工作_61.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_61.webp"; sourceTree = "<group>"; };
+		6EA31CCD2F9C81D40051BB6E /* 工作_62.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_62.webp"; sourceTree = "<group>"; };
+		6EA31CCE2F9C81D40051BB6E /* 工作_63.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_63.webp"; sourceTree = "<group>"; };
+		6EA31CCF2F9C81D40051BB6E /* 工作_64.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_64.webp"; sourceTree = "<group>"; };
+		6EA31CD02F9C81D40051BB6E /* 工作_65.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_65.webp"; sourceTree = "<group>"; };
+		6EA31CD12F9C81D40051BB6E /* 工作_66.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_66.webp"; sourceTree = "<group>"; };
+		6EA31CD22F9C81D40051BB6E /* 工作_67.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_67.webp"; sourceTree = "<group>"; };
+		6EA31CD32F9C81D40051BB6E /* 工作_68.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_68.webp"; sourceTree = "<group>"; };
+		6EA31CD42F9C81D40051BB6E /* 工作_69.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_69.webp"; sourceTree = "<group>"; };
+		6EA31CD52F9C81D40051BB6E /* 工作_70.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_70.webp"; sourceTree = "<group>"; };
+		6EA31CD62F9C81D40051BB6E /* 工作_71.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_71.webp"; sourceTree = "<group>"; };
+		6EA31CD72F9C81D40051BB6E /* 工作_72.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_72.webp"; sourceTree = "<group>"; };
+		6EA31CD82F9C81D40051BB6E /* 工作_73.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_73.webp"; sourceTree = "<group>"; };
+		6EA31CD92F9C81D40051BB6E /* 工作_74.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_74.webp"; sourceTree = "<group>"; };
+		6EA31CDA2F9C81D40051BB6E /* 工作_75.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_75.webp"; sourceTree = "<group>"; };
+		6EA31CDB2F9C81D40051BB6E /* 工作_76.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_76.webp"; sourceTree = "<group>"; };
+		6EA31CDC2F9C81D40051BB6E /* 工作_77.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_77.webp"; sourceTree = "<group>"; };
+		6EA31CDD2F9C81D40051BB6E /* 工作_78.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_78.webp"; sourceTree = "<group>"; };
+		6EA31CDE2F9C81D40051BB6E /* 工作_79.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_79.webp"; sourceTree = "<group>"; };
+		6EA31CDF2F9C81D40051BB6E /* 工作_80.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_80.webp"; sourceTree = "<group>"; };
+		6EA31CE02F9C81D40051BB6E /* 工作_81.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_81.webp"; sourceTree = "<group>"; };
+		6EA31CE12F9C81D40051BB6E /* 工作_82.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_82.webp"; sourceTree = "<group>"; };
+		6EA31CE22F9C81D40051BB6E /* 工作_83.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_83.webp"; sourceTree = "<group>"; };
+		6EA31CE32F9C81D40051BB6E /* 工作_84.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_84.webp"; sourceTree = "<group>"; };
+		6EA31CE42F9C81D40051BB6E /* 工作_85.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_85.webp"; sourceTree = "<group>"; };
+		6EA31CE52F9C81D40051BB6E /* 工作_86.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_86.webp"; sourceTree = "<group>"; };
+		6EA31CE62F9C81D40051BB6E /* 工作_87.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_87.webp"; sourceTree = "<group>"; };
+		6EA31CE72F9C81D40051BB6E /* 工作_88.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_88.webp"; sourceTree = "<group>"; };
+		6EA31CE82F9C81D40051BB6E /* 工作_89.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_89.webp"; sourceTree = "<group>"; };
+		6EA31CE92F9C81D40051BB6E /* 工作_90.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_90.webp"; sourceTree = "<group>"; };
+		6EA31CEA2F9C81D40051BB6E /* 工作_91.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_91.webp"; sourceTree = "<group>"; };
+		6EA31CEB2F9C81D40051BB6E /* 工作_92.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_92.webp"; sourceTree = "<group>"; };
+		6EA31CEC2F9C81D40051BB6E /* 工作_93.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_93.webp"; sourceTree = "<group>"; };
+		6EA31CED2F9C81D40051BB6E /* 工作_94.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_94.webp"; sourceTree = "<group>"; };
+		6EA31CEE2F9C81D40051BB6E /* 工作_95.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_95.webp"; sourceTree = "<group>"; };
+		6EA31CEF2F9C81D40051BB6E /* 工作_96.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_96.webp"; sourceTree = "<group>"; };
+		6EA31CF02F9C81D40051BB6E /* 工作_97.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_97.webp"; sourceTree = "<group>"; };
+		6EA31CF12F9C81D40051BB6E /* 工作_98.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_98.webp"; sourceTree = "<group>"; };
+		6EA31CF22F9C81D40051BB6E /* 工作_99.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_99.webp"; sourceTree = "<group>"; };
+		6EA31CF32F9C81D40051BB6E /* 工作_100.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_100.webp"; sourceTree = "<group>"; };
+		6EA31CF42F9C81D40051BB6E /* 工作_101.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_101.webp"; sourceTree = "<group>"; };
+		6EA31CF52F9C81D40051BB6E /* 工作_102.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_102.webp"; sourceTree = "<group>"; };
+		6EA31CF62F9C81D40051BB6E /* 工作_103.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_103.webp"; sourceTree = "<group>"; };
+		6EA31CF72F9C81D40051BB6E /* 工作_104.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_104.webp"; sourceTree = "<group>"; };
+		6EA31CF82F9C81D40051BB6E /* 工作_105.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_105.webp"; sourceTree = "<group>"; };
+		6EA31CF92F9C81D40051BB6E /* 工作_106.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_106.webp"; sourceTree = "<group>"; };
+		6EA31CFA2F9C81D40051BB6E /* 工作_107.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_107.webp"; sourceTree = "<group>"; };
+		6EA31CFB2F9C81D40051BB6E /* 工作_108.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_108.webp"; sourceTree = "<group>"; };
+		6EA31CFC2F9C81D40051BB6E /* 工作_109.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_109.webp"; sourceTree = "<group>"; };
+		6EA31CFD2F9C81D40051BB6E /* 工作_110.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_110.webp"; sourceTree = "<group>"; };
+		6EA31CFE2F9C81D40051BB6E /* 工作_111.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_111.webp"; sourceTree = "<group>"; };
+		6EA31CFF2F9C81D40051BB6E /* 工作_112.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_112.webp"; sourceTree = "<group>"; };
+		6EA31D002F9C81D40051BB6E /* 工作_113.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_113.webp"; sourceTree = "<group>"; };
+		6EA31D012F9C81D40051BB6E /* 工作_114.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_114.webp"; sourceTree = "<group>"; };
+		6EA31D022F9C81D40051BB6E /* 工作_115.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_115.webp"; sourceTree = "<group>"; };
+		6EA31D032F9C81D40051BB6E /* 工作_116.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_116.webp"; sourceTree = "<group>"; };
+		6EA31D042F9C81D40051BB6E /* 工作_117.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_117.webp"; sourceTree = "<group>"; };
+		6EA31D052F9C81D40051BB6E /* 工作_118.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_118.webp"; sourceTree = "<group>"; };
+		6EA31D062F9C81D40051BB6E /* 工作_119.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_119.webp"; sourceTree = "<group>"; };
+		6EA31D072F9C81D40051BB6E /* 工作_120.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_120.webp"; sourceTree = "<group>"; };
+		6EA31D082F9C81D40051BB6E /* 工作_121.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_121.webp"; sourceTree = "<group>"; };
+		6EA31D092F9C81D40051BB6E /* 工作_122.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_122.webp"; sourceTree = "<group>"; };
+		6EA31D0A2F9C81D40051BB6E /* 工作_123.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_123.webp"; sourceTree = "<group>"; };
+		6EA31D0B2F9C81D40051BB6E /* 工作_124.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_124.webp"; sourceTree = "<group>"; };
+		6EA31D0C2F9C81D40051BB6E /* 工作_125.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_125.webp"; sourceTree = "<group>"; };
+		6EA31D0D2F9C81D40051BB6E /* 工作_126.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_126.webp"; sourceTree = "<group>"; };
+		6EA31D0E2F9C81D40051BB6E /* 工作_127.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_127.webp"; sourceTree = "<group>"; };
 		6EC4C3E62F8E2C8000F0818E /* 团子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "团子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC4C3F62F8E2C8400F0818E /* 团子Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团子Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC4C4002F8E2C8400F0818E /* 团子UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团子UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3791,134 +3918,6 @@
 		6EC4D7B22F8F932E00F0818E /* 提醒_46.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提醒_46.webp"; sourceTree = "<group>"; };
 		6EC4D7B32F8F932E00F0818E /* 提醒_47.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提醒_47.webp"; sourceTree = "<group>"; };
 		6EC4D7B42F8F932E00F0818E /* 提醒_48.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提醒_48.webp"; sourceTree = "<group>"; };
-		6EC4DDB62F8FB3A000F0818E /* 工作_0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_0.webp"; sourceTree = "<group>"; };
-		6EC4DDB72F8FB3A000F0818E /* 工作_1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_1.webp"; sourceTree = "<group>"; };
-		6EC4DDB82F8FB3A000F0818E /* 工作_2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_2.webp"; sourceTree = "<group>"; };
-		6EC4DDB92F8FB3A000F0818E /* 工作_3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_3.webp"; sourceTree = "<group>"; };
-		6EC4DDBA2F8FB3A000F0818E /* 工作_4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_4.webp"; sourceTree = "<group>"; };
-		6EC4DDBB2F8FB3A000F0818E /* 工作_5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_5.webp"; sourceTree = "<group>"; };
-		6EC4DDBC2F8FB3A000F0818E /* 工作_6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_6.webp"; sourceTree = "<group>"; };
-		6EC4DDBD2F8FB3A000F0818E /* 工作_7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_7.webp"; sourceTree = "<group>"; };
-		6EC4DDBE2F8FB3A000F0818E /* 工作_8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_8.webp"; sourceTree = "<group>"; };
-		6EC4DDBF2F8FB3A000F0818E /* 工作_9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_9.webp"; sourceTree = "<group>"; };
-		6EC4DDC02F8FB3A000F0818E /* 工作_10.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_10.webp"; sourceTree = "<group>"; };
-		6EC4DDC12F8FB3A000F0818E /* 工作_11.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_11.webp"; sourceTree = "<group>"; };
-		6EC4DDC22F8FB3A000F0818E /* 工作_12.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_12.webp"; sourceTree = "<group>"; };
-		6EC4DDC32F8FB3A000F0818E /* 工作_13.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_13.webp"; sourceTree = "<group>"; };
-		6EC4DDC42F8FB3A000F0818E /* 工作_14.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_14.webp"; sourceTree = "<group>"; };
-		6EC4DDC52F8FB3A000F0818E /* 工作_15.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_15.webp"; sourceTree = "<group>"; };
-		6EC4DDC62F8FB3A000F0818E /* 工作_16.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_16.webp"; sourceTree = "<group>"; };
-		6EC4DDC72F8FB3A000F0818E /* 工作_17.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_17.webp"; sourceTree = "<group>"; };
-		6EC4DDC82F8FB3A000F0818E /* 工作_18.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_18.webp"; sourceTree = "<group>"; };
-		6EC4DDC92F8FB3A000F0818E /* 工作_19.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_19.webp"; sourceTree = "<group>"; };
-		6EC4DDCA2F8FB3A000F0818E /* 工作_20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_20.webp"; sourceTree = "<group>"; };
-		6EC4DDCB2F8FB3A000F0818E /* 工作_21.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_21.webp"; sourceTree = "<group>"; };
-		6EC4DDCC2F8FB3A000F0818E /* 工作_22.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_22.webp"; sourceTree = "<group>"; };
-		6EC4DDCD2F8FB3A000F0818E /* 工作_23.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_23.webp"; sourceTree = "<group>"; };
-		6EC4DDCE2F8FB3A000F0818E /* 工作_24.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_24.webp"; sourceTree = "<group>"; };
-		6EC4DDCF2F8FB3A000F0818E /* 工作_25.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_25.webp"; sourceTree = "<group>"; };
-		6EC4DDD02F8FB3A000F0818E /* 工作_26.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_26.webp"; sourceTree = "<group>"; };
-		6EC4DDD12F8FB3A000F0818E /* 工作_27.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_27.webp"; sourceTree = "<group>"; };
-		6EC4DDD22F8FB3A000F0818E /* 工作_28.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_28.webp"; sourceTree = "<group>"; };
-		6EC4DDD32F8FB3A000F0818E /* 工作_29.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_29.webp"; sourceTree = "<group>"; };
-		6EC4DDD42F8FB3A000F0818E /* 工作_30.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_30.webp"; sourceTree = "<group>"; };
-		6EC4DDD52F8FB3A000F0818E /* 工作_31.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_31.webp"; sourceTree = "<group>"; };
-		6EC4DDD62F8FB3A000F0818E /* 工作_32.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_32.webp"; sourceTree = "<group>"; };
-		6EC4DDD72F8FB3A000F0818E /* 工作_33.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_33.webp"; sourceTree = "<group>"; };
-		6EC4DDD82F8FB3A000F0818E /* 工作_34.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_34.webp"; sourceTree = "<group>"; };
-		6EC4DDD92F8FB3A000F0818E /* 工作_35.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_35.webp"; sourceTree = "<group>"; };
-		6EC4DDDA2F8FB3A000F0818E /* 工作_36.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_36.webp"; sourceTree = "<group>"; };
-		6EC4DDDB2F8FB3A000F0818E /* 工作_37.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_37.webp"; sourceTree = "<group>"; };
-		6EC4DDDC2F8FB3A000F0818E /* 工作_38.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_38.webp"; sourceTree = "<group>"; };
-		6EC4DDDD2F8FB3A000F0818E /* 工作_39.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_39.webp"; sourceTree = "<group>"; };
-		6EC4DDDE2F8FB3A000F0818E /* 工作_40.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_40.webp"; sourceTree = "<group>"; };
-		6EC4DDDF2F8FB3A000F0818E /* 工作_41.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_41.webp"; sourceTree = "<group>"; };
-		6EC4DDE02F8FB3A000F0818E /* 工作_42.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_42.webp"; sourceTree = "<group>"; };
-		6EC4DDE12F8FB3A000F0818E /* 工作_43.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_43.webp"; sourceTree = "<group>"; };
-		6EC4DDE22F8FB3A000F0818E /* 工作_44.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_44.webp"; sourceTree = "<group>"; };
-		6EC4DDE32F8FB3A000F0818E /* 工作_45.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_45.webp"; sourceTree = "<group>"; };
-		6EC4DDE42F8FB3A000F0818E /* 工作_46.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_46.webp"; sourceTree = "<group>"; };
-		6EC4DDE52F8FB3A000F0818E /* 工作_47.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_47.webp"; sourceTree = "<group>"; };
-		6EC4DDE62F8FB3A000F0818E /* 工作_48.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_48.webp"; sourceTree = "<group>"; };
-		6EC4DDE72F8FB3A000F0818E /* 工作_49.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_49.webp"; sourceTree = "<group>"; };
-		6EC4DDE82F8FB3A000F0818E /* 工作_50.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_50.webp"; sourceTree = "<group>"; };
-		6EC4DDE92F8FB3A000F0818E /* 工作_51.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_51.webp"; sourceTree = "<group>"; };
-		6EC4DDEA2F8FB3A000F0818E /* 工作_52.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_52.webp"; sourceTree = "<group>"; };
-		6EC4DDEB2F8FB3A000F0818E /* 工作_53.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_53.webp"; sourceTree = "<group>"; };
-		6EC4DDEC2F8FB3A000F0818E /* 工作_54.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_54.webp"; sourceTree = "<group>"; };
-		6EC4DDED2F8FB3A000F0818E /* 工作_55.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_55.webp"; sourceTree = "<group>"; };
-		6EC4DDEE2F8FB3A000F0818E /* 工作_56.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_56.webp"; sourceTree = "<group>"; };
-		6EC4DDEF2F8FB3A000F0818E /* 工作_57.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_57.webp"; sourceTree = "<group>"; };
-		6EC4DDF02F8FB3A000F0818E /* 工作_58.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_58.webp"; sourceTree = "<group>"; };
-		6EC4DDF12F8FB3A000F0818E /* 工作_59.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_59.webp"; sourceTree = "<group>"; };
-		6EC4DDF22F8FB3A000F0818E /* 工作_60.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_60.webp"; sourceTree = "<group>"; };
-		6EC4DDF32F8FB3A000F0818E /* 工作_61.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_61.webp"; sourceTree = "<group>"; };
-		6EC4DDF42F8FB3A000F0818E /* 工作_62.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_62.webp"; sourceTree = "<group>"; };
-		6EC4DDF52F8FB3A000F0818E /* 工作_63.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_63.webp"; sourceTree = "<group>"; };
-		6EC4DDF62F8FB3A000F0818E /* 工作_64.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_64.webp"; sourceTree = "<group>"; };
-		6EC4DDF72F8FB3A000F0818E /* 工作_65.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_65.webp"; sourceTree = "<group>"; };
-		6EC4DDF82F8FB3A000F0818E /* 工作_66.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_66.webp"; sourceTree = "<group>"; };
-		6EC4DDF92F8FB3A000F0818E /* 工作_67.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_67.webp"; sourceTree = "<group>"; };
-		6EC4DDFA2F8FB3A000F0818E /* 工作_68.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_68.webp"; sourceTree = "<group>"; };
-		6EC4DDFB2F8FB3A000F0818E /* 工作_69.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_69.webp"; sourceTree = "<group>"; };
-		6EC4DDFC2F8FB3A000F0818E /* 工作_70.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_70.webp"; sourceTree = "<group>"; };
-		6EC4DDFD2F8FB3A000F0818E /* 工作_71.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_71.webp"; sourceTree = "<group>"; };
-		6EC4DDFE2F8FB3A000F0818E /* 工作_72.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_72.webp"; sourceTree = "<group>"; };
-		6EC4DDFF2F8FB3A000F0818E /* 工作_73.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_73.webp"; sourceTree = "<group>"; };
-		6EC4DE002F8FB3A000F0818E /* 工作_74.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_74.webp"; sourceTree = "<group>"; };
-		6EC4DE012F8FB3A000F0818E /* 工作_75.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_75.webp"; sourceTree = "<group>"; };
-		6EC4DE022F8FB3A000F0818E /* 工作_76.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_76.webp"; sourceTree = "<group>"; };
-		6EC4DE032F8FB3A000F0818E /* 工作_77.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_77.webp"; sourceTree = "<group>"; };
-		6EC4DE042F8FB3A000F0818E /* 工作_78.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_78.webp"; sourceTree = "<group>"; };
-		6EC4DE052F8FB3A000F0818E /* 工作_79.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_79.webp"; sourceTree = "<group>"; };
-		6EC4DE062F8FB3A000F0818E /* 工作_80.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_80.webp"; sourceTree = "<group>"; };
-		6EC4DE072F8FB3A000F0818E /* 工作_81.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_81.webp"; sourceTree = "<group>"; };
-		6EC4DE082F8FB3A000F0818E /* 工作_82.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_82.webp"; sourceTree = "<group>"; };
-		6EC4DE092F8FB3A000F0818E /* 工作_83.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_83.webp"; sourceTree = "<group>"; };
-		6EC4DE0A2F8FB3A000F0818E /* 工作_84.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_84.webp"; sourceTree = "<group>"; };
-		6EC4DE0B2F8FB3A000F0818E /* 工作_85.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_85.webp"; sourceTree = "<group>"; };
-		6EC4DE0C2F8FB3A000F0818E /* 工作_86.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_86.webp"; sourceTree = "<group>"; };
-		6EC4DE0D2F8FB3A000F0818E /* 工作_87.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_87.webp"; sourceTree = "<group>"; };
-		6EC4DE0E2F8FB3A000F0818E /* 工作_88.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_88.webp"; sourceTree = "<group>"; };
-		6EC4DE0F2F8FB3A000F0818E /* 工作_89.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_89.webp"; sourceTree = "<group>"; };
-		6EC4DE102F8FB3A000F0818E /* 工作_90.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_90.webp"; sourceTree = "<group>"; };
-		6EC4DE112F8FB3A000F0818E /* 工作_91.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_91.webp"; sourceTree = "<group>"; };
-		6EC4DE122F8FB3A000F0818E /* 工作_92.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_92.webp"; sourceTree = "<group>"; };
-		6EC4DE132F8FB3A000F0818E /* 工作_93.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_93.webp"; sourceTree = "<group>"; };
-		6EC4DE142F8FB3A000F0818E /* 工作_94.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_94.webp"; sourceTree = "<group>"; };
-		6EC4DE152F8FB3A000F0818E /* 工作_95.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_95.webp"; sourceTree = "<group>"; };
-		6EC4DE162F8FB3A000F0818E /* 工作_96.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_96.webp"; sourceTree = "<group>"; };
-		6EC4DE172F8FB3A000F0818E /* 工作_97.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_97.webp"; sourceTree = "<group>"; };
-		6EC4DE182F8FB3A000F0818E /* 工作_98.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_98.webp"; sourceTree = "<group>"; };
-		6EC4DE192F8FB3A000F0818E /* 工作_99.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_99.webp"; sourceTree = "<group>"; };
-		6EC4DE1A2F8FB3A000F0818E /* 工作_100.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_100.webp"; sourceTree = "<group>"; };
-		6EC4DE1B2F8FB3A000F0818E /* 工作_101.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_101.webp"; sourceTree = "<group>"; };
-		6EC4DE1C2F8FB3A000F0818E /* 工作_102.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_102.webp"; sourceTree = "<group>"; };
-		6EC4DE1D2F8FB3A000F0818E /* 工作_103.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_103.webp"; sourceTree = "<group>"; };
-		6EC4DE1E2F8FB3A000F0818E /* 工作_104.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_104.webp"; sourceTree = "<group>"; };
-		6EC4DE1F2F8FB3A000F0818E /* 工作_105.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_105.webp"; sourceTree = "<group>"; };
-		6EC4DE202F8FB3A000F0818E /* 工作_106.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_106.webp"; sourceTree = "<group>"; };
-		6EC4DE212F8FB3A000F0818E /* 工作_107.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_107.webp"; sourceTree = "<group>"; };
-		6EC4DE222F8FB3A000F0818E /* 工作_108.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_108.webp"; sourceTree = "<group>"; };
-		6EC4DE232F8FB3A000F0818E /* 工作_109.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_109.webp"; sourceTree = "<group>"; };
-		6EC4DE242F8FB3A000F0818E /* 工作_110.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_110.webp"; sourceTree = "<group>"; };
-		6EC4DE252F8FB3A000F0818E /* 工作_111.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_111.webp"; sourceTree = "<group>"; };
-		6EC4DE262F8FB3A000F0818E /* 工作_112.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_112.webp"; sourceTree = "<group>"; };
-		6EC4DE272F8FB3A000F0818E /* 工作_113.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_113.webp"; sourceTree = "<group>"; };
-		6EC4DE282F8FB3A000F0818E /* 工作_114.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_114.webp"; sourceTree = "<group>"; };
-		6EC4DE292F8FB3A000F0818E /* 工作_115.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_115.webp"; sourceTree = "<group>"; };
-		6EC4DE2A2F8FB3A000F0818E /* 工作_116.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_116.webp"; sourceTree = "<group>"; };
-		6EC4DE2B2F8FB3A000F0818E /* 工作_117.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_117.webp"; sourceTree = "<group>"; };
-		6EC4DE2C2F8FB3A000F0818E /* 工作_118.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_118.webp"; sourceTree = "<group>"; };
-		6EC4DE2D2F8FB3A000F0818E /* 工作_119.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_119.webp"; sourceTree = "<group>"; };
-		6EC4DE2E2F8FB3A000F0818E /* 工作_120.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_120.webp"; sourceTree = "<group>"; };
-		6EC4DE2F2F8FB3A000F0818E /* 工作_121.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_121.webp"; sourceTree = "<group>"; };
-		6EC4DE302F8FB3A000F0818E /* 工作_122.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_122.webp"; sourceTree = "<group>"; };
-		6EC4DE312F8FB3A000F0818E /* 工作_123.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_123.webp"; sourceTree = "<group>"; };
-		6EC4DE322F8FB3A000F0818E /* 工作_124.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_124.webp"; sourceTree = "<group>"; };
-		6EC4DE332F8FB3A000F0818E /* 工作_125.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_125.webp"; sourceTree = "<group>"; };
-		6EC4DE342F8FB3A000F0818E /* 工作_126.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_126.webp"; sourceTree = "<group>"; };
-		6EC4DE352F8FB3A000F0818E /* 工作_127.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "工作_127.webp"; sourceTree = "<group>"; };
 		6EC4DEB72F91C87300F0818E /* 摸摸_0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "摸摸_0.webp"; sourceTree = "<group>"; };
 		6EC4DEB82F91C87300F0818E /* 摸摸_1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "摸摸_1.webp"; sourceTree = "<group>"; };
 		6EC4DEB92F91C87300F0818E /* 摸摸_2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "摸摸_2.webp"; sourceTree = "<group>"; };
@@ -4456,7 +4455,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA31B9A2F98A4B30051BB6E /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5462,9 +5460,145 @@
 			path = "左提醒";
 			sourceTree = "<group>";
 		};
+		6EA31D0F2F9C81D40051BB6E /* 工作 */ = {
+			isa = PBXGroup;
+			children = (
+				6EA31C8F2F9C81D40051BB6E /* 工作_0.webp */,
+				6EA31C902F9C81D40051BB6E /* 工作_1.webp */,
+				6EA31C912F9C81D40051BB6E /* 工作_2.webp */,
+				6EA31C922F9C81D40051BB6E /* 工作_3.webp */,
+				6EA31C932F9C81D40051BB6E /* 工作_4.webp */,
+				6EA31C942F9C81D40051BB6E /* 工作_5.webp */,
+				6EA31C952F9C81D40051BB6E /* 工作_6.webp */,
+				6EA31C962F9C81D40051BB6E /* 工作_7.webp */,
+				6EA31C972F9C81D40051BB6E /* 工作_8.webp */,
+				6EA31C982F9C81D40051BB6E /* 工作_9.webp */,
+				6EA31C992F9C81D40051BB6E /* 工作_10.webp */,
+				6EA31C9A2F9C81D40051BB6E /* 工作_11.webp */,
+				6EA31C9B2F9C81D40051BB6E /* 工作_12.webp */,
+				6EA31C9C2F9C81D40051BB6E /* 工作_13.webp */,
+				6EA31C9D2F9C81D40051BB6E /* 工作_14.webp */,
+				6EA31C9E2F9C81D40051BB6E /* 工作_15.webp */,
+				6EA31C9F2F9C81D40051BB6E /* 工作_16.webp */,
+				6EA31CA02F9C81D40051BB6E /* 工作_17.webp */,
+				6EA31CA12F9C81D40051BB6E /* 工作_18.webp */,
+				6EA31CA22F9C81D40051BB6E /* 工作_19.webp */,
+				6EA31CA32F9C81D40051BB6E /* 工作_20.webp */,
+				6EA31CA42F9C81D40051BB6E /* 工作_21.webp */,
+				6EA31CA52F9C81D40051BB6E /* 工作_22.webp */,
+				6EA31CA62F9C81D40051BB6E /* 工作_23.webp */,
+				6EA31CA72F9C81D40051BB6E /* 工作_24.webp */,
+				6EA31CA82F9C81D40051BB6E /* 工作_25.webp */,
+				6EA31CA92F9C81D40051BB6E /* 工作_26.webp */,
+				6EA31CAA2F9C81D40051BB6E /* 工作_27.webp */,
+				6EA31CAB2F9C81D40051BB6E /* 工作_28.webp */,
+				6EA31CAC2F9C81D40051BB6E /* 工作_29.webp */,
+				6EA31CAD2F9C81D40051BB6E /* 工作_30.webp */,
+				6EA31CAE2F9C81D40051BB6E /* 工作_31.webp */,
+				6EA31CAF2F9C81D40051BB6E /* 工作_32.webp */,
+				6EA31CB02F9C81D40051BB6E /* 工作_33.webp */,
+				6EA31CB12F9C81D40051BB6E /* 工作_34.webp */,
+				6EA31CB22F9C81D40051BB6E /* 工作_35.webp */,
+				6EA31CB32F9C81D40051BB6E /* 工作_36.webp */,
+				6EA31CB42F9C81D40051BB6E /* 工作_37.webp */,
+				6EA31CB52F9C81D40051BB6E /* 工作_38.webp */,
+				6EA31CB62F9C81D40051BB6E /* 工作_39.webp */,
+				6EA31CB72F9C81D40051BB6E /* 工作_40.webp */,
+				6EA31CB82F9C81D40051BB6E /* 工作_41.webp */,
+				6EA31CB92F9C81D40051BB6E /* 工作_42.webp */,
+				6EA31CBA2F9C81D40051BB6E /* 工作_43.webp */,
+				6EA31CBB2F9C81D40051BB6E /* 工作_44.webp */,
+				6EA31CBC2F9C81D40051BB6E /* 工作_45.webp */,
+				6EA31CBD2F9C81D40051BB6E /* 工作_46.webp */,
+				6EA31CBE2F9C81D40051BB6E /* 工作_47.webp */,
+				6EA31CBF2F9C81D40051BB6E /* 工作_48.webp */,
+				6EA31CC02F9C81D40051BB6E /* 工作_49.webp */,
+				6EA31CC12F9C81D40051BB6E /* 工作_50.webp */,
+				6EA31CC22F9C81D40051BB6E /* 工作_51.webp */,
+				6EA31CC32F9C81D40051BB6E /* 工作_52.webp */,
+				6EA31CC42F9C81D40051BB6E /* 工作_53.webp */,
+				6EA31CC52F9C81D40051BB6E /* 工作_54.webp */,
+				6EA31CC62F9C81D40051BB6E /* 工作_55.webp */,
+				6EA31CC72F9C81D40051BB6E /* 工作_56.webp */,
+				6EA31CC82F9C81D40051BB6E /* 工作_57.webp */,
+				6EA31CC92F9C81D40051BB6E /* 工作_58.webp */,
+				6EA31CCA2F9C81D40051BB6E /* 工作_59.webp */,
+				6EA31CCB2F9C81D40051BB6E /* 工作_60.webp */,
+				6EA31CCC2F9C81D40051BB6E /* 工作_61.webp */,
+				6EA31CCD2F9C81D40051BB6E /* 工作_62.webp */,
+				6EA31CCE2F9C81D40051BB6E /* 工作_63.webp */,
+				6EA31CCF2F9C81D40051BB6E /* 工作_64.webp */,
+				6EA31CD02F9C81D40051BB6E /* 工作_65.webp */,
+				6EA31CD12F9C81D40051BB6E /* 工作_66.webp */,
+				6EA31CD22F9C81D40051BB6E /* 工作_67.webp */,
+				6EA31CD32F9C81D40051BB6E /* 工作_68.webp */,
+				6EA31CD42F9C81D40051BB6E /* 工作_69.webp */,
+				6EA31CD52F9C81D40051BB6E /* 工作_70.webp */,
+				6EA31CD62F9C81D40051BB6E /* 工作_71.webp */,
+				6EA31CD72F9C81D40051BB6E /* 工作_72.webp */,
+				6EA31CD82F9C81D40051BB6E /* 工作_73.webp */,
+				6EA31CD92F9C81D40051BB6E /* 工作_74.webp */,
+				6EA31CDA2F9C81D40051BB6E /* 工作_75.webp */,
+				6EA31CDB2F9C81D40051BB6E /* 工作_76.webp */,
+				6EA31CDC2F9C81D40051BB6E /* 工作_77.webp */,
+				6EA31CDD2F9C81D40051BB6E /* 工作_78.webp */,
+				6EA31CDE2F9C81D40051BB6E /* 工作_79.webp */,
+				6EA31CDF2F9C81D40051BB6E /* 工作_80.webp */,
+				6EA31CE02F9C81D40051BB6E /* 工作_81.webp */,
+				6EA31CE12F9C81D40051BB6E /* 工作_82.webp */,
+				6EA31CE22F9C81D40051BB6E /* 工作_83.webp */,
+				6EA31CE32F9C81D40051BB6E /* 工作_84.webp */,
+				6EA31CE42F9C81D40051BB6E /* 工作_85.webp */,
+				6EA31CE52F9C81D40051BB6E /* 工作_86.webp */,
+				6EA31CE62F9C81D40051BB6E /* 工作_87.webp */,
+				6EA31CE72F9C81D40051BB6E /* 工作_88.webp */,
+				6EA31CE82F9C81D40051BB6E /* 工作_89.webp */,
+				6EA31CE92F9C81D40051BB6E /* 工作_90.webp */,
+				6EA31CEA2F9C81D40051BB6E /* 工作_91.webp */,
+				6EA31CEB2F9C81D40051BB6E /* 工作_92.webp */,
+				6EA31CEC2F9C81D40051BB6E /* 工作_93.webp */,
+				6EA31CED2F9C81D40051BB6E /* 工作_94.webp */,
+				6EA31CEE2F9C81D40051BB6E /* 工作_95.webp */,
+				6EA31CEF2F9C81D40051BB6E /* 工作_96.webp */,
+				6EA31CF02F9C81D40051BB6E /* 工作_97.webp */,
+				6EA31CF12F9C81D40051BB6E /* 工作_98.webp */,
+				6EA31CF22F9C81D40051BB6E /* 工作_99.webp */,
+				6EA31CF32F9C81D40051BB6E /* 工作_100.webp */,
+				6EA31CF42F9C81D40051BB6E /* 工作_101.webp */,
+				6EA31CF52F9C81D40051BB6E /* 工作_102.webp */,
+				6EA31CF62F9C81D40051BB6E /* 工作_103.webp */,
+				6EA31CF72F9C81D40051BB6E /* 工作_104.webp */,
+				6EA31CF82F9C81D40051BB6E /* 工作_105.webp */,
+				6EA31CF92F9C81D40051BB6E /* 工作_106.webp */,
+				6EA31CFA2F9C81D40051BB6E /* 工作_107.webp */,
+				6EA31CFB2F9C81D40051BB6E /* 工作_108.webp */,
+				6EA31CFC2F9C81D40051BB6E /* 工作_109.webp */,
+				6EA31CFD2F9C81D40051BB6E /* 工作_110.webp */,
+				6EA31CFE2F9C81D40051BB6E /* 工作_111.webp */,
+				6EA31CFF2F9C81D40051BB6E /* 工作_112.webp */,
+				6EA31D002F9C81D40051BB6E /* 工作_113.webp */,
+				6EA31D012F9C81D40051BB6E /* 工作_114.webp */,
+				6EA31D022F9C81D40051BB6E /* 工作_115.webp */,
+				6EA31D032F9C81D40051BB6E /* 工作_116.webp */,
+				6EA31D042F9C81D40051BB6E /* 工作_117.webp */,
+				6EA31D052F9C81D40051BB6E /* 工作_118.webp */,
+				6EA31D062F9C81D40051BB6E /* 工作_119.webp */,
+				6EA31D072F9C81D40051BB6E /* 工作_120.webp */,
+				6EA31D082F9C81D40051BB6E /* 工作_121.webp */,
+				6EA31D092F9C81D40051BB6E /* 工作_122.webp */,
+				6EA31D0A2F9C81D40051BB6E /* 工作_123.webp */,
+				6EA31D0B2F9C81D40051BB6E /* 工作_124.webp */,
+				6EA31D0C2F9C81D40051BB6E /* 工作_125.webp */,
+				6EA31D0D2F9C81D40051BB6E /* 工作_126.webp */,
+				6EA31D0E2F9C81D40051BB6E /* 工作_127.webp */,
+			);
+			path = "工作";
+			sourceTree = "<group>";
+		};
 		6EC4C3DD2F8E2C8000F0818E = {
 			isa = PBXGroup;
 			children = (
+				6EA31D0F2F9C81D40051BB6E /* 工作 */,
 				6EA31B642F9719740051BB6E /* 左提醒 */,
 				6EA31A9E2F9717170051BB6E /* 右提醒 */,
 				6E0740732F9259B900053827 /* 右侧走出 */,
@@ -5483,7 +5617,6 @@
 				6EC4DFDC2F91C87300F0818E /* 伸懒腰 */,
 				6EC4E0C02F91C87300F0818E /* 提起 */,
 				6EC4E1642F91C87300F0818E /* 完成 */,
-				6EC4DE362F8FB3A000F0818E /* 工作2 */,
 				6EC4D3E32F8F932E00F0818E /* 待机  */,
 				6EC4D5FC2F8F932E00F0818E /* 睡觉 */,
 				6EC4D64D2F8F932E00F0818E /* 思考 */,
@@ -6215,141 +6348,6 @@
 			path = "提醒";
 			sourceTree = "<group>";
 		};
-		6EC4DE362F8FB3A000F0818E /* 工作2 */ = {
-			isa = PBXGroup;
-			children = (
-				6EC4DDB62F8FB3A000F0818E /* 工作_0.webp */,
-				6EC4DDB72F8FB3A000F0818E /* 工作_1.webp */,
-				6EC4DDB82F8FB3A000F0818E /* 工作_2.webp */,
-				6EC4DDB92F8FB3A000F0818E /* 工作_3.webp */,
-				6EC4DDBA2F8FB3A000F0818E /* 工作_4.webp */,
-				6EC4DDBB2F8FB3A000F0818E /* 工作_5.webp */,
-				6EC4DDBC2F8FB3A000F0818E /* 工作_6.webp */,
-				6EC4DDBD2F8FB3A000F0818E /* 工作_7.webp */,
-				6EC4DDBE2F8FB3A000F0818E /* 工作_8.webp */,
-				6EC4DDBF2F8FB3A000F0818E /* 工作_9.webp */,
-				6EC4DDC02F8FB3A000F0818E /* 工作_10.webp */,
-				6EC4DDC12F8FB3A000F0818E /* 工作_11.webp */,
-				6EC4DDC22F8FB3A000F0818E /* 工作_12.webp */,
-				6EC4DDC32F8FB3A000F0818E /* 工作_13.webp */,
-				6EC4DDC42F8FB3A000F0818E /* 工作_14.webp */,
-				6EC4DDC52F8FB3A000F0818E /* 工作_15.webp */,
-				6EC4DDC62F8FB3A000F0818E /* 工作_16.webp */,
-				6EC4DDC72F8FB3A000F0818E /* 工作_17.webp */,
-				6EC4DDC82F8FB3A000F0818E /* 工作_18.webp */,
-				6EC4DDC92F8FB3A000F0818E /* 工作_19.webp */,
-				6EC4DDCA2F8FB3A000F0818E /* 工作_20.webp */,
-				6EC4DDCB2F8FB3A000F0818E /* 工作_21.webp */,
-				6EC4DDCC2F8FB3A000F0818E /* 工作_22.webp */,
-				6EC4DDCD2F8FB3A000F0818E /* 工作_23.webp */,
-				6EC4DDCE2F8FB3A000F0818E /* 工作_24.webp */,
-				6EC4DDCF2F8FB3A000F0818E /* 工作_25.webp */,
-				6EC4DDD02F8FB3A000F0818E /* 工作_26.webp */,
-				6EC4DDD12F8FB3A000F0818E /* 工作_27.webp */,
-				6EC4DDD22F8FB3A000F0818E /* 工作_28.webp */,
-				6EC4DDD32F8FB3A000F0818E /* 工作_29.webp */,
-				6EC4DDD42F8FB3A000F0818E /* 工作_30.webp */,
-				6EC4DDD52F8FB3A000F0818E /* 工作_31.webp */,
-				6EC4DDD62F8FB3A000F0818E /* 工作_32.webp */,
-				6EC4DDD72F8FB3A000F0818E /* 工作_33.webp */,
-				6EC4DDD82F8FB3A000F0818E /* 工作_34.webp */,
-				6EC4DDD92F8FB3A000F0818E /* 工作_35.webp */,
-				6EC4DDDA2F8FB3A000F0818E /* 工作_36.webp */,
-				6EC4DDDB2F8FB3A000F0818E /* 工作_37.webp */,
-				6EC4DDDC2F8FB3A000F0818E /* 工作_38.webp */,
-				6EC4DDDD2F8FB3A000F0818E /* 工作_39.webp */,
-				6EC4DDDE2F8FB3A000F0818E /* 工作_40.webp */,
-				6EC4DDDF2F8FB3A000F0818E /* 工作_41.webp */,
-				6EC4DDE02F8FB3A000F0818E /* 工作_42.webp */,
-				6EC4DDE12F8FB3A000F0818E /* 工作_43.webp */,
-				6EC4DDE22F8FB3A000F0818E /* 工作_44.webp */,
-				6EC4DDE32F8FB3A000F0818E /* 工作_45.webp */,
-				6EC4DDE42F8FB3A000F0818E /* 工作_46.webp */,
-				6EC4DDE52F8FB3A000F0818E /* 工作_47.webp */,
-				6EC4DDE62F8FB3A000F0818E /* 工作_48.webp */,
-				6EC4DDE72F8FB3A000F0818E /* 工作_49.webp */,
-				6EC4DDE82F8FB3A000F0818E /* 工作_50.webp */,
-				6EC4DDE92F8FB3A000F0818E /* 工作_51.webp */,
-				6EC4DDEA2F8FB3A000F0818E /* 工作_52.webp */,
-				6EC4DDEB2F8FB3A000F0818E /* 工作_53.webp */,
-				6EC4DDEC2F8FB3A000F0818E /* 工作_54.webp */,
-				6EC4DDED2F8FB3A000F0818E /* 工作_55.webp */,
-				6EC4DDEE2F8FB3A000F0818E /* 工作_56.webp */,
-				6EC4DDEF2F8FB3A000F0818E /* 工作_57.webp */,
-				6EC4DDF02F8FB3A000F0818E /* 工作_58.webp */,
-				6EC4DDF12F8FB3A000F0818E /* 工作_59.webp */,
-				6EC4DDF22F8FB3A000F0818E /* 工作_60.webp */,
-				6EC4DDF32F8FB3A000F0818E /* 工作_61.webp */,
-				6EC4DDF42F8FB3A000F0818E /* 工作_62.webp */,
-				6EC4DDF52F8FB3A000F0818E /* 工作_63.webp */,
-				6EC4DDF62F8FB3A000F0818E /* 工作_64.webp */,
-				6EC4DDF72F8FB3A000F0818E /* 工作_65.webp */,
-				6EC4DDF82F8FB3A000F0818E /* 工作_66.webp */,
-				6EC4DDF92F8FB3A000F0818E /* 工作_67.webp */,
-				6EC4DDFA2F8FB3A000F0818E /* 工作_68.webp */,
-				6EC4DDFB2F8FB3A000F0818E /* 工作_69.webp */,
-				6EC4DDFC2F8FB3A000F0818E /* 工作_70.webp */,
-				6EC4DDFD2F8FB3A000F0818E /* 工作_71.webp */,
-				6EC4DDFE2F8FB3A000F0818E /* 工作_72.webp */,
-				6EC4DDFF2F8FB3A000F0818E /* 工作_73.webp */,
-				6EC4DE002F8FB3A000F0818E /* 工作_74.webp */,
-				6EC4DE012F8FB3A000F0818E /* 工作_75.webp */,
-				6EC4DE022F8FB3A000F0818E /* 工作_76.webp */,
-				6EC4DE032F8FB3A000F0818E /* 工作_77.webp */,
-				6EC4DE042F8FB3A000F0818E /* 工作_78.webp */,
-				6EC4DE052F8FB3A000F0818E /* 工作_79.webp */,
-				6EC4DE062F8FB3A000F0818E /* 工作_80.webp */,
-				6EC4DE072F8FB3A000F0818E /* 工作_81.webp */,
-				6EC4DE082F8FB3A000F0818E /* 工作_82.webp */,
-				6EC4DE092F8FB3A000F0818E /* 工作_83.webp */,
-				6EC4DE0A2F8FB3A000F0818E /* 工作_84.webp */,
-				6EC4DE0B2F8FB3A000F0818E /* 工作_85.webp */,
-				6EC4DE0C2F8FB3A000F0818E /* 工作_86.webp */,
-				6EC4DE0D2F8FB3A000F0818E /* 工作_87.webp */,
-				6EC4DE0E2F8FB3A000F0818E /* 工作_88.webp */,
-				6EC4DE0F2F8FB3A000F0818E /* 工作_89.webp */,
-				6EC4DE102F8FB3A000F0818E /* 工作_90.webp */,
-				6EC4DE112F8FB3A000F0818E /* 工作_91.webp */,
-				6EC4DE122F8FB3A000F0818E /* 工作_92.webp */,
-				6EC4DE132F8FB3A000F0818E /* 工作_93.webp */,
-				6EC4DE142F8FB3A000F0818E /* 工作_94.webp */,
-				6EC4DE152F8FB3A000F0818E /* 工作_95.webp */,
-				6EC4DE162F8FB3A000F0818E /* 工作_96.webp */,
-				6EC4DE172F8FB3A000F0818E /* 工作_97.webp */,
-				6EC4DE182F8FB3A000F0818E /* 工作_98.webp */,
-				6EC4DE192F8FB3A000F0818E /* 工作_99.webp */,
-				6EC4DE1A2F8FB3A000F0818E /* 工作_100.webp */,
-				6EC4DE1B2F8FB3A000F0818E /* 工作_101.webp */,
-				6EC4DE1C2F8FB3A000F0818E /* 工作_102.webp */,
-				6EC4DE1D2F8FB3A000F0818E /* 工作_103.webp */,
-				6EC4DE1E2F8FB3A000F0818E /* 工作_104.webp */,
-				6EC4DE1F2F8FB3A000F0818E /* 工作_105.webp */,
-				6EC4DE202F8FB3A000F0818E /* 工作_106.webp */,
-				6EC4DE212F8FB3A000F0818E /* 工作_107.webp */,
-				6EC4DE222F8FB3A000F0818E /* 工作_108.webp */,
-				6EC4DE232F8FB3A000F0818E /* 工作_109.webp */,
-				6EC4DE242F8FB3A000F0818E /* 工作_110.webp */,
-				6EC4DE252F8FB3A000F0818E /* 工作_111.webp */,
-				6EC4DE262F8FB3A000F0818E /* 工作_112.webp */,
-				6EC4DE272F8FB3A000F0818E /* 工作_113.webp */,
-				6EC4DE282F8FB3A000F0818E /* 工作_114.webp */,
-				6EC4DE292F8FB3A000F0818E /* 工作_115.webp */,
-				6EC4DE2A2F8FB3A000F0818E /* 工作_116.webp */,
-				6EC4DE2B2F8FB3A000F0818E /* 工作_117.webp */,
-				6EC4DE2C2F8FB3A000F0818E /* 工作_118.webp */,
-				6EC4DE2D2F8FB3A000F0818E /* 工作_119.webp */,
-				6EC4DE2E2F8FB3A000F0818E /* 工作_120.webp */,
-				6EC4DE2F2F8FB3A000F0818E /* 工作_121.webp */,
-				6EC4DE302F8FB3A000F0818E /* 工作_122.webp */,
-				6EC4DE312F8FB3A000F0818E /* 工作_123.webp */,
-				6EC4DE322F8FB3A000F0818E /* 工作_124.webp */,
-				6EC4DE332F8FB3A000F0818E /* 工作_125.webp */,
-				6EC4DE342F8FB3A000F0818E /* 工作_126.webp */,
-				6EC4DE352F8FB3A000F0818E /* 工作_127.webp */,
-			);
-			path = "工作2";
-			sourceTree = "<group>";
-		};
 		6EC4DF082F91C87300F0818E /* 摸摸 */ = {
 			isa = PBXGroup;
 			children = (
@@ -6917,7 +6915,6 @@
 			);
 			name = "团子";
 			packageProductDependencies = (
-				6EA31B992F98A4B30051BB6E /* Sparkle */,
 			);
 			productName = "团子";
 			productReference = 6EC4C3E62F8E2C8000F0818E /* 团子.app */;
@@ -7003,7 +7000,6 @@
 			mainGroup = 6EC4C3DD2F8E2C8000F0818E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6EC4C3E72F8E2C8000F0818E /* Products */;
@@ -8256,6 +8252,134 @@
 				6E073A0C2F921CFF00053827 /* 侧边提起_197.webp in Resources */,
 				6E073A0D2F921CFF00053827 /* 侧边提起_9.webp in Resources */,
 				6E073A0E2F921CFF00053827 /* 吸附变换_13.webp in Resources */,
+				6EA31D102F9C81D40051BB6E /* 工作_39.webp in Resources */,
+				6EA31D112F9C81D40051BB6E /* 工作_14.webp in Resources */,
+				6EA31D122F9C81D40051BB6E /* 工作_57.webp in Resources */,
+				6EA31D132F9C81D40051BB6E /* 工作_18.webp in Resources */,
+				6EA31D142F9C81D40051BB6E /* 工作_53.webp in Resources */,
+				6EA31D152F9C81D40051BB6E /* 工作_37.webp in Resources */,
+				6EA31D162F9C81D40051BB6E /* 工作_41.webp in Resources */,
+				6EA31D172F9C81D40051BB6E /* 工作_49.webp in Resources */,
+				6EA31D182F9C81D40051BB6E /* 工作_96.webp in Resources */,
+				6EA31D192F9C81D40051BB6E /* 工作_6.webp in Resources */,
+				6EA31D1A2F9C81D40051BB6E /* 工作_58.webp in Resources */,
+				6EA31D1B2F9C81D40051BB6E /* 工作_13.webp in Resources */,
+				6EA31D1C2F9C81D40051BB6E /* 工作_29.webp in Resources */,
+				6EA31D1D2F9C81D40051BB6E /* 工作_88.webp in Resources */,
+				6EA31D1E2F9C81D40051BB6E /* 工作_61.webp in Resources */,
+				6EA31D1F2F9C81D40051BB6E /* 工作_91.webp in Resources */,
+				6EA31D202F9C81D40051BB6E /* 工作_117.webp in Resources */,
+				6EA31D212F9C81D40051BB6E /* 工作_30.webp in Resources */,
+				6EA31D222F9C81D40051BB6E /* 工作_25.webp in Resources */,
+				6EA31D232F9C81D40051BB6E /* 工作_32.webp in Resources */,
+				6EA31D242F9C81D40051BB6E /* 工作_55.webp in Resources */,
+				6EA31D252F9C81D40051BB6E /* 工作_93.webp in Resources */,
+				6EA31D262F9C81D40051BB6E /* 工作_2.webp in Resources */,
+				6EA31D272F9C81D40051BB6E /* 工作_89.webp in Resources */,
+				6EA31D282F9C81D40051BB6E /* 工作_68.webp in Resources */,
+				6EA31D292F9C81D40051BB6E /* 工作_120.webp in Resources */,
+				6EA31D2A2F9C81D40051BB6E /* 工作_21.webp in Resources */,
+				6EA31D2B2F9C81D40051BB6E /* 工作_113.webp in Resources */,
+				6EA31D2C2F9C81D40051BB6E /* 工作_85.webp in Resources */,
+				6EA31D2D2F9C81D40051BB6E /* 工作_70.webp in Resources */,
+				6EA31D2E2F9C81D40051BB6E /* 工作_104.webp in Resources */,
+				6EA31D2F2F9C81D40051BB6E /* 工作_16.webp in Resources */,
+				6EA31D302F9C81D40051BB6E /* 工作_24.webp in Resources */,
+				6EA31D312F9C81D40051BB6E /* 工作_116.webp in Resources */,
+				6EA31D322F9C81D40051BB6E /* 工作_4.webp in Resources */,
+				6EA31D332F9C81D40051BB6E /* 工作_71.webp in Resources */,
+				6EA31D342F9C81D40051BB6E /* 工作_92.webp in Resources */,
+				6EA31D352F9C81D40051BB6E /* 工作_73.webp in Resources */,
+				6EA31D362F9C81D40051BB6E /* 工作_35.webp in Resources */,
+				6EA31D372F9C81D40051BB6E /* 工作_80.webp in Resources */,
+				6EA31D382F9C81D40051BB6E /* 工作_107.webp in Resources */,
+				6EA31D392F9C81D40051BB6E /* 工作_69.webp in Resources */,
+				6EA31D3A2F9C81D40051BB6E /* 工作_127.webp in Resources */,
+				6EA31D3B2F9C81D40051BB6E /* 工作_3.webp in Resources */,
+				6EA31D3C2F9C81D40051BB6E /* 工作_118.webp in Resources */,
+				6EA31D3D2F9C81D40051BB6E /* 工作_99.webp in Resources */,
+				6EA31D3E2F9C81D40051BB6E /* 工作_31.webp in Resources */,
+				6EA31D3F2F9C81D40051BB6E /* 工作_11.webp in Resources */,
+				6EA31D402F9C81D40051BB6E /* 工作_59.webp in Resources */,
+				6EA31D412F9C81D40051BB6E /* 工作_72.webp in Resources */,
+				6EA31D422F9C81D40051BB6E /* 工作_64.webp in Resources */,
+				6EA31D432F9C81D40051BB6E /* 工作_121.webp in Resources */,
+				6EA31D442F9C81D40051BB6E /* 工作_100.webp in Resources */,
+				6EA31D452F9C81D40051BB6E /* 工作_63.webp in Resources */,
+				6EA31D462F9C81D40051BB6E /* 工作_122.webp in Resources */,
+				6EA31D472F9C81D40051BB6E /* 工作_106.webp in Resources */,
+				6EA31D482F9C81D40051BB6E /* 工作_123.webp in Resources */,
+				6EA31D492F9C81D40051BB6E /* 工作_62.webp in Resources */,
+				6EA31D4A2F9C81D40051BB6E /* 工作_94.webp in Resources */,
+				6EA31D4B2F9C81D40051BB6E /* 工作_28.webp in Resources */,
+				6EA31D4C2F9C81D40051BB6E /* 工作_19.webp in Resources */,
+				6EA31D4D2F9C81D40051BB6E /* 工作_20.webp in Resources */,
+				6EA31D4E2F9C81D40051BB6E /* 工作_12.webp in Resources */,
+				6EA31D4F2F9C81D40051BB6E /* 工作_97.webp in Resources */,
+				6EA31D502F9C81D40051BB6E /* 工作_52.webp in Resources */,
+				6EA31D512F9C81D40051BB6E /* 工作_38.webp in Resources */,
+				6EA31D522F9C81D40051BB6E /* 工作_77.webp in Resources */,
+				6EA31D532F9C81D40051BB6E /* 工作_67.webp in Resources */,
+				6EA31D542F9C81D40051BB6E /* 工作_114.webp in Resources */,
+				6EA31D552F9C81D40051BB6E /* 工作_126.webp in Resources */,
+				6EA31D562F9C81D40051BB6E /* 工作_112.webp in Resources */,
+				6EA31D572F9C81D40051BB6E /* 工作_27.webp in Resources */,
+				6EA31D582F9C81D40051BB6E /* 工作_76.webp in Resources */,
+				6EA31D592F9C81D40051BB6E /* 工作_1.webp in Resources */,
+				6EA31D5A2F9C81D40051BB6E /* 工作_111.webp in Resources */,
+				6EA31D5B2F9C81D40051BB6E /* 工作_5.webp in Resources */,
+				6EA31D5C2F9C81D40051BB6E /* 工作_10.webp in Resources */,
+				6EA31D5D2F9C81D40051BB6E /* 工作_17.webp in Resources */,
+				6EA31D5E2F9C81D40051BB6E /* 工作_15.webp in Resources */,
+				6EA31D5F2F9C81D40051BB6E /* 工作_22.webp in Resources */,
+				6EA31D602F9C81D40051BB6E /* 工作_8.webp in Resources */,
+				6EA31D612F9C81D40051BB6E /* 工作_124.webp in Resources */,
+				6EA31D622F9C81D40051BB6E /* 工作_43.webp in Resources */,
+				6EA31D632F9C81D40051BB6E /* 工作_83.webp in Resources */,
+				6EA31D642F9C81D40051BB6E /* 工作_115.webp in Resources */,
+				6EA31D652F9C81D40051BB6E /* 工作_50.webp in Resources */,
+				6EA31D662F9C81D40051BB6E /* 工作_110.webp in Resources */,
+				6EA31D672F9C81D40051BB6E /* 工作_86.webp in Resources */,
+				6EA31D682F9C81D40051BB6E /* 工作_56.webp in Resources */,
+				6EA31D692F9C81D40051BB6E /* 工作_34.webp in Resources */,
+				6EA31D6A2F9C81D40051BB6E /* 工作_23.webp in Resources */,
+				6EA31D6B2F9C81D40051BB6E /* 工作_44.webp in Resources */,
+				6EA31D6C2F9C81D40051BB6E /* 工作_125.webp in Resources */,
+				6EA31D6D2F9C81D40051BB6E /* 工作_42.webp in Resources */,
+				6EA31D6E2F9C81D40051BB6E /* 工作_119.webp in Resources */,
+				6EA31D6F2F9C81D40051BB6E /* 工作_98.webp in Resources */,
+				6EA31D702F9C81D40051BB6E /* 工作_79.webp in Resources */,
+				6EA31D712F9C81D40051BB6E /* 工作_48.webp in Resources */,
+				6EA31D722F9C81D40051BB6E /* 工作_66.webp in Resources */,
+				6EA31D732F9C81D40051BB6E /* 工作_74.webp in Resources */,
+				6EA31D742F9C81D40051BB6E /* 工作_75.webp in Resources */,
+				6EA31D752F9C81D40051BB6E /* 工作_108.webp in Resources */,
+				6EA31D762F9C81D40051BB6E /* 工作_78.webp in Resources */,
+				6EA31D772F9C81D40051BB6E /* 工作_7.webp in Resources */,
+				6EA31D782F9C81D40051BB6E /* 工作_40.webp in Resources */,
+				6EA31D792F9C81D40051BB6E /* 工作_65.webp in Resources */,
+				6EA31D7A2F9C81D40051BB6E /* 工作_47.webp in Resources */,
+				6EA31D7B2F9C81D40051BB6E /* 工作_103.webp in Resources */,
+				6EA31D7C2F9C81D40051BB6E /* 工作_95.webp in Resources */,
+				6EA31D7D2F9C81D40051BB6E /* 工作_46.webp in Resources */,
+				6EA31D7E2F9C81D40051BB6E /* 工作_87.webp in Resources */,
+				6EA31D7F2F9C81D40051BB6E /* 工作_105.webp in Resources */,
+				6EA31D802F9C81D40051BB6E /* 工作_60.webp in Resources */,
+				6EA31D812F9C81D40051BB6E /* 工作_54.webp in Resources */,
+				6EA31D822F9C81D40051BB6E /* 工作_9.webp in Resources */,
+				6EA31D832F9C81D40051BB6E /* 工作_45.webp in Resources */,
+				6EA31D842F9C81D40051BB6E /* 工作_26.webp in Resources */,
+				6EA31D852F9C81D40051BB6E /* 工作_102.webp in Resources */,
+				6EA31D862F9C81D40051BB6E /* 工作_36.webp in Resources */,
+				6EA31D872F9C81D40051BB6E /* 工作_84.webp in Resources */,
+				6EA31D882F9C81D40051BB6E /* 工作_33.webp in Resources */,
+				6EA31D892F9C81D40051BB6E /* 工作_109.webp in Resources */,
+				6EA31D8A2F9C81D40051BB6E /* 工作_82.webp in Resources */,
+				6EA31D8B2F9C81D40051BB6E /* 工作_0.webp in Resources */,
+				6EA31D8C2F9C81D40051BB6E /* 工作_90.webp in Resources */,
+				6EA31D8D2F9C81D40051BB6E /* 工作_81.webp in Resources */,
+				6EA31D8E2F9C81D40051BB6E /* 工作_101.webp in Resources */,
+				6EA31D8F2F9C81D40051BB6E /* 工作_51.webp in Resources */,
 				6E073A0F2F921CFF00053827 /* 吸附变换_30.webp in Resources */,
 				6E073A102F921CFF00053827 /* 吸附待机_21.webp in Resources */,
 				6E073A112F921CFF00053827 /* 侧边提起_173.webp in Resources */,
@@ -8520,8 +8644,6 @@
 				6EC4DA8E2F8F932E00F0818E /* 睡觉_96.webp in Resources */,
 				6EC4DA912F8F932E00F0818E /* 思考_75.webp in Resources */,
 				6EC4DA922F8F932E00F0818E /* 提醒_46.webp in Resources */,
-				6EC4DE372F8FB3A000F0818E /* 工作_53.webp in Resources */,
-				6EC4DE382F8FB3A000F0818E /* 工作_51.webp in Resources */,
 				6E073EE02F922B2F00053827 /* 左侧待机_7.webp in Resources */,
 				6E073EE32F922B2F00053827 /* 右侧待机_26.webp in Resources */,
 				6E073EE42F922B2F00053827 /* 右侧待机_20.webp in Resources */,
@@ -8684,132 +8806,6 @@
 				6E07403B2F922B2F00053827 /* 右侧待机_65.webp in Resources */,
 				6E07403D2F922B2F00053827 /* 右侧待机_34.webp in Resources */,
 				6E07403F2F922B2F00053827 /* 左侧待机_52.webp in Resources */,
-				6EC4DE392F8FB3A000F0818E /* 工作_26.webp in Resources */,
-				6EC4DE3A2F8FB3A000F0818E /* 工作_118.webp in Resources */,
-				6EC4DE3B2F8FB3A000F0818E /* 工作_108.webp in Resources */,
-				6EC4DE3C2F8FB3A000F0818E /* 工作_16.webp in Resources */,
-				6EC4DE3D2F8FB3A000F0818E /* 工作_65.webp in Resources */,
-				6EC4DE3E2F8FB3A000F0818E /* 工作_37.webp in Resources */,
-				6EC4DE3F2F8FB3A000F0818E /* 工作_2.webp in Resources */,
-				6EC4DE402F8FB3A000F0818E /* 工作_46.webp in Resources */,
-				6EC4DE412F8FB3A000F0818E /* 工作_106.webp in Resources */,
-				6EC4DE422F8FB3A000F0818E /* 工作_19.webp in Resources */,
-				6EC4DE432F8FB3A000F0818E /* 工作_127.webp in Resources */,
-				6EC4DE442F8FB3A000F0818E /* 工作_96.webp in Resources */,
-				6EC4DE452F8FB3A000F0818E /* 工作_47.webp in Resources */,
-				6EC4DE462F8FB3A000F0818E /* 工作_116.webp in Resources */,
-				6EC4DE472F8FB3A000F0818E /* 工作_45.webp in Resources */,
-				6EC4DE482F8FB3A000F0818E /* 工作_11.webp in Resources */,
-				6EC4DE492F8FB3A000F0818E /* 工作_97.webp in Resources */,
-				6EC4DE4A2F8FB3A000F0818E /* 工作_114.webp in Resources */,
-				6EC4DE4B2F8FB3A000F0818E /* 工作_110.webp in Resources */,
-				6EC4DE4C2F8FB3A000F0818E /* 工作_75.webp in Resources */,
-				6EC4DE4D2F8FB3A000F0818E /* 工作_7.webp in Resources */,
-				6EC4DE4E2F8FB3A000F0818E /* 工作_56.webp in Resources */,
-				6EC4DE4F2F8FB3A000F0818E /* 工作_15.webp in Resources */,
-				6EC4DE502F8FB3A000F0818E /* 工作_123.webp in Resources */,
-				6EC4DE512F8FB3A000F0818E /* 工作_14.webp in Resources */,
-				6EC4DE522F8FB3A000F0818E /* 工作_72.webp in Resources */,
-				6EC4DE532F8FB3A000F0818E /* 工作_20.webp in Resources */,
-				6EC4DE542F8FB3A000F0818E /* 工作_54.webp in Resources */,
-				6EC4DE552F8FB3A000F0818E /* 工作_49.webp in Resources */,
-				6EC4DE562F8FB3A000F0818E /* 工作_1.webp in Resources */,
-				6EC4DE572F8FB3A000F0818E /* 工作_63.webp in Resources */,
-				6EC4DE582F8FB3A000F0818E /* 工作_23.webp in Resources */,
-				6EC4DE592F8FB3A000F0818E /* 工作_6.webp in Resources */,
-				6EC4DE5A2F8FB3A000F0818E /* 工作_68.webp in Resources */,
-				6EC4DE5B2F8FB3A000F0818E /* 工作_48.webp in Resources */,
-				6EC4DE5C2F8FB3A000F0818E /* 工作_3.webp in Resources */,
-				6EC4DE5D2F8FB3A000F0818E /* 工作_22.webp in Resources */,
-				6EC4DE5E2F8FB3A000F0818E /* 工作_25.webp in Resources */,
-				6EC4DE5F2F8FB3A000F0818E /* 工作_84.webp in Resources */,
-				6EC4DE602F8FB3A000F0818E /* 工作_90.webp in Resources */,
-				6EC4DE612F8FB3A000F0818E /* 工作_52.webp in Resources */,
-				6EC4DE622F8FB3A000F0818E /* 工作_35.webp in Resources */,
-				6EC4DE632F8FB3A000F0818E /* 工作_104.webp in Resources */,
-				6EC4DE642F8FB3A000F0818E /* 工作_73.webp in Resources */,
-				6EC4DE652F8FB3A000F0818E /* 工作_8.webp in Resources */,
-				6EC4DE662F8FB3A000F0818E /* 工作_17.webp in Resources */,
-				6EC4DE672F8FB3A000F0818E /* 工作_78.webp in Resources */,
-				6EC4DE682F8FB3A000F0818E /* 工作_13.webp in Resources */,
-				6EC4DE692F8FB3A000F0818E /* 工作_32.webp in Resources */,
-				6EC4DE6A2F8FB3A000F0818E /* 工作_107.webp in Resources */,
-				6EC4DE6B2F8FB3A000F0818E /* 工作_77.webp in Resources */,
-				6EC4DE6C2F8FB3A000F0818E /* 工作_29.webp in Resources */,
-				6EC4DE6D2F8FB3A000F0818E /* 工作_74.webp in Resources */,
-				6EC4DE6E2F8FB3A000F0818E /* 工作_5.webp in Resources */,
-				6EC4DE6F2F8FB3A000F0818E /* 工作_42.webp in Resources */,
-				6EC4DE702F8FB3A000F0818E /* 工作_61.webp in Resources */,
-				6EC4DE712F8FB3A000F0818E /* 工作_4.webp in Resources */,
-				6EC4DE722F8FB3A000F0818E /* 工作_111.webp in Resources */,
-				6EC4DE732F8FB3A000F0818E /* 工作_99.webp in Resources */,
-				6EC4DE742F8FB3A000F0818E /* 工作_55.webp in Resources */,
-				6EC4DE752F8FB3A000F0818E /* 工作_103.webp in Resources */,
-				6EC4DE762F8FB3A000F0818E /* 工作_34.webp in Resources */,
-				6EC4DE772F8FB3A000F0818E /* 工作_88.webp in Resources */,
-				6EC4DE782F8FB3A000F0818E /* 工作_112.webp in Resources */,
-				6EC4DE792F8FB3A000F0818E /* 工作_102.webp in Resources */,
-				6EC4DE7A2F8FB3A000F0818E /* 工作_31.webp in Resources */,
-				6EC4DE7B2F8FB3A000F0818E /* 工作_21.webp in Resources */,
-				6EC4DE7C2F8FB3A000F0818E /* 工作_36.webp in Resources */,
-				6EC4DE7D2F8FB3A000F0818E /* 工作_18.webp in Resources */,
-				6EC4DE7E2F8FB3A000F0818E /* 工作_39.webp in Resources */,
-				6EC4DE7F2F8FB3A000F0818E /* 工作_100.webp in Resources */,
-				6EC4DE802F8FB3A000F0818E /* 工作_41.webp in Resources */,
-				6EC4DE812F8FB3A000F0818E /* 工作_95.webp in Resources */,
-				6EC4DE822F8FB3A000F0818E /* 工作_82.webp in Resources */,
-				6EC4DE832F8FB3A000F0818E /* 工作_125.webp in Resources */,
-				6EC4DE842F8FB3A000F0818E /* 工作_92.webp in Resources */,
-				6EC4DE852F8FB3A000F0818E /* 工作_27.webp in Resources */,
-				6EC4DE862F8FB3A000F0818E /* 工作_76.webp in Resources */,
-				6EC4DE872F8FB3A000F0818E /* 工作_105.webp in Resources */,
-				6EC4DE882F8FB3A000F0818E /* 工作_117.webp in Resources */,
-				6EC4DE892F8FB3A000F0818E /* 工作_80.webp in Resources */,
-				6EC4DE8A2F8FB3A000F0818E /* 工作_85.webp in Resources */,
-				6EC4DE8B2F8FB3A000F0818E /* 工作_87.webp in Resources */,
-				6EC4DE8C2F8FB3A000F0818E /* 工作_89.webp in Resources */,
-				6EC4DE8D2F8FB3A000F0818E /* 工作_86.webp in Resources */,
-				6EC4DE8E2F8FB3A000F0818E /* 工作_24.webp in Resources */,
-				6EC4DE8F2F8FB3A000F0818E /* 工作_122.webp in Resources */,
-				6EC4DE902F8FB3A000F0818E /* 工作_33.webp in Resources */,
-				6EC4DE912F8FB3A000F0818E /* 工作_109.webp in Resources */,
-				6EC4DE922F8FB3A000F0818E /* 工作_28.webp in Resources */,
-				6EC4DE932F8FB3A000F0818E /* 工作_115.webp in Resources */,
-				6EC4DE942F8FB3A000F0818E /* 工作_62.webp in Resources */,
-				6EC4DE952F8FB3A000F0818E /* 工作_79.webp in Resources */,
-				6EC4DE962F8FB3A000F0818E /* 工作_40.webp in Resources */,
-				6EC4DE972F8FB3A000F0818E /* 工作_38.webp in Resources */,
-				6EC4DE982F8FB3A000F0818E /* 工作_57.webp in Resources */,
-				6EC4DE992F8FB3A000F0818E /* 工作_126.webp in Resources */,
-				6EC4DE9A2F8FB3A000F0818E /* 工作_64.webp in Resources */,
-				6EC4DE9B2F8FB3A000F0818E /* 工作_58.webp in Resources */,
-				6EC4DE9C2F8FB3A000F0818E /* 工作_50.webp in Resources */,
-				6EC4DE9D2F8FB3A000F0818E /* 工作_69.webp in Resources */,
-				6EC4DE9E2F8FB3A000F0818E /* 工作_124.webp in Resources */,
-				6EC4DE9F2F8FB3A000F0818E /* 工作_0.webp in Resources */,
-				6EC4DEA02F8FB3A000F0818E /* 工作_60.webp in Resources */,
-				6EC4DEA12F8FB3A000F0818E /* 工作_67.webp in Resources */,
-				6EC4DEA22F8FB3A000F0818E /* 工作_101.webp in Resources */,
-				6EC4DEA32F8FB3A000F0818E /* 工作_83.webp in Resources */,
-				6EC4DEA42F8FB3A000F0818E /* 工作_121.webp in Resources */,
-				6EC4DEA52F8FB3A000F0818E /* 工作_44.webp in Resources */,
-				6EC4DEA62F8FB3A000F0818E /* 工作_81.webp in Resources */,
-				6EC4DEA72F8FB3A000F0818E /* 工作_91.webp in Resources */,
-				6EC4DEA82F8FB3A000F0818E /* 工作_71.webp in Resources */,
-				6EC4DEA92F8FB3A000F0818E /* 工作_66.webp in Resources */,
-				6EC4DEAA2F8FB3A000F0818E /* 工作_12.webp in Resources */,
-				6EC4DEAB2F8FB3A000F0818E /* 工作_9.webp in Resources */,
-				6EC4DEAC2F8FB3A000F0818E /* 工作_43.webp in Resources */,
-				6EC4DEAD2F8FB3A000F0818E /* 工作_119.webp in Resources */,
-				6EC4DEAE2F8FB3A000F0818E /* 工作_113.webp in Resources */,
-				6EC4DEAF2F8FB3A000F0818E /* 工作_94.webp in Resources */,
-				6EC4DEB02F8FB3A000F0818E /* 工作_120.webp in Resources */,
-				6EC4DEB12F8FB3A000F0818E /* 工作_59.webp in Resources */,
-				6EC4DEB22F8FB3A000F0818E /* 工作_98.webp in Resources */,
-				6EC4DEB32F8FB3A000F0818E /* 工作_10.webp in Resources */,
-				6EC4DEB42F8FB3A000F0818E /* 工作_93.webp in Resources */,
-				6EC4DEB52F8FB3A000F0818E /* 工作_70.webp in Resources */,
-				6EC4DEB62F8FB3A000F0818E /* 工作_30.webp in Resources */,
 				6EC4DA992F8F932E00F0818E /* 待机_144.webp in Resources */,
 				6EC4DA9A2F8F932E00F0818E /* 睡觉_159.webp in Resources */,
 				6EC4DA9C2F8F932E00F0818E /* 搜索_58.webp in Resources */,
@@ -9429,7 +9425,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
@@ -9442,7 +9438,6 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -9477,7 +9472,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
@@ -9490,7 +9485,6 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -9504,13 +9498,12 @@
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/团子.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/团子";
 			};
@@ -9525,13 +9518,12 @@
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.3;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/团子.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/团子";
 			};
@@ -9544,13 +9536,12 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "团子";
 			};
@@ -9563,13 +9554,12 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DT3764626N;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.tuanziUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
-
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "团子";
 			};
@@ -9615,25 +9605,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6EA31B992F98A4B30051BB6E /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6EA31B982F98A4B30051BB6E /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6EC4C3DE2F8E2C8000F0818E /* Project object */;
 }

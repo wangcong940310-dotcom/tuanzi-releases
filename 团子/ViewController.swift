@@ -233,9 +233,9 @@ class ViewController: NSViewController {
     var isMenuOpen = false
     var permissionDialogWindow: NSWindow?
     var permissionKeyMonitors: [Any] = []
-    var pendingPermissionSessionId: String?  // 当前权限弹窗对应的 session
-    var permissionStaleCheckTimer: Timer?    // 定时检查权限弹窗是否已失效
-    var permissionDialogShownAt: Double = 0  // 弹窗弹出时的时间戳
+    var pendingPermissionSessionId: String?
+    var permissionEventSeq: UInt64 = 0
+    var webhookEventCounter: UInt64 = 0
     var autoApproveEnabled = false
     var isSnapReminding = false
     var snapReminderTimer: Timer?
@@ -291,6 +291,7 @@ class ViewController: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(applySettings), name: .petSettingsChanged, object: nil)
         loadSessionsFromDisk()
         startProcessDiscovery()
+        checkForUpdateOnLaunch()
     }
 
     override func viewDidAppear() {
@@ -382,21 +383,32 @@ class ViewController: NSViewController {
 
         // UserPromptSubmit
         webhookServer?.onThinking = { [weak self] in
-            self?.isClaudeStateActive = true
-            self?.isThinkingOnClaudeProxy = true
-            self?.lastClaudeState = "thinking"
-            self?.startThinkingAnimationLoop()
+            guard let self else { return }
+            self.webhookEventCounter += 1
+            self.isClaudeStateActive = true
+            self.isThinkingOnClaudeProxy = true
+            self.lastClaudeState = "thinking"
+            TextureManager.shared.preload([.enterWorking, .workingLoop, .exitWorking])
+            self.startThinkingAnimationLoop()
+            if self.pendingPermissionSessionId != nil,
+               self.webhookEventCounter > self.permissionEventSeq {
+                self.dismissPermissionDialogIfNeeded()
+            }
         }
 
         // PreToolUse / PostToolUse / SubagentStop
         webhookServer?.onWorking = { [weak self] in
-            self?.stopSnapReminder()
-            self?.isClaudeStateActive = true
-            self?.isThinkingOnClaudeProxy = true
-            self?.lastClaudeState = "working"
-            self?.startWorkingAnimationLoop()
-            if self?.pendingPermissionSessionId != nil {
-                self?.dismissPermissionDialogIfNeeded()
+            guard let self else { return }
+            self.webhookEventCounter += 1
+            self.stopSnapReminder()
+            self.isClaudeStateActive = true
+            self.isThinkingOnClaudeProxy = true
+            self.lastClaudeState = "working"
+            TextureManager.shared.preload([.attention])
+            self.startWorkingAnimationLoop()
+            if self.pendingPermissionSessionId != nil,
+               self.webhookEventCounter > self.permissionEventSeq {
+                self.dismissPermissionDialogIfNeeded()
             }
         }
 
@@ -409,12 +421,18 @@ class ViewController: NSViewController {
 
         // Stop / PostCompact
         webhookServer?.onAttention = { [weak self] in
-            self?.isClaudeStateActive = true
-            self?.isThinkingOnClaudeProxy = false
-            if self?.isSnappedToSide == true {
-                self?.startSnapReminderLoop()
+            guard let self else { return }
+            self.webhookEventCounter += 1
+            self.isClaudeStateActive = true
+            self.isThinkingOnClaudeProxy = false
+            if self.pendingPermissionSessionId != nil,
+               self.webhookEventCounter > self.permissionEventSeq {
+                self.dismissPermissionDialogIfNeeded()
+            }
+            if self.isSnappedToSide {
+                self.startSnapReminderLoop()
             } else {
-                self?.playAttentionAnimation()
+                self.playAttentionAnimation()
             }
         }
 
@@ -476,26 +494,7 @@ class ViewController: NSViewController {
             // 记录当前权限弹窗对应的 session，用于自动关闭
             let permSessionId = payload["session_id"] as? String
             self.pendingPermissionSessionId = permSessionId
-            self.permissionDialogShownAt = Date().timeIntervalSince1970
-            // 启动定时器：每 2 秒检查 session 弹窗之后是否有新活动（OVI stale check 模式）
-            self.permissionStaleCheckTimer?.invalidate()
-            if let sid = permSessionId {
-                let shownAt = self.permissionDialogShownAt
-                self.permissionStaleCheckTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
-                    guard let self else { return }
-                    // 弹窗后有新活动 → 说明权限已在编辑器中被批准
-                    if let lastActivity = self.claudeSessions[sid]?["lastActivityAt"] as? Double,
-                       lastActivity > shownAt + 2 {
-                        self.dismissPermissionDialogIfNeeded()
-                        return
-                    }
-                    // session 已结束
-                    let status = (self.claudeSessions[sid]?["status"] as? String) ?? ""
-                    if status == "idle" || status == "ended" {
-                        self.dismissPermissionDialogIfNeeded()
-                    }
-                }
-            }
+            self.permissionEventSeq = self.webhookEventCounter
 
             let toolName = payload["tool_name"] as? String ?? "Unknown"
             let toolInput = payload["tool_input"] as? [String: Any] ?? [:]
@@ -564,18 +563,11 @@ class ViewController: NSViewController {
         webhookServer?.onSessionUpdate = { [weak self] sessionData in
             guard let self, let sessionId = sessionData["sessionId"] as? String, !sessionId.isEmpty else { return }
 
-            // 用户在编辑器中批准权限后，后续 hook 会更新 session（参照 OVI actionableStateResolved）
-            // 检测弹窗后有新活动就关闭团子的权限弹窗
             if let pendingSid = self.pendingPermissionSessionId,
-               sessionId == pendingSid {
-                let shownAt = self.permissionDialogShownAt
-                if let lastActivity = sessionData["lastActivityAt"] as? Double,
-                   lastActivity > shownAt + 2 {
-                    self.dismissPermissionDialogIfNeeded()
-                } else if let status = sessionData["status"] as? String,
-                          status == "idle" || status == "ended" {
-                    self.dismissPermissionDialogIfNeeded()
-                }
+               sessionId == pendingSid,
+               let status = sessionData["status"] as? String,
+               status == "ended" {
+                self.dismissPermissionDialogIfNeeded()
             }
 
             if sessionData["status"] as? String == "ended" {
@@ -1016,6 +1008,72 @@ class ViewController: NSViewController {
     private func loadTextures(named prefix: String, _ range: Range<Int>) -> [SKTexture] {
         range.map { SKTexture(imageNamed: "\(prefix)_\($0)") }
     }
+
+    private func ensureTextures(_ groups: TextureGroup...) {
+        for group in groups {
+            let textures = TextureManager.shared.textures(for: group)
+            switch group {
+            case .idle:             idleTextures = textures
+            case .randomIdle1:      randomIdle1Textures = textures
+            case .randomIdle2:      randomIdle2Textures = textures
+            case .enterSearch:      enterSearchTextures = textures
+            case .searchLoop:       searchLoopTextures = textures
+            case .exitSearch:       exitSearchTextures = textures
+            case .enterThinking:    enterThinkingTextures = textures
+            case .thinkingLoop:     thinkingLoopTextures = textures
+            case .exitThinking:     exitThinkingTextures = textures
+            case .enterWorking:     enterWorkingTextures = textures
+            case .workingLoop:      workingLoopTextures = textures
+            case .exitWorking:      exitWorkingTextures = textures
+            case .drinkWater:       drinkWaterTextures = textures
+            case .message:          messageTextures = textures; notificationTextures = textures
+            case .click:            clickTextures = textures
+            case .enterSleep:       enterSleepTextures = textures
+            case .sleepLoop:        sleepLoopTextures = textures
+            case .wakeUp:           wakeUpTextures = textures
+            case .enterTyping:      enterTypingTextures = textures
+            case .typingLoop:       typingLoopTextures = textures
+            case .exitTyping:       exitTypingTextures = textures
+            case .dragEnter:        dragEnterTextures = textures
+            case .dragLoop:         dragLoopTextures = textures
+            case .dragExit:         dragExitTextures = textures
+            case .runEnter:         runEnterTextures = textures
+            case .runLoop:          runLoopTextures = textures
+            case .runExit:          runExitTextures = textures
+            case .runRest:          runRestTextures = textures
+            case .pet:              petTextures = textures
+            case .attention:        attentionTextures = textures
+            case .snapLeftEnter:    snapLeftEnterTextures = textures
+            case .snapLeftIdle:     snapLeftIdleTextures = textures
+            case .snapLeftExit:     snapLeftExitTextures = textures
+            case .snapRightEnter:   snapRightEnterTextures = textures
+            case .snapRightIdle:    snapRightIdleTextures = textures
+            case .snapRightExit:    snapRightExitTextures = textures
+            case .snapReminder1:    snapReminder1Textures = textures
+            case .snapReminder2:    snapReminder2Textures = textures
+            }
+        }
+    }
+
+    private func clearNormalTextures() {
+        enterSearchTextures = []; searchLoopTextures = []; exitSearchTextures = []
+        enterThinkingTextures = []; thinkingLoopTextures = []; exitThinkingTextures = []
+        enterWorkingTextures = []; workingLoopTextures = []; exitWorkingTextures = []
+        drinkWaterTextures = []; messageTextures = []; notificationTextures = []; clickTextures = []
+        enterSleepTextures = []; sleepLoopTextures = []; wakeUpTextures = []
+        enterTypingTextures = []; typingLoopTextures = []; exitTypingTextures = []
+        dragEnterTextures = []; dragLoopTextures = []; dragExitTextures = []
+        runEnterTextures = []; runLoopTextures = []; runExitTextures = []; runRestTextures = []
+        petTextures = []; attentionTextures = []
+        TextureManager.shared.evict(TextureGroup.normalNonEssential)
+    }
+
+    private func clearSnapTextures() {
+        snapLeftEnterTextures = []; snapLeftIdleTextures = []; snapLeftExitTextures = []
+        snapRightEnterTextures = []; snapRightIdleTextures = []; snapRightExitTextures = []
+        snapReminder1Textures = []; snapReminder2Textures = []
+        TextureManager.shared.evict(TextureGroup.snapAll)
+    }
     func setupSpriteKit() {
         skView = SKView(frame: view.bounds); skView.autoresizingMask = [.width, .height]
         skView.wantsLayer = true; skView.layer?.backgroundColor = NSColor.clear.cgColor
@@ -1028,61 +1086,7 @@ class ViewController: NSViewController {
     }
 
     func setupSpriteNode(in scene: SKScene) {
-        idleTextures          = loadTextures(named: "待机",       0..<240)
-        randomIdle1Textures   = loadTextures(named: "伸懒腰",       0..<80)
-        randomIdle2Textures   = loadTextures(named: "舔爪子",       0..<80)
-
-        enterSearchTextures   = loadTextures(named: "搜索",       0..<20)
-        searchLoopTextures    = loadTextures(named: "搜索",       20..<67)
-        exitSearchTextures    = loadTextures(named: "搜索",       67..<80)
-
-        enterThinkingTextures = loadTextures(named: "思考",       0..<17)
-        thinkingLoopTextures  = loadTextures(named: "思考",       17..<67)
-        exitThinkingTextures  = loadTextures(named: "思考",       67..<79)
-
-        enterWorkingTextures  = loadTextures(named: "工作",       0..<59)
-        workingLoopTextures   = loadTextures(named: "工作",       59..<78)
-        exitWorkingTextures   = loadTextures(named: "工作",       78..<127)
-
-        drinkWaterTextures    = loadTextures(named: "喝水",       0..<80)
-        messageTextures       = loadTextures(named: "提醒",   0..<48)
-
-        clickTextures         = loadTextures(named: "戳",  19..<48)
-        enterSleepTextures    = loadTextures(named: "睡觉", 0..<52)
-        sleepLoopTextures     = loadTextures(named: "睡觉", 52..<120)
-        wakeUpTextures        = loadTextures(named: "睡觉", 120..<160)
-
-        enterTypingTextures   = loadTextures(named: "敲键盘",     0..<38)
-        typingLoopTextures    = loadTextures(named: "敲键盘",     38..<100)
-        exitTypingTextures    = loadTextures(named: "敲键盘",     100..<128)
-
-        dragEnterTextures     = loadTextures(named: "提起",       18..<59)
-        dragLoopTextures      = loadTextures(named: "提起",       129..<177)
-        dragExitTextures      = loadTextures(named: "提起",       178..<226)
-
-        runEnterTextures      = loadTextures(named: "滚动",       0..<46)
-        runLoopTextures       = loadTextures(named: "滚动",       46..<81)
-        runExitTextures       = loadTextures(named: "滚动",       81..<106)
-        runRestTextures       = loadTextures(named: "滚动",       106..<152)
-
-        petTextures           = loadTextures(named: "摸摸",       0..<80)
-        // snapEnterTextures     = loadTextures(named: "吸附变换",   0..<48)
-        // snapIdleTextures      = loadTextures(named: "吸附待机",   0..<81)
-        // snapDragEnterTextures = loadTextures(named: "侧边提起",   0..<49)
-        // snapDragLoopTextures  = loadTextures(named: "侧边提起",   129..<178)
-        // snapDragExitTextures  = loadTextures(named: "侧边提起",   178..<227)
-        snapLeftEnterTextures  = loadTextures(named: "走到左侧",   0..<49)
-        snapLeftIdleTextures   = loadTextures(named: "左侧待机",   0..<81)
-        snapLeftExitTextures   = loadTextures(named: "左侧走出",   0..<49)
-        snapRightEnterTextures = loadTextures(named: "走到右侧",   0..<49)
-        snapRightIdleTextures  = loadTextures(named: "右侧待机",   0..<81)
-        snapRightExitTextures  = loadTextures(named: "右侧走出",   0..<49)
-
-        errorTextures         = loadTextures(named: "报错",       0..<80)
-        attentionTextures     = loadTextures(named: "完成",       0..<80)
-        notificationTextures  = messageTextures
-        snapReminder1Textures = loadTextures(named: "右提醒",  0..<48)
-        snapReminder2Textures = loadTextures(named: "左提醒",  0..<48)
+        ensureTextures(.idle, .randomIdle1, .randomIdle2, .click)
 
         guard let firstTex = idleTextures.first else {
             print("❌ 待机纹理加载失败，无法初始化 spriteNode")
@@ -1140,12 +1144,16 @@ class ViewController: NSViewController {
               spriteNode.action(forKey: "snapReminderSequence") == nil else { return }
         let textures = snappedSide == -1 ? snapLeftIdleTextures : snapRightIdleTextures
         guard !textures.isEmpty else { return }
+        let sceneW = spriteNode.scene!.size.width
+        let padding = (sceneW - spriteNode.frame.size.width) / 2
+        spriteNode.position.x = sceneW / 2 + (snappedSide == -1 ? -padding : padding)
         spriteNode.removeAllActions()
         spriteNode.run(SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.05)), withKey: "snapSequence")
     }
 
     // MARK: - Animation 动画控制
     func startIdleAnimation() {
+        ensureTextures(.idle, .randomIdle1, .randomIdle2)
         guard !idleTextures.isEmpty, !isInteracting else { return }
         spriteNode.removeAllActions()
         
@@ -1161,6 +1169,7 @@ class ViewController: NSViewController {
     }
 
     func startPetting() {
+        ensureTextures(.pet)
         guard !petTextures.isEmpty, !isInteracting else { return }
         isPetting = true; spriteNode.removeAllActions()
         isSleeping = false; isTyping = false; isThinkingOnClaudeProxy = false
@@ -1179,7 +1188,8 @@ class ViewController: NSViewController {
 
     func startDraggingAnimationSequence() {
         guard !isCurrentlyDragging else { return }
-        if isSnappedToSide { isSnappedToSide = false; snappedSide = 0 }
+        ensureTextures(.dragEnter, .dragLoop, .dragExit)
+        if isSnappedToSide { clearSnapTextures(); isSnappedToSide = false; snappedSide = 0 }
         isCurrentlyDragging = true; spriteNode.removeAllActions()
         if let firstFrame = dragEnterTextures.first { spriteNode.texture = firstFrame }
         isSleeping = false; isTyping = false; isThinkingOnClaudeProxy = false
@@ -1240,8 +1250,10 @@ class ViewController: NSViewController {
         isSnappedToSide = false; snappedSide = 0
         spriteNode.removeAllActions()
         spriteNode.xScale = abs(spriteNode.xScale)
+        spriteNode.position.x = spriteNode.scene!.size.width / 2
         let exitAction = SKAction.animate(with: exitTextures, timePerFrame: 0.04)
         spriteNode.run(SKAction.sequence([exitAction, SKAction.run { [weak self] in
+            self?.clearSnapTextures()
             self?.checkAndSnapToSide()
             if self?.isSnappedToSide == false { self?.startIdleAnimation() }
         }]), withKey: "snapExitSequence")
@@ -1267,8 +1279,14 @@ class ViewController: NSViewController {
 
         isSnappedToSide = true
         snappedSide = snapLeft ? -1 : 1
+        if snapLeft {
+            ensureTextures(.snapLeftEnter, .snapLeftIdle, .snapLeftExit, .snapReminder2)
+        } else {
+            ensureTextures(.snapRightEnter, .snapRightIdle, .snapRightExit, .snapReminder1)
+        }
+        clearNormalTextures()
         spriteNode.xScale = abs(spriteNode.xScale)
-        let targetX: CGFloat = snapLeft ? sf.minX - 70 : sf.maxX - wf.width + 100
+        let targetX: CGFloat = snapLeft ? sf.minX : sf.maxX - wf.width
         NSAnimationContext.runAnimationGroup { ctx in
             ctx.duration = 0.3
             ctx.timingFunction = CAMediaTimingFunction(name: .easeOut)
@@ -1278,6 +1296,11 @@ class ViewController: NSViewController {
         let snapIdleTextures = snapLeft ? snapLeftIdleTextures  : snapRightIdleTextures
         guard !enterTextures.isEmpty, !snapIdleTextures.isEmpty else { return }
         spriteNode.removeAllActions()
+        let sceneW = spriteNode.scene!.size.width
+        let padding = (sceneW - spriteNode.frame.size.width) / 2
+        let shiftAction = SKAction.moveTo(x: sceneW / 2 + (snapLeft ? -padding : padding), duration: 0.3)
+        shiftAction.timingMode = .easeOut
+        spriteNode.run(shiftAction, withKey: "snapShift")
         let enterAction = SKAction.animate(with: enterTextures, timePerFrame: 0.04)
         let idleLoop = SKAction.repeatForever(SKAction.animate(with: snapIdleTextures, timePerFrame: 0.05))
         spriteNode.run(SKAction.sequence([enterAction, idleLoop]), withKey: "snapSequence")
@@ -1288,6 +1311,7 @@ class ViewController: NSViewController {
         let sf = screen.visibleFrame
         let wf = window.frame
         let targetX: CGFloat = snappedSide == -1 ? sf.minX : sf.maxX - wf.width
+        spriteNode.position.x = spriteNode.scene!.size.width / 2
         NSAnimationContext.runAnimationGroup { ctx in
             ctx.duration = 0.2
             ctx.timingFunction = CAMediaTimingFunction(name: .easeOut)
@@ -1302,9 +1326,10 @@ class ViewController: NSViewController {
 
     func startChasing() {
         guard !isCurrentlyDragging else { return }
+        ensureTextures(.runEnter, .runLoop, .runExit, .runRest)
         isChasing = true; isSleeping = false; isTyping = false; isThinkingOnClaudeProxy = false
         isPlayingRunExit = false; isRestingAtMouse = false; isPetting = false
-        
+
         spriteNode.removeAllActions()
         guard !runEnterTextures.isEmpty, !runLoopTextures.isEmpty else { return }
         
@@ -1342,6 +1367,7 @@ class ViewController: NSViewController {
     }
 
     func startThinkingAnimationLoop() {
+        ensureTextures(.enterSearch, .searchLoop, .exitSearch)
         guard !enterSearchTextures.isEmpty, !searchLoopTextures.isEmpty else { return }
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isTyping = false; isSleeping = false
@@ -1358,6 +1384,7 @@ class ViewController: NSViewController {
     }
 
     func startPonderAnimationLoop() {
+        ensureTextures(.enterThinking, .thinkingLoop, .exitThinking)
         guard !enterThinkingTextures.isEmpty, !thinkingLoopTextures.isEmpty else { return }
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isTyping = false; isSleeping = false
@@ -1373,6 +1400,7 @@ class ViewController: NSViewController {
     }
 
     func startWorkingAnimationLoop() {
+        ensureTextures(.enterWorking, .workingLoop, .exitWorking, .exitSearch)
         guard !isInteracting else { return }
         guard spriteNode.action(forKey: "workingSequence") == nil else { return } // 已在循环中，不重新播
         guard !enterWorkingTextures.isEmpty, !workingLoopTextures.isEmpty else {
@@ -1404,6 +1432,7 @@ class ViewController: NSViewController {
     }
 
     func startSleepAnimation() {
+        ensureTextures(.enterSleep, .sleepLoop, .wakeUp)
         guard !enterSleepTextures.isEmpty, !sleepLoopTextures.isEmpty else { return }
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isThinkingOnClaudeProxy = false
@@ -1418,6 +1447,7 @@ class ViewController: NSViewController {
     }
 
     func startTypingAnimation() {
+        ensureTextures(.enterTyping, .typingLoop, .exitTyping)
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isTyping = true; isThinkingOnClaudeProxy = false
         guard !enterTypingTextures.isEmpty, !typingLoopTextures.isEmpty else { return }
@@ -1510,8 +1540,6 @@ class ViewController: NSViewController {
     /// 关闭权限弹窗（参照 OVI actionableStateResolved 清除 permissionRequest）
     func dismissPermissionDialogIfNeeded() {
         pendingPermissionSessionId = nil
-        permissionStaleCheckTimer?.invalidate()
-        permissionStaleCheckTimer = nil
         if permissionDialogWindow != nil {
             permissionKeyMonitors.forEach { NSEvent.removeMonitor($0) }
             permissionKeyMonitors = []
@@ -1523,6 +1551,10 @@ class ViewController: NSViewController {
             permissionKeyMonitors = []
             inlinePermissionWindow?.close()
             inlinePermissionWindow = nil
+        }
+        if askUserQuestionWindow != nil {
+            askUserQuestionWindow?.close()
+            askUserQuestionWindow = nil
         }
     }
 
@@ -1614,7 +1646,7 @@ class ViewController: NSViewController {
             case "command": expectedMod = .command
             default:        expectedMod = .control
             }
-            let mod = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+            let mod = event.modifierFlags.intersection([.control, .option, .command, .shift])
             guard mod == expectedMod else { return }
             let char = event.charactersIgnoringModifiers?.lowercased()
             switch char {
@@ -2236,11 +2268,11 @@ class ViewController: NSViewController {
         panel.hasShadow = true; panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
 
         guard let petWindow = self.view.window else { dismiss(["behavior": "deny"]); return }
-        let screen = petWindow.screen ?? NSScreen.main
-        let screenMaxX = screen?.visibleFrame.maxX ?? 1440
-        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
-        let startX: CGFloat = snappedSide == 1 ? screenMaxX : -panelW
-        let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+        let pf = petWindow.frame
+        let sf = (petWindow.screen ?? NSScreen.main)?.visibleFrame ?? NSScreen.main!.visibleFrame
+        let targetX: CGFloat = snappedSide == 1 ? pf.maxX - 110 - panelW : pf.minX + 65
+        let startX: CGFloat = snappedSide == 1 ? sf.maxX : sf.minX - panelW
+        let targetY = max(pf.midY - panelH / 2, 8)
 
         panel.setFrame(NSRect(x: startX, y: targetY, width: panelW, height: panelH), display: false)
         panel.orderFrontRegardless()
@@ -2262,7 +2294,7 @@ class ViewController: NSViewController {
             case "command": expectedMod = .command
             default:        expectedMod = .control
             }
-            let mod = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+            let mod = event.modifierFlags.intersection([.control, .option, .command, .shift])
             guard mod == expectedMod else { return }
             let char = event.charactersIgnoringModifiers?.lowercased()
             switch char {
@@ -2320,10 +2352,9 @@ class ViewController: NSViewController {
 
         guard let petWindow = self.view.window else { dismiss(0); return }
         if isSnappedToSide {
-            let screen = petWindow.screen ?? NSScreen.main
-            let screenMaxX = screen?.visibleFrame.maxX ?? 1440
-            let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
-            let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+            let pf = petWindow.frame
+            let targetX: CGFloat = snappedSide == 1 ? pf.maxX - 110 - panelW : pf.minX + 65
+            let targetY = max(pf.midY - panelH / 2, 8)
             panel.setFrameOrigin(NSPoint(x: targetX, y: targetY))
         } else {
             let petFrame = petWindow.frame
@@ -2379,11 +2410,11 @@ class ViewController: NSViewController {
         panel.hasShadow = true; panel.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 2)
 
         guard let petWindow = self.view.window else { dismiss(["action": "cancel"]); return }
-        let screen = petWindow.screen ?? NSScreen.main
-        let screenMaxX = screen?.visibleFrame.maxX ?? 1440
-        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
-        let startX: CGFloat = snappedSide == 1 ? screenMaxX : -panelW
-        let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+        let pf = petWindow.frame
+        let sf = (petWindow.screen ?? NSScreen.main)?.visibleFrame ?? NSScreen.main!.visibleFrame
+        let targetX: CGFloat = snappedSide == 1 ? pf.maxX - 110 - panelW : pf.minX + 65
+        let startX: CGFloat = snappedSide == 1 ? sf.maxX : sf.minX - panelW
+        let targetY = max(pf.midY - panelH / 2, 8)
 
         panel.setFrame(NSRect(x: startX, y: targetY, width: panelW, height: panelH), display: false)
         panel.orderFrontRegardless()
@@ -2458,13 +2489,11 @@ class ViewController: NSViewController {
 
         // 根据吸附方向决定弹出位置和动画方向
         guard let panel = terminalPanelWindow, let petWindow = view.window else { return }
-        let screen = petWindow.screen ?? NSScreen.main
-        let screenMaxX = screen?.visibleFrame.maxX ?? NSScreen.main?.visibleFrame.maxX ?? 1440
-        // 右侧吸附：面板贴右边缘（与左侧对称），从右侧屏幕外飞入
-        // 左侧吸附：面板贴左边缘 50px，从左侧屏幕外飞入
-        let targetX: CGFloat = snappedSide == 1 ? screenMaxX - panelW - 50 - 15 : 50 + 15
-        let startX:  CGFloat = snappedSide == 1 ? screenMaxX               : -panelW
-        let targetY = max(petWindow.frame.midY - panelH / 2, 8)
+        let pf = petWindow.frame
+        let sf = (petWindow.screen ?? NSScreen.main)?.visibleFrame ?? NSScreen.main!.visibleFrame
+        let targetX: CGFloat = snappedSide == 1 ? pf.maxX - 110 - panelW : pf.minX + 65
+        let startX:  CGFloat = snappedSide == 1 ? sf.maxX               : sf.minX - panelW
+        let targetY = max(pf.midY - panelH / 2, 8)
         let startFrame = NSRect(x: startX,   y: targetY, width: panelW, height: panelH)
         let endFrame   = NSRect(x: targetX,  y: targetY, width: panelW, height: panelH)
         panel.setFrame(startFrame, display: false)
@@ -2482,10 +2511,8 @@ class ViewController: NSViewController {
     func hideTerminalPanel() {
         // 只有面板可见时才隐藏；guard 失败时不设 cooldown，避免误拦截悬停
         guard let panel = terminalPanelWindow, panel.isVisible else { return }
-        let screen = view.window?.screen ?? NSScreen.main
-        let screenMaxX = screen?.visibleFrame.maxX ?? NSScreen.main?.visibleFrame.maxX ?? 1440
-        // 右侧吸附：向右飞出；左侧吸附：向左飞出
-        let exitX: CGFloat = snappedSide == 1 ? screenMaxX : -panel.frame.width
+        let sf = (view.window?.screen ?? NSScreen.main)?.visibleFrame ?? NSScreen.main!.visibleFrame
+        let exitX: CGFloat = snappedSide == 1 ? sf.maxX : sf.minX - panel.frame.width
         let endFrame = NSRect(x: exitX, y: panel.frame.minY,
                               width: panel.frame.width, height: panel.frame.height)
         let anim = NSViewAnimation(viewAnimations: [[
@@ -2510,6 +2537,7 @@ class ViewController: NSViewController {
     // }
 
     func playAttentionAnimation() {
+        ensureTextures(.attention)
         guard !attentionTextures.isEmpty else { isClaudeStateActive = false; startIdleAnimation(); return }
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isTyping = false; isSleeping = false; isThinkingOnClaudeProxy = false
@@ -2524,6 +2552,7 @@ class ViewController: NSViewController {
     }
 
     func playNotificationAnimation() {
+        ensureTextures(.message, .click)
         guard !isInteracting else { return }
         spriteNode.removeAllActions(); isTyping = false; isSleeping = false; isThinkingOnClaudeProxy = false
         let texturesToPlay = notificationTextures.isEmpty ? clickTextures : notificationTextures
@@ -2588,6 +2617,7 @@ class ViewController: NSViewController {
 
     // MARK: - Water Reminder 喝水提醒
     func playDrinkWaterAnimation() {
+        ensureTextures(.drinkWater)
         guard !drinkWaterTextures.isEmpty else { return }
         // 最高优先级：强制打断所有状态
         stopCountdown()
@@ -2725,6 +2755,7 @@ class ViewController: NSViewController {
     }
     
     func playFeishuMessageAnimation() {
+        ensureTextures(.message, .click)
         guard !isInteracting, !isClaudeStateActive else { return }
         spriteNode.removeAllActions(); isTyping = false; isSleeping = false; isThinkingOnClaudeProxy = false
         let soundAction = SKAction.playSoundFileNamed("提醒.mp3", waitForCompletion: false)
@@ -2780,6 +2811,28 @@ class ViewController: NSViewController {
                     if let m = self.globalMouseMonitor { NSEvent.removeMonitor(m) }
                     if let k = self.globalKeyboardMonitor { NSEvent.removeMonitor(k) }
                     self.setupGlobalMonitors()
+                }
+            }
+        }
+    }
+
+    func checkForUpdateOnLaunch() {
+        let lastCheck = UserDefaults.standard.double(forKey: "lastUpdateCheck")
+        let now = Date().timeIntervalSince1970
+        guard now - lastCheck > 86400 else { return }
+        UserDefaults.standard.set(now, forKey: "lastUpdateCheck")
+        UpdateChecker.check { result in
+            DispatchQueue.main.async {
+                guard case .newVersion(let version, let url) = result else { return }
+                let current = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
+                let alert = NSAlert()
+                alert.messageText = "发现新版本 \(version)"
+                alert.informativeText = "当前版本 \(current)，点击下载更新。"
+                alert.alertStyle = .informational
+                alert.addButton(withTitle: "下载更新")
+                alert.addButton(withTitle: "稍后")
+                if alert.runModal() == .alertFirstButtonReturn {
+                    NSWorkspace.shared.open(url)
                 }
             }
         }
