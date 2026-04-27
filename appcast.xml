@@ -6,22 +6,15 @@
         <description>团子最新版本</description>
         <language>zh-cn</language>
         <item>
-            <title>版本 1.0.6</title>
-            <pubDate>Mon, 27 Apr 2026 10:44:17 +0800</pubDate>
-            <sparkle:version>106</sparkle:version>
-            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <title>版本 1.0.7</title>
+            <pubDate>Mon, 27 Apr 2026 14:33:26 +0800</pubDate>
+            <sparkle:version>107</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<h3>v1.0.5 更新内容</h3>
-<ul>
-<li><b>自动安装 Hook</b> — 每次启动自动检测新安装的 AI 助手并配置 Hook，不再遗漏</li>
-<li><b>设置页跟随系统外观</b> — 浅色模式下不再全黑</li>
-<li><b>进程发现修复</b> — 正确识别 Claude Code 等 Node.js 类 AI 助手</li>
-<li><b>首次启动权限引导</b> — 自动弹出辅助功能和自动化权限请求</li>
-</ul>]]></description>
+            <description><![CDATA[<ul><li>新增诊断信息一键复制功能</li><li>修复更新后辅助功能权限需手动重置的问题</li><li>修复进程发现的会话不显示的问题</li></ul>]]></description>
             <enclosure
-                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.6/tuanzi-1.0.6.zip"
-                sparkle:edSignature=""
-                length="43596451"
+                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.0.7/tuanzi-1.0.7.zip"
+                length="43620839"
                 type="application/octet-stream"/>
         </item>
     </channel>
