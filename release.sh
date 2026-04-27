@@ -37,22 +37,24 @@ APP_PATH="$ARCHIVE_PATH/Products/Applications/${APP_NAME}.app"
 
 # 2. 压缩
 echo "🗜️  正在压缩..."
-cd /tmp
-zip -r --symlinks "$ZIP_PATH" "${APP_NAME}.app" --include "${APP_NAME}.app/*"
-# 从 archive 里复制 app 再压缩
 ditto -c -k --keepParent "$APP_PATH" "$ZIP_PATH"
 
 FILE_SIZE=$(stat -f%z "$ZIP_PATH")
 echo "📁 文件大小: $FILE_SIZE bytes"
 
-# 3. 签名
-echo "✍️  正在签名..."
-RAW_SIG=$("$SIGN_UPDATE" "$ZIP_PATH")
-SIGNATURE=$(echo "$RAW_SIG" | grep -oE '[A-Za-z0-9+/=]{40,}' | head -1)
-if [ -z "$SIGNATURE" ]; then
-    SIGNATURE="$RAW_SIG"
+# 3. Sparkle 签名（可选，找不到 sign_update 则跳过）
+if [ -x "$SIGN_UPDATE" ]; then
+    echo "✍️  正在 Sparkle 签名..."
+    RAW_SIG=$("$SIGN_UPDATE" "$ZIP_PATH")
+    SIGNATURE=$(echo "$RAW_SIG" | grep -oE '[A-Za-z0-9+/=]{40,}' | head -1)
+    if [ -z "$SIGNATURE" ]; then
+        SIGNATURE="$RAW_SIG"
+    fi
+    echo "🔑 签名: $SIGNATURE"
+else
+    echo "⚠️  未找到 sign_update，跳过 Sparkle 签名"
+    SIGNATURE=""
 fi
-echo "🔑 签名: $SIGNATURE"
 
 # 4. 读取更新说明
 NOTES_FILE="$RELEASES_DIR/release_notes.html"
