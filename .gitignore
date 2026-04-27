@@ -1,15 +1,20 @@
-# Xcode
-build/
-*.xcodeproj/xcuserdata/
-*.xcworkspace/xcuserdata/
-DerivedData/
-*.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-*.xccheckout
-*.moved-aside
-
-# macOS
+# 全局忽略
 .DS_Store
-*.swp
+
+# 忽略所有文件
+*
+
+# 只允许以下文件上传
+!.gitignore
+!README.md
+!README_CN.md
+!appcast.xml
+!release.sh
+!release_notes.html
+!build_dmg.sh
+
+# 允许 assets 目录（README 用的图片和 gif）
+!assets/
+!assets/gif/
+!assets/*.png
+!assets/gif/*.gif
