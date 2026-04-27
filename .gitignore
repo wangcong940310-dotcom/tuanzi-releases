@@ -1,20 +1,57 @@
-# 全局忽略
-.DS_Store
+# ============================================================
+# tuanzi-releases 仓库上传规则
+# 此仓库仅用于发版分发，不存放源码和素材
+# ============================================================
 
-# 忽略所有文件
+# 默认忽略所有文件
 *
 
-# 只允许以下文件上传
-!.gitignore
+# ── 允许上传的文件 ──────────────────────────────────────────
+
+# 说明文档
 !README.md
 !README_CN.md
+
+# 发版相关
 !appcast.xml
 !release.sh
 !release_notes.html
 !build_dmg.sh
 
-# 允许 assets 目录（README 用的图片和 gif）
+# Git 配置
+!.gitignore
+
+# README 引用的图片和演示动图
 !assets/
 !assets/gif/
 !assets/*.png
 !assets/gif/*.gif
+
+# ── 始终忽略（即使在白名单目录内）─────────────────────────
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 构建产物和分发包（只在本地保留，不上传）
+*.zip
+*.dmg
+*.app
+*.app/**
+
+# 截图
+screenshot-*.png
+
+# 音频 / 动画素材
+*.mp3
+*.wav
+*.webp
+
+# Xcode 相关
+*.xcodeproj
+*.xcworkspace
+*.xcarchive
+*.plist
+*.swift
+build/
+DerivedData/
