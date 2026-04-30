@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
     <channel>
         <title>团子更新</title>
-        <link>https://github.com/wangcong940310-dotcom/tuanzi-releases</link>
+        <link>https://github.com/Sanchez-77/tuanzi-releases</link>
         <description>团子最新版本</description>
         <language>zh-cn</language>
         <item>
@@ -13,7 +13,7 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description><![CDATA[<ul><li>新增 Unix Socket IPC，连接更快无端口冲突</li><li>代码架构优化（ViewController 拆分 12 个文件）</li><li>Session 即时扫描 + JSONL 恢复</li><li>修复点击动画不触发</li><li>修复 Stop hook 显示旧消息</li><li>修复 Session 不消失问题</li><li>修复权限弹窗不触发</li><li>Hook 脚本优先走 socket</li><li>增强终端识别（Kitty/WezTerm/tmux）</li></ul>]]></description>
             <enclosure
-                url="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v1.1.0/tuanzi-1.1.0.zip"
+                url="https://github.com/Sanchez-77/tuanzi-releases/releases/download/v1.1.0/tuanzi-1.1.0.zip"
                 length="43668399"
                 type="application/octet-stream"/>
         </item>

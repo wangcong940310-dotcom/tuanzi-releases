@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/wangcong940310-dotcom/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="Tuanzi">
+<img src="https://raw.githubusercontent.com/Sanchez-77/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="Tuanzi">
 
 # Tuanzi
 
@@ -15,10 +15,10 @@
 A desktop pet cat that reacts in real time to Claude Code's status.
 Flips through books while thinking, types while working, celebrates when done — and purrs when you pet it.
 
-[![Download](https://img.shields.io/github/v/release/wangcong940310-dotcom/tuanzi-releases?label=Download&color=blue)](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest)
-[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest)
+[![Download](https://img.shields.io/github/v/release/Sanchez-77/tuanzi-releases?label=Download&color=blue)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
 
-[**Download**](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest) · [**Features**](#features) · [**Getting Started**](#getting-started)
+[**Download**](https://github.com/Sanchez-77/tuanzi-releases/releases/latest) · [**Features**](#features) · [**Getting Started**](#getting-started)
 
 </div>
 
@@ -103,7 +103,7 @@ Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel
 
 ### 1. Download & Install
 
-Go to [Releases](https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
+Go to [Releases](https://github.com/Sanchez-77/tuanzi-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
 
 ### 2. Configure Hooks
 

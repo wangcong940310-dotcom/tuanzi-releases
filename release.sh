@@ -68,7 +68,7 @@ fi
 
 # 5. 更新 appcast.xml
 echo "📝 更新 appcast.xml..."
-DOWNLOAD_URL="https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/download/v${VERSION}/${ZIP_NAME}"
+DOWNLOAD_URL="https://github.com/Sanchez-77/tuanzi-releases/releases/download/v${VERSION}/${ZIP_NAME}"
 PUB_DATE=$(date -R)
 
 cat > "$RELEASES_DIR/appcast.xml" << EOF
@@ -76,7 +76,7 @@ cat > "$RELEASES_DIR/appcast.xml" << EOF
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
     <channel>
         <title>团子更新</title>
-        <link>https://github.com/wangcong940310-dotcom/tuanzi-releases</link>
+        <link>https://github.com/Sanchez-77/tuanzi-releases</link>
         <description>团子最新版本</description>
         <language>zh-cn</language>
         <item>
@@ -107,6 +107,6 @@ echo ""
 echo "✅ appcast.xml 已更新完毕！"
 echo ""
 echo "接下来手动操作："
-echo "1. 在 GitHub 创建 Release: https://github.com/wangcong940310-dotcom/tuanzi-releases/releases/new"
+echo "1. 在 GitHub 创建 Release: https://github.com/Sanchez-77/tuanzi-releases/releases/new"
 echo "   - Tag: v${VERSION}"
 echo "   - 上传文件: $ZIP_PATH"
