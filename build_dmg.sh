@@ -60,14 +60,11 @@ mkdir -p "$STAGING"
 cp -R "$APP_PATH" "$STAGING/"
 ln -s /Applications "$STAGING/Applications"
 
-cp "$SCRIPT_DIR/../团子安装包/hook_tuanzi.sh" "$STAGING/" 2>/dev/null || \
-    cp "$PROJECT_DIR/../团子安装包/hook_tuanzi.sh" "$STAGING/" 2>/dev/null || \
-    warn "未找到 hook_tuanzi.sh，DMG 中不包含 hook 脚本"
-
-INSTALL_CMD="$SCRIPT_DIR/../团子安装包/团子安装.command"
-if [ -f "$INSTALL_CMD" ]; then
-    cp "$INSTALL_CMD" "$STAGING/"
-    chmod +x "$STAGING/团子安装.command"
+# 背景图（放在隐藏的 .background 目录）
+BG_IMG="$SCRIPT_DIR/dmg_background.png"
+if [ -f "$BG_IMG" ]; then
+    mkdir -p "$STAGING/.background"
+    cp "$BG_IMG" "$STAGING/.background/bg.png"
 fi
 
 # ── 4. 创建 DMG ─────────────────────────────────────────────
@@ -104,6 +101,9 @@ tell application "Finder"
         set theViewOptions to the icon view options of container window
         set arrangement of theViewOptions to not arranged
         set icon size of theViewOptions to 100
+        try
+            set background picture of theViewOptions to file ".background:bg.png"
+        end try
         set position of item "$APP_NAME" of container window to {140, 160}
         set position of item "Applications" of container window to {420, 160}
         close
@@ -114,13 +114,10 @@ tell application "Finder"
 end tell
 APPLESCRIPT
 
-# 隐藏辅助文件
-if [ -f "$MOUNT_POINT/hook_tuanzi.sh" ]; then
-    chflags hidden "$MOUNT_POINT/hook_tuanzi.sh" 2>/dev/null || true
-fi
-if [ -f "$MOUNT_POINT/团子安装.command" ]; then
-    chflags hidden "$MOUNT_POINT/团子安装.command" 2>/dev/null || true
-fi
+# 隐藏系统文件和 .background
+SetFile -a V "$MOUNT_POINT/.background" 2>/dev/null || chflags hidden "$MOUNT_POINT/.background" 2>/dev/null || true
+rm -rf "$MOUNT_POINT/.fseventsd" 2>/dev/null || true
+rm -rf "$MOUNT_POINT/.Trashes" 2>/dev/null || true
 
 sync
 hdiutil detach "$DEVICE" -quiet
