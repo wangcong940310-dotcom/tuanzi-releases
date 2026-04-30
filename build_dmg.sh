@@ -35,6 +35,8 @@ else
         -scheme "团子" \
         -configuration Release \
         -derivedDataPath "$PROJECT_DIR/build" \
+        ARCHS="x86_64 arm64" \
+        ONLY_ACTIVE_ARCH=NO \
         CODE_SIGN_IDENTITY="-" \
         CODE_SIGN_STYLE=Manual \
         DEVELOPMENT_TEAM="" \
