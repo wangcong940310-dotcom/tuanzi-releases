@@ -6,15 +6,15 @@
         <description>团子最新版本</description>
         <language>zh-cn</language>
         <item>
-            <title>版本 1.1.0</title>
-            <pubDate>Wed, 30 Apr 2026 10:30:00 +0800</pubDate>
-            <sparkle:version>110</sparkle:version>
-            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <title>版本 1.1.1</title>
+            <pubDate>Wed, 30 Apr 2026 12:00:00 +0800</pubDate>
+            <sparkle:version>111</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<ul><li>新增 Unix Socket IPC，连接更快无端口冲突</li><li>代码架构优化（ViewController 拆分 12 个文件）</li><li>Session 即时扫描 + JSONL 恢复</li><li>修复点击动画不触发</li><li>修复 Stop hook 显示旧消息</li><li>修复 Session 不消失问题</li><li>修复权限弹窗不触发</li><li>Hook 脚本优先走 socket</li><li>增强终端识别（Kitty/WezTerm/tmux）</li></ul>]]></description>
+            <description><![CDATA[<ul><li>修复自动更新失败（改用 launchctl 确保更新脚本存活）</li><li>修复 PermissionRequest hook 安装时 matcher 为空</li><li>修复 session tracking 因特殊字符导致消息不更新</li><li>修复检查更新超时（10s→30s）</li><li>hookVersion 升至 6</li></ul>]]></description>
             <enclosure
-                url="https://github.com/Sanchez-77/tuanzi-releases/releases/download/v1.1.0/tuanzi-1.1.0.zip"
-                length="43668399"
+                url="https://github.com/Sanchez-77/tuanzi-releases/releases/download/v1.1.1/tuanzi-1.1.1.zip"
+                length="43675525"
                 type="application/octet-stream"/>
         </item>
     </channel>
