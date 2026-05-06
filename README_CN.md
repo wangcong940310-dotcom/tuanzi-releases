@@ -45,9 +45,9 @@
 
 #### 日常
 
-| 待机 | 伸懒腰 | 舔爪子 | 睡觉 | 喝水 |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> |
+| 待机 | 伸懒腰 | 舔爪子 | 睡觉 | 喝水 | 听音乐 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> | <img src="assets/gif/music.gif" width="100"> |
 
 #### 交互
 

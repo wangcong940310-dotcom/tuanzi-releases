@@ -6,19 +6,19 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Sanchez-77/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="Tuanzi">
+<img src="https://raw.githubusercontent.com/Sanchez-77/molly-releases/main/assets/icon.png" width="128" height="128" alt="Molly">
 
-# Tuanzi
+# Molly
 
 **Your AI coding buddy, right on your desktop.**
 
 A desktop pet cat that reacts in real time to Claude Code's status.
 Flips through books while thinking, types while working, celebrates when done — and purrs when you pet it.
 
-[![Download](https://img.shields.io/github/v/release/Sanchez-77/tuanzi-releases?label=Download&color=blue)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
-[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
+[![Download](https://img.shields.io/github/v/release/Sanchez-77/molly-releases?label=Download&color=blue)](https://github.com/Sanchez-77/molly-releases/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/Sanchez-77/molly-releases/releases/latest)
 
-[**Download**](https://github.com/Sanchez-77/tuanzi-releases/releases/latest) · [**Features**](#features) · [**Getting Started**](#getting-started)
+[**Download**](https://github.com/Sanchez-77/molly-releases/releases/latest) · [**Features**](#features) · [**Getting Started**](#getting-started)
 
 </div>
 
@@ -28,11 +28,11 @@ Flips through books while thinking, types while working, celebrates when done �
 
 ### Multi-Agent Integration
 
-Tuanzi listens to hook events via Webhook and switches animations in real time. Supports **10 terminal AI agents** with one-click hook setup, managed from the settings page:
+Molly listens to hook events via Webhook and switches animations in real time. Supports **10 terminal AI agents** with one-click hook setup, managed from the settings page:
 
 **Claude Code** · **Cursor** · **Gemini CLI** · **Qoder** · **Qwen Code** · **Factory** · **CodeBuddy** · **Codex** · **Kimi** · **OpenCode**
 
-| AI Status | Tuanzi Reaction |
+| AI Status | Molly Reaction |
 |---|---|
 | User submits prompt | Flips through books |
 | Tool call in progress | Types on keyboard |
@@ -45,9 +45,9 @@ Tuanzi listens to hook events via Webhook and switches animations in real time. 
 
 #### Daily
 
-| Idle | Stretch | Lick Paw | Sleep | Drink |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> |
+| Idle | Stretch | Lick Paw | Sleep | Drink | Music |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| <img src="assets/gif/idle.gif" width="100"> | <img src="assets/gif/stretch.gif" width="100"> | <img src="assets/gif/lick.gif" width="100"> | <img src="assets/gif/sleep.gif" width="100"> | <img src="assets/gif/drink.gif" width="100"> | <img src="assets/gif/music.gif" width="100"> |
 
 #### Interactive
 
@@ -87,7 +87,7 @@ Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel
 - **Inline permission prompt** — Approve directly in the docked panel without leaving your workflow
 - **Elicitation dialog** — When Claude asks a question, pick an option right from the popup
 - **Permission hotkey** — Configurable modifier + key combo, no mouse needed
-- **Auto-dismiss** — Approve in the editor and Tuanzi's popup closes automatically
+- **Auto-dismiss** — Approve in the editor and Molly's popup closes automatically
 
 ### Other Features
 
@@ -103,11 +103,11 @@ Drag to the screen edge to auto-dock. Hover to reveal the terminal session panel
 
 ### 1. Download & Install
 
-Go to [Releases](https://github.com/Sanchez-77/tuanzi-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
+Go to [Releases](https://github.com/Sanchez-77/molly-releases/releases/latest), download the latest zip, unzip and drag into your Applications folder.
 
 ### 2. Configure Hooks
 
-Tuanzi auto-detects installed AI agents and configures hooks on first launch. You can also manage hooks from the "AI Agents" tab in Settings.
+Molly auto-detects installed AI agents and configures hooks on first launch. You can also manage hooks from the "AI Agents" tab in Settings.
 
 For manual Claude Code setup, add the following to `hooks` in `~/.claude/settings.json`:
 
@@ -125,14 +125,14 @@ For manual Claude Code setup, add the following to `hooks` in `~/.claude/setting
 
 ### 3. Start Using
 
-Launch Tuanzi → Drag to the right edge of the screen → Open a terminal with Claude Code → Tuanzi comes alive.
+Launch Molly → Drag to the right edge of the screen → Open a terminal with Claude Code → Molly comes alive.
 
 ---
 
 ## How It Works
 
 ```
-Claude Code ──Hook Event──→ hook.sh ──HTTP──→ Tuanzi Webhook (port 23333)
+Claude Code ──Hook Event──→ hook.sh ──HTTP──→ Molly Webhook (port 23333)
                                                     │
                                           ┌─────────┼─────────┐
                                           ▼         ▼         ▼
