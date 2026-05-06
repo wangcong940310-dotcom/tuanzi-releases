@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Sanchez-77/tuanzi-releases/main/assets/icon.png" width="128" height="128" alt="团子">
+<img src="https://raw.githubusercontent.com/Sanchez-77/molly-releases/main/assets/icon.png" width="128" height="128" alt="团子">
 
 # 团子
 
@@ -15,10 +15,10 @@
 一只会根据 Claude Code 状态实时反应的桌面宠物猫。
 思考时翻书、工作时敲键盘、完成时提醒你、摸它还会撒娇。
 
-[![下载最新版](https://img.shields.io/github/v/release/Sanchez-77/tuanzi-releases?label=%E4%B8%8B%E8%BD%BD&color=blue)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
-[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/Sanchez-77/tuanzi-releases/releases/latest)
+[![下载最新版](https://img.shields.io/github/v/release/Sanchez-77/molly-releases?label=%E4%B8%8B%E8%BD%BD&color=blue)](https://github.com/Sanchez-77/molly-releases/releases/latest)
+[![macOS](https://img.shields.io/badge/macOS-13.0%2B-black)](https://github.com/Sanchez-77/molly-releases/releases/latest)
 
-[**下载**](https://github.com/Sanchez-77/tuanzi-releases/releases/latest) · [**功能介绍**](#功能) · [**快速开始**](#快速开始) · [**反馈**](#反馈)
+[**下载**](https://github.com/Sanchez-77/molly-releases/releases/latest) · [**功能介绍**](#功能) · [**快速开始**](#快速开始) · [**反馈**](#反馈)
 
 </div>
 
@@ -103,7 +103,7 @@
 
 ### 1. 下载安装
 
-前往 [Releases](https://github.com/Sanchez-77/tuanzi-releases/releases/latest) 下载最新 zip，解压后拖入「应用程序」文件夹。
+前往 [Releases](https://github.com/Sanchez-77/molly-releases/releases/latest) 下载最新 zip，解压后拖入「应用程序」文件夹。
 
 ### 2. 配置 Hook
 
@@ -150,7 +150,7 @@ Claude Code ──Hook事件──→ hook.sh ──HTTP──→ 团子 Webhook
 
 ## 反馈
 
-这是我作为新手做的第一个 macOS App，还很粗糙，很多地方可以改进。如果你有任何意见、建议或想法，欢迎交流！
+如果你有任何意见、建议或想法，欢迎交流！
 
 扫码添加飞书联系：
 
